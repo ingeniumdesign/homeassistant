@@ -26,6 +26,7 @@ climate.buro_dect301_1:
   friendly_name: Büro Heizung 1
   icon: mdi:radiator
 sensor.db_size:
+  friendly_name: DB-Größe
   icon: mdi:database
 sensor.version_current:
   friendly_name: Aktuell
