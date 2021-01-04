@@ -1,6 +1,6 @@
 ## ING - Home Assistant Configuration
 
-This is my Home Assistant configuration. This is a Fork from [aFFekopp](https://github.com/aFFekopp/homeassistant).
+This is my Home Assistant configuration. This is a Fork of [aFFekopp](https://github.com/aFFekopp/homeassistant).
 <br/>My Home Assistant (HA) Machine is an [Raspberry Pi 3 Model B](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB](https://amzn.to/2KRBXVH) microSDHC in a [Aukru Super 3 in 1 Kit Case](https://amzn.to/3ne80fx). <br />
 It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home-assistant.io/hassio/installation/).
 
