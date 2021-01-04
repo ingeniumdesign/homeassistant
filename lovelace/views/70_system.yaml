@@ -139,9 +139,9 @@ cards:
             entities:
               - sensor.cpu_clock
               - sensor.cpu_temp
+              - sensor.pi3_uptime
               - sensor.db_size
               - sensor.hass_io_uptime
-              - sensor.pi3_uptime
 
       # INFOS Synology DSM DS713+
       - !include
