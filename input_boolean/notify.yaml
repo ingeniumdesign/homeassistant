@@ -5,7 +5,3 @@ notify_presence_sebastian:
 notifications:
   name: Benachrichtungen
   icon: mdi:telegram
-
-notify_door_left_open:
-  name: Door Left Open Warning
-  icon: mdi:alarm-light
