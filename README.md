@@ -16,15 +16,12 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 
 ## Hardware
 
-- Phoscon [Conbee II](https://phoscon.de/de/conbee2) - [Amazon](https://amzn.to/3n7jgu0) - for Zigbee using ZHA integration
-- Philips [Hue Lights](https://www2.meethue.com/de-de/bulbs)
-- Philips [Hue Motion Sensors](https://www2.meethue.com/de-de/p/hue-bewegungssensor/8718696743171) in every room
-- Philips [Hue Remotes](https://www2.meethue.com/de-de/p/hue-dimmschalter/8718696743157) with custom [3D printed Switch Frames](https://www.thingiverse.com/thing:2905340)
-- Xiaomi [Buttons](https://banggood.com/Original-Xiaomi-Mijia-Smart-Home-Zig-bee-Wireless-Smart-Switch-Touch-Button-ON-OFF-WiFi-Remote-Control-Switch-p-1049175.html)
-- Xiaomi [Humidity Sensor](https://www.banggood.com/Original-Xiaomi-Mijia-Smart-Home-Temperature-and-Humidity-Sensor-Thermometer-Sensor-p-1046061.html)
-- Xiaomi [Door/Window Sensors](https://www.banggood.com/Original-Xiaomi-Intelligent-Door-Window-Sensor-Control-Smart-Home-Suit-Kit-Accessory-p-1017541.html)
-- Amazon [Echo Dot](https://www.amazon.de/dp/B07PHPXHQS/) / [Echo Show 8](https://www.amazon.de/dp/B07SNPKX5Y/) / 2x [Echo 3rd Gen.](https://www.amazon.de/dp/B07P64LFFH/)
-- Amazon [Fire TV 4k](https://www.amazon.de/dp/B079QHMFWC/)
+- Phoscon [Conbee II USB](https://phoscon.de/de/conbee2) - [Amazon](https://amzn.to/3n7jgu0) - for Zigbee using ZHA integration
+- Z-Wave [RaZberry 2 Modul](https://z-wave.me/products/razberry/) ZMEERAZ2 - [Amazon](https://amzn.to/3nchsA1) - for Zigbee using ZHA integration
+- Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Amazon](https://amzn.to/38eLmPX)
+- AEOTEC [Plus Multisensor 6](https://aeotec.com/z-wave-sensor/) - [Amazon](https://amzn.to/38YJoCm)
+- Amazon 1x [Echo Dot (4. Gen.)](https://amzn.to/3ncrktE)
+- Amazon 1x [Echo Dot (3. Gen.)](https://amzn.to/3hHu8xz)
 
 ## Hass.io Addons
 - Check Home Assistant configuration
