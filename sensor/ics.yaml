@@ -1,0 +1,61 @@
+# ICS Kalender Config
+# https://github.com/KoljaWindeler/ics#manual-configuration
+# ICS - In der Eisenbach - https://www.eaw-rheingau-taunus.de/service/abfallkalender.html?omnibox-streetid=1136
+# ICS - Fichtenweg - https://www.eaw-rheingau-taunus.de/service/abfallkalender.html?omnibox-streetid=1087
+
+- platform: ics
+  name: Restmülltonne
+  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
+  #startswith: Restmülltonne
+  contains: "Restmülltonne"
+  id: 1
+  timeformat: "%A, %d.%m."
+  show_remaining: true
+  show_ongoing: true
+  description_in_state: false
+  icon: "mdi:trash-can-outline"
+
+- platform: ics
+  name: Biotonne
+  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
+  #startswith: Biotonne
+  contains: "Biotonne"
+  id: 2
+  timeformat: "%A, %d.%m."
+  show_remaining: true
+  show_ongoing: true
+  description_in_state: false
+  icon: "mdi:trash-can-outline"
+
+- platform: ics
+  name: Altpapiertonne
+  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
+  #startswith: Altpapiertonne
+  contains: "Altpapiertonne"
+  id: 3
+  timeformat: "%A, %d.%m."
+  show_remaining: true
+  show_ongoing: true
+  description_in_state: false
+  icon: "mdi:newspaper-variant-multiple-outline"
+
+- platform: ics
+  name: Gelbetonne
+  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
+  #startswith: Gelber
+  contains: "Gelber Sack"
+  id: 4
+  timeformat: "%A, %d.%m."
+  show_remaining: true
+  show_ongoing: true
+  description_in_state: false
+  icon: "mdi:recycle"
+
+# Wochentage ICS
+#- platform: template
+#  sensors:
+#    ics_wochentage_deutsch:
+#      friendly_name: "Wochentag"
+#      value_template: >-
+#        {{ states.sensor.ics_1|regex_replace(find='Monday', replace='Montag', ignorecase=False)|regex_replace(find='Tuesday', replace='Dienstag', ignorecase=False)|regex_replace(find='Thursday', replace='Donnerstag', ignorecase=False)}}
+

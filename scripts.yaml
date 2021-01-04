@@ -1,0 +1,34 @@
+#wakeup_computer_htpc:
+#  sequence:
+#    - service: switch.turn_on
+#      entity_id: switch.wakeup_computer_htpc
+
+log_reload_themes:
+  alias: Log Theme Restart
+  sequence:
+    - event: LOGBOOK_ENTRY
+      event_data:
+        name: "{{ name }}"
+        message: "{{ message }}"
+
+add_logbook_entry:
+  alias: Add Logbook
+  sequence:
+    - service: logbook.log
+      data_template:
+        title: "Theme Restart"
+        message: "Theme Restart ausgeführt"
+        # Optional
+        entity_id: frontend.reload_themes
+        domain: frontend
+
+#Abfallkalender
+seq_trash:
+  sequence:
+    - service: notify.pb
+      data_template:
+      title: "Trash pickup tomorrow"
+      message: >
+        {% if is_state_attr("sensor.ics_1", "remaining",1) %} {{states.sensor.ics_1.attributes.friendly_name}} pickup tomorrow.{% endif %}
+        {% if is_state_attr("sensor.ics_2", "remaining",1) %} {{states.sensor.ics_2.attributes.friendly_name}} pickup tomorrow.{% endif %}
+        {% if is_state_attr("sensor.ics_3", "remaining",1) %} {{states.sensor.ics_3.attributes.friendly_name}} pickup tomorrow.{% endif %}

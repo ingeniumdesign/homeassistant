@@ -1,0 +1,23 @@
+- name: Home
+  latitude: 50.210403
+  longitude: 8.2620216
+  radius: 100
+  icon: mdi:home-heart
+
+- name: SebastianArbeit
+  latitude: 50.2123494
+  longitude: 8.2656348
+  radius: 25
+  icon: mdi:factory
+
+- name: JuliaArbeit
+  latitude: 50.1465358
+  longitude: 8.5571502
+  radius: 150
+  icon: mdi:factory
+
+- name: Golfpark
+  latitude: 50.262022
+  longitude: 8.2613754
+  radius: 1100
+  icon: mdi:golf

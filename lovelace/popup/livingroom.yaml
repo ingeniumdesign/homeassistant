@@ -1,0 +1,24 @@
+              action: call-service
+              service: browser_mod.popup
+              service_data:
+                deviceID: this
+                title: Wohnzimmer Status
+                card:
+                  type: entities
+                  state_color: true
+                  show_header_toggle: false
+                  entities:
+                    - entity: media_player.samsung_tv_q9075
+                      tap_action:
+                        action: none
+                    - entity: media_player.denon_avr_x4200w
+                      tap_action:
+                        action: none
+                    - entity: media_player.vu_uno4k_se
+                      tap_action:
+                        action: none
+                    # Computer Basti NUC @TODO Icon ändern und PC herunterfahren Funktion
+                    - entity: switch.basti_nuc
+                      secondary_info: last-triggered
+                      #tap_action:
+                      #  action: none

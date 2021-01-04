@@ -1,0 +1,73 @@
+#################
+# INPUT_BOOLEAN #
+#################
+input_boolean:
+  motion_sensor_mainhallway_toggle:
+    name: Flur - Bewegungsmelder
+    icon: mdi:motion-sensor
+
+  motion_sensor_stairwell1_toggle:
+    name: Treppenhaus 1 - Bewegungsmelder
+    icon: mdi:motion-sensor
+
+  motion_sensor_stairwell2_toggle:
+    name: Treppenhaus 2 - Bewegungsmelder
+    icon: mdi:motion-sensor
+
+  motion_sensor_stairwell3_toggle:
+    name: Treppenhaus 3 - Bewegungsmelder
+    icon: mdi:motion-sensor
+
+  motion_sensor_kitchen_toggle:
+    name: Küche - Bewegungsmelder
+    icon: mdi:motion-sensor
+
+  motion_sensor_restroom_toggle:
+    name: Gäste-WC - Bewegungsmelder
+    icon: mdi:motion-sensor
+
+##################
+# INPUT_DATETIME #
+##################
+input_datetime:
+  motion_sensor_mainhallway:
+    name: Bewegungsmelder Timeout
+    has_time: true
+    initial: 01:00
+  motion_sensor_stairwell1:
+    name: Bewegungsmelder Timeout
+    has_time: true
+    initial: 01:00
+  motion_sensor_stairwell2:
+    name: Bewegungsmelder Timeout
+    has_time: true
+    initial: 01:00
+  motion_sensor_stairwell3:
+    name: Bewegungsmelder Timeout
+    has_time: true
+    initial: 01:00
+  motion_sensor_kitchen:
+    name: Bewegungsmelder Timeout
+    has_time: true
+    initial: 01:00
+  motion_sensor_restroom:
+    name: Bewegungsmelder Timeout
+    has_time: true
+    initial: 01:00
+
+#########
+# TIMER #
+#########
+timer:
+  motion_sensor_mainhallway:
+    duration: '01:00:00'
+  motion_sensor_stairwell1:
+    duration: '01:00:00'
+  motion_sensor_stairwell2:
+    duration: '01:00:00'
+  motion_sensor_stairwell3:
+    duration: '01:00:00'
+  motion_sensor_kitchen:
+    duration: '01:00:00'
+  motion_sensor_restroom:
+    duration: '01:00:00'

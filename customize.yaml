@@ -1,0 +1,126 @@
+sun.sun:
+  friendly_name: Sonnenstand
+media_player.vu_uno4k_se:
+  friendly_name: VU UNO4k SE
+  icon: mdi:toggle-switch-outline
+media_player.samsung_tv_q9075:
+  friendly_name: Samsung TV Q9075
+  icon: mdi:television
+media_player.denon_avr_x4200w:
+  friendly_name: Denon AVR-X4200W
+  icon: mdi:audio-video
+input_number.kwh_cost:
+  friendly_name: Kosten für eine kWh
+  icon: mdi:currency-eur
+  unit_of_measurement: €
+switch.buro_dect200_1:
+  friendly_name: Büro Steckdose 1
+  icon: mdi:power-plug
+sensor.buro_dect200_1_total_consumption:
+  icon: mdi:flash
+sensor.buro_dect200_1_today_energy_kwh:
+  icon: mdi:flash
+climate.buro_dect301_1:
+  friendly_name: Büro Heizung 1
+  icon: mdi:radiator
+sensor.version_ha_local:
+  friendly_name: Home Assistant Version
+sensor.version_ha_docker:
+  friendly_name: Latest Docker Version
+  icon: mdi:docker
+sensor.db_size:
+  icon: mdi:database
+sensor.version_current:
+  friendly_name: Aktuell
+sensor.version_latest:
+  friendly_name: Neueste
+input_boolean.motion_sensor_mainhallway_toggle:
+  friendly_name: Flur
+input_boolean.motion_sensor_stairwell1_toggle:
+  friendly_name: Treppenhaus 1
+input_boolean.motion_sensor_stairwell2_toggle:
+  friendly_name: Treppenhaus 2
+input_boolean.motion_sensor_stairwell3_toggle:
+  friendly_name: Treppenhaus 2
+input_boolean.motion_sensor_kitchen_toggle:
+  friendly_name: Küche
+input_boolean.motion_sensor_restroom_toggle:
+  friendly_name: Gäste-WC
+sensor.hacs:
+  friendly_name: Plugins / Components
+sensor.people_home:
+  icon: mdi:account-multiple
+  unit_of_measurement: Personen
+input_boolean.auto_open_door:
+  icon: mdi:door-open
+binary_sensor.remote_ui:
+  icon: mdi:cloud
+sensor.net_received_monthly:
+  friendly_name: Download
+  icon: mdi:inbox-arrow-down
+sensor.net_sent_monthly:
+  friendly_name: Upload
+  icon: mdi:inbox-arrow-up
+sensor.net_download_cur_filtered:
+  friendly_name: Download
+sensor.motion_sensor_minmax_temp:
+  friendly_name: Bewegungsmelder - minmax temp
+  icon: mdi:thermometer
+sensor.motion_sensor_minmax_lux:
+  friendly_name: Bewegungsmelder - minmax lux
+  icon: mdi:brightness-5
+sensor.net_uptime:
+  icon: mdi:lan-connect
+sensor.hass_io_uptime:
+  icon: mdi:home-assistant
+  unit_of_measurement: Tage
+sensor.last_boot:
+  friendly_name: Pi3 Uptime
+  icon: mdi:desktop-tower
+sensor.pi3_uptime:
+  icon: mdi:desktop-tower
+sensor.net_uptime_pretty:
+  icon: mdi:lan-connect
+sensor.hass_io_uptime_pretty:
+  icon: mdi:home-assistant
+device_tracker.handy_sebastian:
+  friendly_name: Sebastian Handy
+device_tracker.iphone_vr_smart:
+  friendly_name: Julia Handy
+device_tracker.iphone_vr_smart_2:
+  friendly_name: Julia Handy App
+group.motion_sensors:
+  friendly_name: Bewegungsmelder
+  icon: mdi:leak
+binary_sensor.pi_hole:
+  device_class: connectivity
+  icon: mdi:pi-hole
+sensor.cpu_temp:
+  friendly_name: CPU Temp
+  icon: mdi:thermometer
+sensor.cpu_clock:
+  friendly_name: CPU Speed
+  icon: mdi:pulse
+switch.basti_nuc:
+  friendly_name: Computer NUC
+  icon: mdi:desktop-tower
+sensor.basti_nas_cpu_load_total:
+  friendly_name: CPU Load
+  icon: mdi:cpu-64-bit
+sensor.basti_nas_volume_1_used_space:
+  friendly_name: Speicher verwendet
+  icon: mdi:harddisk
+sensor.basti_nas_laufwerk_1_temperature:
+  friendly_name: Temperatur LW 1
+  icon: mdi:thermometer
+sensor.basti_nas_laufwerk_2_temperature:
+  friendly_name: Temperatur LW 2
+  icon: mdi:thermometer
+sensor.basti_nas_network_up:
+  friendly_name: Netzwerk Upload
+  icon: mdi:inbox-arrow-up
+sensor.basti_nas_network_down:
+  friendly_name: Netzwerk Download
+  icon: mdi:inbox-arrow-down
+vacuum.xiaomi_vacuum_cleaner:
+  friendly_name: Wallie
