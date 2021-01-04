@@ -1,0 +1,258 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Familie Schmal
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: 298
+  # 'metric' for Metric, 'imperial' for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Berlin
+  # C for Celcius, F for Fahrenheit
+  temperature_unit: C
+  external_url: "https://ingeniumdesign.duckdns.org:18123"
+  internal_url: "http://192.168.178.37:8123"
+  auth_providers:
+   - type: homeassistant
+  customize: !include customize.yaml
+  packages: !include_dir_named packages
+
+## Themes UI ############################################################################
+## ui-lovelace.yaml inline Styles
+frontend:
+  themes: !include_dir_merge_named themes
+
+config:
+
+hassio:
+
+api:
+
+# HTTP / HTTPS Config
+http:
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+updater:
+
+conversation:
+
+history: !include history.yaml
+
+recorder: !include recorder.yaml
+
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_bot_api_key
+    allowed_chat_ids:
+      #User Sebastian
+      - !secret telegram_bot_allowed_chat_ids_sebastian
+      #Group Familie Schmal
+      - !secret telegram_bot_allowed_chat_ids_group
+
+notify:
+  - platform: telegram
+    name: HA_Message
+    chat_id: !secret notify_chat_id_sebastian
+  # Group Familie Schmal
+  - platform: telegram
+    name: HA_Message_GROUP
+    chat_id: !secret notify_chat_id_group
+
+system_health:
+
+logbook:
+  exclude:
+    entities:
+      - sensor.time
+      - sensor.date
+      - sensor.ha_uptime
+
+logger: !include logger.yaml
+
+sun:
+
+ssdp:
+
+zeroconf:
+
+person:
+
+mobile_app:
+
+## HOME ASSISTANT CLOUD #################################################################
+cloud:
+
+## TTS ##################################################################################
+tts:
+  - platform: google_translate
+    language: 'de'
+
+## PLUGINS ##############################################################################
+#########################################################################################
+
+## MEDIA PLAYER #########################################################################
+media_source:
+
+media_player:
+  # VU UNO4k SE
+  - platform: enigma2
+    host: 192.168.178.32
+    mac_address: !secret media_player_enigma2_vu_mac_address
+    name: VU UNO4k SE
+    username: !secret media_player_enigma2_vu_username
+    password: !secret media_player_enigma2_vu_password
+  # Samsung TV Q9075
+  - platform: samsungtv_tizen
+    host: 192.168.178.27
+    mac: !secret media_player_samsungtv_tizen_q9075_mac_address
+    name: Samsung TV Q9075
+  # Denon-AVR-X4200W
+  - platform: denon
+    host: 192.168.178.26
+    #mac: !secret media_player_denon_x4200w_mac_address
+    name: Denon-AVR-X4200W
+
+#samsungtv:
+#  - host: 192.168.178.27
+#    name: Samsung TV Q9075
+
+## DEVICE TRACKERS ######################################################################
+device_tracker:
+  - platform: fritz
+    host: 192.168.178.1
+    password: !secret device_tracker_fritzbox_password
+    track_new_devices: true
+    consider_home: 90
+
+## UTILITY METER ########################################################################
+utility_meter:
+  net_received_monthly:
+    source: sensor.net_received
+    cycle: monthly
+  net_sent_monthly:
+    source: sensor.net_sent
+    cycle: monthly
+
+## SYNOLOGY DS713 #######################################################################
+synology_dsm:
+  - host: 192.168.178.43
+    username: !secret synology_dsm_ds713_username
+    password: !secret synology_dsm_ds713_password
+    #name: SYNOLOGY DSM DS713+
+
+## WAKEonLAN #############################################################################
+wake_on_lan:
+
+## UPNP FRITZBOX ########################################################################
+upnp:
+  local_ip: 192.168.178.1
+
+## VACUUM ROBOROCK S6 ###################################################################
+# https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor
+vacuum:
+  - platform: xiaomi_miio
+    host: 192.168.178.46
+    token: !secret vacuum_roborock_s6_token
+
+## SPEEDTEST ###########################################################################
+speedtestdotnet:
+  server_id: 10010
+  scan_interval:
+    minutes: 5
+    hours: 6
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+#########################################################################################
+
+## LOVELACE UI ##########################################################################
+lovelace_gen:
+
+lovelace:
+  mode: yaml
+  # Include external resources only add when mode is yaml
+  resources:
+    # Plugins
+    - url: /hacsfiles/lovelace-layout-card/layout-card.js
+      type: module
+    - url: /hacsfiles/lovelace-hui-element/hui-element.js
+      type: module
+    - url: /hacsfiles/light-entity-card/light-entity-card.js
+      type: module
+    - url: /hacsfiles/stack-in-card/stack-in-card.js
+      type: module
+    - url: /hacsfiles/vertical-stack-in-card/vertical-stack-in-card.js
+      type: module
+    - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+      type: module
+    - url: /hacsfiles/lovelace-card-tools/card-tools.js
+      type: module
+    - url: /hacsfiles/lovelace-card-mod/card-mod.js
+      type: module
+    - url: /hacsfiles/bar-card/bar-card.js
+      type: module
+    - url: /hacsfiles/transmission-card/transmission-card.js
+      type: module
+    - url: /hacsfiles/button-card/button-card.js
+      type: module
+    - url: /hacsfiles/lovelace-time-picker-card/time-picker-card.js
+      type: module
+    - url: /hacsfiles/lovelace-auto-entities/auto-entities.js
+      type: module
+    - url: /hacsfiles/lovelace-multiple-entity-row/multiple-entity-row.js
+      type: module
+    #- url: /hacsfiles/kiosk-mode/kiosk-mode.js
+    #  type: module
+    # Addons
+    - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
+      type: module
+    - url: /hacsfiles/swipe-card/swipe-card.js
+      type: module
+    - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
+      type: module
+    - url: /hacsfiles/simple-thermostat/simple-thermostat.js
+      type: module
+    - url: /hacsfiles/weather-card/weather-card.js
+      type: module
+    - url: /hacsfiles/lovelace-state-switch/state-switch.js
+      type: module
+    - url: /hacsfiles/vacuum-card/vacuum-card.js
+      type: module
+    # Styles
+    - url: 'https://fonts.googleapis.com/css?family=Raleway'
+      type: css
+    - url: 'https://fonts.googleapis.com/css?family=Oswald'
+      type: css
+    - url: 'https://fonts.googleapis.com/css?family=Quicksand'
+      type: css
+  dashboards:
+    lovelace-generated:
+      mode: yaml
+      filename: notexist.yaml
+      title: Generated
+      icon: mdi:rotate-right
+      show_in_sidebar: true
+      require_admin: true
+
+browser_mod:
+  disable:
+    - all
+
+input_boolean: !include_dir_merge_named input_boolean
+input_select: !include_dir_merge_named input_select
+input_number: !include_dir_merge_named input_number
+
+#group: !include groups.yaml
+automation: !include automations.yaml
+
+scene: !include scenes.yaml
+script: !include_dir_merge_named scripts
+switch: !include_dir_merge_list switch
+sensor: !include_dir_merge_list sensor
