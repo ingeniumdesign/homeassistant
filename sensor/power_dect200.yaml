@@ -1,0 +1,31 @@
+- platform: template
+  sensors:
+    buro_dect200_1_current_power_w:
+      value_template: "{{state_attr('switch.buro_dect200_1', 'current_power_w') | round(2)}}"
+      friendly_name: "Leistung"
+      unit_of_measurement: 'W'
+
+    buro_dect200_1_total_consumption:
+      value_template: "{{state_attr('switch.buro_dect200_1', 'total_consumption') | round(2)}}"
+      friendly_name: "Gesamt"
+      unit_of_measurement: 'kWh'
+
+    buro_dect200_1_voltage:
+      value_template: "{{state_attr('switch.buro_dect200_1', 'voltage') | round(2)}}"
+      friendly_name: "Spannung"
+      unit_of_measurement: 'V'
+
+    buro_dect200_1_current_a:
+      value_template: "{{state_attr('switch.buro_dect200_1', 'current_a') | round(2)}}"
+      friendly_name: "Ampere"
+      unit_of_measurement: 'A'
+
+    buro_dect200_1_today_energy_kwh:
+      value_template: "{{state_attr('switch.buro_dect200_1', 'today_energy_kwh') | round(2)}}"
+      friendly_name: "Heute"
+      unit_of_measurement: 'kWh'
+
+    buro_dect200_1_temperature:
+      value_template: "{{state_attr('switch.buro_dect200_1', 'temperature') }}"
+      friendly_name: "Temperatur"
+      unit_of_measurement: '°C'

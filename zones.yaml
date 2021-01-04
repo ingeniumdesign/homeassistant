@@ -1,0 +1,23 @@
+- name: Home
+  latitude: 0.0
+  longitude: 0.0
+  radius: 100
+  icon: mdi:home-heart
+
+- name: SebastianArbeit
+  latitude: 0.0
+  longitude: 0.0
+  radius: 25
+  icon: mdi:factory
+
+- name: JuliaArbeit
+  latitude: 0.0
+  longitude: 0.0
+  radius: 150
+  icon: mdi:factory
+
+- name: Golfpark
+  latitude: 0.0
+  longitude: 0.0
+  radius: 1100
+  icon: mdi:golf

@@ -1,0 +1,11 @@
+notify_presence_sebastian:
+  name: Sebastian Location Status
+  icon: mdi:account
+
+notifications:
+  name: Benachrichtungen
+  icon: mdi:telegram
+
+notify_door_left_open:
+  name: Door Left Open Warning
+  icon: mdi:alarm-light

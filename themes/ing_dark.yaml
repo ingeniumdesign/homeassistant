@@ -1,0 +1,275 @@
+ing_dark:
+
+  # Fonts
+  primary-font-family: 'Raleway,sans-serif'
+  paper-font-common-base_-_font-family: "var(--primary-font-family)"
+  paper-font-common-code_-_font-family: "var(--primary-font-family)"
+  paper-font-body1_-_font-family: "var(--primary-font-family)"
+  paper-font-subhead_-_font-family: "var(--primary-font-family)"
+  paper-font-headline_-_font-family: "var(--primary-font-family)"
+  paper-font-caption_-_font-family: "var(--primary-font-family)"
+  paper-font-title_-_font-family: "var(--primary-font-family)"
+  ha-card-header-font-family: "var(--primary-font-family)"
+
+  # Text
+  text-color: '#ffffff' 
+  primary-text-color: 'var(--text-color)'
+  text-primary-color: 'var(--text-color)'
+  secondary-text-color: "#BAC0C6"
+  text-medium-light-color: '#A0A2A8'
+  text-medium-color: '#80828A'
+  disabled-text-color: '#626569'
+  primary-color: 'var(--accent-color)'
+  
+  # Main Colors
+  app-header-background-color: '#242e42'
+  accent-color: '#1A89F5'
+  accent-medium-color: 'var(--accent-color)'
+
+  # Background
+  background-color: '#242e42'
+  primary-background-color: 'var(--background-color)'
+  background-color-2: '#20293c' 
+  secondary-background-color: 'none'
+  markdown-code-background-color: 'var(--background-color)'
+  
+  # Card
+  card-background-color: 'var(--ha-card-background)'
+  ha-card-background: 'rgba(43,55,78,1)' #'linear-gradient(145deg, #273246, #2e3b53)'
+  ha-card-box-shadow: "3px 3px 13px -6px rgba(17,35,52,1)"
+  ha-card-border-radius: "5px"
+  border-color: 'none'
+
+  # Icons
+  paper-item-icon-color: '#EBEBEB'
+  paper-item-icon-active-color: 'var(--accent-color)'
+  
+  # Sidebar
+  sidebar-background-color: 'var(--background-color)'
+  sidebar-icon-color: '#98a7b9'
+  sidebar-selected-icon-color: 'var(--accent-color)'
+  sidebar-selected-text-color: 'var(--text-color)'
+  paper-listbox-background-color: 'var(--sidebar-background-color)'
+  divider-color: 'var(--background-color)'
+  light-primary-color: 'var(--ha-card-background)'
+
+  # Sliders
+  paper-slider-knob-color: 'var(--accent-color)'
+  paper-slider-pin-color: 'var(--background-color-2)'
+  paper-slider-active-color: 'var(--accent-color)'
+  paper-slider-container-color: 'var(--background-color-2)'
+
+  # Toggle:
+  paper-toggle-button-checked-bar-color: 'var(--accent-color)'
+  mdc-theme-primary: 'var(--accent-color)'
+
+  # Switch
+  switch-unchecked-color: '#70889e'
+  switch-checked-button-color: 'var(--accent-color)'
+  switch-unchecked-track-color: 'var(--background-color-2)'
+  switch-checked-track-color: 'var(--background-color-2)'
+
+  # Radio Button
+  paper-radio-button-checked-color: 'var(--accent-color)'
+
+  # Popups
+  more-info-header-background: 'var(--secondary-background-color)'
+  paper-dialog-background-color: 'var(--background-color)' #'rgba(47,59,82,0.4)'
+
+  # Tables
+  table-row-background-color: 'var(--background-color)'
+  table-row-alternative-background-color: 'var(--ha-card-background)'
+
+  # Badges
+  label-badge-background-color: 'var(--background-color)'
+  label-badge-text-color: 'var(--text-primary-color)'
+  label-badge-red: 'rgba(73,85,108,1)'
+  label-badge-blue: 'rgba(26,137,245,1)'
+  label-badge-green: 'rgba(0,202,139,1)'
+  label-badge-yellow: 'rgba(222,176,107,1)'
+
+  paper-input-container-focus-color: 'var(--accent-color)'
+  
+  # Custom Header
+  ch-background: 'var(--background-color)'
+  ch-active-tab-color: 'var(--accent-color)'
+  ch-notification-dot-color: 'var(--accent-color)'
+  ch-all-tabs-color: 'var(--sidebar-icon-color)'
+  ch-tab-indicator-color: 'var(--accent-color)'
+
+  # Mini Mediaplayer
+  mini-media-player-base-color: 'var(--text-color)'
+  mini-media-player-accent-color: 'var(--accent-color)'
+
+  # Custom
+  custom_heading: '#ffffff'
+  custom_icon_light: '#ffffff'
+  custom_icon_dark: '#ffffff'
+  custom_card_background: 'var(--ha-card-background)'
+  # hell rot
+  custom_motion_off: 'rgba(255,102,102,0.6)'
+  # hell lila
+  custom_motion_detected: 'rgba(31,142,250,0.9)'
+  # rot
+  custom_graph_color_1: 'rgba(247,53,67,1)'
+  #oka
+  custom_graph_color_2: 'rgba(222,176,107,1)'
+  #hell grün
+  custom_graph_color_3: 'rgba(0,202,139,1)'
+  #lila
+  custom_graph_color_4: 'rgba(139,64,156,1)'
+  #orange
+  custom_graph_color_5: 'rgba(255,153,0,1)'
+
+  # Card-Mod
+  card-mod-theme: ing_dark
+  
+  card-mod-root-yaml: |
+
+    ha-app-layout$: |
+        /* This corrects top padding for the view. */
+        #contentContainer {
+          padding-top: 48px !important;
+        }
+
+    paper-tabs$: |
+        /* This hides tab scroll arrows, remove next 3 lines if you want them. */
+        paper-icon-button {
+          display: none;
+        }
+        /* This makes it so arrows are only displayed when needed. */
+        .not-visible {
+          display: none;
+        }
+    .: |
+      /* This shifts the unused portion of the header up.
+      app-toolbar:not([class="edit-mode"]) {
+        margin-top: -64px;
+        z-index: 1;
+      } */
+      /* This shifts the menu button back down.
+      app-toolbar:not([class="edit-mode"]) ha-button-menu {
+        margin-top: 110px
+      } */
+      /* Bring edit UI overflow menu back in
+      ha-button-menu {
+        right: 0;
+        position: absolute; */
+        /*Uncomment this out to hide the overflow menu
+        display: none;
+
+      }*/
+      /* This shifts the voice button back down. */
+      app-toolbar:not([class="edit-mode"]) mwc-icon-button[label] {
+        /* Uncomment line below to hide voice button. */
+        display: none; 
+        margin-top: 110px
+      }
+      /* This shifts the options button back down. */
+      app-toolbar:not([class="edit-mode"]) ha-menu-button {
+        /* Uncomment line below to hide options button. */
+        /* display: none; */
+        margin-top: 110px
+      }
+      /* This hides the menu button when sidebar is open. */
+      menu-button[style="visibility: hidden;"] {
+        display: none;
+      }
+      /* This adds room for the menu button when sidebar is open. */
+      :host-context(home-assistant-main[expanded]) paper-tabs {
+        margin-left: 5px !important;
+      }
+      /* This leaves space for the buttons on the right of the tabs bar.
+         Change 112px to 56px if you don't use voice icon. */
+      paper-tabs {
+          margin-right: 56px !important;
+      }
+      /* This corrects the sizing of the view. */
+      #view {
+        min-height: calc(100vh - 48px) !important;
+      }
+      /* Set bar color*/
+      paper-tabs {
+        --paper-tabs-selection-bar-color: transparent !important;
+        margin-left: 0px !important;
+      }
+      /* Color selected tabs */
+      paper-tab[aria-selected="true"] > ha-icon {
+        color: var(--accent-color) !important;
+      }
+      paper-tab[aria-selected="true"] {
+        color: var(--accent-color) !important;
+      }
+      /* Color deselected tabs */
+      paper-tab[aria-selected="false"] > ha-icon {
+        color: var(--secondary-text-color) !important;
+      }
+      /* Hide buttons that are taking up space, but invisible */
+      menu-button[style="visibility: hidden;"] {
+        display: none;
+      }
+      /* Styles for mobile */
+      @media (orientation: portrait) {
+        /* Hide sidebar button and keep room for the overflow menu button */
+        paper-tabs {
+          margin-left: 5px !important;
+          margin-right: 48px !important;
+        }
+        /* Hide voice button */
+        mwc-icon-button[label="Start conversation"] {
+          display: none !important;
+        }
+        /* Hide sidebar button */
+        ha-menu-button {
+          display: none !important;
+        }
+      }
+
+  card-mod-view: |
+    #view {
+      min-height: 100vh !important;
+    }
+  # card-mod-view: |
+  #   #columns .column > * {
+  #     overflow: unset !important;
+  #     padding-left: 9px;
+  #     padding-right: 9px;
+  #     padding-bottom: 9px;
+  #   }
+
+  card-mod-more-info-yaml: |
+    .: |
+      :host {
+        --ha-card-box-shadow: none;
+      }
+      /*
+      app-toolbar {
+        background: var(--card-header) !important;
+      }*/
+
+    $: |
+      .mdc-dialog .mdc-dialog__container .mdc-dialog__surface {
+        background: var(--card-color);
+        box-shadow: none;
+        border-radius: 1em;
+      }
+
+      .mdc-dialog, .mdc-dialog.mdc-dialog--open {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: none;
+      }
+
+      .mdc-dialog--open .mdc-dialog__scrim {
+        backdrop-filter: blur(5px) brightness(95%) !important;
+        -webkit-backdrop-filter: blur(5px) brightness(95%) !important;
+        background: rgba(0,0,0,.50) !important;
+      }
+
+      .mdc-dialog .mdc-dialog__surface {
+        background-color: transparent;
+      }
+      .mdc-dialog .mdc-dialog__container .mdc-dialog__surface {
+        box-shadow: none !important;
+        border-radius: var(--ha-card-border-radius);
+      }

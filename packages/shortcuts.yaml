@@ -1,0 +1,14 @@
+input_boolean:
+  # SHORTCUTS
+  shortcut_mainhallway:
+    name: Flur
+    icon: mdi:view-carousel-outline
+  shortcut_livingroom:
+    name: Wohnzimmer
+    icon: mdi:sofa
+  shortcut_kitchen_diningroom:
+    name: Küche/Esszimmer
+    icon: mdi:food-fork-drink
+  shortcut_office:
+    name: Büro
+    icon: mdi:desktop-tower-monitor

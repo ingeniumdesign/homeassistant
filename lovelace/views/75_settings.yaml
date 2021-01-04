@@ -1,0 +1,83 @@
+icon: mdi:cog
+title: Einstellungen
+path: settings
+id: settings
+popup_cards:
+  input_boolean.motion_sensor_mainhallway_toggle:
+    title: Timeout
+    card:
+      type: entities
+      entities:
+        - input_datetime.motion_sensor_mainhallway
+  input_boolean.motion_sensor_stairwell1_toggle:
+    title: Timeout
+    card:
+      type: entities
+      entities:
+        - input_datetime.motion_sensor_stairwell1
+  input_boolean.motion_sensor_stairwell2_toggle:
+    title: Timeout
+    card:
+      type: entities
+      entities:
+        - input_datetime.motion_sensor_stairwell2
+  input_boolean.motion_sensor_stairwell3_toggle:
+    title: Timeout
+    card:
+      type: entities
+      entities:
+        - input_datetime.motion_sensor_stairwell3
+  input_boolean.motion_sensor_kitchen_toggle:
+    title: Timeout
+    card:
+      type: entities
+      entities:
+        - input_datetime.motion_sensor_kitchen
+  input_boolean.motion_sensor_restroom_toggle:
+    title: Timeout
+    card:
+      type: entities
+      entities:
+        - input_datetime.motion_sensor_restroom
+
+cards:
+  - type: vertical-stack
+    cards:
+      - !include
+        - ../includes/titles.yaml
+        - title: EINSTELLUNGEN
+
+      - type: entities
+        show_header_toggle: false
+        style: !include ../includes/style_entities.yaml
+        entities:
+          - input_boolean.notifications
+          - input_boolean.auto_open_door
+          - input_boolean.notify_door_left_open
+          - input_boolean.cinema_lights
+
+  - type: vertical-stack
+    cards:
+      - !include
+        - ../includes/titles.yaml
+        - title: BEWEGUNGSMELDER
+
+      - type: entities
+        show_header_toggle: false
+        style: !include ../includes/style_entities.yaml
+        entities:
+          - input_boolean.motion_sensor_mainhallway_toggle
+          - input_boolean.motion_sensor_stairwell1_toggle
+          - input_boolean.motion_sensor_stairwell2_toggle
+          - input_boolean.motion_sensor_stairwell3_toggle
+          - input_boolean.motion_sensor_kitchen_toggle
+          - input_boolean.motion_sensor_restroom_toggle
+
+      - !include
+        - ../includes/titles.yaml
+        - title: STROMKOSTEN
+
+      - type: entities
+        style: !include ../includes/style_entities.yaml
+        entities:
+          - input_number.kwh_cost

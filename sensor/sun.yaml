@@ -1,0 +1,33 @@
+- platform: template
+  sensors:
+    solar_elevation:
+      friendly_name: "Sonnenstand"
+      unit_of_measurement: '°'
+      value_template: "{{ state_attr('sun.sun', 'elevation') }}"
+      # https://www.home-assistant.io/integrations/template/#sun-angle
+      #value_template: "{{ '%+.1f'|format(state_attr('sun.sun', 'elevation')) }}"
+    #sun_state:
+    #  friendly_name: "Sonnenstatus"
+    #  value_template: "{{ states('sun.sun') }}"
+    sun_state:
+      friendly_name: "Sonnenstatus"
+      value_template: >-
+        {% if is_state('sun.sun', 'above_horizon') %}
+          Aufgang
+        {% else %}
+          Untergang
+        {% endif %}
+    day_night:
+      friendly_name: "Tag/Nacht"
+      value_template: >-
+        {% if is_state('sun.sun', 'above_horizon') %}
+          Tag
+        {% else %}
+          Nacht
+        {% endif %}
+      icon_template: >-
+        {% if is_state('sun.sun', 'above_horizon') %}
+          mdi:weather-sunny
+        {% else %}
+          mdi:weather-night
+        {% endif %}

@@ -1,0 +1,11 @@
+- platform: template
+  sensors:
+    speedtest_last_updated:
+      friendly_name: "SpeedTest Last Updated"
+      value_template: "{{ as_timestamp(states.sensor.speedtest_ping.last_updated) | timestamp_custom('%d.%m - %H:%M') }} Uhr"
+
+- platform: template
+  sensors:
+    speedtest_server_name:
+      friendly_name: "SpeedTest Server Name"
+      value_template: "{{ states.sensor.speedtest_ping.attributes.server_name }}"

@@ -1,0 +1,20 @@
+icon: ""
+title: " "
+path: map
+id: map
+panel: true
+cards:
+  - type: map
+    #aspect_ratio: 16x9
+    default_zoom: 12
+    #hours_to_show: 48
+    dark_mode: true
+    entities:
+      - device_tracker.handy_sebastian
+      - device_tracker.iphone_vr_smart
+      - device_tracker.iphone_vr_smart_2
+      #- device_tracker.google_maps_109408471456601103538
+      - zone.home
+      - zone.sebastianarbeit
+      - zone.juliaarbeit
+      - zone.golfpark
