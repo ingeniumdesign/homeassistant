@@ -16,8 +16,9 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 
 ## Hardware
 
-- Phoscon [Conbee II USB](https://phoscon.de/de/conbee2) - [Amazon](https://amzn.to/3n7jgu0) - for Zigbee using ZHA integration
-- Z-Wave [RaZberry 2 Modul](https://z-wave.me/products/razberry/) ZMEERAZ2 - [Amazon](https://amzn.to/3nchsA1) - for Zigbee using ZHA integration
+- Phoscon [Conbee II USB](https://phoscon.de/de/conbee2) - [Amazon](https://amzn.to/3n7jgu0) - for Zigbee using ZHA integration<br />
+  _See the Install Pi3 Infos_
+- Z-Wave [RaZberry 2 Modul](https://z-wave.me/products/razberry/) ZMEERAZ2 - [Amazon](https://amzn.to/3nchsA1) -
 - Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Amazon](https://amzn.to/38eLmPX)
 - AEOTEC [Plus Multisensor 6](https://aeotec.com/z-wave-sensor/) - [Amazon](https://amzn.to/38YJoCm)
 - Amazon 1x [Echo Dot (4. Gen.)](https://amzn.to/3ncrktE)
@@ -29,7 +30,7 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 - [Terminal & SSH](https://github.com/home-assistant/addons/tree/master/ssh)
 - [duckDNS Addon](https://github.com/home-assistant/addons/tree/master/duckdns) / [duckDNS](https://www.duckdns.org/)
   <br />Fritzbox Install [Configs](https://www.duckdns.org/install.jsp)
-  <br />edit: configuration.yaml => http
+  <br />_edit: configuration.yaml => http_
 - [Hass.io Google Drive Backup](https://github.com/sabeechen/hassio-google-drive-backup)
 - [Mosquitto broker](https://home-assistant.io/addons/mosquitto/)
 - [Node-RED](https://github.com/hassio-addons/addon-node-red)
@@ -80,3 +81,18 @@ All of my automations are in Home Assistant - automations.yaml:
 :-------------------------:|:-------------------------:
 ![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-dash3.JPG) | ![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-system.JPG)
 ![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-office.JPG) |
+
+## Install - Infos
+
+### Z-Wave RaZberry 2 Modul for the RPi 3B+:
+
+https://www.home-assistant.io/docs/z-wave/device-specific/#razberry-board
+
+- Plugged it into the very first pins (#1-#10).
+- Popped out the SD card and used USB reader to access on another computer.
+- Edited config.txt to add "dtoverlay=pi3-disable-bt". Ejected.
+- Put SD card back in RPi and turned it on.
+- Went to Configuration > Integrations.
+- Added "Z-Wave". Set device path to "/dev/ttyAMA0". HA said everything was good.
+- Went to Configuration > Z-Wave.
+- Tried "Test Network" which showed green.
