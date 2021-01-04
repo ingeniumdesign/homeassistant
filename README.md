@@ -64,14 +64,20 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 
 All of my automations are in Home Assistant - automations.yaml:
 
+- Quick-Infos when leaving the house
+- Weather-Infos for one Week
 - turning Hue motion sensors off on demand
-- actionable notification via telegram when the doorbell is ringing
-- turn everything off when everyone is in bed
-- presence detection with different states (just arrived, just left, extended away etc.)
-- alert when there ist movement in the apartment and nobody is home
-- reminder to open the window in the bathroom when a humidity threshold is reached
-- music following you around
-- guest mode automations
+- notification via telegram
+- presence detection with different states like zone
+- Trash Calendar with notification
+- Vacuum Infos and Start/Stop Functions
+- HA and Plugin Update Infos
+- Frontend Reload, Restart HA and Server restart
+- Pi3 Infos and Stats
+- NAS Infos and Stats
+- Network Infos from Fritzbox
+- SpeedTest.net Infos for the Network
+- Settings for the different sensors, Lights, Motion detector...
 - and many more...
 
 ## Aditional Screenshots
