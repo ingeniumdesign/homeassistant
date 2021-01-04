@@ -1,7 +1,7 @@
 ## ING - Home Assistant Configuration
 
 This is my Home Assistant configuration. This is a Fork from [aFFekopp](https://github.com/aFFekopp/homeassistant).
-<br/>My Home Assistant (HA) Machine is an [Raspberry Pi 3 Model B](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB](https://amzn.to/2KRBXVH) microSDHC in a [Aukru Super 3 in 1 Kit](https://amzn.to/3ne80fx). <br />
+<br/>My Home Assistant (HA) Machine is an [Raspberry Pi 3 Model B](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB](https://amzn.to/2KRBXVH) microSDHC in a [Aukru Super 3 in 1 Kit Case](https://amzn.to/3ne80fx). <br />
 It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home-assistant.io/hassio/installation/).
 
 ![HAVERSION](https://img.shields.io/badge/homeassistant-2020.12.2-blue)
@@ -76,15 +76,3 @@ All of my automations are in Home Assistant - automations.yaml:
 - and many more...
 
 ## Aditional Screenshots
-
-#### PC
-
-![](https://raw.githubusercontent.com/aFFekopp/noctis/master/docs/screenshots/pc/1-1.jpg) | ![](https://raw.githubusercontent.com/aFFekopp/noctis/master/docs/screenshots/pc/2.jpg)
-:-------------------------:|:-------------------------:
-![](https://raw.githubusercontent.com/aFFekopp/noctis/master/docs/screenshots/pc/3.jpg) | ![](https://raw.githubusercontent.com/aFFekopp/noctis/master/docs/screenshots/pc/4.jpg)
-![](https://raw.githubusercontent.com/aFFekopp/noctis/master/docs/screenshots/pc/5.jpg) | ![](https://raw.githubusercontent.com/aFFekopp/noctis/master/docs/screenshots/pc/6.jpg)
-
-#### Android
-
-![](https://raw.githubusercontent.com/aFFekopp/noctis/master/docs/screenshots/android/1.jpg) | ![](https://raw.githubusercontent.com/aFFekopp/noctis/master/docs/screenshots/android/2.jpg) | ![](https://raw.githubusercontent.com/aFFekopp/noctis/master/docs/screenshots/android/3.jpg)
-:-------------------------:|:-------------------------:|:-------------------------:
