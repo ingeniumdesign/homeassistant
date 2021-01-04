@@ -1,5 +1,7 @@
 sun.sun:
-  friendly_name: Sonnenstand
+  friendly_name: Sonne
+sun.sun_state:
+  friendly_name: Sonnenstatus
 media_player.vu_uno4k_se:
   friendly_name: VU UNO4k SE
   icon: mdi:toggle-switch-outline
@@ -23,11 +25,6 @@ sensor.buro_dect200_1_today_energy_kwh:
 climate.buro_dect301_1:
   friendly_name: Büro Heizung 1
   icon: mdi:radiator
-sensor.version_ha_local:
-  friendly_name: Home Assistant Version
-sensor.version_ha_docker:
-  friendly_name: Latest Docker Version
-  icon: mdi:docker
 sensor.db_size:
   icon: mdi:database
 sensor.version_current:
@@ -48,11 +45,6 @@ input_boolean.motion_sensor_restroom_toggle:
   friendly_name: Gäste-WC
 sensor.hacs:
   friendly_name: Plugins / Components
-sensor.people_home:
-  icon: mdi:account-multiple
-  unit_of_measurement: Personen
-input_boolean.auto_open_door:
-  icon: mdi:door-open
 binary_sensor.remote_ui:
   icon: mdi:cloud
 sensor.net_received_monthly:
@@ -63,12 +55,6 @@ sensor.net_sent_monthly:
   icon: mdi:inbox-arrow-up
 sensor.net_download_cur_filtered:
   friendly_name: Download
-sensor.motion_sensor_minmax_temp:
-  friendly_name: Bewegungsmelder - minmax temp
-  icon: mdi:thermometer
-sensor.motion_sensor_minmax_lux:
-  friendly_name: Bewegungsmelder - minmax lux
-  icon: mdi:brightness-5
 sensor.net_uptime:
   icon: mdi:lan-connect
 sensor.hass_io_uptime:
@@ -92,9 +78,6 @@ device_tracker.iphone_vr_smart_2:
 group.motion_sensors:
   friendly_name: Bewegungsmelder
   icon: mdi:leak
-binary_sensor.pi_hole:
-  device_class: connectivity
-  icon: mdi:pi-hole
 sensor.cpu_temp:
   friendly_name: CPU Temp
   icon: mdi:thermometer
