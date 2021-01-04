@@ -4,16 +4,15 @@ This is my Home Assistant configuration. This is a Fork from [aFFekopp](https://
 <br/>My Home Assistant (HA) Machine is an [Raspberry Pi 3 Model B](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB](https://amzn.to/2KRBXVH) microSDHC in a [Aukru Super 3 in 1 Kit](https://amzn.to/3ne80fx). <br />
 It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home-assistant.io/hassio/installation/).
 
-![HAVERSION](https://img.shields.io/badge/homeassistant-0.109.4-blue)
-![STARS](https://img.shields.io/github/stars/aFFekopp/homeassistant?color=yellow&style=flat-square)
-![ISSUES](https://img.shields.io/github/issues-raw/aFFekopp/homeassistant?style=flat-square)
-![ACTIVITY](https://img.shields.io/github/commit-activity/w/aFFekopp/homeassistant?style=flat-square)
-![LASTCOMMIT](https://img.shields.io/github/last-commit/aFFekopp/homeassistant?style=flat-square)
-![SIZE](https://img.shields.io/github/repo-size/aFFekopp/homeassistant?style=flat-square)
+![HAVERSION](https://img.shields.io/badge/homeassistant-2020.12.2-blue)
+![STARS](https://img.shields.io/github/stars/ingeniumdesign/homeassistant?color=yellow&style=flat-square)
+![ISSUES](https://img.shields.io/github/issues-raw/ingeniumdesign/homeassistant?style=flat-square)
+![LASTCOMMIT](https://img.shields.io/github/last-commit/ingeniumdesign/homeassistant?style=flat-square)
+![SIZE](https://img.shields.io/github/repo-size/ingeniumdesign/homeassistant?style=flat-square)
 
 ## Screenshot
 
-![](https://raw.githubusercontent.com/aFFekopp/homeassistant/master/docs/screenshots/pc/1.jpg)
+![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-dash.JPG)
 
 ## Hardware
 
