@@ -65,12 +65,24 @@ notify:
 
 system_health:
 
+system_log:
+  max_entries: 30
+
 logbook:
   exclude:
     entities:
       - sensor.time
+      - sensor.time_date
+      - sensor.time_utc
       - sensor.date
-      - sensor.ha_uptime
+      - sensor.date_time
+      - sensor.date_time_iso
+      - sensor.date_time_utc
+      - sensor.hass_io_uptime
+      - sensor.hass_io_uptime
+      - sensor.hass_io_uptime_pretty
+      - sensor.pi3_uptime
+      - sensor.last_boot
 
 logger: !include logger.yaml
 

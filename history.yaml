@@ -37,25 +37,20 @@ include:
     - sensor.buro_dect200_1_current_a
     - climate.buro_dect301_1
     - sensor.handy_sebastian_akkufullstand
-    - sensor.handy_sebastian_akkuzustand
-    - sensor.motion_sensor_mainhallway_light_level
-    - sensor.motion_sensor_mainhallway_temperature
-    - sensor.motion_sensor_stairwell1_light_level
-    - sensor.motion_sensor_stairwell1_temperature
-    - sensor.motion_sensor_stairwell2_light_level
-    - sensor.motion_sensor_stairwell2_temperature
-    - sensor.motion_sensor_stairwell3_light_level
-    - sensor.motion_sensor_stairwell3_temperature
-    - sensor.motion_sensor_kitchen_light_level
-    - sensor.motion_sensor_kitchen_temperature
-    - sensor.motion_sensor_restroom_light_level
-    - sensor.motion_sensor_restroom_temperature
-    - sensor.temperature_mean
-    - sensor.light_level_mean
-    - sensor.humidity_mean
+    #- sensor.motion_sensor_mainhallway_light_level
+    #- sensor.motion_sensor_mainhallway_temperature
+    #- sensor.motion_sensor_stairwell1_light_level
+    #- sensor.motion_sensor_stairwell1_temperature
+    #- sensor.motion_sensor_stairwell2_light_level
+    #- sensor.motion_sensor_stairwell2_temperature
+    #- sensor.motion_sensor_stairwell3_light_level
+    #- sensor.motion_sensor_stairwell3_temperature
+    #- sensor.motion_sensor_kitchen_light_level
+    #- sensor.motion_sensor_kitchen_temperature
+    #- sensor.motion_sensor_restroom_light_level
+    #- sensor.motion_sensor_restroom_temperature
     - sensor.net_upload_cur
     - sensor.net_download_cur_filtered
-    - sensor.bed_weight_filtered
     - vacuum.xiaomi_vacuum_cleaner
     - sensor.solar_elevation
     - sensor.dwd_weather_humidity

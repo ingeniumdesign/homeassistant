@@ -428,64 +428,64 @@ cards:
         - ../includes/titles.yaml
         - title: SAUGER ROBOROCK S6
 
-      #- type: 'custom:vacuum-card'
-      #  entity: vacuum.xiaomi_vacuum_cleaner
-      #  show_name: false
-      #  compact_view: false
-      #  style: |
-      #    ha-card {
-      #      margin-top: 5px;
-      #      margin-bottom: 5px;
-      #    }
-      #    .preview {
-      #      background: var(--ha-card-background) !important;
-      #    }
-      #    .stats {
-      #      border-top: 3px solid var(--background-color) !important;
-      #    }
-      #    .stats-block {
-      #      margin: 5px 0px;
-      #      border-right: 0px !important;
-      #    }
-      #    .toolbar {
-      #      background: (var(--ha-card-background), var(--primary-background-color)) !important;
-      #      border-top: 3px solid var(--background-color) !important;
-      #      min-height: 30px;
-      #    }
-      #    .toolbar ha-icon-button {
-      #      color: var(--text-color) !important;
-      #    }
-      #    .vacuum {
-      #      max-height: 150px !important;
-      #      margin: 10px auto 10px auto !important;
-      #    }
-      #    .battery {
-      #      font-weight: normal !important;
-      #    }
-      #    .stats-hours {
-      #      font-size: 16px !important;
-      #    }
-      #  stats:
-      #    default:
-      #      - attribute: filter_left
-      #        unit: Std.
-      #        subtitle: Filter
-      #      - attribute: side_brush_left
-      #        unit: Std.
-      #        subtitle: Seitenbürste
-      #      - attribute: main_brush_left
-      #        unit: Std.
-      #        subtitle: Hauptbürste
-      #      - attribute: sensor_dirty_left
-      #        unit: Std.
-      #        subtitle: Sensoren
-      #    cleaning:
-      #      - attribute: cleaned_area
-      #        unit: m2
-      #        subtitle: Bereich
-      #      - attribute: cleaning_time
-      #        unit: Min.
-      #        subtitle: Zeit
+      - type: 'custom:vacuum-card'
+        entity: vacuum.xiaomi_vacuum_cleaner
+        show_name: false
+        compact_view: false
+        style: |
+          ha-card {
+            margin-top: 5px;
+            margin-bottom: 5px;
+          }
+          .preview {
+            background: var(--ha-card-background) !important;
+          }
+          .stats {
+            border-top: 3px solid var(--background-color) !important;
+          }
+          .stats-block {
+            margin: 5px 0px;
+            border-right: 0px !important;
+          }
+          .toolbar {
+            background: (var(--ha-card-background), var(--primary-background-color)) !important;
+            border-top: 3px solid var(--background-color) !important;
+            min-height: 30px;
+          }
+          .toolbar ha-icon-button {
+            color: var(--text-color) !important;
+          }
+          .vacuum {
+            max-height: 150px !important;
+            margin: 10px auto 10px auto !important;
+          }
+          .battery {
+            font-weight: normal !important;
+          }
+          .stats-hours {
+            font-size: 16px !important;
+          }
+        stats:
+          default:
+            - attribute: filter_left
+              unit: Std.
+              subtitle: Filter
+            - attribute: side_brush_left
+              unit: Std.
+              subtitle: Seitenbürste
+            - attribute: main_brush_left
+              unit: Std.
+              subtitle: Hauptbürste
+            - attribute: sensor_dirty_left
+              unit: Std.
+              subtitle: Sensoren
+          cleaning:
+            - attribute: cleaned_area
+              unit: m2
+              subtitle: Bereich
+            - attribute: cleaning_time
+              unit: Min.
+              subtitle: Zeit
 
   ## ROW 3 ###################################################################################################################
   #- type: vertical-stack
