@@ -83,6 +83,7 @@ logbook:
       - sensor.hass_io_uptime_pretty
       - sensor.pi3_uptime
       - sensor.last_boot
+      - sensor.sun_state
 
 logger: !include logger.yaml
 
