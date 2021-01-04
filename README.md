@@ -16,9 +16,9 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 
 ## Hardware
 
-- Phoscon [Conbee II USB](https://phoscon.de/de/conbee2) - [Amazon](https://amzn.to/3n7jgu0) - for Zigbee using ZHA integration<br />
-  _See the Install Pi3 Infos_
-- Z-Wave [RaZberry 2 Modul](https://z-wave.me/products/razberry/) ZMEERAZ2 - [Amazon](https://amzn.to/3nchsA1) -
+- Phoscon [Conbee II USB](https://phoscon.de/de/conbee2) - [Amazon](https://amzn.to/3n7jgu0) - for Zigbee using ZHA integration
+- Z-Wave [RaZberry 2 Modul](https://z-wave.me/products/razberry/) ZMEERAZ2 - [Amazon](https://amzn.to/3nchsA1) - for Z-Wave <br />
+  _See the Install Pi3 Infos: Z-Wave RaZberry 2 Modul for the RPi 3B+_
 - Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Amazon](https://amzn.to/38eLmPX)
 - AEOTEC [Plus Multisensor 6](https://aeotec.com/z-wave-sensor/) - [Amazon](https://amzn.to/38YJoCm)
 - Amazon 1x [Echo Dot (4. Gen.)](https://amzn.to/3ncrktE)
