@@ -21,3 +21,6 @@ home-assistant_v2.db
 known_devices.yaml
 secrets.yaml
 zigbee.db
+OZW_Log.txt
+pyozw.sqlite
+options.xml
