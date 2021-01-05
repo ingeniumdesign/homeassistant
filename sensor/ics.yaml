@@ -3,7 +3,7 @@
 
 - platform: ics
   name: Restmülltonne
-  url: !secret ics_url
+  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
   #startswith: Restmülltonne
   contains: "Restmülltonne"
   id: 1

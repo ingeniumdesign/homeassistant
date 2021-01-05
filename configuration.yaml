@@ -184,8 +184,7 @@ vacuum:
 speedtestdotnet:
   server_id: 10010
   scan_interval:
-    minutes: 5
-    hours: 6
+    minutes: 480
   monitored_conditions:
     - ping
     - download
