@@ -14,8 +14,8 @@ homeassistant:
   time_zone: Europe/Berlin
   # C for Celcius, F for Fahrenheit
   temperature_unit: C
-  external_url: "https://ingeniumdesign.duckdns.org:18123"
-  internal_url: "http://192.168.178.37:8123"
+  external_url: !secret homeassistant_external_url
+  internal_url: !secret homeassistant_internal_url
   auth_providers:
    - type: homeassistant
   customize: !include customize.yaml
