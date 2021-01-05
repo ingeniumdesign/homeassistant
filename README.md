@@ -128,7 +128,7 @@ device: >-
 
 ### Z-Wave RaZberry 2 Modul for the RPi 3B+:
 
-https://www.home-assistant.io/integrations/ozw
+https://www.home-assistant.io/integrations/ozw <br />
 https://www.home-assistant.io/docs/z-wave/device-specific/#razberry-board
 
 1. Plugged it into the very first pins (#1-#10).
