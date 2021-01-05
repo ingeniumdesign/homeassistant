@@ -1,10 +1,10 @@
-## ING - Home Assistant Configuration
+## ING - Home Assistant Configuration :metal:
 
 This is my Home Assistant configuration. This is a Fork of [aFFekopp](https://github.com/aFFekopp/homeassistant).
 <br/>My Home Assistant (HA) Machine is an [Raspberry Pi 3 Model B](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB](https://amzn.to/2KRBXVH) microSDHC in a [Aukru Super 3 in 1 Kit Case](https://amzn.to/3ne80fx). <br />
 It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home-assistant.io/hassio/installation/).
 
-Buy the new [Raspberry Pi 4](https://amzn.to/35aHPjo) with 8GB RAM.
+> Buy the new [Raspberry Pi 4](https://amzn.to/35aHPjo) with 8GB RAM. :rocket:
 
 ![HAVERSION](https://img.shields.io/badge/homeassistant-2020.12.2-blue)
 ![STARS](https://img.shields.io/github/stars/ingeniumdesign/homeassistant?color=yellow&style=flat-square)
@@ -67,21 +67,21 @@ Buy the new [Raspberry Pi 4](https://amzn.to/35aHPjo) with 8GB RAM.
 
 All of my automations are in Home Assistant - automations.yaml:
 
-- Quick-Infos when leaving the house
-- Weather-Infos for one Week
-- turning Hue motion sensors off on demand
-- notification via telegram
-- presence detection with different states like zone
-- Trash Calendar with notification
-- Vacuum Infos and Start/Stop Functions
-- HA and Plugin Update Infos
-- Frontend Reload, Restart HA and Server restart
-- Pi3 Infos and Stats
-- NAS Infos and Stats
-- Network Infos from Fritzbox
-- SpeedTest.net Infos for the Network
-- Settings for the different sensors, Lights, Motion detector...
-- and many more...
+- [x] Quick-Infos when leaving the house
+- [x] Weather-Infos for one Week
+- [ ] turning Hue motion sensors off on demand
+- [x] notification via telegram
+- [ ] presence detection with different states like zone
+- [x] Trash Calendar with notification
+- [x] Vacuum Infos and Start/Stop Functions
+- [x] HA and Plugin Update Infos
+- [x] Frontend Reload, Restart HA and Server restart
+- [x] Pi3 Infos and Stats
+- [x] NAS Infos and Stats
+- [x] Network Infos from Fritzbox
+- [x] SpeedTest.net Infos for the Network
+- [x] Settings for the different sensors, Lights, Motion detector...
+- [ ] and many more...
 
 ## Aditional Screenshots
 
@@ -96,9 +96,9 @@ All of my automations are in Home Assistant - automations.yaml:
 
 ### Conbee II USB for the RPi 3B+
 
-- Plugged it into the USB.
-- Popped out the SD card and used USB reader to access on another computer.
-- Edited config.txt <br />
+1. Plugged it into the USB.
+2. Popped out the SD card and used USB reader to access on another computer.
+3. Edited config.txt <br />
   Config Device Pi3B, Pi3B+ or Pi4: <br />
   **Raspberry Pi 3B** or older: <br/>
   enable_uart=1 <br/>
@@ -106,8 +106,8 @@ All of my automations are in Home Assistant - automations.yaml:
   **Raspberry Pi 3B+ or 4** <br/>
   enable_uart=1 <br/>
   dtoverlay=pi3-miniuart-bt
-- Put SD card back in RPi and turned it on.
-- Went to Configuration > deCONZ. <br/>
+4. Put SD card back in RPi and turned it on.
+5. Went to Configuration > deCONZ. <br/>
   _device: >- <br/>
   /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00_
 
@@ -115,11 +115,11 @@ All of my automations are in Home Assistant - automations.yaml:
 
 https://www.home-assistant.io/docs/z-wave/device-specific/#razberry-board
 
-- Plugged it into the very first pins (#1-#10).
-- Popped out the SD card and used USB reader to access on another computer.
-- Edited config.txt to add "dtoverlay=pi3-miniuart-bt" for a Pi3B+. Ejected.
-- Put SD card back in RPi and turned it on.
-- Went to Configuration > Integrations.
-- Added "Z-Wave". Set device path to "/dev/ttyAMA0". HA said everything was good.
-- Went to Configuration > Z-Wave.
-- Tried "Test Network" which showed green.
+1. Plugged it into the very first pins (#1-#10).
+2. Popped out the SD card and used USB reader to access on another computer.
+3. Edited config.txt to add "dtoverlay=pi3-miniuart-bt" for a Pi3B+. Ejected.
+4. Put SD card back in RPi and turned it on.
+5. Went to Configuration > Integrations.
+6. Added "Z-Wave". Set device path to "/dev/ttyAMA0". HA said everything was good.
+7. Went to Configuration > Z-Wave.
+8. Tried "Test Network" which showed green.
