@@ -128,16 +128,30 @@ device: >-
 
 ### Z-Wave RaZberry 2 Modul for the RPi 3B+:
 
+https://www.home-assistant.io/integrations/ozw
 https://www.home-assistant.io/docs/z-wave/device-specific/#razberry-board
 
 1. Plugged it into the very first pins (#1-#10).
 2. Popped out the SD card and used [USB reader *](https://amzn.to/3pOwVI1) to access on another computer.
-3. Edited config.txt to add "dtoverlay=pi3-miniuart-bt" for a Pi3B+. Ejected.
+3. Edited config.txt to add "`dtoverlay=pi3-miniuart-bt`" for a Pi3B+. Ejected.
 4. Put SD card back in RPi and turned it on.
 5. Went to Configuration > Integrations.
-6. Added "Z-Wave". Set device path to "/dev/ttyAMA0". HA said everything was good.
+6. Added "Z-Wave". Set device path to "`/dev/ttyAMA0`". HA said everything was good.
+```yaml
+device: /dev/ttyAMA0
+network_key: 0x2e, 0xcc, 0xab, 0x1c, 0xa3, 0x7f, 0x0e, 0xb5, 0x70, 0x71, 0x2d, 0x98, 0x25, 0x43, 0xee, 0x0c
+```
+Generate a **unique Network Key** with the Terminal:
+```text
+cat /dev/urandom | tr -dc '0-9A-F' | fold -w 32 | head -n 1 | sed -e 's/\(..\)/0x\1, /g' -e 's/, $//'
+```
 7. Went to Configuration > Z-Wave.
 8. Tried "Test Network" which showed green.
+
+### Backend Config
+
+You find the System Configuration in this File: <br />
+`config/.storage/core.config_entries`
 
 ### DEBUGGING and Errors :neckbeard:
 
