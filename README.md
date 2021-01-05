@@ -106,26 +106,32 @@ All of my automations are in Home Assistant - automations.yaml:
 ### Conbee II USB for the RPi 3B+
 
 1. Plugged it into the USB.
-2. Popped out the SD card and used USB reader to access on another computer.
+2. Popped out the SD card and used [USB reader *](https://amzn.to/3pOwVI1) to access on another computer.
 3. Edited config.txt <br />
-  Config Device Pi3B, Pi3B+ or Pi4: <br />
-  **Raspberry Pi 3B** or older: <br/>
-  enable_uart=1 <br/>
-  dtoverlay=pi3-disable-bt <br/>
-  **Raspberry Pi 3B+ or 4** <br/>
-  enable_uart=1 <br/>
-  dtoverlay=pi3-miniuart-bt
+   Config Device Pi3B, Pi3B+ or Pi4: <br />
+   **Raspberry Pi 3B** or older: <br/>
+```yaml
+enable_uart=1
+dtoverlay=pi3-disable-bt
+```
+3.  **Raspberry Pi 3B+ or 4** <br/>
+```yaml
+enable_uart=1
+dtoverlay=pi3-miniuart-bt
+```
 4. Put SD card back in RPi and turned it on.
 5. Went to Configuration > deCONZ. <br/>
-  _device: >- <br/>
-  /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00_
+```yaml
+device: >-
+  /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00
+```
 
 ### Z-Wave RaZberry 2 Modul for the RPi 3B+:
 
 https://www.home-assistant.io/docs/z-wave/device-specific/#razberry-board
 
 1. Plugged it into the very first pins (#1-#10).
-2. Popped out the SD card and used USB reader to access on another computer.
+2. Popped out the SD card and used [USB reader *](https://amzn.to/3pOwVI1) to access on another computer.
 3. Edited config.txt to add "dtoverlay=pi3-miniuart-bt" for a Pi3B+. Ejected.
 4. Put SD card back in RPi and turned it on.
 5. Went to Configuration > Integrations.
