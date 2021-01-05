@@ -72,7 +72,7 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 - [time-picker-card](https://github.com/GeorgeSG/lovelace-time-picker-card)
 - [auto-entities](https://github.com/thomasloven/lovelace-auto-entities)
 - [multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row)
-- [kiosk-mode](https://github.com/maykar/kiosk-mode) - ERROR
+- [kiosk-mode](https://github.com/maykar/kiosk-mode) - deactivated
 - [slider-entity-row](https://github.com/thomasloven/lovelace-slider-entity-row)
 - [swipe-card](https://github.com/bramkragten/swipe-card)
 - [mini-media-player-bundle](https://github.com/kalkih/mini-media-player)
