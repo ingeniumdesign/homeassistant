@@ -58,19 +58,29 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 
 ## Lovelace Plugins
 
-- [auto-entities](https://github.com/thomasloven/lovelace-auto-entities)
-- [Bar Card](https://github.com/custom-cards/bar-card)
-- [Button Card](https://github.com/custom-cards/button-card)
-- [card-mod](https://github.com/thomasloven/lovelace-card-mod)
+- [layout-card](https://github.com/thomasloven/lovelace-layout-card)
+- [hui-element](https://github.com/thomasloven/lovelace-hui-element)
+- [light-entity-card](https://github.com/ljmerza/light-entity-card)
+- [stack-in-card](https://github.com/custom-cards/stack-in-card)
+- [vertical-stack-in-card](https://github.com/ofekashery/vertical-stack-in-card)
+- [mini-graph-card-bundle](https://github.com/kalkih/mini-graph-card)
 - [card-tools](https://github.com/thomasloven/lovelace-card-tools)
-- [Custom Header](https://github.com/maykar/custom-header)
-- [Lovelace Popup Card](https://github.com/thomasloven/lovelace-popup-card)
-- [Mini Graph Card](https://github.com/kalkih/mini-graph-card)
-- [Mini Media Player](https://github.com/kalkih/mini-media-player)
+- [card-mod](https://github.com/thomasloven/lovelace-card-mod)
+- [bar-card](https://github.com/custom-cards/bar-card)
+- [transmission-card](https://github.com/amaximus/transmission-card)
+- [button-card](https://github.com/custom-cards/button-card)
+- [time-picker-card](https://github.com/GeorgeSG/lovelace-time-picker-card)
+- [auto-entities](https://github.com/thomasloven/lovelace-auto-entities)
+- [multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row)
+- [kiosk-mode](https://github.com/maykar/kiosk-mode) - ERROR
 - [slider-entity-row](https://github.com/thomasloven/lovelace-slider-entity-row)
+- [swipe-card](https://github.com/bramkragten/swipe-card)
+- [mini-media-player-bundle](https://github.com/kalkih/mini-media-player)
+- [simple-thermostat](https://github.com/nervetattoo/simple-thermostat)
+- [weather-card](https://github.com/bramkragten/weather-card)
 - [state-switch](https://github.com/thomasloven/lovelace-state-switch)
-- [Vertical Stack In Card](https://github.com/custom-cards/vertical-stack-in-card)
-- [Weather Card](https://github.com/bramkragten/weather-card)
+- [vacuum-card](https://github.com/denysdovhan/vacuum-card)
+
 
 ## Automations :green_heart:
 
@@ -157,6 +167,9 @@ You find the System Configuration in this File: <br />
 
 - [ ] **ERROR** vacuum-card/vacuum-card.js Error: Cannot read property 'states' of undefined [GitHub #169](https://github.com/denysdovhan/vacuum-card/issues/169)
 - [ ] **WARNING** The 'entity_id' option is deprecated, please remove it from your configuration
+- [ ] **ERROR** ICS Calendar Platform and !secret ics_url dont work [GitHub #23](https://github.com/franc6/ics_calendar/issues/23)
+- [ ] **ERROR** RAZBERRY2 Board dont work on the Pi3B+ [Community Forum](https://community.home-assistant.io/t/pi3b-setup-with-razberry-v2/264457)
+- [ ] **ERROR** kiosk-mode dont work from LoveLace UI
 
 
 _* Amazon Affiliate Link_
