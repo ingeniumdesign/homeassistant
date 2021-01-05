@@ -63,7 +63,7 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 - [Vertical Stack In Card](https://github.com/custom-cards/vertical-stack-in-card)
 - [Weather Card](https://github.com/bramkragten/weather-card)
 
-## Automations
+## Automations :green_heart:
 
 All of my automations are in Home Assistant - automations.yaml:
 
@@ -92,7 +92,7 @@ All of my automations are in Home Assistant - automations.yaml:
 ![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-dash3.JPG) Active Vacuum | ![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-system.JPG) System Overview
 ![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-office.JPG) Room - Office |
 
-## Install - Infos
+## Install - Infos :point_up:
 
 ### Conbee II USB for the RPi 3B+
 
@@ -124,7 +124,7 @@ https://www.home-assistant.io/docs/z-wave/device-specific/#razberry-board
 7. Went to Configuration > Z-Wave.
 8. Tried "Test Network" which showed green.
 
-### DEBUGGING and Errors
+### DEBUGGING and Errors :neckbeard:
 
 - [ ] **ERROR** vacuum-card/vacuum-card.js Error: Cannot read property 'states' of undefined [GitHub #169](https://github.com/denysdovhan/vacuum-card/issues/169)
 - [ ] **WARNING** The 'entity_id' option is deprecated, please remove it from your configuration
