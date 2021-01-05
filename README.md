@@ -29,9 +29,12 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
   _See the Install Pi3 Infos: Z-Wave RaZberry 2 Modul for the RPi 3B+_
 - Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Amazon *](https://amzn.to/38eLmPX)
 - AEOTEC [Plus Multisensor 6](https://aeotec.com/z-wave-sensor/) - [Amazon *](https://amzn.to/38YJoCm)
+- Amazon [FireHD 10 Tablet *](https://amzn.to/3oicZNp)
 - Amazon 1x [Echo Dot (4. Gen.) *](https://amzn.to/3ncrktE)
 - Amazon 1x [Echo Dot (3. Gen.) *](https://amzn.to/3hHu8xz)
 - Synology [DS713+](https://www.synology.com/de-de/support/download/DS713+#system) - [Amazon *](https://amzn.to/3hHu8xz) // Buy the new [DS720+](https://www.synology.com/de-de/products/DS720+) [Amazon *](https://amzn.to/3rWErT1)
+- ZyXEL [GS1900-24E](https://www.zyxel.com/de/de/products_services/8-10-16-24-48-port-GbE-Smart-Managed-Switch-GS1900-Series/) - [Amazon *](https://amzn.to/391vcbR)
+- ZyXEL [GS1900-8](https://www.zyxel.com/de/de/products_services/8-10-16-24-48-port-GbE-Smart-Managed-Switch-GS1900-Series/) - [Amazon *](https://amzn.to/357BQMo)
 
 ## Hass.io Addons
 
