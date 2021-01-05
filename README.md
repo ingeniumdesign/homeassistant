@@ -24,9 +24,9 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 - AVM [FRITZ!DECT 200](https://avm.de/produkte/fritzdect/fritzdect-200/) - [Amazon *](https://amzn.to/2LnpAQK)
 - AVM [FRITZ!Powerline 1260E Set](https://avm.de/produkte/fritzpowerline/fritzpowerline-1260e-wlan-set/) - [Amazon *](https://amzn.to/35a7gSv)
 - Phoscon [Conbee II USB](https://phoscon.de/de/conbee2) - [Amazon *](https://amzn.to/3n7jgu0) - for Zigbee using ZHA integration <br />
-  _See the Install Pi3 Infos: Conbee II USB for the RPi 3B+_
+  _See the Install Pi3 Infos down below: Conbee II USB for the RPi 3B+_
 - Z-Wave [RaZberry 2 Modul](https://z-wave.me/products/razberry/) ZMEERAZ2 - [Amazon *](https://amzn.to/3nchsA1) - for Z-Wave <br />
-  _See the Install Pi3 Infos: Z-Wave RaZberry 2 Modul for the RPi 3B+_
+  _See the Install Pi3 Infos down below: Z-Wave RaZberry 2 Modul for the RPi 3B+_
 - Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Amazon *](https://amzn.to/38eLmPX)
 - AEOTEC [Plus Multisensor 6](https://aeotec.com/z-wave-sensor/) - [Amazon *](https://amzn.to/38YJoCm)
 - Amazon [FireHD 10 Tablet *](https://amzn.to/3oicZNp)
