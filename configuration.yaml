@@ -21,6 +21,14 @@ homeassistant:
   customize: !include customize.yaml
   packages: !include_dir_named packages
 
+## MultiSensoring #######################################################################
+#zwave:
+#  #device: /dev/ttyAMA0
+#  usb_path: /dev/ttyAMA0
+#  #usb_path: /dev/ttyS0
+#  network_key: ...
+#  debug: true
+
 ## Themes UI ############################################################################
 ## ui-lovelace.yaml inline Styles
 frontend:
