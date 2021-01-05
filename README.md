@@ -4,6 +4,8 @@ This is my Home Assistant configuration. This is a Fork of [aFFekopp](https://gi
 <br/>My Home Assistant (HA) Machine is an [Raspberry Pi 3 Model B](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB](https://amzn.to/2KRBXVH) microSDHC in a [Aukru Super 3 in 1 Kit Case](https://amzn.to/3ne80fx). <br />
 It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home-assistant.io/hassio/installation/).
 
+Buy the new [Raspberry Pi 4](https://amzn.to/35aHPjo) with 8GB RAM.
+
 ![HAVERSION](https://img.shields.io/badge/homeassistant-2020.12.2-blue)
 ![STARS](https://img.shields.io/github/stars/ingeniumdesign/homeassistant?color=yellow&style=flat-square)
 ![ISSUES](https://img.shields.io/github/issues-raw/ingeniumdesign/homeassistant?style=flat-square)
@@ -17,7 +19,7 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 ## Hardware
 
 - Phoscon [Conbee II USB](https://phoscon.de/de/conbee2) - [Amazon](https://amzn.to/3n7jgu0) - for Zigbee using ZHA integration <br />
-  _device = /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00_
+  _See the Install Pi3 Infos: Conbee II USB for the RPi 3B+_
 - Z-Wave [RaZberry 2 Modul](https://z-wave.me/products/razberry/) ZMEERAZ2 - [Amazon](https://amzn.to/3nchsA1) - for Z-Wave <br />
   _See the Install Pi3 Infos: Z-Wave RaZberry 2 Modul for the RPi 3B+_
 - Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Amazon](https://amzn.to/38eLmPX)
@@ -26,6 +28,7 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 - Amazon 1x [Echo Dot (3. Gen.)](https://amzn.to/3hHu8xz)
 
 ## Hass.io Addons
+
 - Check Home Assistant configuration
 - [File editor](https://github.com/home-assistant/addons/tree/master/configurator)
 - [Terminal & SSH](https://github.com/home-assistant/addons/tree/master/ssh)
@@ -91,13 +94,30 @@ All of my automations are in Home Assistant - automations.yaml:
 
 ## Install - Infos
 
+### Conbee II USB for the RPi 3B+
+
+- Plugged it into the USB.
+- Popped out the SD card and used USB reader to access on another computer.
+- Edited config.txt <br />
+  Config Device Pi3B, Pi3B+ or Pi4: <br />
+  **Raspberry Pi 3B** or older: <br/>
+  enable_uart=1 <br/>
+  dtoverlay=pi3-disable-bt <br/>
+  **Raspberry Pi 3B+ or 4** <br/>
+  enable_uart=1 <br/>
+  dtoverlay=pi3-miniuart-bt
+- Put SD card back in RPi and turned it on.
+- Went to Configuration > deCONZ. <br/>
+  _device: >- <br/>
+  /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00_
+
 ### Z-Wave RaZberry 2 Modul for the RPi 3B+:
 
 https://www.home-assistant.io/docs/z-wave/device-specific/#razberry-board
 
 - Plugged it into the very first pins (#1-#10).
 - Popped out the SD card and used USB reader to access on another computer.
-- Edited config.txt to add "dtoverlay=pi3-disable-bt". Ejected.
+- Edited config.txt to add "dtoverlay=pi3-miniuart-bt" for a Pi3B+. Ejected.
 - Put SD card back in RPi and turned it on.
 - Went to Configuration > Integrations.
 - Added "Z-Wave". Set device path to "/dev/ttyAMA0". HA said everything was good.
