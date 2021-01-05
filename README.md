@@ -1,10 +1,10 @@
 ## ING - Home Assistant Configuration :metal:
 
 This is my Home Assistant configuration. This is a Fork of [aFFekopp](https://github.com/aFFekopp/homeassistant).
-<br/>My Home Assistant (HA) Machine is an [Raspberry Pi 3 Model B](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB](https://amzn.to/2KRBXVH) microSDHC in a [Aukru Super 3 in 1 Kit Case](https://amzn.to/3ne80fx). <br />
+<br/>My Home Assistant (HA) Machine is an [Raspberry Pi 3 Model B+ *](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB *](https://amzn.to/2KRBXVH) microSDHC in a [Aukru Super 3 in 1 Kit Case *](https://amzn.to/3ne80fx). <br />
 It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home-assistant.io/hassio/installation/).
 
-> Buy the new [Raspberry Pi 4](https://amzn.to/35aHPjo) with 8GB RAM. :rocket:
+> Buy the new [Raspberry Pi 4 B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) - [Amazon](https://amzn.to/35aHPjo) with 8GB RAM. :rocket:
 
 ![HAVERSION](https://img.shields.io/badge/homeassistant-2020.12.2-blue)
 ![STARS](https://img.shields.io/github/stars/ingeniumdesign/homeassistant?color=yellow&style=flat-square)
@@ -18,14 +18,20 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 
 ## Hardware
 
-- Phoscon [Conbee II USB](https://phoscon.de/de/conbee2) - [Amazon](https://amzn.to/3n7jgu0) - for Zigbee using ZHA integration <br />
+- Raspberry [Pi3 B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) - [Amazon *](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB *](https://amzn.to/2KRBXVH) microSDHC
+- AVM [FRITZ!Box 6590 Cable](https://avm.de/produkte/fritzbox/fritzbox-6590-cable/) - [Amazon *](https://amzn.to/359i6YE) // Take the new [6591 Cable](https://avm.de/produkte/fritzbox/fritzbox-6591-cable/)! - [Amazon *](https://amzn.to/3pNbdUU)
+- AVM [FRITZ!DECT 301](https://avm.de/produkte/fritzdect/fritzdect-301/) - [Amazon *](https://amzn.to/3pSRUd4)
+- AVM [FRITZ!DECT 200](https://avm.de/produkte/fritzdect/fritzdect-200/) - [Amazon *](https://amzn.to/2LnpAQK)
+- AVM [FRITZ!Powerline 1260E Set](https://avm.de/produkte/fritzpowerline/fritzpowerline-1260e-wlan-set/) - [Amazon *](https://amzn.to/35a7gSv)
+- Phoscon [Conbee II USB](https://phoscon.de/de/conbee2) - [Amazon *](https://amzn.to/3n7jgu0) - for Zigbee using ZHA integration <br />
   _See the Install Pi3 Infos: Conbee II USB for the RPi 3B+_
-- Z-Wave [RaZberry 2 Modul](https://z-wave.me/products/razberry/) ZMEERAZ2 - [Amazon](https://amzn.to/3nchsA1) - for Z-Wave <br />
+- Z-Wave [RaZberry 2 Modul](https://z-wave.me/products/razberry/) ZMEERAZ2 - [Amazon *](https://amzn.to/3nchsA1) - for Z-Wave <br />
   _See the Install Pi3 Infos: Z-Wave RaZberry 2 Modul for the RPi 3B+_
-- Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Amazon](https://amzn.to/38eLmPX)
-- AEOTEC [Plus Multisensor 6](https://aeotec.com/z-wave-sensor/) - [Amazon](https://amzn.to/38YJoCm)
-- Amazon 1x [Echo Dot (4. Gen.)](https://amzn.to/3ncrktE)
-- Amazon 1x [Echo Dot (3. Gen.)](https://amzn.to/3hHu8xz)
+- Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Amazon *](https://amzn.to/38eLmPX)
+- AEOTEC [Plus Multisensor 6](https://aeotec.com/z-wave-sensor/) - [Amazon *](https://amzn.to/38YJoCm)
+- Amazon 1x [Echo Dot (4. Gen.) *](https://amzn.to/3ncrktE)
+- Amazon 1x [Echo Dot (3. Gen.) *](https://amzn.to/3hHu8xz)
+- Synology [DS713+](https://www.synology.com/de-de/support/download/DS713+#system) - [Amazon *](https://amzn.to/3hHu8xz) // Buy the new [DS720+](https://www.synology.com/de-de/products/DS720+) [Amazon *](https://amzn.to/3rWErT1)
 
 ## Hass.io Addons
 
@@ -128,3 +134,6 @@ https://www.home-assistant.io/docs/z-wave/device-specific/#razberry-board
 
 - [ ] **ERROR** vacuum-card/vacuum-card.js Error: Cannot read property 'states' of undefined [GitHub #169](https://github.com/denysdovhan/vacuum-card/issues/169)
 - [ ] **WARNING** The 'entity_id' option is deprecated, please remove it from your configuration
+
+
+_* Amazon Affiliate Link_

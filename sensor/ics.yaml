@@ -1,11 +1,9 @@
 # ICS Kalender Config
 # https://github.com/KoljaWindeler/ics#manual-configuration
-# ICS - In der Eisenbach - https://www.eaw-rheingau-taunus.de/service/abfallkalender.html?omnibox-streetid=1136
-# ICS - Fichtenweg - https://www.eaw-rheingau-taunus.de/service/abfallkalender.html?omnibox-streetid=1087
 
 - platform: ics
   name: Restmülltonne
-  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
+  url: !secret ics_url
   #startswith: Restmülltonne
   contains: "Restmülltonne"
   id: 1
@@ -17,7 +15,7 @@
 
 - platform: ics
   name: Biotonne
-  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
+  url: !secret ics_url
   #startswith: Biotonne
   contains: "Biotonne"
   id: 2
@@ -29,7 +27,7 @@
 
 - platform: ics
   name: Altpapiertonne
-  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
+  url: !secret ics_url
   #startswith: Altpapiertonne
   contains: "Altpapiertonne"
   id: 3
@@ -41,7 +39,7 @@
 
 - platform: ics
   name: Gelbetonne
-  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
+  url: !secret ics_url
   #startswith: Gelber
   contains: "Gelber Sack"
   id: 4
