@@ -123,3 +123,8 @@ https://www.home-assistant.io/docs/z-wave/device-specific/#razberry-board
 6. Added "Z-Wave". Set device path to "/dev/ttyAMA0". HA said everything was good.
 7. Went to Configuration > Z-Wave.
 8. Tried "Test Network" which showed green.
+
+### DEBUGGING and Errors
+
+- [ ] **ERROR** vacuum-card/vacuum-card.js Error: Cannot read property 'states' of undefined [GitHub #169](https://github.com/denysdovhan/vacuum-card/issues/169)
+- [ ] **WARNING** The 'entity_id' option is deprecated, please remove it from your configuration
