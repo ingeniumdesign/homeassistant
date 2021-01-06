@@ -22,6 +22,10 @@ home-assistant_v2.db
 known_devices.yaml
 secrets.yaml
 zigbee.db
-OZW_Log.txt
 pyozw.sqlite
 options.xml
+
+# Ignore files OpenZwave
+OZW_Log.txt
+zwcfg_0xdbd682de.xml
+zwscene.xml

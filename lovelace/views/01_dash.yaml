@@ -372,11 +372,13 @@ cards:
                 padding-bottom: 10px;
               }
             entities: 
-              #- entity: sensor.buro_dect301_1_temperature
-              #  name: Innen
+              - entity: sensor.zw100_multisensor_6_humidity
+                name: Innen
+                color: 'rgba(222,176,107,0.7)'
               - entity: sensor.dwd_weather_humidity
                 name: Außen
-                color: 'rgba(73,85,108,0.5)'
+                #color: 'rgba(73,85,108,0.5)'
+                color: 'rgba(26,137,245,0.7)'
             name: Luftfeuchtigkeit
             align_state: center
             align_icon: right

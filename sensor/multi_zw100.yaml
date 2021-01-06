@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    zw100_multisensor_6_air_temperature:
+      friendly_name: "Temperatur"
+      unit_of_measurement: '°C'

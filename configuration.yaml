@@ -22,12 +22,19 @@ homeassistant:
   packages: !include_dir_named packages
 
 ## MultiSensoring #######################################################################
+# DONT use this, we use OpenZWave (beta) !
+# Dont run zwave with OpenZWave (beta) together!!
 #zwave:
 #  #device: /dev/ttyAMA0
 #  usb_path: /dev/ttyAMA0
 #  #usb_path: /dev/ttyS0
-#  network_key: ...
+#  network_key: !secret network_key
 #  debug: true
+
+#Zigbee Home Automation
+zha:
+  usb_path: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00
+  database_path: /config/zigbee.db
 
 ## Themes UI ############################################################################
 ## ui-lovelace.yaml inline Styles
