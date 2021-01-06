@@ -21,6 +21,7 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 ## Screenshot
 
 ![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-dash.JPG)
+_More Screenshot down below._
 
 ## Hardware
 
@@ -126,10 +127,19 @@ All of my automations are in Home Assistant - automations.yaml:
 
 ### HA on Intel NUC with Docker
 
-##### Absolute Beginners guide to installing HA on Intel NUC using Docker
+##### Juan Mtech Install Guide
+
+Check this Install Guide frist! <br />
+[How to set up Hassio in Docker and in an Ubuntu server](https://www.juanmtech.com/set-up-hassio-in-docker-and-in-an-ubuntu-server/)
+
+##### Absolute Beginners guide to installing HA on Intel NUC using Docker.
+
+Check this install Guide after the "main Install". Dont use the Install part. <br />
 [community.home-assistant.io](https://community.home-assistant.io/t/absolute-beginners-guide-to-installing-ha-on-intel-nuc-using-docker/98412)
 
 ##### A successful migration from Pi 3 to Intel NUC
+
+Use this Guide to Check the migration from Pi to NUC. Dont use the Install part. <br />
 [community.home-assistant.io](https://community.home-assistant.io/t/a-successful-migration-from-pi-3-to-intel-nuc/189992)
 
 ### HA on Raspbarry Pi 3B+
