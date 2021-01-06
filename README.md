@@ -171,7 +171,7 @@ You find the System Configuration in this File: <br />
 - [ ] **ERROR** vacuum-card/vacuum-card.js Error: Cannot read property 'states' of undefined [GitHub #169](https://github.com/denysdovhan/vacuum-card/issues/169)
 - [ ] **WARNING** The 'entity_id' option is deprecated, please remove it from your configuration
 - [ ] **ERROR** ICS Calendar Platform and !secret ics_url dont work [GitHub #23](https://github.com/franc6/ics_calendar/issues/23)
-- [ ] **ERROR** RAZBERRY2 Board dont work on the Pi3B+ [Community Forum](https://community.home-assistant.io/t/pi3b-setup-with-razberry-v2/264457)
+- [x] **ERROR** ~~RAZBERRY2 Board dont work on the Pi3B+~~ [~~Community Forum~~](https://community.home-assistant.io/t/pi3b-setup-with-razberry-v2/264457)
 - [ ] **ERROR** kiosk-mode dont work from LoveLace UI
 
 
