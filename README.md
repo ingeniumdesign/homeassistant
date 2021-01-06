@@ -49,6 +49,8 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 - [Node-RED](https://github.com/hassio-addons/addon-node-red)
 - [ESPHome](https://esphome.io/)
 - [MariaDB](https://home-assistant.io/addons/mariadb/)
+- [OpenZWave (beta)](https://www.home-assistant.io/integrations/ozw) - RaZberry 2
+- [deCONZ](https://www.home-assistant.io/integrations/deconz/) - Conbee II
 
 ## Custom Components
 
@@ -146,7 +148,7 @@ https://www.home-assistant.io/docs/z-wave/device-specific/#razberry-board
 3. Edited config.txt to add "`dtoverlay=pi3-miniuart-bt`" for a Pi3B+. Ejected.
 4. Put SD card back in RPi and turned it on.
 5. Went to Configuration > Integrations.
-6. Added "Z-Wave". Set device path to "`/dev/ttyAMA0`". HA said everything was good.
+6. Added "OpenZWave (beta)". Set device path to "`/dev/ttyAMA0`". HA said everything was good.
 ```yaml
 device: /dev/ttyAMA0
 network_key: 0x2e, 0xcc, 0xab, 0x1c, 0xa3, 0x7f, 0x0e, 0xb5, 0x70, 0x71, 0x2d, 0x98, 0x25, 0x43, 0xee, 0x0c
@@ -155,8 +157,9 @@ Generate a **unique Network Key** with the Terminal:
 ```text
 cat /dev/urandom | tr -dc '0-9A-F' | fold -w 32 | head -n 1 | sed -e 's/\(..\)/0x\1, /g' -e 's/, $//'
 ```
-7. Went to Configuration > Z-Wave.
-8. Tried "Test Network" which showed green.
+7. Went to Configuration > OpenZWave.
+8. OpenZWave application, just the lower half (Remote Daemon) and just click start to connect.
+9. Tried "Test Network" which showed green.
 
 ### Backend Config
 
