@@ -1,10 +1,16 @@
 ## ING - Home Assistant Configuration :metal:
 
 This is my Home Assistant configuration. This is a Fork of [aFFekopp](https://github.com/aFFekopp/homeassistant).
-<br/>My Home Assistant (HA) Machine is an [Raspberry Pi 3 Model B+ *](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB *](https://amzn.to/2KRBXVH) microSDHC in a [Aukru Super 3 in 1 Kit Case *](https://amzn.to/3ne80fx). <br />
+<br/>My final Home Assistant (HA) Machine is a Intel NUC i5 ([NUC7i5BNB](https://ark.intel.com/content/www/de/de/ark/products/95064/intel-nuc-board-nuc7i5bnb.html)) with 16GB RAM and 250GB NVMe SSD [Amazon i5-10 *](https://amzn.to/35e8tYI)
+
+---
+
+My Home Assistant (HA) Test-Machine is an [Raspberry Pi 3 Model B+ *](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB *](https://amzn.to/2KRBXVH) microSDHC in a [Aukru Super 3 in 1 Kit Case *](https://amzn.to/3ne80fx). <br />
 It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home-assistant.io/hassio/installation/).
 
-> Buy the new [Raspberry Pi 4 B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) - [Amazon](https://amzn.to/35aHPjo) with 8GB RAM. :rocket:
+> Buy the new [Raspberry Pi 4 B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) - [Amazon *](https://amzn.to/35aHPjo) with 8GB RAM. :rocket:
+
+---
 
 ![HAVERSION](https://img.shields.io/badge/homeassistant-2020.12.2-blue)
 ![STARS](https://img.shields.io/github/stars/ingeniumdesign/homeassistant?color=yellow&style=flat-square)
@@ -18,6 +24,7 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 
 ## Hardware
 
+- Intel NUC i5 [NUC7i5BNB](https://ark.intel.com/content/www/de/de/ark/products/95064/intel-nuc-board-nuc7i5bnb.html) with 16GB RAM and 250GB NVMe SSD [Amazon i5-10 *](https://amzn.to/35e8tYI)
 - Raspberry [Pi3 B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) - [Amazon *](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB *](https://amzn.to/2KRBXVH) microSDHC
 - AVM [FRITZ!Box 6590 Cable](https://avm.de/produkte/fritzbox/fritzbox-6590-cable/) - [Amazon *](https://amzn.to/359i6YE) // Take the new [6591 Cable](https://avm.de/produkte/fritzbox/fritzbox-6591-cable/)! - [Amazon *](https://amzn.to/3pNbdUU)
 - AVM [FRITZ!DECT 301](https://avm.de/produkte/fritzdect/fritzdect-301/) - [Amazon *](https://amzn.to/3pSRUd4)
@@ -27,8 +34,10 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
   _See the Install Pi3 Infos down below: Conbee II USB for the RPi 3B+_
 - Z-Wave [RaZberry 2 Modul](https://z-wave.me/products/razberry/) ZMEERAZ2 - [Amazon *](https://amzn.to/3nchsA1) - for ZWave <br />
   _See the Install Pi3 Infos down below: Z-Wave RaZberry 2 Modul for the RPi 3B+_
+- AEOTEC [Z-Stick Gen5+ EU 868.4MHz](https://aeotec.com/z-wave-usb-stick/) ZW090-C - for ZWave <br />
+  _For the Intel NUC i5 Upgrade_
 - Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Amazon *](https://amzn.to/38eLmPX)
-- AEOTEC [Plus Multisensor 6](https://aeotec.com/z-wave-sensor/) - [Amazon *](https://amzn.to/38YJoCm)
+- AEOTEC [Plus Multisensor 6 EU 868.4MHz](https://aeotec.com/z-wave-sensor/) ZW100-C - [Amazon *](https://amzn.to/38YJoCm)
 - Amazon [FireHD 10 Tablet *](https://amzn.to/3oicZNp)
 - Amazon 1x [Echo Dot (4. Gen.) *](https://amzn.to/3ncrktE)
 - Amazon 1x [Echo Dot (3. Gen.) *](https://amzn.to/3hHu8xz)
@@ -115,7 +124,17 @@ All of my automations are in Home Assistant - automations.yaml:
 
 ## Install - Infos :point_up:
 
-### Conbee II USB for the RPi 3B+
+### HA on Intel NUC with Docker
+
+##### Absolute Beginners guide to installing HA on Intel NUC using Docker
+[community.home-assistant.io](https://community.home-assistant.io/t/absolute-beginners-guide-to-installing-ha-on-intel-nuc-using-docker/98412)
+
+##### A successful migration from Pi 3 to Intel NUC
+[community.home-assistant.io](https://community.home-assistant.io/t/a-successful-migration-from-pi-3-to-intel-nuc/189992)
+
+### HA on Raspbarry Pi 3B+
+
+#### Conbee II USB for the RPi 3B+
 
 1. Plugged it into the USB.
 2. Popped out the SD card and used [USB reader *](https://amzn.to/3pOwVI1) to access on another computer.
@@ -138,7 +157,7 @@ device: >-
   /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00
 ```
 
-### Z-Wave RaZberry 2 Modul for the RPi 3B+:
+#### Z-Wave RaZberry 2 Modul for the RPi 3B+:
 
 https://www.home-assistant.io/integrations/ozw <br />
 https://www.home-assistant.io/docs/z-wave/device-specific/#razberry-board
