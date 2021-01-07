@@ -320,9 +320,11 @@ cards:
             card:
               type: logbook
               entities:
+                - synology_dsm.reboot
                 - vacuum.toggle
                 - automation.trigger
                 - automation.eaw_abholtermine_abfall
+                - telegram_bot.send_message
               hours_to_show: 24
 
       #- type: custom:stack-in-card
