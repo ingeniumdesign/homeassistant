@@ -139,7 +139,8 @@ cards:
             entities:
               - sensor.cpu_speed
               - sensor.cpu_temp
-              - sensor.hdd_temp
+              - sensor.network_in_eno1
+              - sensor.network_out_eno1
               - sensor.nuc_uptime
               - sensor.db_size
               - sensor.hass_io_uptime_pretty

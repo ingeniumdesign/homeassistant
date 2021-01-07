@@ -56,16 +56,24 @@ sensor.net_sent_monthly:
   icon: mdi:inbox-arrow-up
 sensor.net_download_cur_filtered:
   friendly_name: Download
+sensor.network_in_eno1:
+  friendly_name: Download
+  icon: mdi:inbox-arrow-down
+sensor.network_out_eno1:
+  friendly_name: Upload
+  icon: mdi:inbox-arrow-up
 sensor.net_uptime:
   icon: mdi:lan-connect
 sensor.hass_io_uptime:
+  friendly_name: Hass.io Laufzeit
   icon: mdi:home-assistant
   unit_of_measurement: Tage
 sensor.last_boot:
-  friendly_name: NUC Uptime
+  friendly_name: Letzer Restart
   icon: mdi:desktop-tower
 sensor.nuc_uptime:
-  icon: mdi:desktop-tower
+  friendly_name: NUC Laufzeit
+  icon: mdi:timeline-clock
 sensor.net_uptime_pretty:
   icon: mdi:lan-connect
 sensor.hass_io_uptime_pretty:

@@ -10,20 +10,30 @@
     - "beat"
 
 ## Intel NUC ########################################################################
+# check the Lan with: ha network info
 - platform: systemmonitor
   resources:
     - type: last_boot
+    - type: disk_free
+    - type: disk_use
     - type: disk_use_percent
       arg: /
     - type: disk_use_percent
       arg: /home
     - type: memory_free
+    - type: memory_use
     - type: memory_use_percent
+    #- type: process
     - type: processor_use
+    - type: processor_temperature
     - type: network_in
-      arg: eth0
+      arg: eno1
     - type: network_out
-      arg: eth0
+      arg: eno1
+    #- type: throughput_network_in
+    #- type: throughput_network_out
+    #- type: packets_in
+    #- type: packets_out
 
 # https://home-assistant.io/components/sensor.cpuspeed/
 - platform: cpuspeed
@@ -36,12 +46,12 @@
   #scan_interval: 240
   value_template: "{{ value | multiply(0.001) | round(1) }}"
 
-# HDD sda Temperature
+# HDD sda Temperature @ToDo: dont work?
 # install via terminal first: apt install hddtemp
-- platform: command_line
-  name: HDD Temp
-  command: "hddtemp -n /dev/sda"
-  unit_of_measurement: "°C"
+#- platform: command_line
+#  name: HDD Temp
+#  command: "hddtemp -n /dev/sda"
+#  unit_of_measurement: "°C"
 
 # only for Raspberry Pi3
 #- platform: command_line
