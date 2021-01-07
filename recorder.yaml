@@ -71,9 +71,8 @@ exclude:
     - sensor.date_time_iso
     - sensor.date_time_utc
     - sensor.hass_io_uptime
-    - sensor.hass_io_uptime
     - sensor.hass_io_uptime_pretty
-    - sensor.pi3_uptime
+    - sensor.nuc_uptime
     - sensor.last_boot
     - sensor.sun_state
     - sensor.handy_sebastian_letzte_benachrichtigung

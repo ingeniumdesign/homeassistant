@@ -50,7 +50,7 @@ cards:
           - type: "custom:button-card"
             template: dash_button
             entity: zone.home
-            icon: 'mdi:restart'
+            icon: "mdi:restart"
             name: Theme Restart
             tap_action:
               action: call-service
@@ -80,7 +80,7 @@ cards:
           - type: "custom:button-card"
             template: dash_button
             entity: zone.home
-            icon: 'mdi:restart'
+            icon: "mdi:restart"
             name: HA Restart
             tap_action:
               action: none
@@ -93,7 +93,7 @@ cards:
           - type: "custom:button-card"
             template: dash_button
             entity: zone.home
-            icon: 'mdi:restart'
+            icon: "mdi:restart"
             name: Server Restart
             tap_action:
               action: none
@@ -104,15 +104,15 @@ cards:
               card:
                 - color: var(--error-color)
 
-      # INFOS RASPBERRY PI3 B
+      # INFOS Intel NUC
       - !include
         - ../includes/titles.yaml
-        - title: Raspberry Pi 3 B
+        - title: Intel NUC i5
 
       - type: custom:stack-in-card
-        cards: 
+        cards:
           - type: horizontal-stack
-            cards: 
+            cards:
               - !include
                 - ../includes/graphs_embeded.yaml
                 - entity: sensor.processor_use_percent
@@ -137,11 +137,11 @@ cards:
           - type: entities
             style: !include ../includes/style_entities_embeded.yaml
             entities:
-              - sensor.cpu_clock
+              - sensor.cpu_speed
               - sensor.cpu_temp
-              - sensor.pi3_uptime
+              - sensor.nuc_uptime
               - sensor.db_size
-              - sensor.hass_io_uptime
+              - sensor.hass_io_uptime_pretty
 
       # INFOS Synology DSM DS713+
       - !include
@@ -209,7 +209,7 @@ cards:
         - title: NETZMONITOR
 
       - type: custom:stack-in-card
-        cards: 
+        cards:
           - type: horizontal-stack
             cards:
               - type: custom:bar-card
@@ -223,11 +223,11 @@ cards:
                     padding-left:0;
                   }
                 entity: sensor.net_download_max
-                color: 'var(--accent-color)'
+                color: "var(--accent-color)"
                 height: 30px
                 positions:
                   icon: inside
-                  indicator: 'off'
+                  indicator: "off"
                   title: inside
                   value: inside
                 target: 500
@@ -246,11 +246,11 @@ cards:
                     margin-top: 1px;
                   }
                 entity: sensor.net_upload_max
-                color: 'var(--accent-color)'
+                color: "var(--accent-color)"
                 height: 30px
                 positions:
                   icon: inside
-                  indicator: 'off'
+                  indicator: "off"
                   title: inside
                   value: inside
                 target: 50

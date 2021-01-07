@@ -12,12 +12,10 @@ homeassistant:
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Berlin
-  # C for Celcius, F for Fahrenheit
-  temperature_unit: C
   external_url: !secret homeassistant_external_url
-  #internal_url: !secret homeassistant_internal_url
+  internal_url: !secret homeassistant_internal_url
   auth_providers:
-   - type: homeassistant
+    - type: homeassistant
   customize: !include customize.yaml
   packages: !include_dir_named packages
 
@@ -95,9 +93,8 @@ logbook:
       - sensor.date_time_iso
       - sensor.date_time_utc
       - sensor.hass_io_uptime
-      - sensor.hass_io_uptime
       - sensor.hass_io_uptime_pretty
-      - sensor.pi3_uptime
+      - sensor.nuc_uptime
       - sensor.last_boot
       - sensor.sun_state
 
@@ -119,7 +116,7 @@ cloud:
 ## TTS ##################################################################################
 tts:
   - platform: google_translate
-    language: 'de'
+    language: "de"
 
 ## PLUGINS ##############################################################################
 #########################################################################################
@@ -253,11 +250,11 @@ lovelace:
     - url: /hacsfiles/vacuum-card/vacuum-card.js
       type: module
     # Styles
-    - url: 'https://fonts.googleapis.com/css?family=Raleway'
+    - url: "https://fonts.googleapis.com/css?family=Raleway"
       type: css
-    - url: 'https://fonts.googleapis.com/css?family=Oswald'
+    - url: "https://fonts.googleapis.com/css?family=Oswald"
       type: css
-    - url: 'https://fonts.googleapis.com/css?family=Quicksand'
+    - url: "https://fonts.googleapis.com/css?family=Quicksand"
       type: css
   dashboards:
     lovelace-generated:
