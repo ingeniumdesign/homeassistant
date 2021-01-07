@@ -51,29 +51,25 @@ cards:
             template: dash_button
             entity: zone.home
             icon: "mdi:restart"
+            name: Lovelace Restart
+            tap_action:
+              action: call-service
+              service: browser_mod.lovelace_reload
+            hold_action:
+              action: none
+            styles:
+              card:
+                - color: var(--custom_graph_color_3)
+          - type: "custom:button-card"
+            template: dash_button
+            entity: zone.home
+            icon: "mdi:restart"
             name: Theme Restart
             tap_action:
               action: call-service
-              #confirmation:
-              #  text: Are you sure you want to restart?
               service: frontend.reload_themes
-              data:
-                message: "Your message goes here"
-                title: "Custom subject"
             hold_action:
-              action: call-service
-              confirmation: true
-              #confirmation:
-              #  text: Are you sure you want to restart?
-              #data:
-              #  message: "Your message goes here"
-              #  title: "Custom subject"
-              service: frontend.reload_themes
-            action:
-              - service: logbook.log
-                data:
-                  name: "Theme Restart: "
-                  message: "motion detected"
+              action: none
             styles:
               card:
                 - color: var(--custom_graph_color_3)
