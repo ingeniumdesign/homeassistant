@@ -142,6 +142,11 @@ Check this install Guide after the "main Install". Dont use the Install part. <b
 Use this Guide to Check the migration from Pi to NUC. Dont use the Install part. <br />
 [community.home-assistant.io](https://community.home-assistant.io/t/a-successful-migration-from-pi-3-to-intel-nuc/189992)
 
+### Portainer - Docker Overview
+
+![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/portainer-3.JPG) Container list
+
+
 ### HA on Raspbarry Pi 3B+
 
 #### Conbee II USB for the RPi 3B+
