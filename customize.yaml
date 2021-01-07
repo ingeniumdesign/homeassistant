@@ -62,9 +62,9 @@ sensor.hass_io_uptime:
   icon: mdi:home-assistant
   unit_of_measurement: Tage
 sensor.last_boot:
-  friendly_name: Pi3 Uptime
+  friendly_name: NUC Uptime
   icon: mdi:desktop-tower
-sensor.pi3_uptime:
+sensor.nuc_uptime:
   icon: mdi:desktop-tower
 sensor.net_uptime_pretty:
   icon: mdi:lan-connect

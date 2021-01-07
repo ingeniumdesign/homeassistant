@@ -10,7 +10,7 @@ cards:
         - ../includes/titles.yaml
         - title: RAUM INFOS
 
-      - type: 'custom:simple-thermostat'
+      - type: "custom:simple-thermostat"
         #style: !include ../includes/style_entities.yaml
         entity: climate.buro_dect301_1
         name: Büro Heizung
@@ -25,7 +25,7 @@ cards:
             heat:
               name: Heizen
               icon: mdi:fire
-            'off':
+            "off":
               name: Aus
               icon: mdi:power
           preset:

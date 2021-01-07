@@ -1,15 +1,15 @@
 - platform: time_date
   display_options:
-    - 'time'
-    - 'date'
-    - 'date_time'
-    - 'date_time_utc'
-    - 'date_time_iso'
-    - 'time_date'
-    - 'time_utc'
-    - 'beat'
+    - "time"
+    - "date"
+    - "date_time"
+    - "date_time_utc"
+    - "date_time_iso"
+    - "time_date"
+    - "time_utc"
+    - "beat"
 
-## Pi3 ########################################################################
+## Intel NUC ########################################################################
 - platform: systemmonitor
   resources:
     - type: last_boot
@@ -26,40 +26,41 @@
     - type: network_out
       arg: eth0
 
-#- platform: cpuspeed
+# https://home-assistant.io/components/sensor.cpuspeed/
+- platform: cpuspeed
 
-#- platform: template
-#  sensors:
-#    cpu_temp:
-#      value_template: '{{ states("input_number.cpu_temp") | multiply(0.001) | round(1) }}'
-
+# NUC Temperature on Thermal Zone 0
 - platform: command_line
-  name: CPU Temp
+  name: CPU Temperature
   command: "cat /sys/class/thermal/thermal_zone0/temp"
   unit_of_measurement: "°C"
   value_template: "{{ value | multiply(0.001) | round(1) }}"
 
-- platform: command_line
-  name: GPU Temp
-  command: "/opt/vc/bin/vcgencmd measure_temp"
-  unit_of_measurement: "°C"
-  value_template: '{{ value | regex_findall_index("=([0-9]*\.[0-9]*)", 0) }}'
+# only for Raspberry Pi3
+#- platform: command_line
+#  name: GPU Temp
+#  command: "/opt/vc/bin/vcgencmd measure_temp"
+#  unit_of_measurement: "°C"
+#  value_template: '{{ value | regex_findall_index("=([0-9]*\.[0-9]*)", 0) }}'
 
-- platform: command_line
-  name: CPU Clock
-  command: "/opt/vc/bin/vcgencmd measure_clock arm"
-  unit_of_measurement: "MHz"
-  value_template: '{{ value | regex_findall_index("=([0-9]*)", 0) | multiply(0.000001) | round(0) }}'
+# only for Raspberry Pi3
+#- platform: command_line
+#  name: CPU Clock
+#  command: "/opt/vc/bin/vcgencmd measure_clock arm"
+#  unit_of_measurement: "MHz"
+#  value_template: '{{ value | regex_findall_index("=([0-9]*)", 0) | multiply(0.000001) | round(0) }}'
 
+# HASS.io UpTime
 - platform: uptime
   name: Hass.io Uptime
 
+# Database mariaDB
 - platform: sql
   db_url: !secret db_url
   queries:
     - name: DB size
       query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1048576, 2) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
-      column: 'value'
+      column: "value"
       unit_of_measurement: MB
 
 ## Version Check ###############################################################
@@ -92,7 +93,7 @@
           {%- set end = 's' if value > 1 else '' %}
           {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
         {%- endmacro %}
-        
+
         {% set weeks = (states('sensor.hass_io_uptime') | int / 7) | int %}
         {% set days = (states('sensor.hass_io_uptime') | int) - (weeks * 7) %}
         {% set hours = (states('sensor.hass_io_uptime') | float - states('sensor.hass_io_uptime') | int) * 24 %}
@@ -112,7 +113,7 @@
           {%- set end = 's' if value > 1 else '' %}
           {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
         {%- endmacro %}
-        
+
         {% set weeks = (states('sensor.net_uptime') | int / 7) | int %}
         {% set days = (states('sensor.net_uptime') | int) - (weeks * 7) %}
         {% set hours = (states('sensor.net_uptime') | float - states('sensor.net_uptime') | int) * 24 %}
@@ -120,32 +121,29 @@
 
         {{ [ phrase(weeks, 'week'), phrase(days, 'day'), phrase(hours, 'hr'), phrase(minutes, 'min') ] | select('!=','') | list | join(', ') }}
         {% endif %}
-    
-    pi3_uptime:
-        friendly_name: Pi3 Uptime
-        entity_id: sensor.time
-        value_template: >
-          {% set up_time = as_timestamp(now()) - as_timestamp(states('sensor.last_boot')) %}
 
-          {% set minutes = (up_time // 60) | int %}
-          {% set hours = (minutes // 60) %}
-          {% set days = (hours // 24) %}
-          {% set weeks = (days // 7) %}
+    nuc_uptime:
+      friendly_name: NUC Uptime
+      entity_id: sensor.time
+      value_template: >
+        {% set up_time = as_timestamp(now()) - as_timestamp(states('sensor.last_boot')) %}
+        {% set minutes = (up_time // 60) | int %}
+        {% set hours = (minutes // 60) %}
+        {% set days = (hours // 24) %}
+        {% set weeks = (days // 7) %}
+        {% set minutes = (minutes % 60) %}
+        {% set hours =  (hours % 24) %}
+        {% set days = (days % 7) %}
+        {% macro phrase(value, name) %}
+          {%- set value = value %}
+          {%- set end = 's' if value > 1 else '' %}
+          {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
+        {%- endmacro %}
+                    
+        {% set text = [ phrase(weeks, 'week'), phrase(days, 'day'), phrase(hours, 'hr'), phrase(minutes, 'min') ] | select('!=','') | list | join(', ') %}
+        {% set last_comma = text.rfind(',') %}
+        {% if last_comma != -1 %}
+          {% set text = text[:last_comma] + ',' + text[last_comma + 1:] %}
+        {% endif %}
 
-          {% set minutes = (minutes % 60) %}
-          {% set hours =  (hours % 24) %}
-          {% set days = (days % 7) %}
-
-          {% macro phrase(value, name) %}
-            {%- set value = value %}
-            {%- set end = 's' if value > 1 else '' %}
-            {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
-          {%- endmacro %}
-
-          {% set text = [ phrase(weeks, 'week'), phrase(days, 'day'), phrase(hours, 'hr'), phrase(minutes, 'min') ] | select('!=','') | list | join(', ') %}
-          {% set last_comma = text.rfind(',') %}
-          {% if last_comma != -1 %}
-              {% set text = text[:last_comma] + ',' + text[last_comma + 1:] %}
-          {% endif %}
-
-          {{ text }}
+        {{ text }}
