@@ -15,7 +15,7 @@ homeassistant:
   # C for Celcius, F for Fahrenheit
   temperature_unit: C
   external_url: !secret homeassistant_external_url
-  internal_url: !secret homeassistant_internal_url
+  #internal_url: !secret homeassistant_internal_url
   auth_providers:
    - type: homeassistant
   customize: !include customize.yaml
@@ -33,7 +33,8 @@ homeassistant:
 
 #Zigbee Home Automation
 zha:
-  usb_path: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00
+  #usb_path: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00
+  #usb_path:
   database_path: /config/zigbee.db
 
 ## Themes UI ############################################################################
