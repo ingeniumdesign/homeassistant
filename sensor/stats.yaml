@@ -20,7 +20,6 @@
     - type: memory_free
     - type: memory_use_percent
     - type: processor_use
-    - type: processor_temperature
     - type: network_in
       arg: eth0
     - type: network_out
@@ -29,12 +28,20 @@
 # https://home-assistant.io/components/sensor.cpuspeed/
 - platform: cpuspeed
 
-# NUC Temperature on Thermal Zone 0
+# CPU Temperature on Thermal Zone 2
 - platform: command_line
   name: CPU Temp
-  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  command: "cat /sys/class/thermal/thermal_zone2/temp"
   unit_of_measurement: "°C"
+  #scan_interval: 240
   value_template: "{{ value | multiply(0.001) | round(1) }}"
+
+# HDD sda Temperature
+# install via terminal first: apt install hddtemp
+- platform: command_line
+  name: HDD Temp
+  command: "hddtemp -n /dev/sda"
+  unit_of_measurement: "°C"
 
 # only for Raspberry Pi3
 #- platform: command_line
