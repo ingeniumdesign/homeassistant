@@ -219,9 +219,11 @@ lovelace:
       type: module
     - url: /hacsfiles/lovelace-card-tools/card-tools.js
       type: module
-    - url: /hacsfiles/lovelace-card-mod/card-mod.js
+    - url: /hacsfiles/lovelace-card-mod/card-mod.js?v1
       type: module
     - url: /hacsfiles/bar-card/bar-card.js
+      type: module
+    - url: /hacsfiles/light-popup-card/light-popup-card.js
       type: module
     - url: /hacsfiles/transmission-card/transmission-card.js
       type: module
