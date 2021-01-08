@@ -10,10 +10,26 @@ ING Dark:
   paper-font-title_-_font-family: "var(--primary-font-family)"
   ha-card-header-font-family: "var(--primary-font-family)"
 
-  # Text
-  text-color: "#ffffff"
-  primary-text-color: "var(--text-color)"
-  text-primary-color: "var(--text-color)"
+  # Color
+  color-white: "#ffffff"
+  color-red-1: "rgba(247,53,67,1)" #rot
+  color-red-bright-1: "rgba(255,102,102,0.6)" #hell rot
+  color-red-error-1: rgba(255,153,0,1.0)" #default HA red rgb(219, 68, 55) --error-color
+  color-error: "var(--error-color)" #default HA red rgb(219, 68, 55)
+  color-lilac-bright-1: "rgba(31,142,250,0.9)" #hell flieder
+  color-ocher-1: "rgba(222,176,107,1)" #ocker
+  color-green-bright-1: "rgba(0,202,139,1)" #hell grün
+  color-purple-1: "rgba(139,64,156,1)" #lila
+  color-orange-1: "rgba(255,153,0,1)" #orange
+  color-blue-1: "rgba(118, 128, 255, 1)" #7680ff
+  color-blue-deepdark-1: "rgba(21, 30, 45, 1)" #dief dunkel blau #151e2d
+  color-blue-deepdark-2: "rgba(30, 42, 64, 1)" #dief dunkel blau #1e2a40
+  color-blue-bright-1: "rgba(169, 186, 202, 1)" #hell blau #a9baca
+
+  # Text Variable
+  text-color: "var(--color-white)"
+  primary-text-color: "var(--color-white)"
+  text-primary-color: "var(--color-white)"
   secondary-text-color: "#BAC0C6"
   text-medium-light-color: "#A0A2A8"
   text-medium-color: "#80828A"
@@ -21,14 +37,14 @@ ING Dark:
   primary-color: "var(--accent-color)"
 
   # Main Colors
-  app-header-background-color: "#242e42"
-  accent-color: "#1A89F5"
+  app-header-background-color: "var(--color-blue-deepdark-2)"
+  accent-color: "var(--color-blue-1)"
   accent-medium-color: "var(--accent-color)"
 
   # Background
-  background-color: "#242e42"
-  primary-background-color: "var(--background-color)"
-  background-color-2: "#20293c"
+  background-color: "var(--color-blue-deepdark-1)"
+  background-color-2: "var(--color-blue-deepdark-2)"
+  primary-background-color: "var(--color-blue-deepdark-1)"
   secondary-background-color: "transparent"
   markdown-code-background-color: "var(--background-color)"
 
@@ -44,10 +60,10 @@ ING Dark:
   paper-item-icon-active-color: "var(--accent-color)"
 
   # Sidebar
-  sidebar-background-color: "var(--background-color)"
-  sidebar-icon-color: "#98a7b9"
+  sidebar-background-color: "var(--color-blue-deepdark-2)"
+  sidebar-icon-color: "var(--color-blue-bright-1)"
   sidebar-selected-icon-color: "var(--accent-color)"
-  sidebar-selected-text-color: "var(--text-color)"
+  sidebar-selected-text-color: "var(--color-white)"
   paper-listbox-background-color: "var(--sidebar-background-color)"
   divider-color: "var(--background-color)"
   light-primary-color: "var(--ha-card-background)"
@@ -98,7 +114,7 @@ ING Dark:
   ch-tab-indicator-color: "var(--accent-color)"
 
   # Mini Mediaplayer
-  mini-media-player-base-color: "var(--text-color)"
+  mini-media-player-base-color: "var(--color-white)"
   mini-media-player-accent-color: "var(--accent-color)"
 
   # Custom

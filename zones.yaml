@@ -1,23 +1,23 @@
-- name: Home
-  latitude: 0.0
-  longitude: 0.0
-  radius: 100
+- name: FamilieSchmal
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  radius: 25
   icon: mdi:home-heart
 
 - name: SebastianArbeit
-  latitude: 0.0
-  longitude: 0.0
+  latitude: !secret work_sebstian_latitude
+  longitude: !secret work_sebstian_longitude
   radius: 25
   icon: mdi:factory
 
 - name: JuliaArbeit
-  latitude: 0.0
-  longitude: 0.0
+  latitude: !secret work_julia_latitude
+  longitude: !secret work_julia_longitude
   radius: 150
   icon: mdi:factory
 
 - name: Golfpark
-  latitude: 0.0
-  longitude: 0.0
+  latitude: !secret hobby_golf_latitude
+  longitude: !secret hobby_golf_longitude
   radius: 1100
   icon: mdi:golf
