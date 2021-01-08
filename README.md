@@ -208,5 +208,10 @@ You find the System Configuration in this File: <br />
 - [x] **ERROR** ~~RAZBERRY2 Board dont work on the Pi3B+~~ [~~Community Forum~~](https://community.home-assistant.io/t/pi3b-setup-with-razberry-v2/264457)
 - [ ] **ERROR** kiosk-mode dont work from LoveLace UI
 
+### Say Thank You
+
+[PayPal *](https://paypal.me/INGENIUMDESIGN)
+
+[Amazon Wishlist *](https://www.amazon.de/hz/wishlist/ls/1I6FZL9008ULK)
 
 _* Amazon Affiliate Link_
