@@ -214,8 +214,8 @@ You find the System Configuration in this File: <br />
 
 [Amazon Wishlist *](https://www.amazon.de/hz/wishlist/ls/1I6FZL9008ULK)
 
-<a href="https://www.buymeacoffee.com/ingeniumdesign" target="_blank">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
+<a href="https://www.buymeacoffee.com/ingeniumdesign" target="_blank" style="height: 60px !important;width: 217px !important;max-width: 217px !important;">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;max-width: 217px !important;" >
 </a>
 
 _* Amazon Affiliate Link_
