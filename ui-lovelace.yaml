@@ -1,28 +1,3 @@
-sidebar:
-  title: "Home"
-  digitalClock: true
-  hideTopMenu: true
-  sidebarMenu:
-    - action: navigate
-      navigation_path: "/lovelace/dashboard"
-      name: "Home"
-      active: true
-  style: |
-    :host {
-      --sidebar-background: #FFF;
-      --sidebar-text-color: #000;
-      --face-color: #FFF;
-      --face-border-color: #FFF;
-      --clock-hands-color: #000;
-      --clock-seconds-hand-color: #FF4B3E;
-      --clock-middle-background: #FFF;
-      --clock-middle-border: #000;
-    }
-  template: |
-    <li>
-      TEST
-    </li>
-
 button_card_templates:
   header:
     styles:
