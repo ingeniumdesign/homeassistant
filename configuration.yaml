@@ -251,6 +251,8 @@ lovelace:
       type: module
     - url: /hacsfiles/vacuum-card/vacuum-card.js
       type: module
+    - url: /hacsfiles/custom-sidebar/custom-sidebar.js
+      type: module
     # Styles
     - url: "https://fonts.googleapis.com/css?family=Raleway"
       type: css

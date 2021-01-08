@@ -79,6 +79,7 @@ _More Screenshot down below._
 - [card-tools](https://github.com/thomasloven/lovelace-card-tools)
 - [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 - [bar-card](https://github.com/custom-cards/bar-card)
+- [light-popup-card](https://github.com/DBuit/light-popup-card)
 - [transmission-card](https://github.com/amaximus/transmission-card)
 - [button-card](https://github.com/custom-cards/button-card)
 - [time-picker-card](https://github.com/GeorgeSG/lovelace-time-picker-card)
@@ -92,6 +93,7 @@ _More Screenshot down below._
 - [weather-card](https://github.com/bramkragten/weather-card)
 - [state-switch](https://github.com/thomasloven/lovelace-state-switch)
 - [vacuum-card](https://github.com/denysdovhan/vacuum-card)
+- [custom-sidebar](https://github.com/DBuit/sidebar-card)
 
 
 ## Automations :green_heart:
