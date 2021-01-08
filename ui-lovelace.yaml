@@ -1,3 +1,28 @@
+sidebar:
+  title: "Home"
+  digitalClock: true
+  hideTopMenu: true
+  sidebarMenu:
+    - action: navigate
+      navigation_path: "/lovelace/dashboard"
+      name: "Home"
+      active: true
+  style: |
+    :host {
+      --sidebar-background: #FFF;
+      --sidebar-text-color: #000;
+      --face-color: #FFF;
+      --face-border-color: #FFF;
+      --clock-hands-color: #000;
+      --clock-seconds-hand-color: #FF4B3E;
+      --clock-middle-background: #FFF;
+      --clock-middle-border: #000;
+    }
+  template: |
+    <li>
+      TEST
+    </li>
+
 button_card_templates:
   header:
     styles:
@@ -5,16 +30,16 @@ button_card_templates:
         - height: 30px
         - font-size: 14px
     color_type: label-card
-    color: 'var(--secondary-background-color)'
+    color: "var(--secondary-background-color)"
   header_clickable:
     color_type: card
-    color: 'var(--secondary-background-color)'
+    color: "var(--secondary-background-color)"
     show_icon: false
     styles:
       card:
         - height: 30px
         - font-size: 14px
-        - background-color: 'var(--ha-card-background)'
+        - background-color: "var(--ha-card-background)"
   esp:
     styles:
       card:
@@ -35,31 +60,31 @@ button_card_templates:
       card:
         - font-size: 14px
     state:
-      - value: 'Abwesend'
+      - value: "Abwesend"
         styles:
           icon:
             - filter: grayscale(80%) #blur(5px)
-      - value: 'Lange Abwesend'
+      - value: "Lange Abwesend"
         styles:
           icon:
             - filter: grayscale(100%)
-      - value: 'Arbeit'
+      - value: "Arbeit"
         styles:
           icon:
             - filter: grayscale(100%)
-      - value: 'Sebastian Arbeit'
+      - value: "Sebastian Arbeit"
         styles:
           icon:
             - filter: grayscale(100%)
-      - value: 'Julia Arbeit'
+      - value: "Julia Arbeit"
         styles:
           icon:
             - filter: grayscale(100%)
-      - value: 'Angekommen'
+      - value: "Angekommen"
         styles:
           icon:
             - filter: grayscale(30%)
-      - value: 'Verlassen'
+      - value: "Verlassen"
         styles:
           icon:
             - filter: grayscale(100%)
@@ -119,7 +144,7 @@ button_card_templates:
     style: !include lovelace/includes/style.yaml
   timer:
     color_type: card
-    color: 'var(--custom_motion_off)'
+    color: "var(--custom_motion_off)"
     size: 25px
     show_icon: false
     show_name: false
@@ -133,15 +158,15 @@ button_card_templates:
     size: 30px
     styles:
       card:
-        - font-size: 12px   
+        - font-size: 12px
   power:
     styles:
       card:
         - height: 40px
         - font-size: 13.5px
       name:
-      - color: var(--secondary-text-color)
-      - font-size: 10px
+        - color: var(--secondary-text-color)
+        - font-size: 10px
     show_name: true
     show_icon: false
     show_state: true

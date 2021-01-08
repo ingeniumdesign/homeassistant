@@ -24,6 +24,7 @@ ING Dark:
   color-blue-1: "rgba(118, 128, 255, 1)" #7680ff
   color-blue-deepdark-1: "rgba(21, 30, 45, 1)" #dief dunkel blau #151e2d
   color-blue-deepdark-2: "rgba(30, 42, 64, 1)" #dief dunkel blau #1e2a40
+  color-blue-deepdark-3: "rgba(45, 53, 82, 1)" #dief dunkel blau #2d3552
   color-blue-bright-1: "rgba(169, 186, 202, 1)" #hell blau #a9baca
 
   # Text Variable
@@ -65,8 +66,10 @@ ING Dark:
   sidebar-selected-icon-color: "var(--accent-color)"
   sidebar-selected-text-color: "var(--color-white)"
   paper-listbox-background-color: "var(--sidebar-background-color)"
-  divider-color: "var(--background-color)"
+  divider-color: "var(--color-blue-deepdark-3)"
   light-primary-color: "var(--ha-card-background)"
+  ha-sidebar$: |
+    
 
   # Sliders
   paper-slider-knob-color: "var(--accent-color)"
