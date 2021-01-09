@@ -23,6 +23,11 @@ cards:
               entities:
                 - sensor.version_current
                 - sensor.version_latest
+              style: |
+                ha-card {
+                  color: var(--color-orange-1);
+                  --paper-item-icon-color: var(--color-orange-1);
+                }
 
       # ABFRAGE - HACS
       - type: conditional
@@ -39,6 +44,11 @@ cards:
             - type: entities
               entities:
                 - sensor.hacs
+              style: |
+                ha-card {
+                  color: var(--color-orange-1);
+                  --paper-item-icon-color: var(--color-orange-1);
+                }
 
       # SERVICE OPTION
       - !include

@@ -1,3 +1,5 @@
+# Example https://github.com/frenck/home-assistant-config/tree/master/config/themes
+
 ING Dark:
   # Fonts
   font-family-raleway: "Raleway,sans-serif"
@@ -28,12 +30,13 @@ ING Dark:
   color-green-bright-1: "rgba(0,202,139,1)" #hell grün
   color-purple-1: "rgba(139,64,156,1)" #lila
   color-orange-1: "rgba(255,153,0,1)" #orange
-  color-blue-1: "rgba(118, 128, 255, 1)" #7680ff
-  color-blue-deepdark-1: "rgba(21, 30, 45, 1)" #tief dunkel blau #151e2d
-  color-blue-deepdark-2: "rgba(30, 42, 64, 1)" #tief dunkel blau #1e2a40
-  color-blue-deepdark-3: "rgba(38, 51, 76, 1)" #tief dunkel blau #26334c
-  color-blue-deepdark-4: "rgba(45, 53, 82, 1)" #tief dunkel blau #2d3552 - Border
-  color-blue-bright-1: "rgba(169, 186, 202, 1)" #hell blau #a9baca
+  color-blue-1: "rgba(118,128,255,1)" #7680ff
+  color-blue-deepdark-1: "rgba(21,30,45,1)" #tief dunkel blau #151e2d
+  color-blue-deepdark-2: "rgba(30,42,64,1)" #tief dunkel blau #1e2a40
+  color-blue-deepdark-3: "rgba(38,51,76,1)" #tief dunkel blau #26334c
+  color-blue-deepdark-4: "rgba(45,53,82,1)" #tief dunkel blau #2d3552 - Border
+  color-blue-bright-1: "rgba(169,186,202,1)" #hell blau #a9baca
+  color-blue-bright-2: "rgba(169,186,202,0.15)" #hell blau #a9baca mit 15%
 
   # Text Variable
   text-color: "var(--color-white)"
@@ -56,13 +59,13 @@ ING Dark:
   primary-background-color: "var(--color-blue-deepdark-1)"
   secondary-background-color: "transparent"
   markdown-code-background-color: "var(--background-color)"
+  st-mode-active-background: "var(--accent-color)"
 
   # Card
   card-background-color: "var(--ha-card-background)"
   ha-card-background: "var(--color-blue-deepdark-2)"
   ha-card-box-shadow: "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)"
-  ha-card-border-radius: "xzy"
-  #border-width: "xyz"
+  ha-card-border-radius: "0.25rem"
   border-color: "rgba(45, 53, 82, 0)"
 
   # Icons
@@ -78,7 +81,6 @@ ING Dark:
   paper-listbox-background-color: "var(--sidebar-background-color)"
   divider-color: "var(--color-blue-deepdark-4)"
   light-primary-color: "var(--ha-card-background)"
-  #ha-sidebar$: |
 
   # Sliders
   paper-slider-knob-color: "var(--accent-color)"
@@ -128,6 +130,12 @@ ING Dark:
   # Mini Mediaplayer
   mini-media-player-base-color: "var(--color-white)"
   mini-media-player-accent-color: "var(--accent-color)"
+
+  # HACS
+  hacs-badge-color: "var(--accent-color)"
+  hacs-status-installed: "var(--text-color)"
+  hacs-status-pending-restart: "var(--text-dark-color)"
+  hacs-status-pending-update: "var(--accent-color)"
 
   # Custom
   custom_heading: "#ffffff"

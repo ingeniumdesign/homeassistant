@@ -90,7 +90,7 @@ group.motion_sensors:
 sensor.cpu_temp:
   friendly_name: CPU Temp
   icon: mdi:thermometer
-sensor.cpu_clock:
+sensor.cpu_speed:
   friendly_name: CPU Speed
   icon: mdi:pulse
 switch.basti_nuc:

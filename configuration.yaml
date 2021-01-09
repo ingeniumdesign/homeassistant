@@ -16,16 +16,16 @@ homeassistant:
   internal_url: !secret homeassistant_internal_url
   auth_providers:
     - type: homeassistant
-  customize: !include customize.yaml
+  customize: !include_dir_merge_named customizations
+
+  # Load packages
   packages: !include_dir_named packages
 
 ## MultiSensoring #######################################################################
 # DONT use this, we use OpenZWave (beta) !
 # Dont run zwave with OpenZWave (beta) together!!
 #zwave:
-#  #device: /dev/ttyAMA0
 #  usb_path: /dev/ttyAMA0
-#  #usb_path: /dev/ttyS0
 #  network_key: !secret network_key
 #  debug: true
 
