@@ -39,7 +39,7 @@ cards:
             font-size: 18px;
           }
           ha-card .mode-item {
-            background: rgba(73,85,108,0.5);
+            background: var(--color-blue-bright-2)
           }
 
       - !include

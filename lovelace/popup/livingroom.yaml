@@ -5,22 +5,6 @@ service_data:
   title: Wohnzimmer Status
   card:
     type: custom:mod-card
-    style: |
-      $: |
-        .mdc-dialog .mdc-dialog__scrim {
-          backgrund: none !important;
-        }
-      .: |
-        :host {
-          backgrund: none !important;
-        }
-      ha-card {
-        backgrund: none !important;
-        color: white
-      }
-      :host {
-        backgrund: none !important;
-      }
     card:
       type: horizontal-stack
       cards:
@@ -37,3 +21,27 @@ service_data:
             - entity: media_player.vu_uno4k_se
               tap_action:
                 action: none
+      style: |
+        $: |
+          .mdc-dialog .mdc-dialog__scrim {
+            backgrund: green !important;
+            --ha-card-background: var(--color-orange-1) !important;
+          }
+        .: |
+          ha-card {
+            backgrund: black !important;
+            color: white;
+            --ha-card-background: var(--color-orange-1) !important;
+          }
+          :host {
+            backgrund: red !important;
+            --ha-card-background: var(--color-orange-1) !important;
+          }
+        ha-card {
+          backgrund: black !important;
+          color: white;
+          --ha-card-background: var(--color-orange-1) !important;
+        }
+        :host {
+          backgrund: blue !important;
+        }
