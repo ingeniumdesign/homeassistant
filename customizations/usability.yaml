@@ -15,6 +15,8 @@ input_number.kwh_cost:
   friendly_name: Kosten für eine kWh
   icon: mdi:currency-eur
   unit_of_measurement: €
+sensor.eingang_zw100_multisensor_1_air_temperature:
+  friendly_name: Flur Temperatur
 switch.buro_dect200_1:
   friendly_name: Büro Steckdose 1
   icon: mdi:power-plug
@@ -24,6 +26,9 @@ sensor.buro_dect200_1_today_energy_kwh:
   icon: mdi:flash
 climate.buro_dect301_1:
   friendly_name: Büro Heizung 1
+  icon: mdi:radiator
+climate.schlafzimmer_dect301_1:
+  friendly_name: Schlafzimmer Heizung 1
   icon: mdi:radiator
 sensor.db_size:
   friendly_name: DB-Größe
