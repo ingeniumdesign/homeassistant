@@ -8,3 +8,11 @@
       value_template: "{{state_attr('climate.buro_dect301_1', 'battery_level') }}"
       friendly_name: "Batterie"
       unit_of_measurement: '%'
+    schlafzimmer_dect301_1_temperature:
+      value_template: "{{state_attr('climate.schlafzimmer_dect301_1', 'temperature') }}"
+      friendly_name: "Temperatur"
+      unit_of_measurement: '°C'
+    schlafzimmer_dect301_1_battery_level:
+      value_template: "{{state_attr('climate.schlafzimmer_dect301_1', 'battery_level') }}"
+      friendly_name: "Batterie"
+      unit_of_measurement: '%'

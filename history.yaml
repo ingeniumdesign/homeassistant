@@ -36,6 +36,7 @@ include:
     - sensor.buro_dect200_1_voltage
     - sensor.buro_dect200_1_current_a
     - climate.buro_dect301_1
+    - climate.schlafzimmer_dect301_1
     - sensor.handy_sebastian_akkufullstand
     #- sensor.motion_sensor_mainhallway_light_level
     #- sensor.motion_sensor_mainhallway_temperature
