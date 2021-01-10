@@ -126,25 +126,20 @@
     net_uptime_pretty:
       friendly_name: Verbunden
       value_template: >
-        {%- set up_time = as_timestamp(now())-as_timestamp(states('sensor.net_uptime')) %}
-
-        {% if states('sensor.net_uptime') == '0.0' %} 
+        {% if states('sensor.net_uptime') == '0.0' %}
           Soeben neu gestartet...
         {% else %}
-        {%- macro phrase(name, divisor, mod=None) %}
-          {%- set value = ((up_time // divisor) % (mod if mod else divisor)) | int %}
+        {% macro phrase(value, name) %}
+          {%- set value = value | int %}
           {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
         {%- endmacro %}
 
-        {%- set values = [
-          phrase('W.', 60*60*24*7),
-          phrase('T.', 60*60*24, 7),
-          phrase('Std.', 60*60, 24),
-          phrase('Min.', 60),
-          phrase('Sek.', 1, 60)
-        ] | select('!=','') | list %}
+        {% set weeks = (states('sensor.net_uptime') | int / 7) | int %}
+        {% set days = (states('sensor.net_uptime') | int) - (weeks * 7) %}
+        {% set hours = (states('sensor.net_uptime') | float - states('sensor.net_uptime') | int) * 24 %}
+        {% set minutes = (hours - hours | int) * 60 %}
 
-        {{ values[:-1] | join(', ') ~ ' ' ~ values[-1] if values | length > 1 else values | first }}
+        {{ [ phrase(weeks, 'W.'), phrase(days, 'T.'), phrase(hours, 'Std.'), phrase(minutes, 'Min.') ] | select('!=','') | list | join(', ') }}
         {% endif %}
 
     nuc_uptime:
