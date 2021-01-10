@@ -1,0 +1,78 @@
+icon: mdi:desktop-tower-monitor
+title: Büro
+path: office
+id: office
+cards:
+  ## ROW 1 ###################################################################################################################
+  - type: vertical-stack
+    cards:
+      - !include
+        - ../includes/titles.yaml
+        - title: RAUM INFOS
+
+      - type: "custom:simple-thermostat"
+        #style: !include ../includes/style_entities.yaml
+        entity: climate.buro_dect301_1
+        name: Büro Heizung
+        decimal: 0
+        step_size: 1.0
+        step_layout: column
+        label:
+          temperature: Innen
+        control:
+          _headings: false
+          hvac:
+            heat:
+              name: Heizen
+              icon: mdi:fire
+            "off":
+              name: Aus
+              icon: mdi:power
+          preset:
+            _name:
+        sensors:
+          - entity: sensor.dwd_weather_temperature
+            name: Außen
+          - entity: sensor.buro_dect301_1_battery_level
+        style: |
+          ha-card .header__title {
+            font-size: 18px;
+          }
+          ha-card .mode-item {
+            background: var(--color-blue-bright-2)
+          }
+
+      - !include
+        - ../includes/titles.yaml
+        - title: GERÄTE
+
+      - type: entities
+        show_header_toggle: false
+        style: !include ../includes/style_entities.yaml
+        entities:
+          - input_boolean.motion_sensor_mainhallway_toggle
+          - input_boolean.motion_sensor_stairwell1_toggle
+          - input_boolean.motion_sensor_stairwell2_toggle
+          - input_boolean.motion_sensor_stairwell3_toggle
+          - input_boolean.motion_sensor_kitchen_toggle
+          - input_boolean.motion_sensor_restroom_toggle
+
+  ## ROW 2 ###################################################################################################################
+  - type: vertical-stack
+    cards:
+      - !include
+        - ../includes/titles.yaml
+        - title: GERÄTE
+
+      - type: entities
+        show_header_toggle: true
+        title: Drucker MFC490CW
+        icon: mdi:printer-wireless
+        style: !include ../includes/style_entities.yaml
+        entities:
+          - sensor.mfc_490cw_status
+          - sensor.mfc_490cw_page_counter
+          - sensor.mfc_490cw_black_ink_remaining
+          - sensor.mfc_490cw_cyan_ink_remaining
+          - sensor.mfc_490cw_magenta_ink_remaining
+          - sensor.mfc_490cw_yellow_ink_remaining

@@ -17,6 +17,20 @@ input_number.kwh_cost:
   unit_of_measurement: €
 sensor.eingang_zw100_multisensor_1_air_temperature:
   friendly_name: Flur Temperatur
+sensor.eingang_zw100_multisensor_1_humidity:
+  friendly_name: Flur Luftfeuchtigkeit
+binary_sensor.eingang_zw100_multisensor_1_home_security_tampering_cover_removed:
+  friendly_name: Flur Sicherheit
+binary_sensor.eingang_zw100_multisensor_1_home_security_motion_detected:
+  friendly_name: Flur Bewegungsmelder
+sensor.eingang_zw100_multisensor_1_illuminance:
+  friendly_name: Flur Helligkeit
+binary_sensor.eingang_zw100_multisensor_1_sensor:
+  friendly_name: Flur Sensor
+sensor.eingang_zw100_multisensor_1_ultraviolet:
+  friendly_name: Flur UV-Strahlung
+sensor.eingang_zw100_multisensor_1_battery_level:
+  friendly_name: Flur Multisensor Batterie
 switch.buro_dect200_1:
   friendly_name: Büro Steckdose 1
   icon: mdi:power-plug
