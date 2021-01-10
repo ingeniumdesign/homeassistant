@@ -4,32 +4,32 @@ path: dashboard
 id: dash
 
 popup_cards:
-  input_boolean.shortcut_mainhallway:
-    title: Test
-    card:
-      type: custom:stack-in-card
-      style: !include ../includes/style_entities_popup.yaml
-      cards:
-        - type: history-graph
-          style: !include ../includes/style_entities_popup.yaml
-          entities:
-            - sensor.sebastian_status
-        - type: entities
-          style: !include ../includes/style_entities_popup.yaml
-          entities:
-            - device_tracker.handy_sebastian
-  input_boolean.shortcut_livingroom:
-    title: Wohnzimmer Status
-    card:
-      type: custom:stack-in-card
-      style: !include ../includes/style_entities_popup.yaml
-      cards:
-        - type: horizontal-stack
-          cards:
-            - !include
-              - ../includes/graphs_popup.yaml
-              - entity: sensor.sebastian_status
-                name: Test
+#  input_boolean.shortcut_mainhallway:
+#    title: Test
+#    card:
+#      type: custom:stack-in-card
+#      style: !include ../includes/style_entities_popup.yaml
+#      cards:
+#        - type: history-graph
+#          style: !include ../includes/style_entities_popup.yaml
+#          entities:
+#            - sensor.sebastian_status
+#        - type: entities
+#          style: !include ../includes/style_entities_popup.yaml
+#          entities:
+#            - device_tracker.handy_sebastian
+#  input_boolean.shortcut_livingroom:
+#    title: Wohnzimmer Status
+#    card:
+#      type: custom:stack-in-card
+#      style: !include ../includes/style_entities_popup.yaml
+#      cards:
+#        - type: horizontal-stack
+#          cards:
+#            - !include
+#              - ../includes/graphs_popup.yaml
+#              - entity: sensor.sebastian_status
+#                name: Test
             #- !include
             #  - type: entities
             #    state_color: true
@@ -45,51 +45,6 @@ popup_cards:
             #      - entity: media_player.vu_uno4k_se
             #        tap_action:
             #          action: none
-  light.kuche:
-    title: Küche
-    card:
-      type: custom:stack-in-card
-      style: !include ../includes/style_entities_popup.yaml
-      cards:
-        - type: horizontal-stack
-          cards:
-            - !include
-              - ../includes/graphs_popup.yaml
-              - entity: sensor.bewegungsmelder_kuche_temperature
-                name: Temperatur
-                font_size_header: 12
-                line_color: var(--custom_graph_color_1)
-            - !include
-              - ../includes/graphs_popup.yaml
-              - entity: sensor.bewegungsmelder_kuche_light_level
-                name: Helligkeit
-                font_size_header: 12
-                line_color: var(--custom_graph_color_2)
-        - !include
-          - ../includes/graphs_popup.yaml
-          - entity: sensor.mi_kuche_humidity
-            name: Luftfeuchtigkeit
-            font_size_header: 12
-            line_color: var(--custom_graph_color_3)
-            line_width: 2
-        - !include
-          - ../includes/titles.yaml
-          - title: LICHT & BEWEGUNG
-        - type: entities
-          show_header_toggle: false
-          style: !include ../includes/style_entities_popup.yaml
-          entities:
-            - entity: light.kuchenzeile
-              name: Decke
-              icon: mdi:ceiling-light
-              type: custom:slider-entity-row
-        - type: entities
-          show_header_toggle: false
-          style: !include ../includes/style_entities_popup.yaml
-          entities:
-            - entity: binary_sensor.bewegungsmelder_kuche_motion
-              name: Bewegungsmelder
-              secondary_info: last-changed
   sensor.sebastian_status:
     title: Sebastian
     card:
@@ -159,19 +114,19 @@ cards:
           - type: "custom:button-card"
             template: popup_button
             entity: input_boolean.shortcut_mainhallway
-            #tap_action: !include ../popup/mainhallway.yaml
+            tap_action: !include ../popup/mainhallway.yaml
           - type: "custom:button-card"
             template: popup_button
             entity: input_boolean.shortcut_livingroom
-            #tap_action: !include ../popup/livingroom.yaml
+            tap_action: !include ../popup/livingroom.yaml
           - type: "custom:button-card"
             template: popup_button
             entity: input_boolean.shortcut_kitchen_diningroom
-            tap_action: !include ../popup/mainhallway.yaml
+            tap_action: !include ../popup/livingroom.yaml
           - type: "custom:button-card"
             template: popup_button
             entity: input_boolean.shortcut_office
-            tap_action: !include ../popup/mainhallway.yaml
+            tap_action: !include ../popup/livingroom.yaml
 
       ## PEOPLE STATUS ##
       - type: horizontal-stack
@@ -426,7 +381,7 @@ cards:
             font_size: 60
             font_size_header: 11
             hours_to_show: 48
-            line_color: var(--custom_graph_color_1)
+            line_color: var(--color-red-1)
             line_width: 4
             animate: true
             points_per_hour: 0.5
@@ -468,7 +423,7 @@ cards:
             font_size: 60
             font_size_header: 11
             hours_to_show: 48
-            line_color: var(--custom_graph_color_3)
+            line_color: var(--color-green-bright-1)
             line_width: 4
             animate: true
             points_per_hour: 0.5

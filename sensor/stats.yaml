@@ -67,10 +67,6 @@
 #  unit_of_measurement: "MHz"
 #  value_template: '{{ value | regex_findall_index("=([0-9]*)", 0) | multiply(0.000001) | round(0) }}'
 
-# HASS.io UpTime
-- platform: uptime
-  name: Hass.io Uptime
-
 # Database mariaDB
 - platform: sql
   db_url: !secret db_url
@@ -96,45 +92,59 @@
       friendly_name: "HA UpToDate geprüft"
 
 ## Stats Home ##################################################################
+# HASS.io UpTime https://www.home-assistant.io/integrations/uptime/
+- platform: uptime
+  name: Hass.io Uptime
+  #unit_of_measurement: minutes
 
 - platform: template
   sensors:
     hass_io_uptime_pretty:
       friendly_name: Hass.io Uptime
       value_template: >
+        {%- set up_time = as_timestamp(now())-as_timestamp(states('sensor.hass_io_uptime')) %}
+
         {% if states('sensor.hass_io_uptime') == '0.0' %} 
           Soeben neu gestartet...
         {% else %}
-        {% macro phrase(value, name) %}
-          {%- set value = value | int %}
+        {%- macro phrase(name, divisor, mod=None) %}
+          {%- set value = ((up_time // divisor) % (mod if mod else divisor)) | int %}
           {%- set end = 's' if value > 1 else '' %}
           {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
         {%- endmacro %}
 
-        {% set weeks = (states('sensor.hass_io_uptime') | int / 7) | int %}
-        {% set days = (states('sensor.hass_io_uptime') | int) - (weeks * 7) %}
-        {% set hours = (states('sensor.hass_io_uptime') | float - states('sensor.hass_io_uptime') | int) * 24 %}
-        {% set minutes = (hours - hours | int) * 60 %}
+        {%- set values = [
+          phrase('Woche', 60*60*24*7),
+          phrase('Tag', 60*60*24, 7),
+          phrase('Stunde', 60*60, 24),
+          phrase('Min.', 60),
+          phrase('Sek.', 1, 60)
+        ] | select('!=','') | list %}
 
-        {{ [ phrase(weeks, 'week'), phrase(days, 'day'), phrase(hours, 'hr'), phrase(minutes, 'min') ] | select('!=','') | list | join(', ') }}
+        {{ values[:-1] | join(', ') ~ ' and ' ~ values[-1] if values | length > 1 else values | first }}
         {% endif %}
 
     net_uptime_pretty:
       friendly_name: Verbunden
       value_template: >
+        {%- set up_time = as_timestamp(now())-as_timestamp(states('sensor.net_uptime')) %}
+
         {% if states('sensor.net_uptime') == '0.0' %} 
           Soeben neu gestartet...
         {% else %}
-        {% macro phrase(value, name) %}
-          {%- set value = value | int %}
+        {%- macro phrase(name, divisor, mod=None) %}
+          {%- set value = ((up_time // divisor) % (mod if mod else divisor)) | int %}
           {%- set end = 's' if value > 1 else '' %}
           {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
         {%- endmacro %}
 
-        {% set weeks = (states('sensor.net_uptime') | int / 7) | int %}
-        {% set days = (states('sensor.net_uptime') | int) - (weeks * 7) %}
-        {% set hours = (states('sensor.net_uptime') | float - states('sensor.net_uptime') | int) * 24 %}
-        {% set minutes = (hours - hours | int) * 60 %}
+        {%- set values = [
+          phrase('Woche', 60*60*24*7),
+          phrase('Tag', 60*60*24, 7),
+          phrase('Stunde', 60*60, 24),
+          phrase('Min.', 60),
+          phrase('Sek.', 1, 60)
+        ] | select('!=','') | list %}
 
         {{ [ phrase(weeks, 'week'), phrase(days, 'day'), phrase(hours, 'hr'), phrase(minutes, 'min') ] | select('!=','') | list | join(', ') }}
         {% endif %}
@@ -144,6 +154,7 @@
       entity_id: sensor.time
       value_template: >
         {% set up_time = as_timestamp(now()) - as_timestamp(states('sensor.last_boot')) %}
+
         {% set minutes = (up_time // 60) | int %}
         {% set hours = (minutes // 60) %}
         {% set days = (hours // 24) %}
@@ -151,6 +162,7 @@
         {% set minutes = (minutes % 60) %}
         {% set hours =  (hours % 24) %}
         {% set days = (days % 7) %}
+
         {% macro phrase(value, name) %}
           {%- set value = value %}
           {%- set end = 's' if value > 1 else '' %}
