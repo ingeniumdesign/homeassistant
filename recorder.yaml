@@ -33,6 +33,14 @@ include:
     - input_boolean.motion_sensor_kitchen_toggle
     - input_boolean.motion_sensor_restroom_toggle
     - sensor.fritz_netmonitor
+    - sensor.eingang_zw100_multisensor_1_air_temperature
+    - sensor.eingang_zw100_multisensor_1_humidity
+    - binary_sensor.eingang_zw100_multisensor_1_home_security_tampering_cover_removed
+    - binary_sensor.eingang_zw100_multisensor_1_home_security_motion_detected
+    - sensor.eingang_zw100_multisensor_1_illuminance
+    - binary_sensor.eingang_zw100_multisensor_1_sensor
+    - sensor.eingang_zw100_multisensor_1_ultraviolet
+    - sensor.eingang_zw100_multisensor_1_battery_level
     - switch.buro_dect200_1
     - sensor.buro_dect200_1_total_consumption
     - sensor.buro_dect200_1_current_power_w

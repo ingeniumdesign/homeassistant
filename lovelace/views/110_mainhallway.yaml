@@ -1,0 +1,43 @@
+icon: mdi:view-carousel-outline
+title: Flur
+path: mainhallway
+id: mainhallway
+cards:
+  ## ROW 1 ###################################################################################################################
+  - type: vertical-stack
+    cards:
+      - !include
+        - ../includes/titles.yaml
+        - title: RAUM INFOS
+
+      - type: "custom:simple-thermostat"
+        #style: !include ../includes/style_entities.yaml
+        entity: climate.schlafzimmer_dect301_1
+        name: Schlafzimmer Heizung
+        decimal: 0
+        step_size: 1.0
+        step_layout: column
+        label:
+          temperature: Innen
+        control:
+          _headings: false
+          hvac:
+            heat:
+              name: Heizen
+              icon: mdi:fire
+            "off":
+              name: Aus
+              icon: mdi:power
+          preset:
+            _name:
+        sensors:
+          - entity: sensor.dwd_weather_temperature
+            name: Außen
+          - entity: sensor.schlafzimmer_dect301_1_battery_level
+        style: |
+          ha-card .header__title {
+            font-size: 18px;
+          }
+          ha-card .mode-item {
+            background: var(--color-blue-bright-2)
+          }
