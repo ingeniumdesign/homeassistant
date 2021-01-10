@@ -1,6 +1,6 @@
 ## ING - Home Assistant Configuration :metal:
 
-This is my Home Assistant configuration. This is a Fork of [aFFekopp](https://github.com/aFFekopp/homeassistant).
+This is my Home Assistant configuration.
 <br/>My final Home Assistant (HA) Machine is a Intel NUC i5 ([NUC7i5BNB](https://ark.intel.com/content/www/de/de/ark/products/95064/intel-nuc-board-nuc7i5bnb.html)) with 16GB RAM and 250GB NVMe SSD [Amazon i5-10 *](https://amzn.to/35e8tYI)
 
 ---

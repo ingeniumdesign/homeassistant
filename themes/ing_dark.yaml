@@ -19,11 +19,11 @@ ING Dark:
   font-title: "var(--font-family-quicksand)"
 
   # Color
-  color-white: "rgba(255, 255, 255, 1)" #ffffff
-  color-white-dark: "rgba(234, 240, 249, 1)" #eaf0f9
+  color-white: "rgba(255,255,255,1)" #ffffff
+  color-white-dark: "rgba(234,240,249,1)" #eaf0f9
   color-red-1: "rgba(247,53,67,1)" #rot
   color-red-bright-1: "rgba(255,102,102,0.6)" #hell rot
-  color-red-error-1: rgba(255,153,0,1.0)" #default HA red rgb(219, 68, 55) --error-color
+  color-red-error-1: "rgba(255,153,0,1.0)" #default HA red rgb(219, 68, 55) --error-color
   color-error: "var(--error-color)" #default HA red rgb(219, 68, 55)
   color-lilac-bright-1: "rgba(31,142,250,0.9)" #hell flieder
   color-ocher-1: "rgba(222,176,107,1)" #ocker
@@ -42,10 +42,10 @@ ING Dark:
   text-color: "var(--color-white)"
   primary-text-color: "var(--color-white)"
   text-primary-color: "var(--color-white)"
-  secondary-text-color: "#BAC0C6"
-  text-medium-light-color: "#A0A2A8"
-  text-medium-color: "#80828A"
-  disabled-text-color: "#626569"
+  secondary-text-color: "rgba(186,192,198,1.0)"
+  text-medium-light-color: "rgba(160,162,168,1.0)"
+  text-medium-color: "rgba(128,130,138,1)"
+  disabled-text-color: "rgba(98,101,105,1)"
   primary-color: "var(--accent-color)"
 
   # Main Colors
@@ -66,7 +66,7 @@ ING Dark:
   ha-card-background: "var(--color-blue-deepdark-2)"
   ha-card-box-shadow: "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)"
   ha-card-border-radius: "0.25rem"
-  border-color: "rgba(45, 53, 82, 0)"
+  border-color: "rgba(45,53,82,0)"
 
   # Icons
   paper-item-icon-color: "var(--color-white-dark)"
@@ -104,7 +104,7 @@ ING Dark:
   # Popups
   mdc-dialog-scrim-color: "rgba(0,0,0,0.50)" # BG Overlay
   more-info-header-background: "var(--secondary-background-color)"
-  paper-dialog-background-color: "var(--background-color)" #'rgba(47,59,82,0.4)'
+  paper-dialog-background-color: "var(--background-color)"
 
   # Tables
   table-row-background-color: "var(--background-color)"
@@ -113,10 +113,10 @@ ING Dark:
   # Badges
   label-badge-background-color: "var(--background-color)"
   label-badge-text-color: "var(--text-primary-color)"
-  label-badge-red: "rgba(73,85,108,1)"
-  label-badge-blue: "rgba(26,137,245,1)"
-  label-badge-green: "rgba(0,202,139,1)"
-  label-badge-yellow: "rgba(222,176,107,1)"
+  label-badge-red: "var(--color-red-1)"
+  label-badge-blue: "var(--color-blue-1)"
+  label-badge-green: "var(--color-green-bright-1)"
+  label-badge-ocher: "var(--color-ocher-1)"
 
   paper-input-container-focus-color: "var(--accent-color)"
 
@@ -137,26 +137,6 @@ ING Dark:
   hacs-status-pending-restart: "var(--text-dark-color)"
   hacs-status-pending-update: "var(--accent-color)"
 
-  # Custom
-  custom_heading: "#ffffff"
-  custom_icon_light: "#ffffff"
-  custom_icon_dark: "#ffffff"
-  custom_card_background: "var(--ha-card-background)"
-  # hell rot
-  custom_motion_off: "rgba(255,102,102,0.6)"
-  # hell lila
-  custom_motion_detected: "rgba(31,142,250,0.9)"
-  # rot
-  custom_graph_color_1: "rgba(247,53,67,1)"
-  #oka
-  custom_graph_color_2: "rgba(222,176,107,1)"
-  #hell grün
-  custom_graph_color_3: "rgba(0,202,139,1)"
-  #lila
-  custom_graph_color_4: "rgba(139,64,156,1)"
-  #orange
-  custom_graph_color_5: "rgba(255,153,0,1)"
-
   # Card-Mod
   card-mod-theme: "ING Dark"
 
@@ -168,7 +148,7 @@ ING Dark:
         background-color: rgba(0,0,0,0.50);
       }
       .mdc-dialog .mdc-dialog__scrim {
-        background-color: rgba(0,0,0,0.50) !important;
+        background-color: var(--mdc-dialog-scrim-color) !important;
       }
       .mdc-dialog .mdc-dialog__container .mdc-dialog__surface {
         background: none !important;
@@ -178,7 +158,7 @@ ING Dark:
       .mdc-dialog .mdc-dialog__container .mdc-dialog__surface .mdc-dialog__content {
         backdrop-filter: blur(5px) brightness(95%);
         -webkit-backdrop-filter: blur(5px) brightness(95%);
-        background-color: rgba(0,0,0,0.50);
+        background-color: var(--mdc-dialog-scrim-color);
       }
       :host {
         background: none !important;
@@ -191,6 +171,9 @@ ING Dark:
       .mdc-tab-bar {
         backdrop-filter: blur(5px) brightness(95%);
         -webkit-backdrop-filter: blur(5px) brightness(95%);
-        background-color: rgba(0,0,0,0.50);
+        background-color: var(--mdc-dialog-scrim-color);
       }
     .: |
+      .heading {
+        border-bottom: none !important;
+      }

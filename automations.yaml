@@ -1,3 +1,15 @@
+- alias: 'Telegram bot that reply pong to ping'
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: '/ping'
+  action:
+    - service: notify.ha_message_group
+      data:
+        title: '*Home Assistant Test*'
+        message: 'pong'
+
 - id: "Hass Startup Notification"
   alias: 'Hass Startup Notification'
   trigger:
@@ -41,18 +53,6 @@
     data:
       title: '*Home Assistant Info*'
       message: 'Die Sonne ist untergegangen.'
-
-- alias: 'Telegram bot that reply pong to ping'
-  trigger:
-    platform: event
-    event_type: telegram_command
-    event_data:
-      command: '/ping'
-  action:
-    - service: notify.ha_message_group
-      data:
-        title: '*Home Assistant Test*'
-        message: 'pong'
 
 - alias: "EAW Abholtermine - Abfall"
   trigger:

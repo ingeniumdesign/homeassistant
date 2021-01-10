@@ -125,21 +125,21 @@ cards:
                   name: CPU
                   hours_to_show: 12
                   points_per_hour: 4
-                  line_color: var(--custom_graph_color_1)
+                  line_color: var(--color-red-1)
               - !include
                 - ../includes/graphs_embeded.yaml
                 - entity: sensor.memory_use_percent
                   name: Memory
                   hours_to_show: 12
                   points_per_hour: 4
-                  line_color: var(--custom_graph_color_2)
+                  line_color: var(--color-ocher-1)
               - !include
                 - ../includes/graphs_embeded.yaml
                 - entity: sensor.disk_use_percent_home
                   name: Disk
                   hours_to_show: 12
                   points_per_hour: 4
-                  line_color: var(--custom_graph_color_3)
+                  line_color: var(--color-green-bright-1)
           - type: entities
             style: !include ../includes/style_entities_embeded.yaml
             entities:
@@ -172,21 +172,21 @@ cards:
                     name: CPU
                     hours_to_show: 12
                     points_per_hour: 4
-                    line_color: var(--custom_graph_color_1)
+                    line_color: var(--color-red-1)
                 - !include
                   - ../includes/graphs_embeded.yaml
                   - entity: sensor.basti_nas_memory_usage_real
                     name: Memory
                     hours_to_show: 12
                     points_per_hour: 4
-                    line_color: var(--custom_graph_color_2)
+                    line_color: var(--color-ocher-1)
                 - !include
                   - ../includes/graphs_embeded.yaml
                   - entity: sensor.basti_nas_temperature
                     name: Temperatur
                     hours_to_show: 12
                     points_per_hour: 4
-                    line_color: var(--custom_graph_color_3)
+                    line_color: var(--color-green-bright-1)
             - type: entities
               style: !include ../includes/style_entities_embeded.yaml
               entities:
@@ -326,11 +326,13 @@ cards:
             card:
               type: logbook
               entities:
+                - climate.buro_dect301_1
+                - climate.schlafzimmer_dect301_1
                 - synology_dsm.reboot
-                - vacuum.toggle
-                - automation.trigger
+                - vacuum.xiaomi_vacuum_cleaner
                 - automation.eaw_abholtermine_abfall
-                - telegram_bot.send_message
+                - notify.ha_message
+                - notify.ha_message_group
               hours_to_show: 24
 
       #- type: custom:stack-in-card
