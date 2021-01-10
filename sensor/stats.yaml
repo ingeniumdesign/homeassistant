@@ -109,19 +109,18 @@
         {% else %}
         {%- macro phrase(name, divisor, mod=None) %}
           {%- set value = ((up_time // divisor) % (mod if mod else divisor)) | int %}
-          {%- set end = 's' if value > 1 else '' %}
           {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
         {%- endmacro %}
 
         {%- set values = [
-          phrase('Woche', 60*60*24*7),
-          phrase('Tag', 60*60*24, 7),
-          phrase('Stunde', 60*60, 24),
+          phrase('W.', 60*60*24*7),
+          phrase('T.', 60*60*24, 7),
+          phrase('Std.', 60*60, 24),
           phrase('Min.', 60),
           phrase('Sek.', 1, 60)
         ] | select('!=','') | list %}
 
-        {{ values[:-1] | join(', ') ~ ' and ' ~ values[-1] if values | length > 1 else values | first }}
+        {{ values[:-1] | join(', ') ~ ' ' ~ values[-1] if values | length > 1 else values | first }}
         {% endif %}
 
     net_uptime_pretty:
@@ -134,45 +133,41 @@
         {% else %}
         {%- macro phrase(name, divisor, mod=None) %}
           {%- set value = ((up_time // divisor) % (mod if mod else divisor)) | int %}
-          {%- set end = 's' if value > 1 else '' %}
           {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
         {%- endmacro %}
 
         {%- set values = [
-          phrase('Woche', 60*60*24*7),
-          phrase('Tag', 60*60*24, 7),
-          phrase('Stunde', 60*60, 24),
+          phrase('W.', 60*60*24*7),
+          phrase('T.', 60*60*24, 7),
+          phrase('Std.', 60*60, 24),
           phrase('Min.', 60),
           phrase('Sek.', 1, 60)
         ] | select('!=','') | list %}
 
-        {{ [ phrase(weeks, 'week'), phrase(days, 'day'), phrase(hours, 'hr'), phrase(minutes, 'min') ] | select('!=','') | list | join(', ') }}
+        {{ values[:-1] | join(', ') ~ ' ' ~ values[-1] if values | length > 1 else values | first }}
         {% endif %}
 
     nuc_uptime:
       friendly_name: NUC Uptime
       entity_id: sensor.time
       value_template: >
-        {% set up_time = as_timestamp(now()) - as_timestamp(states('sensor.last_boot')) %}
+        {%- set up_time = as_timestamp(now())-as_timestamp(states('sensor.last_boot')) %}
 
-        {% set minutes = (up_time // 60) | int %}
-        {% set hours = (minutes // 60) %}
-        {% set days = (hours // 24) %}
-        {% set weeks = (days // 7) %}
-        {% set minutes = (minutes % 60) %}
-        {% set hours =  (hours % 24) %}
-        {% set days = (days % 7) %}
-
-        {% macro phrase(value, name) %}
-          {%- set value = value %}
-          {%- set end = 's' if value > 1 else '' %}
+        {% if states('sensor.last_boot') == '0.0' %}
+          Soeben neu gestartet...
+        {% else %}
+        {%- macro phrase(name, divisor, mod=None) %}
+          {%- set value = ((up_time // divisor) % (mod if mod else divisor)) | int %}
           {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
         {%- endmacro %}
-                    
-        {% set text = [ phrase(weeks, 'week'), phrase(days, 'day'), phrase(hours, 'hr'), phrase(minutes, 'min') ] | select('!=','') | list | join(', ') %}
-        {% set last_comma = text.rfind(',') %}
-        {% if last_comma != -1 %}
-          {% set text = text[:last_comma] + ',' + text[last_comma + 1:] %}
-        {% endif %}
 
-        {{ text }}
+        {%- set values = [
+          phrase('W.', 60*60*24*7),
+          phrase('T.', 60*60*24, 7),
+          phrase('Std.', 60*60, 24),
+          phrase('Min.', 60),
+          phrase('Sek.', 1, 60)
+        ] | select('!=','') | list %}
+
+        {{ values[:-1] | join(', ') ~ ' ' ~ values[-1] if values | length > 1 else values | first }}
+        {% endif %}
