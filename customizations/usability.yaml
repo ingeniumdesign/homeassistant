@@ -135,5 +135,9 @@ sensor.basti_nas_network_down:
   icon: mdi:inbox-arrow-down
 vacuum.xiaomi_vacuum_cleaner:
   friendly_name: Wallie
+sensor.opensky:
+  friendly_name: openSky
+  unit_of_measurement: Flugzeuge
+  attribution: "Wieviele Flugzeuge sind über unserem Haus?"
 input_select.sensor_frontdoortest:
   friendly_name: Haustür TEST
