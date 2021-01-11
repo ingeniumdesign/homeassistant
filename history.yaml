@@ -64,4 +64,5 @@ include:
     - sensor.solar_elevation
     - sensor.dwd_weather_humidity
     - sensor.dwd_weather_temperature
+    - sensor.opensky
     - input_select.sensor_frontdoortest

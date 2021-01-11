@@ -61,6 +61,10 @@ _More Screenshot down below._
 - [MariaDB](https://home-assistant.io/addons/mariadb/)
 - [OpenZWave (beta)](https://www.home-assistant.io/integrations/ozw) - RaZberry 2
 - [deCONZ](https://www.home-assistant.io/integrations/deconz/) - Conbee II
+- [OpenSky Network](https://opensky-network.org/)
+- [Speedtest.net](https://www.speedtest.net/)
+- [Samsung Smart TV](https://www.home-assistant.io/integrations/samsungtv/)
+- [MQTT](https://www.home-assistant.io/integrations/mqtt/)
 
 ## Custom Components
 
