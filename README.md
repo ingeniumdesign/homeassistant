@@ -70,6 +70,11 @@ _More Screenshot down below._
 
 - [Alexa Media Player](https://github.com/custom-components/alexa_media_player)
 - [HACS (Home Assistant Community Store)](https://hacs.xyz)
+  - HACS  
+  - SamsungTV Tizen
+  - Monitor Docker
+  - browser_mod
+  - ICS
 - [Lovelace Gen](https://github.com/thomasloven/hass-lovelace_gen)
 
 ## Lovelace Plugins
