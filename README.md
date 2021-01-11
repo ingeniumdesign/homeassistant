@@ -101,7 +101,7 @@ _More Screenshot down below._
 All of my automations are in Home Assistant - automations.yaml and with NODE-RED:
 
 #### NODE-RED Plugins:
-
+- [node-red-contrib-alexa-remote2](https://flows.nodered.org/node/node-red-contrib-alexa-remote2)
 - [node-red-contrib-amazon-echo](https://flows.nodered.org/node/node-red-contrib-amazon-echo)
 
 #### Automation:

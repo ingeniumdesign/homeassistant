@@ -1,0 +1,7 @@
+sensor_frontdoortest:
+  name: Front Door
+  options:
+    - geöffnet
+    - geschlossen
+  initial: geschlossen
+  icon: mdi:door
