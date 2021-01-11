@@ -98,10 +98,16 @@ _More Screenshot down below._
 
 ## Automations :green_heart:
 
-All of my automations are in Home Assistant - automations.yaml:
+All of my automations are in Home Assistant - automations.yaml and with NODE-RED:
 
-- [x] Quick-Infos when leaving the house
-- [x] Weather-Infos for one Week
+#### NODE-RED Plugins:
+
+- [node-red-contrib-amazon-echo](https://flows.nodered.org/node/node-red-contrib-amazon-echo)
+
+#### Automation:
+
+- [ ] Quick-Infos when leaving the house
+- [ ] Weather-Infos for one Week
 - [ ] turning Hue motion sensors off on demand
 - [x] notification via telegram
 - [ ] presence detection with different states like zone
@@ -113,7 +119,7 @@ All of my automations are in Home Assistant - automations.yaml:
 - [x] NAS Infos and Stats
 - [x] Network Infos from Fritzbox
 - [x] SpeedTest.net Infos for the Network
-- [x] Settings for the different sensors, Lights, Motion detector...
+- [ ] Settings for the different sensors, Lights, Motion detector...
 - [ ] and many more...
 
 ## Aditional Screenshots
