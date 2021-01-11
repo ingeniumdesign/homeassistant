@@ -135,3 +135,5 @@ sensor.basti_nas_network_down:
   icon: mdi:inbox-arrow-down
 vacuum.xiaomi_vacuum_cleaner:
   friendly_name: Wallie
+input_select.sensor_frontdoortest:
+  friendly_name: Haustür TEST

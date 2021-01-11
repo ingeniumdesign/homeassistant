@@ -67,6 +67,7 @@ include:
     - sensor.solar_elevation
     - sensor.dwd_weather_humidity
     - sensor.dwd_weather_temperature
+    - input_select.sensor_frontdoortest
 
 exclude:
   entity_globs:

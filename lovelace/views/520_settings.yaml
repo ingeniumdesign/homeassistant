@@ -45,6 +45,18 @@ cards:
     cards:
       - !include
         - ../includes/titles.yaml
+        - title: TEST SENSOREN & SCHALTER
+
+      - type: entities
+        show_header_toggle: false
+        style: !include ../includes/style_entities.yaml
+        entities:
+          - input_select.sensor_frontdoortest
+
+  - type: vertical-stack
+    cards:
+      - !include
+        - ../includes/titles.yaml
         - title: EINSTELLUNGEN
 
       - type: entities
