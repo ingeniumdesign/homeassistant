@@ -57,6 +57,8 @@ _More Screenshot down below._
 - [Hass.io Google Drive Backup](https://github.com/sabeechen/hassio-google-drive-backup)
 - [Mosquitto broker](https://home-assistant.io/addons/mosquitto/)
 - [Node-RED](https://github.com/hassio-addons/addon-node-red)
+  - node-red-contrib-mytimeout
+  - node-red-contrib-alexa-remote2
 - [ESPHome](https://esphome.io/)
 - [MariaDB](https://home-assistant.io/addons/mariadb/)
 - [OpenZWave (beta)](https://www.home-assistant.io/integrations/ozw) - RaZberry 2
