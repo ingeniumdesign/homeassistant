@@ -112,6 +112,12 @@ sensor.cpu_temp:
 sensor.cpu_speed:
   friendly_name: CPU Speed
   icon: mdi:pulse
+sensor.disk_use_percent_home:
+  friendly_name: Speicher verwendet /home
+sensor.disk_use_percent:
+  friendly_name: Speicher verwendet
+sensor.disk_use:
+  friendly_name: Speicher verwendet
 switch.basti_nuc:
   friendly_name: Computer NUC
   icon: mdi:desktop-tower
