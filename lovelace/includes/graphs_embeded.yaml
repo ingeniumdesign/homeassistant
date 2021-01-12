@@ -34,3 +34,4 @@ show:
   extrema: {{ extrema|default('false') }}
   icon: {{ show_icon|default('true') }}
   name: {{ show_name|default('true') }}
+  labels: {{ show_labels|default('false') }}
