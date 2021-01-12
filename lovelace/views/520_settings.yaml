@@ -64,6 +64,7 @@ cards:
         style: !include ../includes/style_entities.yaml
         entities:
           - input_boolean.notifications
+          - input_boolean.notify_dooropen
 
   - type: vertical-stack
     cards:

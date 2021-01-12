@@ -1,2 +1,5 @@
-button_stats:
-  name: Statistiken
+button_logbook:
+  name: Logbuch
+
+button_battery:
+  name: Batterien
