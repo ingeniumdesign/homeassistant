@@ -20,10 +20,10 @@ www/community
 home-assistant.log
 home-assistant_v2.db
 known_devices.yaml
+options.xml
+pyozw.sqlite
 secrets.yaml
 zigbee.db
-pyozw.sqlite
-options.xml
 
 # Ignore files OpenZwave
 OZW_Log.txt
