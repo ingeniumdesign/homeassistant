@@ -115,19 +115,22 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 - [node-red-contrib-alexa-remote2](https://flows.nodered.org/node/node-red-contrib-alexa-remote2)
 - [node-red-contrib-amazon-echo](https://flows.nodered.org/node/node-red-contrib-amazon-echo)
 
-#### Automation:
+#### Automation / Features:
 
 - [ ] Quick-Infos when leaving the house
+- [x] Frontdoor is longer open XX Minutes, Alexa Info
+- [x] Motion Sensor, Edit Time, Lights Control
 - [ ] Weather-Infos for one Week
 - [ ] turning Hue motion sensors off on demand
 - [x] notification via telegram
 - [ ] presence detection with different states like zone
 - [x] Trash Calendar with notification
 - [x] Vacuum Infos and Start/Stop Functions
-- [x] HA and Plugin Update Infos
-- [x] Frontend Reload, Restart HA and Server restart
-- [x] Pi3 Infos and Stats
-- [x] NAS Infos and Stats
+- [x] HA and Plugin Update Infos.
+- [x] Lovelace Restart, Frontend/Theme Reload, Restart HA and Server Restart.
+- [x] Intel NUC Infos and Stats.
+- [x] Synology NAS Infos and Stats.
+- [x] Device Battery Infos and Stats.
 - [x] Network Infos from Fritzbox
 - [x] SpeedTest.net Infos for the Network
 - [ ] Settings for the different sensors, Lights, Motion detector...
