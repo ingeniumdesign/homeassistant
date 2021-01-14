@@ -128,13 +128,14 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
   - Stove or oven still on?
   - Heating-System´s turn down.
 - [x] Frontdoor is longer open XX Minutes, Alexa Info
+- [x] Trash Calendar with notification
+- [x] Zones for different people
+- [ ] presence detection with different states like zone
 - [x] Motion Sensor, Edit Time, Lights Control
 - [ ] Weather-Infos for one Week
 - [x] Show Planes over the house
 - [ ] turning Hue motion sensors off on demand
 - [x] notification via telegram
-- [ ] presence detection with different states like zone
-- [x] Trash Calendar with notification
 - [x] Vacuum Infos and Start/Stop Functions
 - [x] HA and Plugin Update Infos.
 - [x] Lovelace Restart, Frontend/Theme Reload, Restart HA and Server Restart.
