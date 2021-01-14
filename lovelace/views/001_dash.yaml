@@ -377,7 +377,7 @@ cards:
                 color: var(--accent-color)
             name: Temperatur
             align_state: center
-            align_icon: right
+            align_icon: left
             font_size: 60
             font_size_header: 11
             hours_to_show: 48
@@ -461,6 +461,47 @@ cards:
               #  action: none
               #hold_action:
               #  action: none
+
+      ## Other Sensor ##
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.opensky
+            name: Flugzeuge ü. Haus + 20km
+            align_icon: left
+            align_state: center
+            hours_to_show: 24
+            points_per_hour: 1
+            font_size: 60
+            font_size_header: 11
+            line_color: var(--accent-color)
+            line_width: 4
+            animate: true
+            bar_spacing: 2
+            show:
+              graph: bar
+              labels: true
+              labels_secondary: true
+            tap_action:
+              action: none
+            style: |
+              ha-card {
+                border: solid 1px var(--border-color);
+                font-family: var(--primary-font-family);
+                margin-top: 5px;
+                margin-bottom: 5px;
+              }
+              .graph {
+                padding-top: 15px;
+                padding-bottom: 0px;
+              }
+              .info {
+                padding-bottom: 0px;
+              }
+              .flex {
+                padding-bottom: 10px;
+              }
 
       ## VACUUM ROBOROCK S6 - XIAOMI
       - !include
