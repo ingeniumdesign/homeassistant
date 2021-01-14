@@ -130,7 +130,7 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 - [x] Lovelace Restart, Frontend/Theme Reload, Restart HA and Server Restart.
 - [x] Intel NUC Infos and Stats.
 - [x] Synology NAS Infos and Stats.
-- [x] Device Battery Infos and Stats.
+- [x] Device, Sensor... Battery Infos and Stats.
 - [x] Network Infos from Fritzbox
 - [x] SpeedTest.net Infos for the Network
 - [ ] Settings for the different sensors, Lights, Motion detector...
