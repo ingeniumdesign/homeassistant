@@ -121,6 +121,12 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 #### Automation / Features:
 
 - [ ] Quick-Infos when leaving the house
+  - All windows closed?
+  - Living-Room devices still on?
+  - Iron still on?
+  - Lights still on?
+  - Stove or oven still on?
+  - Heating-System´s turn down.
 - [x] Frontdoor is longer open XX Minutes, Alexa Info
 - [x] Motion Sensor, Edit Time, Lights Control
 - [ ] Weather-Infos for one Week
