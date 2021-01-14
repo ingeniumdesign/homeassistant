@@ -20,7 +20,7 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 
 ## Screenshot
 
-![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-dash.JPG)
+![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/ha-dash.JPG)
 _More Screenshot down below._
 
 ## Hardware
@@ -47,6 +47,8 @@ _More Screenshot down below._
 - ZyXEL [GS1900-8](https://www.zyxel.com/de/de/products_services/8-10-16-24-48-port-GbE-Smart-Managed-Switch-GS1900-Series/) - [Amazon *](https://amzn.to/357BQMo)
 
 ## Hass.io Addons
+
+![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/ha-logo-small.png)
 
 - Check Home Assistant configuration
 - [File editor](https://github.com/home-assistant/addons/tree/master/configurator)
@@ -140,10 +142,10 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 
 #### PC
 
-![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-dash.JPG) Dashboard | ![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-dash2.JPG) Popup with Blur-Effect
+![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/ha-dash.JPG) Dashboard | ![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/ha-dash2.JPG) Popup with Blur-Effect
 :-------------------------:|:-------------------------:
-![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-dash3.JPG) Active Vacuum | ![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-system.JPG) System Overview
-![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/hs-office.JPG) Room - Office |
+![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/ha-dash3.JPG) Active Vacuum | ![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/ha-system.JPG) System Overview
+![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/ha-settings.JPG) Settings Overview | ![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/ha-office.JPG) Room - Office
 
 ## Install - Infos :point_up:
 
@@ -164,9 +166,9 @@ Check this install Guide after the "main Install". Dont use the Install part. <b
 Use this Guide to Check the migration from Pi to NUC. Dont use the Install part. <br />
 [community.home-assistant.io](https://community.home-assistant.io/t/a-successful-migration-from-pi-3-to-intel-nuc/189992)
 
-### Portainer - Docker Overview
+### Portainer CE - Docker Overview
 
-![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/portainer-3.JPG) Container list
+![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/portainer.JPG) Container list
 
 
 ### HA on Raspbarry Pi 3B+
