@@ -124,6 +124,7 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 - [x] Frontdoor is longer open XX Minutes, Alexa Info
 - [x] Motion Sensor, Edit Time, Lights Control
 - [ ] Weather-Infos for one Week
+- [x] Show Planes over the house
 - [ ] turning Hue motion sensors off on demand
 - [x] notification via telegram
 - [ ] presence detection with different states like zone
