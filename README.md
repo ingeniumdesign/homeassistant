@@ -33,7 +33,7 @@ _More Screenshot down below._
 - AVM [FRITZ!Powerline 1260E Set](https://avm.de/produkte/fritzpowerline/fritzpowerline-1260e-wlan-set/) - [Amazon *](https://amzn.to/35a7gSv)
 - Phoscon [Conbee II USB](https://phoscon.de/de/conbee2) - [Amazon *](https://amzn.to/3n7jgu0) - for Zigbee using ZHA integration <br />
   _See the Install Pi3 Infos down below: Conbee II USB for the RPi 3B+_
-- Z-Wave [RaZberry 2 Modul](https://z-wave.me/products/razberry/) ZMEERAZ2 - [Amazon *](https://amzn.to/3nchsA1) - for ZWave <br />
+- Z-Wave [RaZberry 2 Modul](https://z-wave.me/products/razberry/) ZMEERAZ2 (only for the Raspberry) - [Amazon *](https://amzn.to/3nchsA1) - for ZWave <br />
   _See the Install Pi3 Infos down below: Z-Wave RaZberry 2 Modul for the RPi 3B+_
 - AEOTEC [Z-Stick Gen5+ EU 868.4MHz](https://aeotec.com/z-wave-usb-stick/) ZW090-C - for ZWave <br />
   _For the Intel NUC i5 Upgrade_
@@ -57,13 +57,14 @@ _More Screenshot down below._
   <br />Fritzbox Install [Configs](https://www.duckdns.org/install.jsp)
   <br />_edit: configuration.yaml => http_
 - [Hass.io Google Drive Backup](https://github.com/sabeechen/hassio-google-drive-backup)
+  <br />Backup to a second HDD: `ln -s /home/backup-ha/ /usr/share/hassio/backup`
 - [Mosquitto broker](https://home-assistant.io/addons/mosquitto/)
 - [Node-RED](https://github.com/hassio-addons/addon-node-red)
   - node-red-contrib-mytimeout
   - node-red-contrib-alexa-remote2
 - [ESPHome](https://esphome.io/)
 - [MariaDB](https://home-assistant.io/addons/mariadb/)
-- [OpenZWave (beta)](https://www.home-assistant.io/integrations/ozw) - RaZberry 2
+- [OpenZWave (beta)](https://www.home-assistant.io/integrations/ozw) - Z-Stick Gen5+ or RaZberry 2
 - [deCONZ](https://www.home-assistant.io/integrations/deconz/) - Conbee II
 - [OpenSky Network](https://opensky-network.org/)
 - [Speedtest.net](https://www.speedtest.net/)
@@ -106,7 +107,7 @@ _More Screenshot down below._
 - [weather-card](https://github.com/bramkragten/weather-card)
 - [state-switch](https://github.com/thomasloven/lovelace-state-switch)
 - [vacuum-card](https://github.com/denysdovhan/vacuum-card)
-- [custom-sidebar](https://github.com/DBuit/sidebar-card)
+- [custom-sidebar](https://github.com/DBuit/sidebar-card) - deactivated
 
 
 ## Automations :green_heart:
