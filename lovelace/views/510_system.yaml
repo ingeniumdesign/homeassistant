@@ -338,18 +338,20 @@ cards:
                     from: 0
                     to: 20
                   - color: var(--color-orange-1)
-                    from: 26
-                    to: 30
+                    from: 21
+                    to: 50
                   - color: var(--color-ocher-1)
                     from: 51
-                    to: 40
+                    to: 70
               show_empty: true
               filter:
                 include:
                   - entity_id: sensor.*.battery_level*
-                    state: <=30
+                    state: <=90
                   - entity_id: sensor.*.akkufullstand*
-                    state: <=20
+                    state: <=90
+                  - entity_id: sensor.*.battery_state*
+                    state: <=90
                 #exclude:
                 #  - entity_id: sensor.*.battery_level*
 
