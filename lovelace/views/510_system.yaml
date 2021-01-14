@@ -347,11 +347,11 @@ cards:
               filter:
                 include:
                   - entity_id: sensor.*.battery_level*
-                    state: <=90
+                    state: <=20
                   - entity_id: sensor.*.akkufullstand*
-                    state: <=90
+                    state: <=30
                   - entity_id: sensor.*.battery_state*
-                    state: <=90
+                    state: <=30
                 #exclude:
                 #  - entity_id: sensor.*.battery_level*
 
