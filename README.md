@@ -37,7 +37,7 @@ _More Screenshot down below._
   _See the Install Pi3 Infos down below: Z-Wave RaZberry 2 Modul for the RPi 3B+_
 - AEOTEC [Z-Stick Gen5+ EU 868.4MHz](https://aeotec.com/z-wave-usb-stick/) ZW090-C - for ZWave <br />
   _For the Intel NUC i5 Upgrade_
-- Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Amazon *](https://amzn.to/38eLmPX)
+- Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Xiaomi Cloud Tokens Extractor](https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor) - [Amazon *](https://amzn.to/38eLmPX)
 - AEOTEC [Plus Multisensor 6 EU 868.4MHz](https://aeotec.com/z-wave-sensor/) ZW100-C - [Amazon *](https://amzn.to/38YJoCm)
 - Amazon [FireHD 10 Tablet *](https://amzn.to/3oicZNp)
 - Amazon 1x [Echo Dot (4. Gen.) *](https://amzn.to/3ncrktE)
@@ -53,6 +53,7 @@ _More Screenshot down below._
 - Check Home Assistant configuration
 - [File editor](https://github.com/home-assistant/addons/tree/master/configurator)
 - [Terminal & SSH](https://github.com/home-assistant/addons/tree/master/ssh)
+- [Visual Studio Code](https://github.com/hassio-addons/addon-vscode) with git / I use the IDE [PHPstorm](https://www.jetbrains.com/de-de/phpstorm/) with git
 - [duckDNS Addon](https://github.com/home-assistant/addons/tree/master/duckdns) / [duckDNS](https://www.duckdns.org/)
   <br />Fritzbox Install [Configs](https://www.duckdns.org/install.jsp)
   <br />_edit: configuration.yaml => http_
@@ -136,6 +137,8 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 - [x] Show Planes over the house
 - [ ] turning Hue motion sensors off on demand
 - [x] notification via telegram
+  - Telegram Bot for the "Family Group" - _**Info:** Invite the "GetIDs Bot" in Group for Bot-ID -100XXXXX_
+  - HA Info stop or restart
 - [x] Vacuum Infos and Start/Stop Functions
 - [x] HA and Plugin Update Infos.
 - [x] Lovelace Restart, Frontend/Theme Reload, Restart HA and Server Restart.
