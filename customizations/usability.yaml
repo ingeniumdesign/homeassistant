@@ -15,26 +15,26 @@ input_number.kwh_cost:
   friendly_name: Kosten für eine kWh
   icon: mdi:currency-eur
   unit_of_measurement: €
-sensor.eingang_zw100_multisensor_1_air_temperature:
+sensor.mainhallway_zw100_multisensor_1_air_temperature:
   friendly_name: Flur Temperatur
-sensor.eingang_zw100_multisensor_1_humidity:
+sensor.mainhallway_zw100_multisensor_1_humidity:
   friendly_name: Flur Luftfeuchtigkeit
-binary_sensor.eingang_zw100_multisensor_1_home_security_tampering_cover_removed:
+binary_sensor.mainhallway_zw100_multisensor_1_home_security_tampering_cover_removed:
   friendly_name: Flur Sicherheit
-binary_sensor.eingang_zw100_multisensor_1_home_security_motion_detected:
+binary_sensor.mainhallway_zw100_multisensor_1_home_security_motion_detected:
   friendly_name: Flur Sensor Bewegung
-sensor.eingang_zw100_multisensor_1_illuminance:
+sensor.mainhallway_zw100_multisensor_1_illuminance:
   friendly_name: Flur Helligkeit
-binary_sensor.eingang_zw100_multisensor_1_sensor:
+binary_sensor.mainhallway_zw100_multisensor_1_sensor:
   friendly_name: Flur Bewegungsmelder
   #device_class: moving
   #icon: mdi:motion-sensor
   #state_icon:
   #  "On": mdi:motion-sensor
   #  "Off": mdi:motion-sensor-off
-sensor.eingang_zw100_multisensor_1_ultraviolet:
+sensor.mainhallway_zw100_multisensor_1_ultraviolet:
   friendly_name: Flur UV-Strahlung
-sensor.eingang_zw100_multisensor_1_battery_level:
+sensor.mainhallway_zw100_multisensor_1_battery_level:
   friendly_name: Flur Multisensor Batterie
 switch.buro_dect200_1:
   friendly_name: Büro Steckdose 1

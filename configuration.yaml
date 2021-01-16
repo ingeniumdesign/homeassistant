@@ -281,7 +281,8 @@ input_select: !include_dir_merge_named input_select
 input_number: !include_dir_merge_named input_number
 
 #group: !include groups.yaml
-automation: !include automations.yaml
+#automation: !include automations.yaml
+automation: !include_dir_merge_list automations
 
 scene: !include scenes.yaml
 script: !include_dir_merge_named scripts

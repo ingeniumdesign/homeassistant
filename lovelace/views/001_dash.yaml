@@ -377,7 +377,7 @@ cards:
                 padding-bottom: 10px;
               }
             entities:
-              - entity: sensor.eingang_zw100_multisensor_1_humidity
+              - entity: sensor.mainhallway_zw100_multisensor_1_humidity
                 name: Innen
                 color: "rgba(222,176,107,0.7)"
               - entity: sensor.dwd_weather_humidity
