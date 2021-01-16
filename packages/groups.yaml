@@ -1,6 +1,6 @@
 ## GROUPS #######################################################################
 # https://www.home-assistant.io/integrations/group/
 group:
-  motion-sensors:
+  motion_sensors:
     entities:
-      - binary_sensor.eingang_zw100_multisensor_1_sensor
+      - binary_sensor.mainhallway_zw100_multisensor_1_sensor

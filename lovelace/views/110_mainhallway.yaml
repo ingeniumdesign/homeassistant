@@ -53,10 +53,10 @@ cards:
           - type: entities
             style: !include ../includes/style_entities_embeded.yaml
             entities:
-              - sensor.eingang_zw100_multisensor_1_air_temperature
-              - binary_sensor.eingang_zw100_multisensor_1_home_security_motion_detected
-              - binary_sensor.eingang_zw100_multisensor_1_home_security_tampering_cover_removed
-              - sensor.eingang_zw100_multisensor_1_humidity
-              - sensor.eingang_zw100_multisensor_1_illuminance
-              - binary_sensor.eingang_zw100_multisensor_1_sensor
-              - sensor.eingang_zw100_multisensor_1_ultraviolet
+              - sensor.mainhallway_zw100_multisensor_1_air_temperature
+              - binary_sensor.mainhallway_zw100_multisensor_1_home_security_motion_detected
+              - binary_sensor.mainhallway_zw100_multisensor_1_home_security_tampering_cover_removed
+              - sensor.mainhallway_zw100_multisensor_1_humidity
+              - sensor.mainhallway_zw100_multisensor_1_illuminance
+              - binary_sensor.mainhallway_zw100_multisensor_1_sensor
+              - sensor.mainhallway_zw100_multisensor_1_ultraviolet

@@ -2,6 +2,6 @@
 
 #- platform: template
 #  sensors:
-#    eingang_zw100_multisensor_1_air_temperature:
+#    mainhallway_zw100_multisensor_1_air_temperature:
 #      friendly_name: "Temperatur"
 #      unit_of_measurement: '°C'
