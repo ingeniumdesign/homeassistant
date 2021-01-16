@@ -13,7 +13,6 @@ cards:
       - device_tracker.handy_sebastian
       - device_tracker.iphone_vr_smart
       - device_tracker.iphone_vr_smart_2
-      #- device_tracker.google_maps_109408471456601103538
       - zone.home
       - zone.sebastianarbeit
       - zone.juliaarbeit

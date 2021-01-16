@@ -34,35 +34,6 @@ button_card_templates:
     styles:
       card:
         - font-size: 14px
-    state:
-      - value: "Abwesend"
-        styles:
-          icon:
-            - filter: grayscale(80%) #blur(5px)
-      - value: "Lange Abwesend"
-        styles:
-          icon:
-            - filter: grayscale(100%)
-      - value: "Arbeit"
-        styles:
-          icon:
-            - filter: grayscale(100%)
-      - value: "Sebastian Arbeit"
-        styles:
-          icon:
-            - filter: grayscale(100%)
-      - value: "Julia Arbeit"
-        styles:
-          icon:
-            - filter: grayscale(100%)
-      - value: "Angekommen"
-        styles:
-          icon:
-            - filter: grayscale(30%)
-      - value: "Verlassen"
-        styles:
-          icon:
-            - filter: grayscale(100%)
     style: |
       img {
         width: 100% !important;

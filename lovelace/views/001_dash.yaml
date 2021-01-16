@@ -4,47 +4,6 @@ path: dashboard
 id: dash
 
 popup_cards:
-#  input_boolean.shortcut_mainhallway:
-#    title: Test
-#    card:
-#      type: custom:stack-in-card
-#      style: !include ../includes/style_entities_popup.yaml
-#      cards:
-#        - type: history-graph
-#          style: !include ../includes/style_entities_popup.yaml
-#          entities:
-#            - sensor.sebastian_status
-#        - type: entities
-#          style: !include ../includes/style_entities_popup.yaml
-#          entities:
-#            - device_tracker.handy_sebastian
-#  input_boolean.shortcut_livingroom:
-#    title: Wohnzimmer Status
-#    card:
-#      type: custom:stack-in-card
-#      style: !include ../includes/style_entities_popup.yaml
-#      cards:
-#        - type: horizontal-stack
-#          cards:
-#            - !include
-#              - ../includes/graphs_popup.yaml
-#              - entity: sensor.sebastian_status
-#                name: Test
-            #- !include
-            #  - type: entities
-            #    state_color: true
-            #    show_header_toggle: false
-            #    style: !include ../includes/style_entities_popup.yaml
-            #    entities:
-            #      - entity: media_player.samsung_tv_q9075
-            #        tap_action:
-            #          action: none
-            #      - entity: media_player.denon_avr_x4200w
-            #        tap_action:
-            #          action: none
-            #      - entity: media_player.vu_uno4k_se
-            #        tap_action:
-            #          action: none
   sensor.sebastian_status:
     title: Sebastian
     card:
@@ -73,7 +32,6 @@ popup_cards:
           style: !include ../includes/style_entities_popup.yaml
           entities:
             - device_tracker.iphone_vr_smart
-            - device_tracker.iphone_vr_smart_2
   device_tracker.handy_sebastian:
     title: Karte
     card:
@@ -166,6 +124,8 @@ cards:
                       ## BATTERY ##
                       - type: custom:button-card
                         template: people_button
+                        tap_action:
+                          action: none
                         entity: sensor.handy_sebastian_akkufullstand
                         show_state: true
                       ## MAP ICON ##
@@ -189,7 +149,9 @@ cards:
                       ## LAST CHANGED ##
                       - type: custom:button-card
                         template: people_button
-                        entity: sensor.sebastian_status
+                        tap_action:
+                          action: none
+                        entity: device_tracker.handy_sebastian
                         show_last_changed: true
           ## JULIA ##
           - type: custom:stack-in-card
@@ -225,6 +187,8 @@ cards:
                       ## BATTERY ##
                       - type: custom:button-card
                         template: people_button
+                        tap_action:
+                          action: none
                         entity: sensor.iphone_vr_smart_battery_level
                         show_state: true
                       ## MAP ICON ##
@@ -248,7 +212,9 @@ cards:
                       ## LAST CHANGED ##
                       - type: custom:button-card
                         template: people_button
-                        entity: sensor.iphone_vr_smart_activity
+                        tap_action:
+                          action: none
+                        entity: device_tracker.iphone_vr_smart
                         show_last_changed: true
 
       ## WEATHER
