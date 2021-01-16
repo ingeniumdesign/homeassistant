@@ -135,7 +135,7 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 - [x] Motion Sensor, Edit Time, Lights Control
 - [ ] Weather-Infos for one Week
 - [x] Show Planes over the house
-- [ ] turning Hue motion sensors off on demand
+- [x] Turning the AEOTEC Plus Multisensor 6 - motion sensors off on demand.
 - [x] notification via telegram
   - Telegram Bot for the "Family Group" - _**Info:** Invite the "GetIDs Bot" in Group for Bot-ID -100XXXXX_
   - HA Info stop or restart
