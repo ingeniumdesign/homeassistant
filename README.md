@@ -139,6 +139,7 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 - [x] notification via telegram
   - Telegram Bot for the "Family Group" - _**Info:** Invite the "GetIDs Bot" in Group for Bot-ID -100XXXXX_
   - HA Info stop or restart
+  - Monitor Sensor Crash with Notify
 - [x] Vacuum Infos and Start/Stop Functions
 - [x] HA and Plugin Update Infos.
 - [x] Lovelace Restart, Frontend/Theme Reload, Restart HA and Server Restart.
