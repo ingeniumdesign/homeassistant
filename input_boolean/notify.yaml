@@ -1,7 +1,3 @@
-notify_presence_sebastian:
-  name: Sebastian Location Status
-  icon: mdi:account
-
 notifications:
   name: Notification
   icon: mdi:telegram

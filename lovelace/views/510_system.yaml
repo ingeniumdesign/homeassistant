@@ -59,7 +59,7 @@ cards:
         cards:
           - type: "custom:button-card"
             template: dash_button
-            entity: zone.home
+            entity: sensor.time #fake
             icon: "mdi:restart"
             name: Lovelace Restart
             tap_action:
@@ -72,7 +72,7 @@ cards:
                 - color: var(--color-green-bright-1)
           - type: "custom:button-card"
             template: dash_button
-            entity: zone.home
+            entity: sensor.time #fake
             icon: "mdi:restart"
             name: Theme Restart
             tap_action:
@@ -85,7 +85,7 @@ cards:
                 - color: var(--color-green-bright-1)
           - type: "custom:button-card"
             template: dash_button
-            entity: zone.home
+            entity: sensor.time #fake
             icon: "mdi:restart"
             name: HA Restart
             tap_action:
@@ -98,7 +98,7 @@ cards:
                 - color: var(--color-orange-1)
           - type: "custom:button-card"
             template: dash_button
-            entity: zone.home
+            entity: sensor.time #fake
             icon: "mdi:restart"
             name: Server Restart
             tap_action:
@@ -376,38 +376,3 @@ cards:
                 - notify.ha_message
                 - notify.ha_message_group
               hours_to_show: 24
-
-      #- type: custom:stack-in-card
-      #  cards:
-      #    - type: "custom:button-card"
-      #      template: header_clickable
-      #      entity: input_boolean.button_stats
-      #      name: Lichter
-      #    - type: conditional
-      #      conditions:
-      #        - entity: input_boolean.button_stats
-      #          state: "on"
-      #      card:
-      #        type: custom:bar-card
-      #        positions:
-      #            icon: 'off'
-      #            indicator: 'off'
-      #            title: inside
-      #            value: inside
-      #        unit_of_measurement: "h"
-      #        columns: 5
-      #        height: 150px
-      #        target: 40
-      #        direction: up
-      #        color: '#d1c96f'
-      #        entities:
-      #          - entity: sensor.handy_sebastian_erkannte_aktivitat
-      #            title: Flur
-      #          # - entity: sensor.bad_licht
-      #            # title: Bad
-      #          # - entity: sensor.kueche_licht
-      #            # title: Küche
-      #          # - entity: sensor.wohnzimmer_licht
-      #            # title: Wohnz
-      #          # - entity: sensor.schlafzimmer_licht
-      #            # title: Schlafz
