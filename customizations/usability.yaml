@@ -154,5 +154,29 @@ sensor.opensky:
   friendly_name: openSky
   unit_of_measurement: Flugzeuge
   attribution: "Wieviele Flugzeuge sind über unserem Haus?"
+sensor.docker_cpu:
+  friendly_name: CPU
+  icon: mdi:cpu-64-bit
+sensor.docker_1cpu:
+  friendly_name: CPU
+  icon: mdi:cpu-64-bit
+sensor.docker_memory_percent:
+  friendly_name: Speicher verwendet
+sensor.docker_memory:
+  friendly_name: Speicher verwendet
+sensor.docker_containers_total:
+  friendly_name: Container
+sensor.docker_containers_running:
+  friendly_name: Container aktiv
+sensor.docker_containers_paused:
+  friendly_name: Container pause
+sensor.docker_containers_stopped:
+  friendly_name: Container gestoppt
+sensor.docker_images:
+  friendly_name: Speicherversionen
+  icon: mdi:cloud-braces
+sensor.docker_version:
+  friendly_name: Version
+  icon: mdi:toolbox
 input_select.sensor_frontdoortest:
   friendly_name: Haustür TEST
