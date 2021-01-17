@@ -31,6 +31,20 @@
       title: "*Info / Warning*"
       message: "Home Assistant ist herunter gefahren"
 
+- id: notify_home_assistant_update
+  alias: 'Notify Home Assistant Update'
+  description: "Send notification Home Assistant Update"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.updater
+      from: 'off'
+      to: 'on'
+  action:
+    - service: notify.ha_message_group
+      data:
+        title: "*Home Assistant Update*"
+        message: "Es gibt eine neue Home Assistant Version!"
+
 - id: notify_sun_rises
   alias: "Notify Sun rises"
   description: "Send notification when sun rises"
