@@ -54,4 +54,14 @@ include:
     - sensor.dwd_weather_humidity
     - sensor.dwd_weather_temperature
     - sensor.opensky
+    - sensor.docker_cpu
+    - sensor.docker_1cpu
+    - sensor.docker_memory_percent
+    - sensor.docker_memory
+    - sensor.docker_containers_total
+    - sensor.docker_containers_running
+    - sensor.docker_containers_paused
+    - sensor.docker_containers_stopped
+    - sensor.docker_images
+    - sensor.docker_version
     - input_select.sensor_frontdoortest
