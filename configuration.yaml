@@ -187,7 +187,7 @@ vacuum:
     host: 192.168.178.46
     token: !secret vacuum_roborock_s6_token
 
-## SPEEDTEST ###########################################################################
+## SPEEDTEST ############################################################################
 speedtestdotnet:
   server_id: 10010
   scan_interval:
@@ -196,6 +196,10 @@ speedtestdotnet:
     - ping
     - download
     - upload
+
+## DOCKER ############################################################################
+# https://github.com/ualex73/monitor_docker
+monitor_docker:
 
 #########################################################################################
 

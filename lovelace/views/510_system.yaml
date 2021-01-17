@@ -216,6 +216,25 @@ cards:
     cards:
       - !include
         - ../includes/titles.yaml
+        - title: DOCKER STATUS
+
+      - type: custom:stack-in-card
+        cards:
+          - type: entities
+            style: !include ../includes/style_entities_embeded.yaml
+            entities:
+              - sensor.docker_1cpu
+              - sensor.docker_cpu
+              - sensor.docker_memory
+              - sensor.docker_containers_total
+              - sensor.docker_containers_running
+              - sensor.docker_containers_paused
+              - sensor.docker_containers_stopped
+              - sensor.docker_images
+              - sensor.docker_version
+
+      - !include
+        - ../includes/titles.yaml
         - title: NETZMONITOR
 
       - type: custom:stack-in-card
