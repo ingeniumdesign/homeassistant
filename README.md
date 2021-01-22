@@ -14,6 +14,7 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 
 ![HAVERSION](https://img.shields.io/badge/homeassistant-2021.1.3-blue)
 ![STARS](https://img.shields.io/github/stars/ingeniumdesign/homeassistant?color=yellow&style=flat-square)
+![WATCHERS](https://img.shields.io/github/watchers/ingeniumdesign/homeassistant?color=green&style=flat-square)
 ![ISSUES](https://img.shields.io/github/issues-raw/ingeniumdesign/homeassistant?style=flat-square)
 ![LASTCOMMIT](https://img.shields.io/github/last-commit/ingeniumdesign/homeassistant?style=flat-square)
 ![SIZE](https://img.shields.io/github/repo-size/ingeniumdesign/homeassistant?style=flat-square)
@@ -42,6 +43,9 @@ _More Screenshot down below._
 - Amazon [FireHD 10 Tablet *](https://amzn.to/3oicZNp)
 - Amazon 1x [Echo Dot (4. Gen.) *](https://amzn.to/3ncrktE)
 - Amazon 1x [Echo Dot (3. Gen.) *](https://amzn.to/3hHu8xz)
+- Shelly 2x [2.5](https://shelly.cloud/products/shelly-25-smart-home-automation-relay/) - [Amazon *](https://amzn.to/38W9vuG)
+- Shelly 2x [1](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/) - [Amazon *](https://amzn.to/397NDNm)
+- Shelly 2x [1L](https://shelly.cloud/products/shelly-1l-single-wire-smart-home-automation-relay/) - [Amazon *](https://amzn.to/3paPwhT)
 - Synology [DS713+](https://www.synology.com/de-de/support/download/DS713+#system) - [Amazon *](https://amzn.to/3hHu8xz) // Buy the new [DS720+](https://www.synology.com/de-de/products/DS720+) [Amazon *](https://amzn.to/3rWErT1)
 - ZyXEL [GS1900-24E](https://www.zyxel.com/de/de/products_services/8-10-16-24-48-port-GbE-Smart-Managed-Switch-GS1900-Series/) - [Amazon *](https://amzn.to/391vcbR)
 - ZyXEL [GS1900-8](https://www.zyxel.com/de/de/products_services/8-10-16-24-48-port-GbE-Smart-Managed-Switch-GS1900-Series/) - [Amazon *](https://amzn.to/357BQMo)
@@ -76,11 +80,12 @@ _More Screenshot down below._
 
 - [Alexa Media Player](https://github.com/custom-components/alexa_media_player)
 - [HACS (Home Assistant Community Store)](https://hacs.xyz)
-  - HACS  
+  - HACS
   - SamsungTV Tizen
   - Monitor Docker
   - browser_mod
   - ICS
+  - Shelly (_Next testing with ShellyForHass_)
 - [Lovelace Gen](https://github.com/thomasloven/hass-lovelace_gen)
 
 ## Lovelace Plugins
