@@ -178,5 +178,8 @@ sensor.docker_images:
 sensor.docker_version:
   friendly_name: Version
   icon: mdi:toolbox
+switch.mainhallway_led_shelly_1l_84cca8ad7232:
+  friendly_name: Flur Shelly 1L
+  icon: mdi:credit-card-wireless
 input_select.sensor_frontdoortest:
   friendly_name: Haustür TEST

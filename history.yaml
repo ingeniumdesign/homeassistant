@@ -64,4 +64,5 @@ include:
     - sensor.docker_containers_stopped
     - sensor.docker_images
     - sensor.docker_version
+    - switch.mainhallway_led_shelly_1l_84cca8ad7232
     - input_select.sensor_frontdoortest
