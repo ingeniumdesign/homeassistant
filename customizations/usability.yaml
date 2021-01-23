@@ -130,22 +130,24 @@ sensor.disk_use:
 switch.basti_nuc:
   friendly_name: Computer NUC
   icon: mdi:desktop-tower
-sensor.basti_nas_cpu_load_total:
+device_tracker.ing_nas:
+  friendly_name: ING NAS
+sensor.ing_nas_cpu_load_total:
   friendly_name: CPU Load
   icon: mdi:cpu-64-bit
-sensor.basti_nas_volume_1_used_space:
+sensor.ing_nas_volume_1_used_space:
   friendly_name: Speicher verwendet
   icon: mdi:harddisk
-sensor.basti_nas_laufwerk_1_temperature:
+sensor.ing_nas_laufwerk_1_temperature:
   friendly_name: Temperatur LW 1
   icon: mdi:thermometer
-sensor.basti_nas_laufwerk_2_temperature:
+sensor.ing_nas_laufwerk_2_temperature:
   friendly_name: Temperatur LW 2
   icon: mdi:thermometer
-sensor.basti_nas_network_up:
+sensor.ing_nas_network_up:
   friendly_name: Netzwerk Upload
   icon: mdi:inbox-arrow-up
-sensor.basti_nas_network_down:
+sensor.ing_nas_network_down:
   friendly_name: Netzwerk Download
   icon: mdi:inbox-arrow-down
 vacuum.xiaomi_vacuum_cleaner:

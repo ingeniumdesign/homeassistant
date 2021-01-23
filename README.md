@@ -254,6 +254,7 @@ You find the System Configuration in this File: <br />
 - [x] **ERROR** ~~RAZBERRY2 Board dont work on the Pi3B+~~ [~~Community Forum~~](https://community.home-assistant.io/t/pi3b-setup-with-razberry-v2/264457)
 - [ ] **ERROR** kiosk-mode dont work from LoveLace UI
 - [ ] **ISSUE** Backup to a second HDD [Community Forum](https://community.home-assistant.io/t/snapshot-other-hdd/268439)
+- [ ] **WARNING** Updating opensky sensor took longer than the scheduled update interval [GitHub #45453](https://github.com/home-assistant/core/issues/45453)
 
 ### Say Thank You
 
