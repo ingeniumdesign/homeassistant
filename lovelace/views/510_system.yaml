@@ -217,6 +217,7 @@ cards:
 
             **INFO:** täglich um 2:00 Uhr schaltet sich die NAS automatisch aus.
 
+      # Shelly Overview
       - type: custom:stack-in-card
         cards:
           - type: 'custom:auto-entities'
