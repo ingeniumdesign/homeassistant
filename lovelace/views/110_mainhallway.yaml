@@ -48,9 +48,17 @@ cards:
               show_header_toggle: false
               title: Shelly
               type: entities
+              style: |
+                ha-card .header__title {
+                  font-size: var(--font-size-subtitle);
+                }
+                ha-card .mode-item {
+                  background: var(--color-blue-bright-2)
+                }
             filter:
               include:
                 - entity_id: '*shelly*'
+
 
   ## ROW 2 ###################################################################################################################
   - type: vertical-stack
