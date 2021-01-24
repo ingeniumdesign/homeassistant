@@ -337,7 +337,7 @@ cards:
             entities:
               - entity: sensor.buro_dect301_1_temperature
                 name: Innen
-                color: "rgba(222,176,107,0.7)"
+                color: var(--color-ocher-1)
               - entity: sensor.dwd_weather_temperature
                 name: Außen
                 color: var(--accent-color)
@@ -379,7 +379,7 @@ cards:
             entities:
               - entity: sensor.mainhallway_zw100_multisensor_1_humidity
                 name: Innen
-                color: "rgba(222,176,107,0.7)"
+                color: var(--color-ocher-1)
               - entity: sensor.dwd_weather_humidity
                 name: Außen
                 color: var(--accent-color)

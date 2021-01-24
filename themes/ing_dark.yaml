@@ -31,6 +31,7 @@ ING Dark:
   color-error: "var(--error-color)" #default HA red rgb(219, 68, 55)
   color-lilac-bright-1: "rgba(31,142,250,0.9)" #hell flieder
   color-ocher-1: "rgba(222,176,107,1)" #ocker
+  color-ocher-2: "rgba(222,176,107,0.7)" #ocker
   color-green-bright-1: "rgba(0,202,139,1)" #hell grün
   color-purple-1: "rgba(139,64,156,1)" #lila
   color-orange-1: "rgba(255,153,0,1)" #orange
