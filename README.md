@@ -118,6 +118,9 @@ _More Screenshot down below._
 - [vacuum-card](https://github.com/denysdovhan/vacuum-card)
 - [custom-sidebar](https://github.com/DBuit/sidebar-card) - deactivated
 
+### Google Fonts
+- **Headlines:** Comfortaa [Google Fonts](https://fonts.google.com/specimen/Comfortaa)
+- **Content:** Raleway [Google Fonts](https://fonts.google.com/specimen/Raleway)
 
 ## Automations :green_heart:
 
@@ -152,7 +155,7 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 - [x] HA and Plugin Update Infos.
 - [x] Lovelace Restart, Frontend/Theme Reload, Restart HA and Server Restart.
 - [x] Intel NUC Infos and Stats.
-- [x] DOCKER Infos and Stats.
+- [x] DOCKER Infos and Stats. - _**Info:** See the Bug-Infos down below_
 - [x] Synology NAS Infos and Stats.
 - [x] Device, Sensor... Battery Infos and Stats.
 - [x] Network Infos from Fritzbox
@@ -255,6 +258,7 @@ You find the System Configuration in this File: <br />
 - [ ] **ERROR** kiosk-mode dont work from LoveLace UI
 - [ ] **ISSUE** Backup to a second HDD [Community Forum](https://community.home-assistant.io/t/snapshot-other-hdd/268439)
 - [ ] **WARNING** Updating opensky sensor took longer than the scheduled update interval [GitHub #45453](https://github.com/home-assistant/core/issues/45453)
+- [ ] **ISSUE** Can not connect to Docker API [Community Forum](https://community.home-assistant.io/t/exposing-docker-sock-for-monitor-docker/265565)
 
 ### Say Thank You
 

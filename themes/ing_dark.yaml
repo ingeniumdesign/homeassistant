@@ -2,9 +2,8 @@
 
 ING Dark:
   # Fonts
-  font-family-raleway: "Raleway,sans-serif"
-  font-family-oswald: "Oswald,sans-serif"
-  font-family-quicksand: "Quicksand,sans-serif"
+  font-family-raleway: "Raleway, sans-serif"
+  font-family-comfortaa: "Comfortaa, sans-serif"
 
   primary-font-family: "var(--font-family-raleway)"
   paper-font-common-base_-_font-family: "var(--primary-font-family)"
@@ -16,7 +15,7 @@ ING Dark:
   paper-font-title_-_font-family: "var(--primary-font-family)"
   ha-card-header-font-family: "var(--primary-font-family)"
 
-  font-title: "var(--font-family-quicksand)"
+  font-title: "var(--font-family-comfortaa)"
 
   # Color
   color-white: "rgba(255,255,255,1)" #ffffff
