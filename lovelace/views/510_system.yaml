@@ -189,14 +189,20 @@ cards:
                     hours_to_show: 12
                     points_per_hour: 4
                     line_color: var(--color-green-bright-1)
-            - type: entities
+            - type: custom:auto-entities
               style: !include ../includes/style_entities_embeded.yaml
-              entities:
-                - sensor.ing_nas_volume_1_used_space
-                - sensor.ing_nas_laufwerk_1_temperature
-                - sensor.ing_nas_laufwerk_2_temperature
-                - sensor.ing_nas_network_up
-                - sensor.ing_nas_network_down
+              show_empty: false
+              card:
+                type: entities
+              filter:
+                exclude:
+                  - state: unavailable
+                include:
+                  - entity_id: sensor.ing_nas_volume_1_used_space
+                  - entity_id: sensor.ing_nas_laufwerk_1_temperature
+                  - entity_id: sensor.ing_nas_laufwerk_2_temperature
+                  - entity_id: sensor.ing_nas_network_up
+                  - entity_id: sensor.ing_nas_network_down
 
       # ABFRAGE - Synology
       - type: conditional
@@ -222,6 +228,7 @@ cards:
               include:
                 - entity_id: '*shelly*'
 
+  ## ROW 2 ###################################################################################################################
   - type: vertical-stack
     style: !include ../includes/style.yaml
     cards:
@@ -344,8 +351,8 @@ cards:
             entities:
               - sensor.net_received_monthly
               - sensor.net_sent_monthly
-              - binary_sensor.remote_ui
               - sensor.net_uptime_pretty
+              - binary_sensor.remote_ui
 
       - type: custom:stack-in-card
         cards:

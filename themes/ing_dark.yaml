@@ -15,11 +15,16 @@ ING Dark:
   paper-font-title_-_font-family: "var(--primary-font-family)"
   ha-card-header-font-family: "var(--primary-font-family)"
 
+  # Font Variable
   font-title: "var(--font-family-comfortaa)"
 
-  # Color
+  # Color Variable
   color-white: "rgba(255,255,255,1)" #ffffff
   color-white-dark: "rgba(234,240,249,1)" #eaf0f9
+  color-grey: "rgba(192,192,192,1)" #C0C0C0
+  color-grey-dark-1: "rgba(169,169,169,1)" #A9A9A9
+  color-grey-dark-2: "rgba(128,128,128,1)" #808080
+  color-grey-dark-3: "rgba(105,105,105,1)" #696969
   color-red-1: "rgba(247,53,67,1)" #rot
   color-red-bright-1: "rgba(255,102,102,0.6)" #hell rot
   color-red-error-1: "rgba(255,153,0,1.0)" #default HA red rgb(219, 68, 55) --error-color
@@ -41,11 +46,15 @@ ING Dark:
   text-color: "var(--color-white)"
   primary-text-color: "var(--color-white)"
   text-primary-color: "var(--color-white)"
-  secondary-text-color: "rgba(186,192,198,1.0)"
-  text-medium-light-color: "rgba(160,162,168,1.0)"
-  text-medium-color: "rgba(128,130,138,1)"
-  disabled-text-color: "rgba(98,101,105,1)"
+  secondary-text-color: "var(--color-grey)"
+  text-medium-light-color: "var(--color-grey-dark-1)"
+  text-medium-color: "var(--color-grey-dark-2)"
+  disabled-text-color: "var(--color-grey-dark-3)"
   primary-color: "var(--accent-color)"
+
+  # Font-Size Variable
+  font-size-title: "20px"
+  font-size-subtitle: "18px"
 
   # Main Colors
   app-header-background-color: "var(--color-blue-deepdark-2)"
