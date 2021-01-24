@@ -12,7 +12,7 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 
 ---
 
-![HAVERSION](https://img.shields.io/badge/homeassistant-2021.1.3-blue)
+![HAVERSION](https://img.shields.io/badge/homeassistant-2021.1.x-blue)
 ![STARS](https://img.shields.io/github/stars/ingeniumdesign/homeassistant?color=yellow&style=flat-square)
 ![WATCHERS](https://img.shields.io/github/watchers/ingeniumdesign/homeassistant?color=green&style=flat-square)
 ![ISSUES](https://img.shields.io/github/issues-raw/ingeniumdesign/homeassistant?style=flat-square)
