@@ -64,7 +64,7 @@ cards:
     cards:
       - !include
         - ../includes/titles.yaml
-        - title: QUICK LINKS & INFOS
+        - title: QUICK LINKS
 
       ## SHORTCUTS ##
       - type: horizontal-stack
@@ -230,7 +230,7 @@ cards:
         style: |
           ha-card {
             border: solid 1px var(--border-color);
-            font-family: Raleway;
+            font-family: var(--primary-font-family);
             margin-top: 5px !important;
             margin-bottom: 5px !important;
           }

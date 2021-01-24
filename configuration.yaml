@@ -264,11 +264,9 @@ lovelace:
       #- url: /hacsfiles/custom-sidebar/custom-sidebar.js
       #  type: module
     # Styles
-    - url: "https://fonts.googleapis.com/css?family=Raleway"
+    - url: "https://fonts.googleapis.com/css2?family=Raleway&display=swap"
       type: css
-    - url: "https://fonts.googleapis.com/css?family=Oswald"
-      type: css
-    - url: "https://fonts.googleapis.com/css?family=Quicksand"
+    - url: "https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
       type: css
   dashboards:
     lovelace-generated:
