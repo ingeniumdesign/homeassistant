@@ -8,12 +8,12 @@ cards:
     cards:
       - !include
         - ../includes/titles.yaml
-        - title: RAUM INFOS
+        - title: SCHLAFZIMMER
 
       - type: "custom:simple-thermostat"
         #style: !include ../includes/style_entities.yaml
         entity: climate.schlafzimmer_dect301_1
-        name: Schlafzimmer Heizung
+        name: Heizung
         decimal: 0
         step_size: 1.0
         step_layout: column
@@ -36,7 +36,7 @@ cards:
           - entity: sensor.schlafzimmer_dect301_1_battery_level
         style: |
           ha-card .header__title {
-            font-size: 18px;
+            font-size: var(--font-size-subtitle);
           }
           ha-card .mode-item {
             background: var(--color-blue-bright-2)

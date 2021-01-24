@@ -10,7 +10,7 @@
   }
   ha-card .header__title,
   ha-card .name {
-    font-size: 18px;
+    font-size: var(--font-size-subtitle);
   }
   ha-card .mode-item {
     background: rgba(73,85,108,0.5);
