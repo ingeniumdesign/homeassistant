@@ -168,9 +168,9 @@ utility_meter:
 
 ## SYNOLOGY DS713 #######################################################################
 synology_dsm:
-  - host: 192.168.178.43
-    port: 5000
-    ssl: false
+  - host: !secret synology_dsm_ds713_host
+    port: 5001
+    ssl: true
     username: !secret synology_dsm_ds713_username
     password: !secret synology_dsm_ds713_password
     #name: SYNOLOGY DSM DS713+
