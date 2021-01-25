@@ -42,19 +42,19 @@ cards:
           }
 
       - type: custom:stack-in-card
+        title: Test
+        style: |
+          ha-card .card-header {
+            font-size: var(--font-size-subtitle);
+            margin-bottom:0;
+            padding-bottom:0;
+          }
         cards:
           - type: custom:auto-entities
             card:
               show_header_toggle: false
-              title: Shelly
+              #title: Shelly
               type: entities
-              style: |
-                ha-card .header__title {
-                  font-size: var(--font-size-subtitle);
-                }
-                ha-card .mode-item {
-                  background: var(--color-blue-bright-2)
-                }
             filter:
               include:
                 - entity_id: '*shelly*'
