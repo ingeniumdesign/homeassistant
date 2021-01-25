@@ -41,23 +41,66 @@ cards:
             background: var(--color-blue-bright-2)
           }
 
-      - type: custom:stack-in-card
-        title: Test
-        style: |
-          ha-card .card-header {
-            font-size: var(--font-size-subtitle);
-            margin-bottom:0;
-            padding-bottom:0;
-          }
-        cards:
-          - type: custom:auto-entities
-            card:
-              show_header_toggle: false
-              #title: Shelly
-              type: entities
-            filter:
-              include:
-                - entity_id: '*shelly*'
+      #- type: custom:stack-in-card
+      #  mode: vertical
+      #  cards:
+      #    - type: glance
+      #      title: Home Assistant
+      #      columns: 7
+      #      show_name: false
+      #      entities:
+      #        - entity: sensor.dwd_weather_temperature
+      #          name: Test
+      #          icon: mdi:play-circle
+      #        #- entity: sensor.count_automations
+      #        #  name: Automations
+      #        #  icon: mdi:play-circle
+      #        #- entity: sensor.count_binary_sensors
+      #        #  name: Binary Sensors
+      #        #  icon: mdi:transition-masked
+      #        #- entity: sensor.count_lights
+      #        #  name: Lights
+      #        #  icon: mdi:lightbulb
+      #        #- entity: sensor.count_scripts
+      #        #  name: Scripts
+      #        #  icon: mdi:script-text
+      #        #- entity: sensor.count_sensors
+      #        #  name: Sensors
+      #        #  icon: mdi:counter
+      #        #- entity: sensor.count_switches
+      #        #  name: Switches
+      #        #  icon: mdi:toggle-switch
+      #        #- entity: sensor.count_zones
+      #        #  name: Zones
+      #
+      #
+      #
+      #- type: custom:stack-in-card
+      #  cards:
+      #    - type: entity
+      #      title: Shelly
+      #      icon: mdi:account
+      #      show_header_toggle: false
+      #      style: |
+      #        ha-card .card-header {
+      #          font-size: var(--font-size-subtitle);
+      #          margin-bottom:0;
+      #          padding-bottom:0;
+      #        }
+      #
+      #        ha-card .icon {
+      #            margin-right: calc(var(--st-spacing, var(--st-default-spacing)) * 2);
+      #        }
+      #      entity: sensor.time #fake
+      #
+      #    - type: custom:auto-entities
+      #      card:
+      #        show_header_toggle: false
+      #        #title: Shelly
+      #        type: entities
+      #      filter:
+      #        include:
+      #          - entity_id: '*shelly*'
 
 
   ## ROW 2 ###################################################################################################################
