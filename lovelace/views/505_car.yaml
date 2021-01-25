@@ -47,53 +47,56 @@ cards:
             cards:
               - type: button
                 entity: sensor.tmbjk7ne1k0055006_adblue_level
+                show_name: true
+                name: AD Blue
+                icon: 'mdi:water-check'
+                icon_height: 25px
                 tap_action:
                   action: none
                 hold_action:
                   action: none
-                icon: 'mdi:water-check'
-                icon_height: 25px
-                name: AD Blue
 
               - type: button
                 entity: sensor.tmbjk7ne1k0055006_service_inspection_days
+                show_name: true
+                name: Inspektion
+                icon: 'mdi:tools'
+                icon_height: 25px
                 tap_action:
                   action: none
                 hold_action:
                   action: none
-                show_name: true
-                icon_height: 25px
-                name: Inspektion
 
               - type: button
                 entity: binary_sensor.tmbjk7ne1k0055006_parking_light
+                show_name: true
+                name: Licht
+                icon_height: 25px
                 tap_action:
                   action: none
                 hold_action:
                   action: none
-                show_name: true
-                icon_height: 25px
-                name: Licht
 
               - type: button
                 entity: binary_sensor.tmbjk7ne1k0055006_windows_closed
+                show_name: true
+                name: Fenster
+                icon_height: 25px
                 tap_action:
                   action: none
                 hold_action:
                   action: none
-                show_name: true
-                icon_height: 25px
-                name: Fenster
 
               - type: button
                 entity: binary_sensor.tmbjk7ne1k0055006_doors_locked
+                show_name: true
+                name: Türen
+                icon: 'mdi:car-door-lock'
+                icon_height: 25px
                 tap_action:
                   action: none
                 hold_action:
                   action: none
-                show_name: true
-                icon_height: 25px
-                name: Türen
 
           - type: entities
             show_header_toggle: false
