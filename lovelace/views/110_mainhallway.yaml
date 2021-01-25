@@ -11,24 +11,24 @@ cards:
         - title: EINGANG / FLUR
 
       - type: custom:simple-thermostat
-        entity: climate.schlafzimmer_dect301_1
+        entity: climate.homematic_ip_ap_mainhallway
         name: Fußbodenheizung
         decimal: 0
         step_size: 1.0
         step_layout: column
         label:
           temperature: Innen
-        control:
-          _headings: false
-          hvac:
-            heat:
-              name: Heizen
-              icon: mdi:fire
-            "off":
-              name: Aus
-              icon: mdi:power
-          preset:
-            _name:
+        #control:
+        #  _headings: false
+        #  hvac:
+        #    heat:
+        #      name: Heizen
+        #      icon: mdi:fire
+        #    "off":
+        #      name: Aus
+        #      icon: mdi:power
+        #  preset:
+        #    _name:
         sensors:
           - entity: sensor.dwd_weather_temperature
             name: Außen
