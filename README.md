@@ -39,7 +39,7 @@ _More Screenshot down below._
 - AEOTEC [Z-Stick Gen5+ EU 868.4MHz](https://aeotec.com/z-wave-usb-stick/) ZW090-C - for ZWave <br />
   _For the Intel NUC i5 Upgrade_
 - Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Xiaomi Cloud Tokens Extractor](https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor) - [Amazon *](https://amzn.to/38eLmPX)
-- AEOTEC [Plus Multisensor 6 EU 868.4MHz](https://aeotec.com/z-wave-sensor/) ZW100-C - [Amazon *](https://amzn.to/38YJoCm)
+- AEOTEC 1x [Plus Multisensor 6 EU 868.4MHz](https://aeotec.com/z-wave-sensor/) ZW100-C - [Amazon *](https://amzn.to/38YJoCm)
 - Amazon [FireHD 10 Tablet *](https://amzn.to/3oicZNp)
 - Amazon 1x [Echo Dot (4. Gen.) *](https://amzn.to/3ncrktE)
 - Amazon 1x [Echo Dot (3. Gen.) *](https://amzn.to/3hHu8xz)
@@ -49,9 +49,10 @@ _More Screenshot down below._
 - Synology [DS713+](https://www.synology.com/de-de/support/download/DS713+#system) - [Amazon *](https://amzn.to/3hHu8xz) // Buy the new [DS720+](https://www.synology.com/de-de/products/DS720+) [Amazon *](https://amzn.to/3rWErT1)
 - ZyXEL [GS1900-24E](https://www.zyxel.com/de/de/products_services/8-10-16-24-48-port-GbE-Smart-Managed-Switch-GS1900-Series/) - [Amazon *](https://amzn.to/391vcbR)
 - ZyXEL [GS1900-8](https://www.zyxel.com/de/de/products_services/8-10-16-24-48-port-GbE-Smart-Managed-Switch-GS1900-Series/) - [Amazon *](https://amzn.to/357BQMo)
-- Homematic IP [Access Point](https://www.homematic-ip.com/produkte/detail/home-control-access-point.html) - [Amazon *](https://amzn.to/2MhohDn)
-- Homematic IP [Fußbodenheizungsaktor – 12-fach, motorisch](https://www.homematic-ip.com/produkte/detail/homematic-ip-fussbodenheizungsaktor-12-fach-motorisch.html) - [Amazon *](https://amzn.to/3paOJNB)
-- Homematic IP [Stellantrieb – motorisch](https://www.homematic-ip.com/produkte/detail/homematic-ip-stellantrieb-motorisch.html) - [Amazon *](https://amzn.to/3p4AVEq)
+- Homematic IP 1x [Access Point](https://www.homematic-ip.com/produkte/detail/home-control-access-point.html) - [Amazon *](https://amzn.to/2MhohDn)
+- Homematic IP 1x [Fußbodenheizungsaktor – 12-fach, motorisch](https://www.homematic-ip.com/produkte/detail/homematic-ip-fussbodenheizungsaktor-12-fach-motorisch.html) - [Amazon *](https://amzn.to/3paOJNB)
+- Homematic IP 6x [Stellantrieb – motorisch](https://www.homematic-ip.com/produkte/detail/homematic-ip-stellantrieb-motorisch.html) - [Amazon *](https://amzn.to/3p4AVEq)
+- Homematic IP 1x [Wandthermostat 240V - 150628A0](https://www.homematic-ip.com/produkte/detail/wandthermostat-mit-schaltausgang-fuer-markenschalter.html) - [Amazon *](https://amzn.to/39lquqC)
 
 ## Hass.io Addons
 
