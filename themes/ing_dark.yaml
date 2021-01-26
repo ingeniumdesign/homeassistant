@@ -38,6 +38,7 @@ ING Dark:
   color-blue-1: "rgba(118,128,255,1)" #7680ff
   color-blue-deepdark-1: "rgba(21,30,45,1)" #tief dunkel blau #151e2d
   color-blue-deepdark-2: "rgba(30,42,64,1)" #tief dunkel blau #1e2a40
+  color-blue-deepdark-2-transp: "rgba(30,42,64,0.7)" #tief dunkel blau #1e2a40
   color-blue-deepdark-3: "rgba(38,51,76,1)" #tief dunkel blau #26334c
   color-blue-deepdark-4: "rgba(45,53,82,1)" #tief dunkel blau #2d3552 - Border
   color-blue-bright-1: "rgba(169,186,202,1)" #hell blau #a9baca
@@ -58,7 +59,7 @@ ING Dark:
   font-size-subtitle: "18px"
 
   # Main Colors
-  app-header-background-color: "var(--color-blue-deepdark-2)"
+  app-header-background-color: "var(--color-blue-deepdark-2-transp)"
   accent-color: "var(--color-blue-1)"
   accent-medium-color: "var(--accent-color)"
 
@@ -111,7 +112,9 @@ ING Dark:
   paper-radio-button-checked-color: "var(--accent-color)"
 
   # Popups
+  dialog-backdrop-filter: "blur(5px) brightness(95%)"
   mdc-dialog-scrim-color: "rgba(0,0,0,0.50)" # BG Overlay
+  mdc-theme-surface: "rgba(0,0,0,0.50)"
   more-info-header-background: "var(--secondary-background-color)"
   paper-dialog-background-color: "var(--background-color)"
 
@@ -151,9 +154,10 @@ ING Dark:
 
   card-mod-more-info-yaml: |
     $: |
+      .mdc-dialog {
+        background: none !important;
+      }
       .mdc-dialog__scrim {
-        backdrop-filter: blur(5px) brightness(95%);
-        -webkit-backdrop-filter: blur(5px) brightness(95%);
         background-color: rgba(0,0,0,0.50);
       }
       .mdc-dialog .mdc-dialog__scrim {
@@ -165,8 +169,6 @@ ING Dark:
         box-shadow: none !important;
       }
       .mdc-dialog .mdc-dialog__container .mdc-dialog__surface .mdc-dialog__content {
-        backdrop-filter: blur(5px) brightness(95%);
-        -webkit-backdrop-filter: blur(5px) brightness(95%);
         background-color: var(--mdc-dialog-scrim-color);
       }
       :host {
@@ -178,8 +180,6 @@ ING Dark:
       }
     mwc-tab-bar$: |
       .mdc-tab-bar {
-        backdrop-filter: blur(5px) brightness(95%);
-        -webkit-backdrop-filter: blur(5px) brightness(95%);
         background-color: var(--mdc-dialog-scrim-color);
       }
     .: |
