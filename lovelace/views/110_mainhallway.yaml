@@ -41,6 +41,7 @@ cards:
             background: var(--color-blue-bright-2)
           }
 
+      # https://community.home-assistant.io/t/stack-in-card-drop-in-replacement-for-vertical-stack-in-card/180072
       #- type: custom:stack-in-card
       #  mode: vertical
       #  cards:

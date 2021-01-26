@@ -71,6 +71,7 @@ cards:
                 entity: binary_sensor.tmbjk7ne1k0055006_parking_light
                 show_name: true
                 name: Licht
+                icon: 'mdi:car-parking-lights'
                 icon_height: 25px
                 tap_action:
                   action: none
@@ -150,7 +151,7 @@ cards:
               name: Reichweite
               icon: 'mdi:gas-station'
               align_icon: right
-              align_state: left
+              align_state: center
               hours_to_show: 364
               points_per_hour: 0.1
               line_width: 1
