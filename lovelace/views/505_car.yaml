@@ -126,6 +126,7 @@ cards:
                 type: 'custom:multiple-entity-row'
                 name: Datenabgleich
                 state_header: Anfragen
+                icon: 'mdi:car-connected'
                 secondary_info:
                   entity: sensor.tmbjk7ne1k0055006_last_connected_pretty
                   name: ' '
