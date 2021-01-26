@@ -88,7 +88,8 @@ _More Screenshot down below._
   - Monitor Docker
   - browser_mod
   - ICS
-  - Shelly (_Next testing with ShellyForHass_)
+  - Shelly (_Next testing with [ShellyForHass](https://github.com/StyraHem/ShellyForHASS)_)
+  - [Skoda Connect](https://github.com/lendy007/homeassistant-skodaconnect) - ŠKODA OCTAVIA RS COMBI
 - [Lovelace Gen](https://github.com/thomasloven/hass-lovelace_gen)
 
 ## Lovelace Plugins
@@ -161,6 +162,7 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 - [x] Network Infos from Fritzbox
 - [x] SpeedTest.net Infos for the Network
 - [ ] Settings for the different sensors, Lights, Motion detector...
+- [ ] Info for Car is open? Next Car Check?
 - [ ] and many more...
 
 ## Aditional Screenshots
