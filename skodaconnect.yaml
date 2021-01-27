@@ -1,16 +1,12 @@
 username: !secret skodaconnect_octavia_username
 password: !secret skodaconnect_octavia_password
 spin: !secret skodaconnect_octavia_spin
-# <allowed values 10,20,30,40,50,60 (minutes)>
-combustion_engine_heating_duration: 10
-# <allowed values 10,20,30,40,50,60 (minutes)>
-combustion_engine_climatisation_duration: 10
 scandinavian_miles: false
-imperial_units: false
 scan_interval:
-  minutes: 5
+  minutes: 1
 name:
-  tmbjk7ne1k0055006: Octavia
+  tmbjk7ne1k0055006: 'Octavia'
+response_debug: True
 #resources:
 #  - combustion_engine_heating
 #  - combustion_climatisation
