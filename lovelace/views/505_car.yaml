@@ -122,7 +122,7 @@ cards:
                 #  - entity: device_tracker.octavia
                 #    name: Location
 
-              - entity: sensor.octavia_requests_remaining
+              - entity: sensor.octavia_request_results
                 type: 'custom:multiple-entity-row'
                 name: Datenabgleich
                 state_header: Anfragen
@@ -130,6 +130,15 @@ cards:
                 secondary_info:
                   entity: sensor.octavia_last_connected_pretty
                   name: ' '
+                style:
+                  ha-entity-toggle$: |
+                    ha-switch {
+                      padding: 3px 5px !important;
+                    }
+                entities:
+                  - entity: switch.octavia_force_data_refresh
+                    name: Erzwingen
+                    toggle: true
 
               - entity: sensor.octavia_last_trip_average_fuel_consumption
                 type: 'custom:multiple-entity-row'
