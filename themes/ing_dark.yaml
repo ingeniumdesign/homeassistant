@@ -103,10 +103,12 @@ ING Dark:
   mdc-theme-primary: "var(--accent-color)"
 
   # Switch
-  switch-unchecked-color: "#70889e"
-  switch-checked-button-color: "var(--accent-color)"
-  switch-unchecked-track-color: "var(--background-color-2)"
-  switch-checked-track-color: "var(--background-color-2)"
+  switch-unchecked-color: "var(--color-grey-dark-2)"
+  switch-checked-button-color: "var(--color-white-dark)" #Switch Button checked
+  switch-unchecked-button-color: "var(--color-white-dark)" #Switch Button unchecked
+  switch-checked-track-color: "var(--accent-color)" #Switch Background
+  switch-unchecked-track-color: "var(--color-grey-dark-3)"
+
 
   # Radio Button
   paper-radio-button-checked-color: "var(--accent-color)"
