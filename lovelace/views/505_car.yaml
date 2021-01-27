@@ -20,14 +20,14 @@ cards:
             entities:
               - type: 'custom:multiple-entity-row'
                 entities:
-                  - entity: sensor.tmbjk7ne1k0055006_fuel_level
+                  - entity: sensor.octavia_fuel_level
                     name: Tank
-                  - entity: sensor.tmbjk7ne1k0055006_combined_range
+                  - entity: sensor.octavia_combined_range
                     name: Reichweite
-                entity: binary_sensor.tmbjk7ne1k0055006_doors_locked
+                entity: binary_sensor.octavia_doors_locked
                 name: 'ŠKODA OCTAVIA RS COMBI'
                 secondary_info:
-                  entity: binary_sensor.tmbjk7ne1k0055006_doors_locked
+                  entity: binary_sensor.octavia_doors_locked
                   name: ' '
                 show_state: false
                 state_color: true
@@ -36,7 +36,7 @@ cards:
 
           - type: picture
             image: /local/images/Car-Octavia-RS-01.png
-            entity: lock.tmbjk7ne1k0055006_door_locked
+            entity: lock.octavia_door_locked
 
           - type: 'custom:stack-in-card'
             mode: horizontal
@@ -46,7 +46,7 @@ cards:
               }
             cards:
               - type: button
-                entity: sensor.tmbjk7ne1k0055006_adblue_level
+                entity: sensor.octavia_adblue_level
                 show_name: true
                 name: AD Blue
                 icon: 'mdi:water-check'
@@ -57,7 +57,7 @@ cards:
                   action: none
 
               - type: button
-                entity: sensor.tmbjk7ne1k0055006_service_inspection_days
+                entity: sensor.octavia_service_inspection_days
                 show_name: true
                 name: Inspektion
                 icon: 'mdi:tools'
@@ -68,7 +68,7 @@ cards:
                   action: none
 
               - type: button
-                entity: binary_sensor.tmbjk7ne1k0055006_parking_light
+                entity: binary_sensor.octavia_parking_light
                 show_name: true
                 name: Licht
                 icon: 'mdi:car-parking-lights'
@@ -79,7 +79,7 @@ cards:
                   action: none
 
               - type: button
-                entity: binary_sensor.tmbjk7ne1k0055006_windows_closed
+                entity: binary_sensor.octavia_windows_closed
                 show_name: true
                 name: Fenster
                 icon_height: 25px
@@ -89,7 +89,7 @@ cards:
                   action: none
 
               - type: button
-                entity: binary_sensor.tmbjk7ne1k0055006_doors_locked
+                entity: binary_sensor.octavia_doors_locked
                 show_name: true
                 name: Türen
                 icon: 'mdi:car-door-lock'
@@ -105,50 +105,50 @@ cards:
             entities:
               - type: divider
 
-              - entity: sensor.tmbjk7ne1k0055006_adblue_level
+              - entity: sensor.octavia_adblue_level
                 type: 'custom:multiple-entity-row'
                 name: Motor
                 state_header: Ad Blue
                 icon: 'mdi:engine'
                 secondary_info:
-                  entity: sensor.tmbjk7ne1k0055006_odometer
+                  entity: sensor.octavia_odometer
                   name: 'KM-Stand:'
                 entities:
-                  - entity: sensor.tmbjk7ne1k0055006_oil_inspection_days
+                  - entity: sensor.octavia_oil_inspection_days
                     name: Ölwechsel
-                  - entity: sensor.tmbjk7ne1k0055006_service_inspection_days
+                  - entity: sensor.octavia_service_inspection_days
                     name: Inspektion
                 #entities:
-                #  - entity: device_tracker.tmbjk7ne1k0055006
+                #  - entity: device_tracker.octavia
                 #    name: Location
 
-              - entity: sensor.tmbjk7ne1k0055006_requests_remaining
+              - entity: sensor.octavia_requests_remaining
                 type: 'custom:multiple-entity-row'
                 name: Datenabgleich
                 state_header: Anfragen
                 icon: 'mdi:car-connected'
                 secondary_info:
-                  entity: sensor.tmbjk7ne1k0055006_last_connected_pretty
+                  entity: sensor.octavia_last_connected_pretty
                   name: ' '
 
-              - entity: sensor.tmbjk7ne1k0055006_last_trip_average_fuel_consumption
+              - entity: sensor.octavia_last_trip_average_fuel_consumption
                 type: 'custom:multiple-entity-row'
                 name: Letzter Trip
                 unit: l
                 icon: 'mdi:map-marker-distance'
                 state_header: Verbrauch
                 entities:
-                  - entity: sensor.tmbjk7ne1k0055006_last_trip_average_speed
+                  - entity: sensor.octavia_last_trip_average_speed
                     name: '% Geschwindigkeit'
-                  - entity: sensor.tmbjk7ne1k0055006_last_trip_duration
+                  - entity: sensor.octavia_last_trip_duration
                     name: Fahrzeit
-                  - entity: sensor.tmbjk7ne1k0055006_last_trip_length
+                  - entity: sensor.octavia_last_trip_length
                     name: Strecke
               - type: divider
 
           - !include
             - ../includes/graphs_embeded.yaml
-            - entity: sensor.tmbjk7ne1k0055006_combined_range
+            - entity: sensor.octavia_combined_range
               name: Reichweite
               icon: 'mdi:gas-station'
               align_icon: right
