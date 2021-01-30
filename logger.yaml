@@ -31,13 +31,3 @@ logs:
   requests.packages.urllib3.connectionpool: critical
   root: warn
   skybellpy: warn
-  skodaconnect.connection: debug
-  skodaconnect.vehicle: debug
-  custom_components.skodaconnect: debug
-  custom_components.skodaconnect.climate: debug
-  custom_components.skodaconnect.lock: debug
-  custom_components.skodaconnect.device_tracker: debug
-  custom_components.skodaconnect.switch: debug
-  custom_components.skodaconnect.binary_sensor: debug
-  custom_components.skodaconnect.sensor: debug
-

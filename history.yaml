@@ -13,6 +13,7 @@ include:
     - device_tracker.handy_sebastian
     - device_tracker.iphone_vr_smart
     - device_tracker.iphone_vr_smart_2
+    - device_tracker.octavia
     - sensor.sebastian_status
     - sensor.julia_status
     - switch.summer

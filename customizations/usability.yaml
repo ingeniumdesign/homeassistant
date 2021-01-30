@@ -112,6 +112,8 @@ device_tracker.iphone_vr_smart:
   friendly_name: Julia Handy
 device_tracker.iphone_vr_smart_2:
   friendly_name: Julia Handy App
+device_tracker.octavia:
+  friendly_name: ŠKODA Octavia RS Kombi
 group.motion_sensors:
   friendly_name: Bewegungsmelder
   icon: mdi:leak
