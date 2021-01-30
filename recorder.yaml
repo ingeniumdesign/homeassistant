@@ -69,6 +69,7 @@ include:
     - sensor.docker_images
     - sensor.docker_version
     - switch.mainhallway_led_shelly_1l_84cca8ad7232
+    - binary_sensor.office_window_xiaomi_1_openclose
     - input_select.sensor_frontdoortest
 
 exclude:

@@ -39,6 +39,7 @@ _More Screenshot down below._
 - AEOTEC [Z-Stick Gen5+ EU 868.4MHz](https://aeotec.com/z-wave-usb-stick/) ZW090-C - for ZWave <br />
   _For the Intel NUC i5 Upgrade_
 - Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Xiaomi Cloud Tokens Extractor](https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor) - [Amazon *](https://amzn.to/38eLmPX)
+- Xiaomi 4x [Door & Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/) MCCGQ01LM - [Amazon *](https://amzn.to/2NR1pM0)
 - AEOTEC 1x [Plus Multisensor 6 EU 868.4MHz](https://aeotec.com/z-wave-sensor/) ZW100-C - [Amazon *](https://amzn.to/38YJoCm)
 - Amazon [FireHD 10 Tablet *](https://amzn.to/3oicZNp)
 - Amazon 1x [Echo Dot (4. Gen.) *](https://amzn.to/3ncrktE)

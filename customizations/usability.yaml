@@ -185,5 +185,8 @@ sensor.docker_version:
 switch.mainhallway_led_shelly_1l_84cca8ad7232:
   friendly_name: Flur Shelly 1L
   icon: mdi:credit-card-wireless
+binary_sensor.office_window_xiaomi_1_openclose:
+  friendly_name: Büro Fenster
+  icon: mdi:window-closed
 input_select.sensor_frontdoortest:
   friendly_name: Haustür TEST
