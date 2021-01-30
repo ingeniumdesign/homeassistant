@@ -13,6 +13,7 @@ cards:
       - device_tracker.handy_sebastian
       - device_tracker.iphone_vr_smart
       - device_tracker.iphone_vr_smart_2
+      - device_tracker.octavia
       - zone.home
       - zone.sebastianarbeit
       - zone.juliaarbeit
