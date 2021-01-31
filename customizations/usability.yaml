@@ -188,7 +188,12 @@ switch.mainhallway_led_shelly_1l_84cca8ad7232:
 binary_sensor.office_window_xiaomi_1_openclose:
   friendly_name: Büro Fenster
   device_class: window
-  templates:
-    rgb_color: "if (state === 'on') return [200, 100, 30]; else return [10, 20, 30];"
+  #templates:
+  #  rgb_color: "if (state === 'on') return [200, 100, 30]; else return [10, 20, 30];"
+  icon_color: '{% if is_state("binary_sensor.office_window_xiaomi_1_openclose", "on") %}rgb(255, 214, 10){% else %}rgb(255, 255, 255){% endif %}'
 input_select.sensor_frontdoortest:
   friendly_name: Haustür TEST
+  device_class: door
+light.light1test:
+  friendly_name: Licht TEST
+  device_class: light

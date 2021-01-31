@@ -1,0 +1,15 @@
+- platform: template
+  lights:
+    light1test:
+      friendly_name: Light 1 Test
+      turn_on:
+        service: input_boolean.turn_on
+        entity_id: input_boolean.light1test
+      turn_off:
+        service: input_boolean.turn_off
+        entity_id: input_boolean.light1test
+      set_level:
+        service: input_number.set_value
+        data_template:
+          value: "{{ brightness }}"
+          entity_id: input_number.light1test

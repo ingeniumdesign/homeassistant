@@ -34,8 +34,9 @@ ING Dark:
   color-ocher-2: "rgba(222,176,107,0.7)" #ocker
   color-green-bright-1: "rgba(0,202,139,1)" #hell grün
   color-purple-1: "rgba(139,64,156,1)" #lila
+  color-purple-bright-1: "rgba(118,128,255,1)" #7680ff
   color-orange-1: "rgba(255,153,0,1)" #orange
-  color-blue-1: "rgba(118,128,255,1)" #7680ff
+  color-blue-1: "rgba(6,169,244,1)" #06a9f4
   color-blue-deepdark-1: "rgba(21,30,45,1)" #tief dunkel blau #151e2d
   color-blue-deepdark-2: "rgba(30,42,64,1)" #tief dunkel blau #1e2a40
   color-blue-deepdark-2-transp: "rgba(30,42,64,0.7)" #tief dunkel blau #1e2a40
