@@ -187,6 +187,8 @@ switch.mainhallway_led_shelly_1l_84cca8ad7232:
   icon: mdi:credit-card-wireless
 binary_sensor.office_window_xiaomi_1_openclose:
   friendly_name: Büro Fenster
-  icon: mdi:window-closed
+  device_class: window
+  templates:
+    rgb_color: "if (state === 'on') return [200, 100, 30]; else return [10, 20, 30];"
 input_select.sensor_frontdoortest:
   friendly_name: Haustür TEST

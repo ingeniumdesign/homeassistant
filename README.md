@@ -41,7 +41,7 @@ _More Screenshot down below._
 - Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Xiaomi Cloud Tokens Extractor](https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor) - [Amazon *](https://amzn.to/38eLmPX)
 - Xiaomi 4x [Door & Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/) MCCGQ01LM - [Amazon *](https://amzn.to/2NR1pM0)
 - AEOTEC 1x [Plus Multisensor 6 EU 868.4MHz](https://aeotec.com/z-wave-sensor/) ZW100-C - [Amazon *](https://amzn.to/38YJoCm)
-- Amazon [FireHD 10 Tablet *](https://amzn.to/3oicZNp)
+- Amazon [FireHD 10 Tablet *](https://amzn.to/3oicZNp) - [Fire Toolbox V11.0](https://forum.xda-developers.com/t/windows-tool-fire-toolbox-v11-0.3889604/)
 - Amazon 1x [Echo Dot (4. Gen.) *](https://amzn.to/3ncrktE)
 - Amazon 1x [Echo Dot (3. Gen.) *](https://amzn.to/3hHu8xz)
 - Shelly 2x [2.5](https://shelly.cloud/products/shelly-25-smart-home-automation-relay/) - [Amazon *](https://amzn.to/38W9vuG)

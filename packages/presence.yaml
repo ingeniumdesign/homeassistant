@@ -1,13 +1,3 @@
-#########
-# GROUP #
-#########
-
 # {{ states.group.all_persons.state }}
 # group.all_persons = not_home
-group:
-  all_persons:
-    name: Personen
-    icon: mdi:account-group
-    entities:
-      - person.sebastian_schmal
-      - person.julia_schmal
+
