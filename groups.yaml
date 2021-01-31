@@ -1,5 +1,18 @@
-windows:
+all_persons:
+  name: Persons
+  icon: mdi:account-group
+  entities:
+    - person.sebastian_schmal
+    - person.julia_schmal
+
+all_doors:
+  name: Doors
+  icon: mdi:door
+  entities:
+    - binary_sensor.office_window_xiaomi_1_openclose
+
+all_windows:
   name: Windows
-  view: no
+  icon: mdi:window-open-variant
   entities:
     - binary_sensor.office_window_xiaomi_1_openclose

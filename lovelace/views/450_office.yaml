@@ -10,11 +10,21 @@ cards:
         - ../includes/titles.yaml
         - title: BÜRO
 
-      - type: horizontal-stack
-        cards:
-          - type: entities
-            entities:
-              - entity: binary_sensor.office_window_xiaomi_1_openclose
+      - type: glance
+        show_name: true
+        style: !include ../includes/style_entities.yaml
+        entities:
+          - sensor.buro_dect301_1_temperature
+          - entity: binary_sensor.office_window_xiaomi_1_openclose
+            name: Fenster
+            styles:
+              icon:
+                - color: >
+                    [[[ if (entity.state == 'on') return 'green'; return 'grey'; ]]]
+                - animation: >
+                    [[[
+                      if (entity.state == 'on') return 'blink 2s ease infinite';
+                    ]]]
 
       - type: "custom:simple-thermostat"
         #style: !include ../includes/style_entities.yaml
