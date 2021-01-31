@@ -62,9 +62,9 @@ cards:
   ## ROW 1 ###################################################################################################################
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: QUICK LINKS
+      #- !include
+      #  - ../includes/titles.yaml
+      #  - title: QUICK LINKS
 
       ## SHORTCUTS ##
       - type: horizontal-stack
@@ -218,9 +218,9 @@ cards:
                         show_last_changed: true
 
       ## WEATHER
-      - !include
-        - ../includes/titles.yaml
-        - title: WETTER
+      #- !include
+      #  - ../includes/titles.yaml
+      #  - title: WETTER
 
       - type: custom:weather-card
         entity: weather.dwd_weather_idstein
@@ -309,10 +309,10 @@ cards:
   ## ROW 2 ###################################################################################################################
   - type: vertical-stack
     cards:
-      ## TEMPERATUR / LICHT / LUFTFEUCHTIGKEIT ##
-      - !include
-        - ../includes/titles.yaml
-        - title: SENSOREN
+      ## TEMPERATUR / LUFTFEUCHTIGKEIT ##
+      #- !include
+      #  - ../includes/titles.yaml
+      #  - title: SENSOREN
 
       - type: horizontal-stack
         cards:
