@@ -297,3 +297,4 @@ scene: !include scenes.yaml
 script: !include_dir_merge_named scripts
 switch: !include_dir_merge_list switch
 sensor: !include_dir_merge_list sensor
+light: !include lights.yaml

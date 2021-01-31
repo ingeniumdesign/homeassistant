@@ -52,6 +52,7 @@ cards:
         style: !include ../includes/style_entities.yaml
         entities:
           - input_select.sensor_frontdoortest
+          - light.light1test
 
   - type: vertical-stack
     cards:
