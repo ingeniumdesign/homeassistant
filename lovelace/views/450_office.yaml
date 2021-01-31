@@ -15,10 +15,6 @@ cards:
           - type: entities
             entities:
               - entity: binary_sensor.office_window_xiaomi_1_openclose
-            title: Playbar's
-            show_name: true
-            show_icon: true
-            show_state: false
 
       - type: "custom:simple-thermostat"
         #style: !include ../includes/style_entities.yaml

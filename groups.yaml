@@ -1,0 +1,5 @@
+windows:
+  name: Windows
+  view: no
+  entities:
+    - binary_sensor.office_window_xiaomi_1_openclose
