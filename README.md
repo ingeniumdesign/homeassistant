@@ -89,6 +89,7 @@ _More Screenshot down below._
   - SamsungTV Tizen
   - Monitor Docker
   - browser_mod
+  - [Custom UI](https://github.com/Mariusthvdb/custom-ui)
   - ICS
   - Shelly (_Next testing with [ShellyForHass](https://github.com/StyraHem/ShellyForHASS)_)
   - [Skoda Connect](https://github.com/lendy007/homeassistant-skodaconnect) - ŠKODA OCTAVIA RS COMBI
