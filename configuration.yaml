@@ -33,8 +33,8 @@ local_ip:
 
 #Zigbee Home Automation
 zha:
+  # Data Input via Plugin Config
   #usb_path: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00
-  #usb_path:
   database_path: /config/zigbee.db
 
 ## Themes UI ############################################################################
@@ -169,10 +169,11 @@ utility_meter:
     cycle: monthly
 
 ## SYNOLOGY DS713 #######################################################################
-synology_dsm:
-  - host: !secret synology_dsm_ds713_host
-    username: !secret synology_dsm_ds713_username
-    password: !secret synology_dsm_ds713_password
+## Data Input via HA Backend
+#synology_dsm:
+  #- host: !secret synology_dsm_ds713_host
+  #  username: !secret synology_dsm_ds713_username
+  #  password: !secret synology_dsm_ds713_password
     #name: SYNOLOGY DSM DS713+
 
 ## WAKEonLAN #############################################################################
@@ -209,6 +210,16 @@ monitor_docker:
 
 ## SHELLY ###############################################################################
 shelly: !include shelly.yaml
+
+## TANKERKÖNIG ###############################################################################
+tankerkoenig:
+  api_key: !secret tankerkoenig_api_key
+  fuel_types:
+    - "diesel"
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  radius: 5
+  scan_interval: "0:15:01"
 
 #########################################################################################
 

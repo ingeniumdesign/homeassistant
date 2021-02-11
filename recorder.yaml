@@ -70,6 +70,10 @@ include:
     - sensor.docker_version
     - switch.mainhallway_led_shelly_1l_84cca8ad7232
     - binary_sensor.office_window_xiaomi_1_openclose
+    - sensor.gasstation_ed_diesel
+    - sensor.gasstation_shellblackdecker_diesel
+    - sensor.gasstation_shellwiesbadener_diesel
+    - sensor.gasstation_total_diesel
     - input_select.sensor_frontdoortest
 
 exclude:

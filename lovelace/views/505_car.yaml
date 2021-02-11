@@ -8,6 +8,44 @@ cards:
     cards:
       - !include
         - ../includes/titles.yaml
+        - title: BENZIN-PREISE
+
+      - type: 'custom:stack-in-card'
+        style: !include ../includes/style_entities_multiple.yaml
+        mode: vertical
+        cards:
+          - entity: sensor.tankerkoenig_dirk_schirmacher_diesel
+            type: 'custom:multiple-entity-row'
+            name: Diesel
+            show_state: false
+            show_last_changed: true
+            style:
+              multiple-entity-row:
+                $: |
+                  .info {
+                    flex: 1 0 20%;
+                  }
+            entities:
+              - entity: sensor.tankerkoenig_dirk_schirmacher_diesel
+                name: ED Tankstelle
+                #value_template: >
+                #  {% if is_state('sensor.tankerkoenig_dirk_schirmacher_diesel', 'unknown') %}
+                #    geschlossen
+                #  { % else % }
+                #    {{ states('sensor.tankerkoenig_dirk_schirmacher_diesel') }}
+                #  { % endif % }
+              - entity: sensor.tankerkoenig_total_idstein_diesel
+                name: Total Tankstelle
+              - entity: sensor.tankerkoenig_shell_idstein_black_u_decker_str_9_diesel
+                name: Shell Black&Decker
+              - entity: sensor.tankerkoenig_shell_idstein_wiesbadener_str_56_diesel
+                name: Shell Wiesbadener
+
+  ## ROW 2 ###################################################################################################################
+  - type: vertical-stack
+    cards:
+      - !include
+        - ../includes/titles.yaml
         - title: AUTO
 
       - type: 'custom:stack-in-card'

@@ -1,0 +1,78 @@
+icon: mdi:sofa
+title: Wohnzimmer
+path: livingroom
+id: livingroom
+cards:
+  ## ROW 1 ###################################################################################################################
+  - type: vertical-stack
+    cards:
+      - !include
+        - ../includes/titles.yaml
+        - title: Wohnzimmer
+
+      - type: glance
+        show_name: true
+        style: !include ../includes/style_entities.yaml
+        entities:
+          - entity: light.light1test
+            name: Licht
+          - entity: sensor.buro_dect301_1_temperature
+            name: Fußbodenheizung
+          - entity: binary_sensor.office_window_xiaomi_1_openclose
+            name: Terrassentür
+
+      - type: "custom:simple-thermostat"
+        #style: !include ../includes/style_entities.yaml
+        entity: climate.fritz_dect_301_4
+        name: Heizung
+        decimal: 0
+        step_size: 1.0
+        step_layout: column
+        label:
+          temperature: Innen
+        control:
+          _headings: false
+          hvac:
+            heat:
+              name: Heizen
+              icon: mdi:fire
+            "off":
+              name: Aus
+              icon: mdi:power
+          preset:
+            _name:
+        sensors:
+          - entity: sensor.dwd_weather_temperature
+            name: Außen
+          - entity: sensor.buro_dect301_1_battery_level
+        style: |
+          ha-card .header__title {
+            font-size: var(--font-size-subtitle);
+          }
+          ha-card .mode-item {
+            background: var(--color-blue-bright-2)
+          }
+
+  ## ROW 2 ###################################################################################################################
+  - type: vertical-stack
+    cards:
+      - !include
+        - ../includes/titles.yaml
+        - title: Lichter
+
+      - type: entities
+        show_header_toggle: false
+        style: !include ../includes/style_entities.yaml
+        entities:
+          - type: custom:slider-entity-row
+            entity: light.light1test
+            toggle: true
+            name: Spots Decke
+          - type: custom:slider-entity-row
+            entity: light.light1test
+            toggle: true
+            name: Stehlampe 1
+          - type: custom:slider-entity-row
+            entity: light.light1test
+            toggle: true
+            name: Stehlampe 2
