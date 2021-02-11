@@ -1,0 +1,14 @@
+- platform: template
+  sensors:
+    gasstation_ed_diesel:
+      friendly_name: 'ED Tankstelle'
+      value_template: '{{ states.sensor.tankerkoenig_dirk_schirmacher_diesel.attributes.brand }}'
+    gasstation_shellblackdecker_diesel:
+      friendly_name: 'Shell Black&Decker'
+      value_template: '{{ states.sensor.tankerkoenig_shell_idstein_black_u_decker_str_9_diesel.attributes.brand }}'
+    gasstation_shellwiesbadener_diesel:
+      friendly_name: 'Shell Wiesbadener'
+      value_template: '{{ states.sensor.tankerkoenig_shell_idstein_wiesbadener_str_56_diesel.attributes.brand }}'
+    gasstation_total_diesel:
+      friendly_name: 'Total Tankstelle'
+      value_template: '{{ states.sensor.tankerkoenig_total_idstein_diesel.attributes.brand }}'

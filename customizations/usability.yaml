@@ -187,6 +187,14 @@ binary_sensor.office_window_xiaomi_1_openclose:
     icon_color: >
       if (state == 'on') return 'var(--color-red-1)';
       return 'var(--paper-item-icon-color)';
+sensor.tankerkoenig_dirk_schirmacher_diesel:
+  friendly_name: ED Tankstelle
+  value_template: >
+    {% if states("sensor.tankerkoenig_dirk_schirmacher_diesel") == unknown %}
+      geschlossen
+    {% else %}
+      {{ states('sensor.tankerkoenig_dirk_schirmacher_diesel') }}
+    {% endif %}
 input_select.sensor_frontdoortest:
   friendly_name: Haustür TEST
   device_class: door
