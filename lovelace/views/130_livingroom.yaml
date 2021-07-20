@@ -16,15 +16,17 @@ cards:
         entities:
           - entity: light.light1test
             name: Licht
-          - entity: sensor.buro_dect301_1_temperature
-            name: Fußbodenheizung
+          - entity: sensor.livingroom_hmipbwth_thermostat_temperature
+            name: Lufttemperatur
           - entity: binary_sensor.office_window_xiaomi_1_openclose
             name: Terrassentür
 
       - type: "custom:simple-thermostat"
         #style: !include ../includes/style_entities.yaml
-        entity: climate.fritz_dect_301_4
-        name: Heizung
+        #entity: climate.fritz_dect_301_4
+        entity: climate.homematic_ip_ap_livingroom
+        name: Fußbodenheizung
+        icon: mdi:radiator
         decimal: 0
         step_size: 1.0
         step_layout: column
@@ -42,9 +44,11 @@ cards:
           preset:
             _name:
         sensors:
+          - entity: sensor.livingroom_hmipbwth_thermostat_humidity
+            name: Luftfeuchtigkeit
           - entity: sensor.dwd_weather_temperature
             name: Außen
-          - entity: sensor.buro_dect301_1_battery_level
+          #- entity: sensor.buro_dect301_1_battery_level
         style: |
           ha-card .header__title {
             font-size: var(--font-size-subtitle);
