@@ -1,26 +1,26 @@
 # Check the sensor ZW100 Multisensor every 5 Min. if a value has changed in the last 2 hours.
-- id: notify_monitor_sensor_mainhallway_zw100_multisensor_1
-  alias: "Notify Monitor Sensor Mainhallway ZW100 Multisensor 1"
-  description: "Send notification Monitor Sensor Crash Mainhallway ZW100 Multisensor 1"
-  #initial_state: true
-  trigger:
-    - platform: time_pattern
-      minutes: '/5'
-  condition:
-    condition: and
-    conditions:
-      - condition: template
-        value_template: >
-          {{ (as_timestamp(now())-as_timestamp(states.sensor.mainhallway_zw100_multisensor_1_air_temperature.last_updated)) > 7200 }}
-      - condition: template
-        value_template: >
-          {{ (as_timestamp(now())-as_timestamp(states.sensor.mainhallway_zw100_multisensor_1_humidity.last_updated)) > 7200 }}
-  action:
-    - service: notify.ha_message_group
-      data:
-        title: '*Info / Warning - SENSOR*'
-        message: "Communication lost to the Sensor - Mainhallway ZW100 Multisensor 1"
-    - service: persistent_notification.create
-      data:
-        title: "Info / Warning - SENSOR"
-        message: "Communication lost to the Sensor - Mainhallway ZW100 Multisensor 1"
+#- id: notify_monitor_sensor_mainhallway_zw100_multisensor_1
+#  alias: "Notify Monitor Sensor Mainhallway ZW100 Multisensor 1"
+#  description: "Send notification Monitor Sensor Crash Mainhallway ZW100 Multisensor 1"
+#  #initial_state: true
+#  trigger:
+#    - platform: time_pattern
+#      minutes: '/5'
+#  condition:
+#    condition: and
+#    conditions:
+#      - condition: template
+#        value_template: >
+#          {{ (as_timestamp(now())-as_timestamp(states.sensor.mainhallway_zw100_multisensor_1_air_temperature.last_updated)) > 7200 }}
+#      - condition: template
+#        value_template: >
+#          {{ (as_timestamp(now())-as_timestamp(states.sensor.mainhallway_zw100_multisensor_1_humidity.last_updated)) > 7200 }}
+#  action:
+#    - service: notify.ha_message_group
+#      data:
+#        title: '*Info / Warning - SENSOR*'
+#        message: "Communication lost to the Sensor - Mainhallway ZW100 Multisensor 1"
+#    - service: persistent_notification.create
+#      data:
+#        title: "Info / Warning - SENSOR"
+#        message: "Communication lost to the Sensor - Mainhallway ZW100 Multisensor 1"
