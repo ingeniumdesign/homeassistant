@@ -15,9 +15,9 @@ cards:
         card:
           type: vertical-stack
           cards:
-            - !include
-              - ../includes/titles.yaml
-              - title: HASSIO
+            ##- !include
+            ##  - ../includes/titles.yaml
+            ##  - title: HASSIO
 
             - type: entities
               entities:
@@ -37,9 +37,9 @@ cards:
         card:
           type: vertical-stack
           cards:
-            - !include
-              - ../includes/titles.yaml
-              - title: HACS / Home Assistant Community Store
+            ##- !include
+            ##  - ../includes/titles.yaml
+            ##  - title: HACS / Home Assistant Community Store
 
             - type: entities
               entities:
@@ -51,9 +51,9 @@ cards:
                 }
 
       # SERVICE OPTION
-      - !include
-        - ../includes/titles.yaml
-        - title: SERVICE - Home Assistant
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: SERVICE - Home Assistant
 
       - type: horizontal-stack
         cards:
@@ -111,9 +111,9 @@ cards:
                 - color: var(--color-error)
 
       # INFOS Intel NUC
-      - !include
-        - ../includes/titles.yaml
-        - title: Intel NUC i5
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: Intel NUC i5
 
       - type: custom:stack-in-card
         cards:
@@ -154,9 +154,9 @@ cards:
               - sensor.hass_io_uptime_pretty
 
       # INFOS Synology DSM DS713+
-      - !include
-        - ../includes/titles.yaml
-        - title: Synology DSM DS713+
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: Synology DSM DS713+
 
       # ABFRAGE - Synology
       - type: conditional
@@ -217,6 +217,18 @@ cards:
 
             **INFO:** täglich um 2:00 Uhr schaltet sich die NAS automatisch aus.
 
+      # Homematic IP Overview
+      - type: custom:stack-in-card
+        cards:
+          - type: 'custom:auto-entities'
+            card:
+              show_header_toggle: false
+              title: Homematic IP
+              type: entities
+            filter:
+              include:
+                - entity_id: '*homematic*'
+
       # Shelly Overview
       - type: custom:stack-in-card
         cards:
@@ -233,9 +245,9 @@ cards:
   - type: vertical-stack
     style: !include ../includes/style.yaml
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: DOCKER STATUS
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: DOCKER STATUS
 
       - type: custom:stack-in-card
         cards:
@@ -274,9 +286,9 @@ cards:
               - sensor.docker_images
               - sensor.docker_version
 
-      - !include
-        - ../includes/titles.yaml
-        - title: NETZMONITOR
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: NETZMONITOR
 
       - type: custom:stack-in-card
         cards:

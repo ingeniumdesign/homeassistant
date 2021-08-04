@@ -6,9 +6,9 @@ cards:
   ## ROW 1 ###################################################################################################################
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: SCHLAFZIMMER
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: SCHLAFZIMMER
 
       - type: "custom:simple-thermostat"
         #style: !include ../includes/style_entities.yaml

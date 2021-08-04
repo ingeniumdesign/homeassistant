@@ -277,9 +277,9 @@ cards:
           }
 
       # Abfallkalender
-      - !include
-        - ../includes/titles.yaml
-        - title: ABFALLKALENDER
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: ABFALLKALENDER
 
       - type: horizontal-stack
         cards:
@@ -470,9 +470,9 @@ cards:
               }
 
       ## VACUUM ROBOROCK S6 - XIAOMI
-      - !include
-        - ../includes/titles.yaml
-        - title: SAUGER ROBOROCK S6
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: SAUGER ROBOROCK S6
 
       - type: "custom:vacuum-card"
         entity: vacuum.xiaomi_vacuum_cleaner

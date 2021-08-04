@@ -6,9 +6,9 @@ cards:
   ## ROW 1 ###################################################################################################################
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: Wohnzimmer
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: Wohnzimmer
 
       - type: glance
         show_name: true
@@ -60,9 +60,9 @@ cards:
   ## ROW 2 ###################################################################################################################
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: Lichter
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: Lichter
 
       - type: entities
         show_header_toggle: false

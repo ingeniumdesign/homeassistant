@@ -6,9 +6,9 @@ cards:
   ## ROW 1 ###################################################################################################################
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: BENZIN-PREISE
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: BENZIN-PREISE
 
       - type: 'custom:stack-in-card'
         style: !include ../includes/style_entities_multiple.yaml
@@ -44,9 +44,9 @@ cards:
   ## ROW 2 ###################################################################################################################
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: AUTO
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: AUTO
 
       - type: 'custom:stack-in-card'
         mode: vertical
