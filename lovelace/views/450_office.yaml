@@ -6,9 +6,9 @@ cards:
   ## ROW 1 ###################################################################################################################
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: BÜRO
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: BÜRO
 
       - type: glance
         show_name: true
@@ -59,9 +59,9 @@ cards:
         entity: light.light1test
         name: Licht
 
-      - !include
-        - ../includes/titles.yaml
-        - title: GERÄTE
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: GERÄTE
 
       - type: entities
         show_header_toggle: true

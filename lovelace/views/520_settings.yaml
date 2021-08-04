@@ -43,9 +43,9 @@ popup_cards:
 cards:
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: TEST SENSOREN & SCHALTER
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: TEST SENSOREN & SCHALTER
 
       - type: entities
         show_header_toggle: false
@@ -58,9 +58,9 @@ cards:
 
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: EINSTELLUNGEN
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: EINSTELLUNGEN
 
       - type: entities
         show_header_toggle: false
@@ -71,9 +71,9 @@ cards:
 
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: BEWEGUNGSMELDER
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: BEWEGUNGSMELDER
 
       - type: entities
         show_header_toggle: false
@@ -86,9 +86,9 @@ cards:
           - input_boolean.motion_sensor_kitchen_toggle
           - input_boolean.motion_sensor_restroom_toggle
 
-      - !include
-        - ../includes/titles.yaml
-        - title: STROMKOSTEN
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: STROMKOSTEN
 
       - type: entities
         style: !include ../includes/style_entities.yaml

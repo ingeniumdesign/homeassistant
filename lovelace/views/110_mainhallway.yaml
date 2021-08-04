@@ -6,9 +6,9 @@ cards:
   ## ROW 1 ###################################################################################################################
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: EINGANG / FLUR
+      ##- !include
+        ##- ../includes/titles.yaml
+        ##- title: EINGANG / FLUR
 
       - type: custom:simple-thermostat
         entity: climate.homematic_ip_ap_mainhallway
@@ -107,9 +107,9 @@ cards:
   ## ROW 2 ###################################################################################################################
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: FLUR / EINGANG INFOS
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: FLUR / EINGANG INFOS
 
       - type: custom:stack-in-card
         cards:
