@@ -4,13 +4,13 @@
 - platform: template
   sensors:
     net_download_max:
-      value_template: "{{ (state_attr('sensor.fritz_netmonitor', 'max_byte_rate_down')|float / 125000)|round(1) }}"
+      value_template: "{{ (state_attr('sensor.ingeniumdesign_max_kbit_s_received', 'max_byte_rate_down')|float / 125000)|round(1) }}"
       unit_of_measurement: "Mbit/s"
       friendly_name: "Down"
       icon_template: mdi:download
   
     net_upload_max:
-        value_template: "{{ (state_attr('sensor.fritz_netmonitor', 'max_byte_rate_up')|float / 125000)|round(1) }}"
+        value_template: "{{ (state_attr('sensor.ingeniumdesign_max_kbit_s_sent', 'max_byte_rate_up')|float / 125000)|round(1) }}"
         unit_of_measurement: "Mbit/s"
         friendly_name: "Up"
         icon_template: mdi:upload
@@ -28,19 +28,19 @@
         icon_template: mdi:upload
     
     net_received:
-        value_template: "{{ (state_attr('sensor.fritz_netmonitor', 'bytes_received')|float / 1000000)|round(0) }}"
+        value_template: "{{ (state_attr('sensor.ingeniumdesign_max_kbit_s_received', 'bytes_received')|float / 1000000)|round(0) }}"
         unit_of_measurement: "MB"
         friendly_name: "Empfangen"
         icon_template: mdi:file
     
     net_sent:
-        value_template: "{{ (state_attr('sensor.fritz_netmonitor', 'bytes_sent')|float / 1000000)|round(0) }}"
+        value_template: "{{ (state_attr('sensor.ingeniumdesign_max_kbit_s_sent', 'bytes_sent')|float / 1000000)|round(0) }}"
         unit_of_measurement: "MB"
         friendly_name: "Gesendet"
         icon_template: mdi:file
 
     net_uptime:
-        value_template: "{{ (state_attr('sensor.fritz_netmonitor', 'uptime')|float / 86400)|round(1) }}"
+        value_template: "{{ (state_attr('sensor.ingeniumdesign_connection_uptime', 'uptime')|float / 86400)|round(1) }}"
         unit_of_measurement: "Tage"
         friendly_name: "Verbunden"
         icon_template: mdi:calendar

@@ -124,6 +124,7 @@ cards:
       - type: custom:stack-in-card
         cards:
           - type: horizontal-stack
+            #title: Intel NUC i5
             cards:
               - type: 'custom:mini-graph-card'
                 style: |
@@ -148,6 +149,43 @@ cards:
                 font_size: 60
                 font_size_header: 11
                 hours_to_show: 12
+                line_color: var(--color-red-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
+
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.memory_use_percent
+                name: Speicher RAM
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
                 line_color: var(--color-ocher-1)
                 line_width: 4
                 animate: true
@@ -162,27 +200,42 @@ cards:
                   name: true
                   labels: false
 
-##              - !include
-##                - ../includes/graphs_embeded.yaml
-##                - entity: sensor.processor_use_percent
-##                  name: CPU
-##                  hours_to_show: 12
-##                  points_per_hour: 4
-##                  line_color: var(--color-red-1)
-##              - !include
-##                - ../includes/graphs_embeded.yaml
-##                - entity: sensor.memory_use_percent
-##                  name: Memory
-##                  hours_to_show: 12
-##                  points_per_hour: 4
-##                  line_color: var(--color-ocher-1)
-##              - !include
-##                - ../includes/graphs_embeded.yaml
-##                - entity: sensor.cpu_temp
-##                  name: Temperatur
-##                  hours_to_show: 12
-##                  points_per_hour: 4
-##                  line_color: var(--color-green-bright-1)
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.cpu_temp
+                name: Temperatur
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-green-bright-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
 
           - type: entities
             style: !include ../includes/style_entities_embeded.yaml
@@ -296,13 +349,42 @@ cards:
         cards:
           - type: horizontal-stack
             cards:
-##              - !include
-##                - ../includes/graphs_embeded.yaml
-##                - entity: sensor.docker_cpu
-##                  name: CPU
-##                  hours_to_show: 12
-##                  points_per_hour: 4
-##                  line_color: var(--color-red-1)
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.docker_cpu
+                name: CPU
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-red-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
 ##              - !include
 ##                - ../includes/graphs_embeded.yaml
 ##                - entity: sensor.docker_1cpu
@@ -382,26 +464,84 @@ cards:
                 max: 52
           - type: horizontal-stack
             cards:
-##              - !include
-##                - ../includes/graphs_embeded.yaml
-##                - entity: sensor.net_download_cur_filtered
-##                  name: Download
-##                  align_icon: left
-##                  points_per_hour: 4
-##                  hours_to_show: 12
-##                  extrema: true
-##                - type: custom:mini-graph-card
-##                  style: |
-##                    .graph .graph__container {
-##                      padding-right:3px;
-##                    }
-##              - !include
-##                - ../includes/graphs_embeded.yaml
-##                - entity: sensor.net_upload_cur
-##                  name: Upload
-##                  points_per_hour: 4
-##                  hours_to_show: 12
-##                  extrema: true
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .graph .graph__container {
+                    padding-right:3px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.net_download_cur_filtered
+                name: Download
+                align_icon: left
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-red-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: true
+                  icon: true
+                  name: true
+                  labels: false
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.net_upload_cur
+                name: Upload
+                align_icon: left
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--accent-color)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: true
+                  icon: true
+                  name: true
+                  labels: false
+
           - type: entities
             style: !include ../includes/style_entities_embeded.yaml
             entities:
