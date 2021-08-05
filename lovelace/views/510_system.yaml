@@ -5,7 +5,13 @@ id: system
 
 cards:
   - type: vertical-stack
-    style: !include ../includes/style.yaml
+    style: |
+      ha-card {
+        border: solid 1px var(--border-color);
+        font-family: var(--primary-font-family);
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
     cards:
       # ABFRAGE - HASSIO
       - type: conditional
@@ -119,27 +125,64 @@ cards:
         cards:
           - type: horizontal-stack
             cards:
-              - !include
-                - ../includes/graphs_embeded.yaml
-                - entity: sensor.processor_use_percent
-                  name: CPU
-                  hours_to_show: 12
-                  points_per_hour: 4
-                  line_color: var(--color-red-1)
-              - !include
-                - ../includes/graphs_embeded.yaml
-                - entity: sensor.memory_use_percent
-                  name: Memory
-                  hours_to_show: 12
-                  points_per_hour: 4
-                  line_color: var(--color-ocher-1)
-              - !include
-                - ../includes/graphs_embeded.yaml
-                - entity: sensor.cpu_temp
-                  name: Temperatur
-                  hours_to_show: 12
-                  points_per_hour: 4
-                  line_color: var(--color-green-bright-1)
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.processor_use_percent
+                name: CPU
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-ocher-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
+
+##              - !include
+##                - ../includes/graphs_embeded.yaml
+##                - entity: sensor.processor_use_percent
+##                  name: CPU
+##                  hours_to_show: 12
+##                  points_per_hour: 4
+##                  line_color: var(--color-red-1)
+##              - !include
+##                - ../includes/graphs_embeded.yaml
+##                - entity: sensor.memory_use_percent
+##                  name: Memory
+##                  hours_to_show: 12
+##                  points_per_hour: 4
+##                  line_color: var(--color-ocher-1)
+##              - !include
+##                - ../includes/graphs_embeded.yaml
+##                - entity: sensor.cpu_temp
+##                  name: Temperatur
+##                  hours_to_show: 12
+##                  points_per_hour: 4
+##                  line_color: var(--color-green-bright-1)
 
           - type: entities
             style: !include ../includes/style_entities_embeded.yaml
@@ -168,27 +211,27 @@ cards:
           cards:
             - type: horizontal-stack
               cards:
-                - !include
-                  - ../includes/graphs_embeded.yaml
-                  - entity: sensor.ing_nas_cpu_load_total
-                    name: CPU
-                    hours_to_show: 12
-                    points_per_hour: 4
-                    line_color: var(--color-red-1)
-                - !include
-                  - ../includes/graphs_embeded.yaml
-                  - entity: sensor.ing_nas_memory_usage_real
-                    name: Memory
-                    hours_to_show: 12
-                    points_per_hour: 4
-                    line_color: var(--color-ocher-1)
-                - !include
-                  - ../includes/graphs_embeded.yaml
-                  - entity: sensor.ing_nas_temperature
-                    name: Temperatur
-                    hours_to_show: 12
-                    points_per_hour: 4
-                    line_color: var(--color-green-bright-1)
+##                - !include
+##                  - ../includes/graphs_embeded.yaml
+##                  - entity: sensor.ing_nas_cpu_load_total
+##                    name: CPU
+##                    hours_to_show: 12
+##                    points_per_hour: 4
+##                    line_color: var(--color-red-1)
+##                - !include
+##                  - ../includes/graphs_embeded.yaml
+##                  - entity: sensor.ing_nas_memory_usage_real
+##                    name: Memory
+##                    hours_to_show: 12
+##                    points_per_hour: 4
+##                    line_color: var(--color-ocher-1)
+##                - !include
+##                  - ../includes/graphs_embeded.yaml
+##                  - entity: sensor.ing_nas_temperature
+##                    name: Temperatur
+##                    hours_to_show: 12
+##                    points_per_hour: 4
+##                    line_color: var(--color-green-bright-1)
             - type: custom:auto-entities
               style: !include ../includes/style_entities_embeded.yaml
               show_empty: false
@@ -253,27 +296,27 @@ cards:
         cards:
           - type: horizontal-stack
             cards:
-              - !include
-                - ../includes/graphs_embeded.yaml
-                - entity: sensor.docker_cpu
-                  name: CPU
-                  hours_to_show: 12
-                  points_per_hour: 4
-                  line_color: var(--color-red-1)
-              - !include
-                - ../includes/graphs_embeded.yaml
-                - entity: sensor.docker_1cpu
-                  name: CPU
-                  hours_to_show: 12
-                  points_per_hour: 4
-                  line_color: var(--color-green-bright-1)
-              - !include
-                - ../includes/graphs_embeded.yaml
-                - entity: sensor.docker_memory_percent
-                  name: Memory
-                  hours_to_show: 12
-                  points_per_hour: 4
-                  line_color: var(--color-ocher-1)
+##              - !include
+##                - ../includes/graphs_embeded.yaml
+##                - entity: sensor.docker_cpu
+##                  name: CPU
+##                  hours_to_show: 12
+##                  points_per_hour: 4
+##                  line_color: var(--color-red-1)
+##              - !include
+##                - ../includes/graphs_embeded.yaml
+##                - entity: sensor.docker_1cpu
+##                  name: CPU
+##                  hours_to_show: 12
+##                  points_per_hour: 4
+##                  line_color: var(--color-green-bright-1)
+##              - !include
+##                - ../includes/graphs_embeded.yaml
+##                - entity: sensor.docker_memory_percent
+##                  name: Memory
+##                  hours_to_show: 12
+##                  points_per_hour: 4
+##                  line_color: var(--color-ocher-1)
 
           - type: entities
             style: !include ../includes/style_entities_embeded.yaml
@@ -339,26 +382,26 @@ cards:
                 max: 52
           - type: horizontal-stack
             cards:
-              - !include
-                - ../includes/graphs_embeded.yaml
-                - entity: sensor.net_download_cur_filtered
-                  name: Download
-                  align_icon: left
-                  points_per_hour: 4
-                  hours_to_show: 12
-                  extrema: true
-                - type: custom:mini-graph-card
-                  style: |
-                    .graph .graph__container {
-                      padding-right:3px;
-                    }
-              - !include
-                - ../includes/graphs_embeded.yaml
-                - entity: sensor.net_upload_cur
-                  name: Upload
-                  points_per_hour: 4
-                  hours_to_show: 12
-                  extrema: true
+##              - !include
+##                - ../includes/graphs_embeded.yaml
+##                - entity: sensor.net_download_cur_filtered
+##                  name: Download
+##                  align_icon: left
+##                  points_per_hour: 4
+##                  hours_to_show: 12
+##                  extrema: true
+##                - type: custom:mini-graph-card
+##                  style: |
+##                    .graph .graph__container {
+##                      padding-right:3px;
+##                    }
+##              - !include
+##                - ../includes/graphs_embeded.yaml
+##                - entity: sensor.net_upload_cur
+##                  name: Upload
+##                  points_per_hour: 4
+##                  hours_to_show: 12
+##                  extrema: true
           - type: entities
             style: !include ../includes/style_entities_embeded.yaml
             entities:

@@ -12,7 +12,7 @@ It's running with a Pi3 64-bit Image for [Hass.io Install-Info](https://www.home
 
 ---
 
-![HAVERSION](https://img.shields.io/badge/homeassistant-2021.1.x-blue)
+![HAVERSION](https://img.shields.io/badge/homeassistant-2021.8.x-blue)
 ![STARS](https://img.shields.io/github/stars/ingeniumdesign/homeassistant?color=yellow&style=flat-square)
 ![WATCHERS](https://img.shields.io/github/watchers/ingeniumdesign/homeassistant?color=green&style=flat-square)
 ![ISSUES](https://img.shields.io/github/issues-raw/ingeniumdesign/homeassistant?style=flat-square)
@@ -27,7 +27,7 @@ _More Screenshot down below._
 ## Hardware
 
 - Intel NUC i5 [NUC7i5BNB](https://ark.intel.com/content/www/de/de/ark/products/95064/intel-nuc-board-nuc7i5bnb.html) with 16GB RAM and 250GB NVMe SSD [Amazon i5-10 *](https://amzn.to/35e8tYI)
-- Raspberry [Pi3 B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) - [Amazon *](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB *](https://amzn.to/2KRBXVH) microSDHC
+- Raspberry [Pi3 B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) - [Amazon *](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB *](https://amzn.to/2KRBXVH) microSDHC - DEV Server
 - AVM [FRITZ!Box 6590 Cable](https://avm.de/produkte/fritzbox/fritzbox-6590-cable/) - [Amazon *](https://amzn.to/359i6YE) // Take the new [6591 Cable](https://avm.de/produkte/fritzbox/fritzbox-6591-cable/)! - [Amazon *](https://amzn.to/3pNbdUU)
 - AVM 3x [FRITZ!DECT 301](https://avm.de/produkte/fritzdect/fritzdect-301/) - [Amazon *](https://amzn.to/3pSRUd4)
 - AVM 1x [FRITZ!DECT 200](https://avm.de/produkte/fritzdect/fritzdect-200/) - [Amazon *](https://amzn.to/2LnpAQK)
@@ -42,6 +42,7 @@ _More Screenshot down below._
 - Xiaomi 4x [Door & Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/) MCCGQ01LM - [Amazon *](https://amzn.to/2NR1pM0)
 - AEOTEC 1x [Plus Multisensor 6 EU 868.4MHz](https://aeotec.com/z-wave-sensor/) ZW100-C - [Amazon *](https://amzn.to/38YJoCm)
 - Amazon [FireHD 10 Tablet *](https://amzn.to/3oicZNp) - [Fire Toolbox V11.0](https://forum.xda-developers.com/t/windows-tool-fire-toolbox-v11-0.3889604/)
+- Amazon [FireHD 10 Plus Tablet *](https://amzn.to/3iqhlli) - [Fire Toolbox V11.0](https://forum.xda-developers.com/t/windows-tool-fire-toolbox-v11-0.3889604/)
 - Amazon 1x [Echo Dot (4. Gen.) *](https://amzn.to/3ncrktE)
 - Amazon 1x [Echo Dot (3. Gen.) *](https://amzn.to/3hHu8xz)
 - Shelly 2x [2.5](https://shelly.cloud/products/shelly-25-smart-home-automation-relay/) - [Amazon *](https://amzn.to/38W9vuG)

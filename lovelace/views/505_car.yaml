@@ -193,29 +193,48 @@ cards:
                     name: Strecke
               - type: divider
 
-          - !include
-            - ../includes/graphs_embeded.yaml
-            - entity: sensor.octavia_combined_range
-              name: Reichweite
-              icon: 'mdi:gas-station'
-              align_icon: right
-              align_state: center
-              hours_to_show: 364
-              points_per_hour: 0.1
-              line_width: 1
-              font_size_header: 14
-              font_size: 90
-              show:
-                name: false
-                icon: false
-                state: false
-                labels: true
-                color_thresholds:
-                  - value: 150
-                    color: var(--color-ocher-1)
-                  - value: 80
-                    color: var(--color-error)
-                lower_bound: 0
-                upper_bound: 1200
-                lower_bound_secondary: 0
-                upper_bound_secondary: 60
+          - type: 'custom:mini-graph-card'
+            style: |
+              ha-card {
+                font-family: var(--primary-font-family);
+                border-bottom: 2px solid var(--background-color);
+              }
+              .graph {
+                padding-top: 15px;
+                padding-bottom: 0px;
+              }
+              .info {
+                padding-bottom: 0px;
+              }
+              .flex {
+                padding-bottom: 10px;
+              }
+            entities:
+              - sensor.octavia_combined_range
+            name: Reichweite
+            icon: 'mdi:gas-station'
+            align_state: center
+            align_icon: right
+            font_size: 90
+            font_size_header: 14
+            hours_to_show: 364
+            line_color: var(--accent-color)
+            line_width: 1
+            animate: true
+            points_per_hour: 0.1
+            lower_bound: 0
+            upper_bound: 1200
+            lower_bound_secondary: 0
+            upper_bound_secondary: 60
+            show:
+              fill: fade
+              graph: line
+              extrema: false
+              icon: false
+              name: false
+              labels: true
+              color_thresholds:
+                - value: 150
+                  color: var(--color-ocher-1)
+                - value: 80
+                  color: var(--color-error)

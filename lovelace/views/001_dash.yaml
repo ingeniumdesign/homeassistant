@@ -335,7 +335,7 @@ cards:
                 padding-bottom: 10px;
               }
             entities:
-              - entity: sensor.buro_dect301_1_temperature
+              - entity: sensor.livingroom_hmipbwth_thermostat_temperature
                 name: Innen
                 color: var(--color-ocher-1)
               - entity: sensor.dwd_weather_temperature
@@ -404,29 +404,86 @@ cards:
       ## DOWNLOAD / UPLOAD ##
       - type: horizontal-stack
         cards:
-          - !include
-            - ../includes/graphs.yaml
-            - entity: sensor.net_download_cur_filtered
-              name: Download
-              align_icon: left
-              hours_to_show: 12
-              points_per_hour: 4
-              # @ToDo link disable
-              #tap_action:
-              #  action: none
-              #hold_action:
-              #  action: none
-          - !include
-            - ../includes/graphs.yaml
-            - entity: sensor.net_upload_cur
-              name: Upload
-              hours_to_show: 12
-              points_per_hour: 4
-              # @ToDo link disable
-              #tap_action:
-              #  action: none
-              #hold_action:
-              #  action: none
+          - type: custom:mini-graph-card
+            style: |
+              ha-card {
+                border: solid 1px var(--border-color);
+                font-family: var(--primary-font-family);
+                margin-top: 5px;
+                margin-bottom: 5px;
+              }
+              .graph {
+                padding-top: 15px;
+                padding-bottom: 0px;
+              }
+              .info {
+                padding-bottom: 0px;
+              }
+              .flex {
+                padding-bottom: 10px;
+              }
+            entities:
+              - sensor.net_download_cur_filtered
+            name: Download
+            align_state: center
+            align_icon: left
+            font_size: 60
+            font_size_header: 11
+            hours_to_show: 24
+            line_color: var(--accent-color)
+            line_width: 4
+            animate: true
+            points_per_hour: 1.0
+            lower_bound_secondary: 0
+            show:
+              fill: fade
+              graph: line
+              extrema: false
+            # @ToDo link disable
+            #tap_action:
+            #  action: none
+            #hold_action:
+            #  action: none
+          - type: custom:mini-graph-card
+            style: |
+              ha-card {
+                border: solid 1px var(--border-color);
+                font-family: var(--primary-font-family);
+                margin-top: 5px;
+                margin-bottom: 5px;
+              }
+              .graph {
+                padding-top: 15px;
+                padding-bottom: 0px;
+              }
+              .info {
+                padding-bottom: 0px;
+              }
+              .flex {
+                padding-bottom: 10px;
+              }
+            entities:
+              - sensor.net_upload_cur
+            name: Upload
+            align_state: center
+            align_icon: left
+            font_size: 60
+            font_size_header: 11
+            hours_to_show: 24
+            line_color: var(--accent-color)
+            line_width: 4
+            animate: true
+            points_per_hour: 1.0
+            lower_bound_secondary: 0
+            show:
+              fill: fade
+              graph: line
+              extrema: false
+            # @ToDo link disable
+            #tap_action:
+            #  action: none
+            #hold_action:
+            #  action: none
 
       ## Other Sensor ##
       - type: horizontal-stack
