@@ -24,9 +24,10 @@ cards:
       - type: "custom:simple-thermostat"
         #style: !include ../includes/style_entities.yaml
         #entity: climate.fritz_dect_301_4
-        entity: climate.homematic_ip_ap_livingroom
-        name: Fußbodenheizung
-        icon: mdi:radiator
+        entity: climate.livingroom_hmipbwth_thermostat
+        header:
+          name: Fußbodenheizung
+          icon: mdi:radiator
         decimal: 0
         step_size: 1.0
         step_layout: column

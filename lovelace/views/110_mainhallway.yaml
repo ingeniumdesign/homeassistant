@@ -10,9 +10,11 @@ cards:
         ##- ../includes/titles.yaml
         ##- title: EINGANG / FLUR
 
-      - type: custom:simple-thermostat
-        entity: climate.homematic_ip_ap_mainhallway
-        name: Fußbodenheizung
+      - type: "custom:simple-thermostat"
+        entity: climate.mainhallway_hmipbwth_thermostat
+        header:
+          name: Fußbodenheizung
+          icon: mdi:radiator
         decimal: 0
         step_size: 1.0
         step_layout: column
@@ -30,9 +32,10 @@ cards:
         #  preset:
         #    _name:
         sensors:
+          - entity: sensor.mainhallway_hmipbwth_thermostat_humidity
+            name: Luftfeuchtigkeit
           - entity: sensor.dwd_weather_temperature
             name: Außen
-          - entity: sensor.schlafzimmer_dect301_1_battery_level
         style: |
           ha-card .header__title {
             font-size: var(--font-size-subtitle);

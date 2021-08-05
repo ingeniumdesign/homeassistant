@@ -44,6 +44,12 @@ climate.buro_dect301_1:
 climate.schlafzimmer_dect301_1:
   friendly_name: Schlafzimmer Heizung 1
   icon: mdi:radiator
+climate.livingroom_hmipbwth_thermostat:
+  friendly_name: Fußbodenheizung
+  icon: mdi:radiator
+climate.mainhallway_hmipbwth_thermostat:
+  friendly_name: Fußbodenheizung
+  icon: mdi:radiator
 sensor.db_size:
   friendly_name: DB-Größe
   icon: mdi:database
