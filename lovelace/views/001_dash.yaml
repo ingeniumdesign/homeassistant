@@ -62,9 +62,24 @@ cards:
   ## ROW 1 ###################################################################################################################
   - type: vertical-stack
     cards:
-      #- !include
-      #  - ../includes/titles.yaml
-      #  - title: QUICK LINKS
+      - type: markdown
+        style: |
+          ha-card {
+            font-size: var(--font-size-title);
+            font-family: var(--font-title);
+            line-height: 30px;
+            background: none;
+            margin-top: 0.4em;
+            margin-left: 8px;
+            margin-bottom: 0em;
+            box-shadow: none;
+            background: none;
+          }
+          ha-markdown {
+            padding: 0px 0px 0px 8px !important;
+            border-left: 3px solid var(--accent-color);
+          }
+        content: QUICK LINKS
 
       ## SHORTCUTS ##
       - type: horizontal-stack
@@ -218,9 +233,24 @@ cards:
                         show_last_changed: true
 
       ## WEATHER
-      #- !include
-      #  - ../includes/titles.yaml
-      #  - title: WETTER
+      - type: markdown
+        style: |
+          ha-card {
+            font-size: var(--font-size-title);
+            font-family: var(--font-title);
+            line-height: 30px;
+            background: none;
+            margin-top: 0.4em;
+            margin-left: 8px;
+            margin-bottom: 0em;
+            box-shadow: none;
+            background: none;
+          }
+          ha-markdown {
+            padding: 0px 0px 0px 8px !important;
+            border-left: 3px solid var(--accent-color);
+          }
+        content: WETTER
 
       - type: custom:weather-card
         entity: weather.dwd_weather_idstein
@@ -277,9 +307,24 @@ cards:
           }
 
       # Abfallkalender
-      ##- !include
-      ##  - ../includes/titles.yaml
-      ##  - title: ABFALLKALENDER
+      - type: markdown
+        style: |
+          ha-card {
+            font-size: var(--font-size-title);
+            font-family: var(--font-title);
+            line-height: 30px;
+            background: none;
+            margin-top: 0.4em;
+            margin-left: 8px;
+            margin-bottom: 0em;
+            box-shadow: none;
+            background: none;
+          }
+          ha-markdown {
+            padding: 0px 0px 0px 8px !important;
+            border-left: 3px solid var(--accent-color);
+          }
+        content: ABFALLKALENDER
 
       - type: horizontal-stack
         cards:
@@ -310,9 +355,24 @@ cards:
   - type: vertical-stack
     cards:
       ## TEMPERATUR / LUFTFEUCHTIGKEIT ##
-      #- !include
-      #  - ../includes/titles.yaml
-      #  - title: SENSOREN
+      - type: markdown
+        style: |
+          ha-card {
+            font-size: var(--font-size-title);
+            font-family: var(--font-title);
+            line-height: 30px;
+            background: none;
+            margin-top: 0.4em;
+            margin-left: 8px;
+            margin-bottom: 0em;
+            box-shadow: none;
+            background: none;
+          }
+          ha-markdown {
+            padding: 0px 0px 0px 8px !important;
+            border-left: 3px solid var(--accent-color);
+          }
+        content: SENSOREN
 
       - type: horizontal-stack
         cards:
@@ -527,9 +587,24 @@ cards:
               }
 
       ## VACUUM ROBOROCK S6 - XIAOMI
-      ##- !include
-      ##  - ../includes/titles.yaml
-      ##  - title: SAUGER ROBOROCK S6
+      - type: markdown
+        style: |
+          ha-card {
+            font-size: var(--font-size-title);
+            font-family: var(--font-title);
+            line-height: 30px;
+            background: none;
+            margin-top: 0.4em;
+            margin-left: 8px;
+            margin-bottom: 0em;
+            box-shadow: none;
+            background: none;
+          }
+          ha-markdown {
+            padding: 0px 0px 0px 8px !important;
+            border-left: 3px solid var(--accent-color);
+          }
+        content: SAUGER ROBOROCK S6
 
       - type: "custom:vacuum-card"
         entity: vacuum.xiaomi_vacuum_cleaner
@@ -594,9 +669,24 @@ cards:
   #- type: vertical-stack
   #  cards:
   ## KARTE
-  #    - !include
-  #      - ../includes/titles.yaml
-  #      - title: KARTE
+  #    - type: markdown
+#        style: |
+#          ha-card {
+#            font-size: var(--font-size-title);
+#            font-family: var(--font-title);
+#            line-height: 30px;
+#            background: none;
+#            margin-top: 0.4em;
+#            margin-left: 8px;
+#            margin-bottom: 0em;
+#            box-shadow: none;
+#            background: none;
+#          }
+#          ha-markdown {
+#            padding: 0px 0px 0px 8px !important;
+#            border-left: 3px solid var(--accent-color);
+#          }
+#        content: KARTE
 
   #    - type: map
   #      style: !include ../includes/style.yaml
