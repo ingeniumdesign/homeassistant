@@ -21,7 +21,7 @@ homeassistant:
   # Load packages
   packages: !include_dir_named packages
 
-local_ip:
+#local_ip:
 
 ## MultiSensoring #######################################################################
 # DONT use this, we use OpenZWave (beta) !
@@ -96,7 +96,7 @@ logbook:
       - sensor.date_time
       - sensor.date_time_iso
       - sensor.date_time_utc
-      - sensor.hass_io_uptime
+      - sensor.uptime
       - sensor.hass_io_uptime_pretty
       - sensor.nuc_uptime
       - sensor.last_boot
@@ -151,14 +151,6 @@ media_player:
 #  - host: 192.168.178.27
 #    name: Samsung TV Q9075
 
-## DEVICE TRACKERS ######################################################################
-device_tracker:
-  - platform: fritz
-    host: 192.168.178.1
-    password: !secret device_tracker_fritzbox_password
-    track_new_devices: true
-    consider_home: 90
-
 ## UTILITY METER ########################################################################
 utility_meter:
   net_received_monthly:
@@ -168,37 +160,22 @@ utility_meter:
     source: sensor.net_sent
     cycle: monthly
 
-## SYNOLOGY DS713 #######################################################################
-## Data Input via HA Backend
-#synology_dsm:
-  #- host: !secret synology_dsm_ds713_host
-  #  username: !secret synology_dsm_ds713_username
-  #  password: !secret synology_dsm_ds713_password
-    #name: SYNOLOGY DSM DS713+
-
 ## WAKEonLAN #############################################################################
 #wake_on_lan:
 
 ## UPNP FRITZBOX ########################################################################
-upnp:
-  local_ip: 192.168.178.1
-
-## VACUUM ROBOROCK S6 ###################################################################
-# https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor
-vacuum:
-  - platform: xiaomi_miio
-    host: 192.168.178.46
-    token: !secret vacuum_roborock_s6_token
+##upnp:
+##  local_ip: 192.168.178.1
 
 ## SPEEDTEST ############################################################################
-speedtestdotnet:
-  server_id: 10010
-  scan_interval:
-    minutes: 480
-  monitored_conditions:
-    - ping
-    - download
-    - upload
+##speedtestdotnet:
+##  server_id: 10010
+##  scan_interval:
+##    minutes: 480
+##  monitored_conditions:
+##    - ping
+##    - download
+##    - upload
 
 ## SKODA CONNECT ########################################################################
 # https://github.com/lendy007/homeassistant-skodaconnect
@@ -225,7 +202,7 @@ tankerkoenig:
 
 ## LOVELACE UI ##########################################################################
 # OLD ?
-#lovelace_gen:
+lovelace_gen:
 
 lovelace:
   mode: yaml
@@ -278,9 +255,6 @@ lovelace:
       type: module
     - url: /hacsfiles/vacuum-card/vacuum-card.js
       type: module
-      # https://github.com/Villhellm/custom-sidebar
-      #- url: /hacsfiles/custom-sidebar/custom-sidebar.js
-      #  type: module
     # Styles
     - url: "https://fonts.googleapis.com/css2?family=Raleway&display=swap"
       type: css
@@ -295,6 +269,7 @@ lovelace:
       show_in_sidebar: true
       require_admin: true
 
+# https://github.com/thomasloven/hass-browser_mod
 browser_mod:
   disable:
     - all
