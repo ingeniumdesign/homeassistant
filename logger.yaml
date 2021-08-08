@@ -20,6 +20,7 @@ logs:
   homeassistant.components.sensor.rest: info
   homeassistant.components.tplink.switch: error
   homeassistant.components.zwave: warn
+  homeassistant.components.deconz: debug
   homeassistant.exceptions: info
   homeassistant.helpers.script: info
   homeassistant.helpers.entity: critical
