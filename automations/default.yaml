@@ -1,0 +1,92 @@
+#- id: "Zone Sebastian - Sebastian Arbeit"
+#  alias: 'Zone Sebastian - Sebastian Arbeit'
+#  trigger:
+#    - platform: zone
+#      entity_id: person.sebastian_schmal
+#      zone: zone.sebastianarbeit
+#      # Event is either enter or leave
+#      event: enter # or "leave"
+
+- id: notify_hass_startup
+  alias: "Notify HASS Startup"
+  description: "Send notification HASS Startup"
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    service: notify.ha_message_group
+    data:
+      title: "*Info / Warning*"
+      message: "Home Assistant ist gestartet"
+
+- id: notify_hass_shutdown
+  alias: "Notify HASS Shutdown"
+  description: "Send notification HASS Shutdown"
+  trigger:
+    - platform: homeassistant
+      event: shutdown
+  action:
+    service: notify.ha_message_group
+    data:
+      title: "*Info / Warning*"
+      message: "Home Assistant ist herunter gefahren"
+
+- id: notify_home_assistant_update
+  alias: 'Notify Home Assistant Update'
+  description: "Send notification Home Assistant Update"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.updater
+      from: 'off'
+      to: 'on'
+  action:
+    - service: notify.ha_message_group
+      data:
+        title: "*Home Assistant Update*"
+        message: "Es gibt eine neue Home Assistant Version!"
+
+- id: notify_sun_rises
+  alias: "Notify Sun rises"
+  description: "Send notification when sun rises"
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: '+00:00:00'
+  action:
+    service: notify.ha_message_group
+    data:
+      title: '*Home Assistant Info*'
+      message: 'Die Sonne ist aufgegangen.'
+
+- id: notify_sun_sets
+  alias: "Notify Sun sets"
+  description: "Send notification when sun sets"
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '+00:00:00'
+  action:
+    service: notify.ha_message_group
+    data:
+      title: '*Home Assistant Info*'
+      message: 'Die Sonne ist untergegangen.'
+
+- id: eaw_ics_trash
+  alias: "EAW ICS Trash"
+  description: "Send notification EAW Timing for Trash"
+  trigger:
+    - platform: time
+      at: "17:00:00"
+  condition:
+    condition: template
+    value_template: >
+      {% set eaw = [states.sensor.ics_1, states.sensor.ics_2, states.sensor.ics_3, states.sensor.ics_4] %}
+      {{ eaw | selectattr('attributes.remaining','<', 3) | list | length >= 1 }}
+  action:
+    - service: notify.ha_message_group
+      data_template:
+        title: '*EAW Abholtermine*'
+        message: >
+          {% set eaw = [states.sensor.ics_1, states.sensor.ics_2, states.sensor.ics_3, states.sensor.ics_4] %}
+          {% set items = eaw | selectattr('attributes.remaining','<', 3) | map(attribute='attributes.friendly_name') | list | join(', ') %}
+          Abfall rausstellen {{ items }}

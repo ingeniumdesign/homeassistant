@@ -46,31 +46,6 @@
   #scan_interval: 240
   value_template: "{{ value | multiply(0.001) | round(1) }}"
 
-# HDD sda Temperature @ToDo: dont work?
-# install via terminal first: apt install hddtemp
-#- platform: command_line
-#  name: HDD Temp
-#  command: "hddtemp -n /dev/sda"
-#  unit_of_measurement: "°C"
-
-# only for Raspberry Pi3
-#- platform: command_line
-#  name: GPU Temp
-#  command: "/opt/vc/bin/vcgencmd measure_temp"
-#  unit_of_measurement: "°C"
-#  value_template: '{{ value | regex_findall_index("=([0-9]*\.[0-9]*)", 0) }}'
-
-# only for Raspberry Pi3
-#- platform: command_line
-#  name: CPU Clock
-#  command: "/opt/vc/bin/vcgencmd measure_clock arm"
-#  unit_of_measurement: "MHz"
-#  value_template: '{{ value | regex_findall_index("=([0-9]*)", 0) | multiply(0.000001) | round(0) }}'
-
-# HASS.io UpTime
-- platform: uptime
-  name: Hass.io Uptime
-
 # Database mariaDB
 - platform: sql
   db_url: !secret db_url
@@ -96,71 +71,92 @@
       friendly_name: "HA UpToDate geprüft"
 
 ## Stats Home ##################################################################
+# HASS.io UpTime https://www.home-assistant.io/integrations/uptime/
+- platform: uptime
+  name: Hass.io Uptime
 
 - platform: template
   sensors:
+    #sensor.hass_io_uptime
     hass_io_uptime_pretty:
-      friendly_name: Hass.io Uptime
+      friendly_name: Hass.io Laufzeit
       value_template: >
-        {% if states('sensor.hass_io_uptime') == '0.0' %} 
+        {%- set up_time = as_timestamp(now())-as_timestamp(states('sensor.hass_io_uptime')) %}
+
+        {% if states('sensor.last_boot') == '0.0' %}
           Soeben neu gestartet...
         {% else %}
-        {% macro phrase(value, name) %}
-          {%- set value = value | int %}
-          {%- set end = 's' if value > 1 else '' %}
-          {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
+
+        {%- macro phrase(name, divisor, mod=None) %}
+          {%- set value = ((up_time // divisor) % (mod if mod else divisor)) | int %}
+          {{- '{} {}'.format(value, name) if value | int > 0 else '' }}
         {%- endmacro %}
 
-        {% set weeks = (states('sensor.hass_io_uptime') | int / 7) | int %}
-        {% set days = (states('sensor.hass_io_uptime') | int) - (weeks * 7) %}
-        {% set hours = (states('sensor.hass_io_uptime') | float - states('sensor.hass_io_uptime') | int) * 24 %}
-        {% set minutes = (hours - hours | int) * 60 %}
+        {%- set values = [
+          phrase('W.', 60*60*24*7),
+          phrase('T.', 60*60*24, 7),
+          phrase('Std.', 60*60, 24),
+          phrase('Min.', 60),
+          phrase('Sek.', 1, 60)
+        ] | select('!=','') | list %}
 
-        {{ [ phrase(weeks, 'week'), phrase(days, 'day'), phrase(hours, 'hr'), phrase(minutes, 'min') ] | select('!=','') | list | join(', ') }}
+        {{ values[:-1] | join(', ') ~ ' ' ~ values[-1] if values | length > 1 else values | first }}
         {% endif %}
 
+    #sensor.ingeniumdesign_connection_uptime
     net_uptime_pretty:
       friendly_name: Verbunden
       value_template: >
-        {% if states('sensor.net_uptime') == '0.0' %} 
+        {%- set up_time = as_timestamp(now())-as_timestamp(states('sensor.ingeniumdesign_connection_uptime')) %}
+
+        {% if states('sensor.last_boot') == '0.0' %}
           Soeben neu gestartet...
         {% else %}
-        {% macro phrase(value, name) %}
-          {%- set value = value | int %}
-          {%- set end = 's' if value > 1 else '' %}
-          {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
+
+        {%- macro phrase(name, divisor, mod=None) %}
+          {%- set value = ((up_time // divisor) % (mod if mod else divisor)) | int %}
+          {{- '{} {}'.format(value, name) if value | int > 0 else '' }}
         {%- endmacro %}
 
-        {% set weeks = (states('sensor.net_uptime') | int / 7) | int %}
-        {% set days = (states('sensor.net_uptime') | int) - (weeks * 7) %}
-        {% set hours = (states('sensor.net_uptime') | float - states('sensor.net_uptime') | int) * 24 %}
-        {% set minutes = (hours - hours | int) * 60 %}
+        {%- set values = [
+          phrase('W.', 60*60*24*7),
+          phrase('T.', 60*60*24, 7),
+          phrase('Std.', 60*60, 24),
+          phrase('Min.', 60),
+          phrase('Sek.', 1, 60)
+        ] | select('!=','') | list %}
 
-        {{ [ phrase(weeks, 'week'), phrase(days, 'day'), phrase(hours, 'hr'), phrase(minutes, 'min') ] | select('!=','') | list | join(', ') }}
+        {{ values[:-1] | join(', ') ~ ' ' ~ values[-1] if values | length > 1 else values | first }}
         {% endif %}
 
     nuc_uptime:
-      friendly_name: NUC Uptime
-      entity_id: sensor.time
+      #sensor.last_boot
+      friendly_name: NUC Laufzeit
       value_template: >
-        {% set up_time = as_timestamp(now()) - as_timestamp(states('sensor.last_boot')) %}
-        {% set minutes = (up_time // 60) | int %}
-        {% set hours = (minutes // 60) %}
-        {% set days = (hours // 24) %}
-        {% set weeks = (days // 7) %}
-        {% set minutes = (minutes % 60) %}
-        {% set hours =  (hours % 24) %}
-        {% set days = (days % 7) %}
-        {% macro phrase(value, name) %}
-          {%- set value = value %}
-          {%- set end = 's' if value > 1 else '' %}
-          {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
+        {%- set up_time = as_timestamp(now())-as_timestamp(states('sensor.last_boot')) %}
+
+        {% if states('sensor.last_boot') == '0.0' %}
+          Soeben neu gestartet...
+        {% else %}
+
+        {%- macro phrase(name, divisor, mod=None) %}
+          {%- set value = ((up_time // divisor) % (mod if mod else divisor)) | int %}
+          {{- '{} {}'.format(value, name) if value | int > 0 else '' }}
         {%- endmacro %}
-                    
-        {% set text = [ phrase(weeks, 'week'), phrase(days, 'day'), phrase(hours, 'hr'), phrase(minutes, 'min') ] | select('!=','') | list | join(', ') %}
-        {% set last_comma = text.rfind(',') %}
-        {% if last_comma != -1 %}
-          {% set text = text[:last_comma] + ',' + text[last_comma + 1:] %}
+
+        {%- set values = [
+          phrase('W.', 60*60*24*7),
+          phrase('T.', 60*60*24, 7),
+          phrase('Std.', 60*60, 24),
+          phrase('Min.', 60),
+          phrase('Sek.', 1, 60)
+        ] | select('!=','') | list %}
+
+        {{ values[:-1] | join(', ') ~ ' ' ~ values[-1] if values | length > 1 else values | first }}
         {% endif %}
 
-        {{ text }}
+    # SKODA TIME
+    octavia_last_connected_pretty:
+      friendly_name: Octavia last connected
+      value_template: "{{ as_timestamp(states('sensor.octavia_last_connected')) | timestamp_custom('%a, %d.%m. - %H:%M') }}"
+

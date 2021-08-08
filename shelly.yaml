@@ -1,0 +1,8 @@
+#host_ip: !secret homeassistant_internal_ip
+#cloud_auth_key: !secret shelly_cloud_auth_key
+#cloud_server: !secret shelly_cloud_server
+#discovery: true
+#version: true
+#additional_information: true
+#sensors:
+#  - all

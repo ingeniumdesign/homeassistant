@@ -6,14 +6,44 @@ cards:
   ## ROW 1 ###################################################################################################################
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: RAUM INFOS
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: BÜRO
+
+      - type: glance
+        show_name: true
+        style: !include ../includes/style_entities.yaml
+        entities:
+          - entity: light.light1test
+            name: Licht
+          - sensor.buro_dect301_1_current_temperature
+          - entity: binary_sensor.office_window_xiaomi_1_openclose
+            name: Fenster
 
       - type: "custom:simple-thermostat"
-        #style: !include ../includes/style_entities.yaml
+        style: |
+          hui-entities-card {
+            margin-top: 0px;
+          }
+          ha-card {
+            border: solid 1px var(--border-color);
+            font-family: var(--primary-font-family);
+            margin-top: 5px;
+            margin-bottom: 5px;
+          }
+          ha-card .header__title,
+          ha-card .name {
+            font-size: var(--font-size-subtitle);
+          }
+          ha-card .mode-item {
+            background: var(--color-blue-bright-2)
+          }
+          .card-content {
+            padding-top: 0px;
+            padding-bottom: 0px;
+          }
         entity: climate.buro_dect301_1
-        name: Büro Heizung
+        name: Heizung
         decimal: 0
         step_size: 1.0
         step_layout: column
@@ -34,35 +64,17 @@ cards:
           - entity: sensor.dwd_weather_temperature
             name: Außen
           - entity: sensor.buro_dect301_1_battery_level
-        style: |
-          ha-card .header__title {
-            font-size: 18px;
-          }
-          ha-card .mode-item {
-            background: var(--color-blue-bright-2)
-          }
-
-      - !include
-        - ../includes/titles.yaml
-        - title: GERÄTE
-
-      - type: entities
-        show_header_toggle: false
-        style: !include ../includes/style_entities.yaml
-        entities:
-          - input_boolean.motion_sensor_mainhallway_toggle
-          - input_boolean.motion_sensor_stairwell1_toggle
-          - input_boolean.motion_sensor_stairwell2_toggle
-          - input_boolean.motion_sensor_stairwell3_toggle
-          - input_boolean.motion_sensor_kitchen_toggle
-          - input_boolean.motion_sensor_restroom_toggle
 
   ## ROW 2 ###################################################################################################################
   - type: vertical-stack
     cards:
-      - !include
-        - ../includes/titles.yaml
-        - title: GERÄTE
+      - type: light
+        entity: light.light1test
+        name: Licht
+
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: GERÄTE
 
       - type: entities
         show_header_toggle: true

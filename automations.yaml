@@ -1,3 +1,12 @@
+#- id: "Zone Sebastian - Sebastian Arbeit"
+#  alias: 'Zone Sebastian - Sebastian Arbeit'
+#  trigger:
+#    - platform: zone
+#      entity_id: person.sebastian_schmal
+#      zone: zone.sebastianarbeit
+#      # Event is either enter or leave
+#      event: enter # or "leave"
+
 - id: "Hass Startup Notification"
   alias: 'Hass Startup Notification'
   trigger:
@@ -41,18 +50,6 @@
     data:
       title: '*Home Assistant Info*'
       message: 'Die Sonne ist untergegangen.'
-
-- alias: 'Telegram bot that reply pong to ping'
-  trigger:
-    platform: event
-    event_type: telegram_command
-    event_data:
-      command: '/ping'
-  action:
-    - service: notify.ha_message_group
-      data:
-        title: '*Home Assistant Test*'
-        message: 'pong'
 
 - alias: "EAW Abholtermine - Abfall"
   trigger:

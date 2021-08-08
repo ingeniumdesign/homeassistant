@@ -1,13 +1,28 @@
-              action: call-service
-              service: browser_mod.popup
-              service_data:
-                deviceID: this
-                title: Flur
-                card:
-                  type: entities
-                  state_color: true
-                  show_header_toggle: false
-                  entities:
-                    - entity: person.sebastian_schmal
-                      name: Test
-                      secondary_info: last-changed
+action: call-service
+service: browser_mod.popup
+service_data:
+  deviceID: this
+  title: Flur
+  card:
+    type: custom:mod-card
+    card:
+      type: horizontal-stack
+      cards:
+        - type: entities
+          state_color: true
+          show_header_toggle: false
+          entities:
+            - entity: person.sebastian_schmal
+              name: Test
+              secondary_info: last-changed
+    style:
+      .: |
+        ha-card {
+          background: none !important;
+          --ha-card-background: none;
+          --card-background-color: transparent;
+        }
+        :host {
+          --ha-card-background: none;
+          --card-background-color: transparent;
+        }

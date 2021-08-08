@@ -18,19 +18,26 @@ style: |
 entities: 
   - {{ entity }}
 name: {{ name }}
-align_state: center
+icon: {{ icon }}
+align_state: {{ align_state|default('center') }}
 align_icon: {{ align_icon|default('right') }}
-font_size: 60
+font_size: {{ font_size|default('60') }}
 font_size_header: {{ font_size_header|default('11') }}
 hours_to_show: {{ hours_to_show|default('24') }}
 line_color: {{ line_color|default('var(--accent-color)') }}
 line_width: {{ line_width|default('4') }}
 animate: true
 points_per_hour: {{ points_per_hour|default('0.5') }}
-lower_bound_secondary: 0
+lower_bound: {{ lower_bound|default('0') }}
+#upper_bound: {{ upper_bound }}
+lower_bound_secondary: {{ lower_bound_secondary|default('0') }}
+#upper_bound_secondary: {{ upper_bound_secondary }}
 show:
   fill: fade
   graph: {{ graph|default('line') }}
   extrema: {{ extrema|default('false') }}
   icon: {{ show_icon|default('true') }}
   name: {{ show_name|default('true') }}
+  labels: {{ show_labels|default('false') }}
+  color_thresholds:
+    - {{ value }}

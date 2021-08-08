@@ -1,0 +1,9 @@
+|
+  ha-card {
+    margin: 0px;
+    padding: 16px;
+  }
+
+  .info {
+    flex: 1 0 20%;
+  }

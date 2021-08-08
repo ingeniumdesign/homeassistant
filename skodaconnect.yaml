@@ -1,0 +1,64 @@
+username: !secret skodaconnect_octavia_username
+password: !secret skodaconnect_octavia_password
+spin: !secret skodaconnect_octavia_spin
+scandinavian_miles: false
+scan_interval:
+  minutes: 1
+name:
+  tmbjk7ne1k0055006: 'Octavia'
+response_debug: True
+#resources:
+#  - combustion_engine_heating
+#  - combustion_climatisation
+#  - distance
+#  - position
+#  - service_inspection
+#  - oil_inspection
+#  - door_locked
+#  - trunk_locked
+#  - request_in_progress
+#  - fuel_level
+#  - windows_closed
+#  - adblue_level
+#  - climatisation_target_temperature
+#  - last_connected
+#  - combustion_range
+#  - trip_last_average_speed
+#  - trip_last_average_fuel_consumption
+#  - trip_last_duration
+#  - trip_last_length
+#  - parking_light
+#  - door_closed_left_front
+#  - door_closed_left_back
+#  - door_closed_right_front
+#  - door_closed_right_back
+#  - trunk_closed
+#  - window_closed_left_front
+#  - window_closed_left_back
+#  - window_closed_right_front
+#  - window_closed_right_back
+#  - sunroof_closed
+#  - service_inspection_km
+#  - oil_inspection_km
+#  - outside_temperature
+#  - electric_climatisation
+#  - window_heater
+#  - charging
+#  - battery_level
+#  - charging_time_left
+#  - electric_range
+#  - combined_range
+#  - charge_max_ampere
+#  - climatisation_target_temperature
+#  - external_power
+#  - climatisation_without_external_power
+#  - charging_cable_connected
+#  - charging_cable_locked
+#  - trip_last_average_electric_consumption
+#  - hood_closed
+#  - combustion_engine_heatingventilation_status
+#  #- vehicleMoving
+#  #- parkingTime
+#  - energy_flow
+#  - requests_remaining
+#

@@ -1,0 +1,240 @@
+icon: mdi:car-connected
+title: Auto
+path: car
+id: car
+cards:
+  ## ROW 1 ###################################################################################################################
+  - type: vertical-stack
+    cards:
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: BENZIN-PREISE
+
+      - type: 'custom:stack-in-card'
+        style: !include ../includes/style_entities_multiple.yaml
+        mode: vertical
+        cards:
+          - entity: sensor.tankerkoenig_dirk_schirmacher_diesel
+            type: 'custom:multiple-entity-row'
+            name: Diesel
+            show_state: false
+            show_last_changed: true
+            style:
+              multiple-entity-row:
+                $: |
+                  .info {
+                    flex: 1 0 20%;
+                  }
+            entities:
+              - entity: sensor.tankerkoenig_dirk_schirmacher_diesel
+                name: ED Tankstelle
+                #value_template: >
+                #  {% if is_state('sensor.tankerkoenig_dirk_schirmacher_diesel', 'unknown') %}
+                #    geschlossen
+                #  { % else % }
+                #    {{ states('sensor.tankerkoenig_dirk_schirmacher_diesel') }}
+                #  { % endif % }
+              - entity: sensor.tankerkoenig_total_idstein_diesel
+                name: Total Tankstelle
+              - entity: sensor.tankerkoenig_shell_idstein_black_u_decker_str_9_diesel
+                name: Shell Black&Decker
+              - entity: sensor.tankerkoenig_shell_idstein_wiesbadener_str_56_diesel
+                name: Shell Wiesbadener
+
+  ## ROW 2 ###################################################################################################################
+  - type: vertical-stack
+    cards:
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: AUTO
+
+      - type: 'custom:stack-in-card'
+        mode: vertical
+        keep:
+          box_shadow: false
+          background: false
+        cards:
+          - type: entities
+            entities:
+              - type: 'custom:multiple-entity-row'
+                entities:
+                  - entity: sensor.octavia_fuel_level
+                    name: Tank
+                  - entity: sensor.octavia_combined_range
+                    name: Reichweite
+                entity: binary_sensor.octavia_doors_locked
+                name: 'ŠKODA OCTAVIA RS COMBI'
+                secondary_info:
+                  entity: binary_sensor.octavia_doors_locked
+                  name: ' '
+                show_state: false
+                state_color: true
+                state_header: true
+              - type: divider
+
+          - type: picture
+            image: /local/images/Car-Octavia-RS-01.png
+            entity: lock.octavia_door_locked
+
+          - type: 'custom:stack-in-card'
+            mode: horizontal
+            style: |
+              ha-card {
+                box-shadow: none;
+              }
+            cards:
+              - type: button
+                entity: sensor.octavia_adblue_level
+                show_name: true
+                name: AD Blue
+                icon: 'mdi:water-check'
+                icon_height: 25px
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+
+              - type: button
+                entity: sensor.octavia_service_inspection_days
+                show_name: true
+                name: Inspektion
+                icon: 'mdi:tools'
+                icon_height: 25px
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+
+              - type: button
+                entity: binary_sensor.octavia_parking_light
+                show_name: true
+                name: Licht
+                icon: 'mdi:car-parking-lights'
+                icon_height: 25px
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+
+              - type: button
+                entity: binary_sensor.octavia_windows_closed
+                show_name: true
+                name: Fenster
+                icon_height: 25px
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+
+              - type: button
+                entity: binary_sensor.octavia_doors_locked
+                show_name: true
+                name: Türen
+                icon: 'mdi:car-door-lock'
+                icon_height: 25px
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+
+          - type: entities
+            show_header_toggle: false
+            state_color: true
+            entities:
+              - type: divider
+
+              - entity: sensor.octavia_adblue_level
+                type: 'custom:multiple-entity-row'
+                name: Motor
+                state_header: Ad Blue
+                icon: 'mdi:engine'
+                secondary_info:
+                  entity: sensor.octavia_odometer
+                  name: 'KM-Stand:'
+                entities:
+                  - entity: sensor.octavia_oil_inspection_days
+                    name: Ölwechsel
+                  - entity: sensor.octavia_service_inspection_days
+                    name: Inspektion
+                #entities:
+                #  - entity: device_tracker.octavia
+                #    name: Location
+
+              - entity: sensor.octavia_request_results
+                type: 'custom:multiple-entity-row'
+                name: Datenabgleich
+                state_header: Anfragen
+                icon: 'mdi:car-connected'
+                secondary_info:
+                  entity: sensor.octavia_last_connected_pretty
+                  name: ' '
+                style:
+                  ha-entity-toggle$: |
+                    ha-switch {
+                      padding: 3px 5px !important;
+                    }
+                entities:
+                  - entity: switch.octavia_force_data_refresh
+                    name: Erzwingen
+                    toggle: true
+
+              - entity: sensor.octavia_last_trip_average_fuel_consumption
+                type: 'custom:multiple-entity-row'
+                name: Letzter Trip
+                unit: l
+                icon: 'mdi:map-marker-distance'
+                state_header: Verbrauch
+                entities:
+                  - entity: sensor.octavia_last_trip_average_speed
+                    name: '% Geschwindigkeit'
+                  - entity: sensor.octavia_last_trip_duration
+                    name: Fahrzeit
+                  - entity: sensor.octavia_last_trip_length
+                    name: Strecke
+              - type: divider
+
+          - type: 'custom:mini-graph-card'
+            style: |
+              ha-card {
+                font-family: var(--primary-font-family);
+                border-bottom: 2px solid var(--background-color);
+              }
+              .graph {
+                padding-top: 15px;
+                padding-bottom: 0px;
+              }
+              .info {
+                padding-bottom: 0px;
+              }
+              .flex {
+                padding-bottom: 10px;
+              }
+            entities:
+              - sensor.octavia_combined_range
+            name: Reichweite
+            icon: 'mdi:gas-station'
+            align_state: center
+            align_icon: right
+            font_size: 90
+            font_size_header: 14
+            hours_to_show: 364
+            line_color: var(--accent-color)
+            line_width: 1
+            animate: true
+            points_per_hour: 0.1
+            lower_bound: 0
+            upper_bound: 1200
+            lower_bound_secondary: 0
+            upper_bound_secondary: 60
+            show:
+              fill: fade
+              graph: line
+              extrema: false
+              icon: false
+              name: false
+              labels: true
+              color_thresholds:
+                - value: 150
+                  color: var(--color-ocher-1)
+                - value: 80
+                  color: var(--color-error)

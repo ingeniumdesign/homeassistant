@@ -1,0 +1,128 @@
+icon: mdi:view-carousel-outline
+title: Flur
+path: mainhallway
+id: mainhallway
+cards:
+  ## ROW 1 ###################################################################################################################
+  - type: vertical-stack
+    cards:
+      ##- !include
+        ##- ../includes/titles.yaml
+        ##- title: EINGANG / FLUR
+
+      - type: "custom:simple-thermostat"
+        entity: climate.mainhallway_hmipbwth_thermostat
+        header:
+          name: Fußbodenheizung
+          icon: mdi:radiator
+        decimal: 0
+        step_size: 1.0
+        step_layout: column
+        label:
+          temperature: Innen
+        #control:
+        #  _headings: false
+        #  hvac:
+        #    heat:
+        #      name: Heizen
+        #      icon: mdi:fire
+        #    "off":
+        #      name: Aus
+        #      icon: mdi:power
+        #  preset:
+        #    _name:
+        sensors:
+          - entity: sensor.mainhallway_hmipbwth_thermostat_humidity
+            name: Luftfeuchtigkeit
+          - entity: sensor.dwd_weather_temperature
+            name: Außen
+        style: |
+          ha-card .header__title {
+            font-size: var(--font-size-subtitle);
+          }
+          ha-card .mode-item {
+            background: var(--color-blue-bright-2)
+          }
+
+      # https://community.home-assistant.io/t/stack-in-card-drop-in-replacement-for-vertical-stack-in-card/180072
+      #- type: custom:stack-in-card
+      #  mode: vertical
+      #  cards:
+      #    - type: glance
+      #      title: Home Assistant
+      #      columns: 7
+      #      show_name: false
+      #      entities:
+      #        - entity: sensor.dwd_weather_temperature
+      #          name: Test
+      #          icon: mdi:play-circle
+      #        #- entity: sensor.count_automations
+      #        #  name: Automations
+      #        #  icon: mdi:play-circle
+      #        #- entity: sensor.count_binary_sensors
+      #        #  name: Binary Sensors
+      #        #  icon: mdi:transition-masked
+      #        #- entity: sensor.count_lights
+      #        #  name: Lights
+      #        #  icon: mdi:lightbulb
+      #        #- entity: sensor.count_scripts
+      #        #  name: Scripts
+      #        #  icon: mdi:script-text
+      #        #- entity: sensor.count_sensors
+      #        #  name: Sensors
+      #        #  icon: mdi:counter
+      #        #- entity: sensor.count_switches
+      #        #  name: Switches
+      #        #  icon: mdi:toggle-switch
+      #        #- entity: sensor.count_zones
+      #        #  name: Zones
+      #
+      #
+      #
+      #- type: custom:stack-in-card
+      #  cards:
+      #    - type: entity
+      #      title: Shelly
+      #      icon: mdi:account
+      #      show_header_toggle: false
+      #      style: |
+      #        ha-card .card-header {
+      #          font-size: var(--font-size-subtitle);
+      #          margin-bottom:0;
+      #          padding-bottom:0;
+      #        }
+      #
+      #        ha-card .icon {
+      #            margin-right: calc(var(--st-spacing, var(--st-default-spacing)) * 2);
+      #        }
+      #      entity: sensor.time #fake
+      #
+      #    - type: custom:auto-entities
+      #      card:
+      #        show_header_toggle: false
+      #        #title: Shelly
+      #        type: entities
+      #      filter:
+      #        include:
+      #          - entity_id: '*shelly*'
+
+
+  ## ROW 2 ###################################################################################################################
+  - type: vertical-stack
+    cards:
+      ##- !include
+      ##  - ../includes/titles.yaml
+      ##  - title: FLUR / EINGANG INFOS
+
+      - type: custom:stack-in-card
+        cards:
+          - type: entities
+            style: !include ../includes/style_entities_embeded.yaml
+            entities:
+              - sensor.mainhallway_zw100_multisensor_1_air_temperature
+              - binary_sensor.mainhallway_zw100_multisensor_1_home_security_motion_detected
+              - binary_sensor.mainhallway_zw100_multisensor_1_home_security_tampering_cover_removed
+              - sensor.mainhallway_zw100_multisensor_1_humidity
+              - sensor.mainhallway_zw100_multisensor_1_illuminance
+              - binary_sensor.mainhallway_zw100_multisensor_1_sensor
+              - sensor.mainhallway_zw100_multisensor_1_ultraviolet
