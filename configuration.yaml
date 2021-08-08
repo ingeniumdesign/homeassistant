@@ -20,14 +20,6 @@ homeassistant:
   # Load packages
   packages: !include_dir_named packages
 
-## MultiSensoring #######################################################################
-# DONT use this, we use OpenZWave (beta) !
-# Dont run zwave with OpenZWave (beta) together!!
-#zwave:
-#  usb_path: /dev/ttyAMA0
-#  network_key: !secret network_key
-#  debug: true
-
 #Zigbee Home Automation
 zha:
   # Data Input via Plugin Config
@@ -81,7 +73,7 @@ notify:
 system_health:
 
 system_log:
-  max_entries: 30
+  max_entries: 60
 
 logbook:
   exclude:
@@ -181,7 +173,15 @@ tankerkoenig:
 ##    host: 192.168.178.46
 ##    token: !secret vacuum_roborock_s6_token
 
-#########################################################################################
+## SPEEDTEST ############################################################################
+speedtestdotnet:
+  server_id: 10010
+  scan_interval:
+    minutes: 480
+  monitored_conditions:
+    - ping
+    - download
+    - upload
 
 ## LOVELACE UI ##########################################################################
 # OLD ?
