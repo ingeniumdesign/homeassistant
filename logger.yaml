@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Log Severities: notset, debug, info, warn, warning, error, fatal, critical
 default: debug
 #default: warning
@@ -32,3 +33,38 @@ logs:
   requests.packages.urllib3.connectionpool: critical
   root: warn
   skybellpy: warn
+=======
+# Log Severities: notset, debug, info, warn, warning, error, fatal, critical
+default: debug
+#default: warning
+logs:
+  aiohttp.access: critical
+  aiohttp.server: critical
+  homeassistant.core: error
+  homeassistant.config_entries: error
+  homeassistant.components.automation: warn
+  homeassistant.components.binary_sensor: error
+  homeassistant.components.climate.nest: warn
+  homeassistant.components.device_tracker: error
+  homeassistant.components.discovery: warn
+  homeassistant.components.feedreader: error
+  homeassistant.components.http: warn
+  homeassistant.components.ipp: critical
+  homeassistant.components.media_player: info
+  homeassistant.components.rest.sensor: critical
+  homeassistant.components.recorder: error
+  homeassistant.components.sensor.rest: info
+  homeassistant.components.tplink.switch: error
+  homeassistant.components.zwave: warn
+  homeassistant.exceptions: info
+  homeassistant.helpers.script: info
+  homeassistant.helpers.entity: critical
+  homeassistant.loader: warn
+  pubnub: critical
+  py.warnings: error
+  pyhap.hap_server: warn
+  urllib3.connectionpool: error
+  requests.packages.urllib3.connectionpool: critical
+  root: warn
+  skybellpy: warn
+>>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586

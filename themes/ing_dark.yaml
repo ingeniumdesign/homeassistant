@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Example https://github.com/frenck/home-assistant-config/tree/master/config/themes
 
 # Theme
@@ -190,3 +191,197 @@ ING Dark:
       .heading {
         border-bottom: none !important;
       }
+=======
+# Example https://github.com/frenck/home-assistant-config/tree/master/config/themes
+
+# Theme
+ING Dark:
+  # Fonts
+  font-family-raleway: "Raleway, sans-serif"
+  font-family-comfortaa: "Comfortaa, sans-serif"
+
+  primary-font-family: "var(--font-family-raleway)"
+  paper-font-common-base_-_font-family: "var(--primary-font-family)"
+  paper-font-common-code_-_font-family: "var(--primary-font-family)"
+  paper-font-body1_-_font-family: "var(--primary-font-family)"
+  paper-font-subhead_-_font-family: "var(--primary-font-family)"
+  paper-font-headline_-_font-family: "var(--primary-font-family)"
+  paper-font-caption_-_font-family: "var(--primary-font-family)"
+  paper-font-title_-_font-family: "var(--primary-font-family)"
+  ha-card-header-font-family: "var(--primary-font-family)"
+
+  # Font Variable
+  font-title: "var(--font-family-comfortaa)"
+
+  # Color Variable
+  color-white: "rgba(255,255,255,1)" #ffffff
+  color-white-dark: "rgba(234,240,249,1)" #eaf0f9
+  color-grey: "rgba(192,192,192,1)" #C0C0C0
+  color-grey-dark-1: "rgba(169,169,169,1)" #A9A9A9
+  color-grey-dark-2: "rgba(128,128,128,1)" #808080
+  color-grey-dark-3: "rgba(105,105,105,1)" #696969
+  color-red-1: "rgba(247,53,67,1)" #rot
+  color-red-bright-1: "rgba(255,102,102,0.6)" #hell rot
+  color-red-error-1: "rgba(255,153,0,1.0)" #default HA red rgb(219, 68, 55) --error-color
+  color-error: "var(--error-color)" #default HA red rgb(219, 68, 55)
+  color-lilac-bright-1: "rgba(31,142,250,0.9)" #hell flieder
+  color-ocher-1: "rgba(222,176,107,1)" #ocker
+  color-ocher-2: "rgba(222,176,107,0.7)" #ocker
+  color-green-bright-1: "rgba(0,202,139,1)" #hell grün
+  color-purple-1: "rgba(139,64,156,1)" #lila
+  color-purple-bright-1: "rgba(118,128,255,1)" #7680ff
+  color-orange-1: "rgba(255,153,0,1)" #orange
+  color-blue-1: "rgba(6,169,244,1)" #06a9f4
+  color-blue-deepdark-1: "rgba(21,30,45,1)" #tief dunkel blau #151e2d
+  color-blue-deepdark-2: "rgba(30,42,64,1)" #tief dunkel blau #1e2a40
+  color-blue-deepdark-2-transp: "rgba(30,42,64,0.7)" #tief dunkel blau #1e2a40
+  color-blue-deepdark-3: "rgba(38,51,76,1)" #tief dunkel blau #26334c
+  color-blue-deepdark-4: "rgba(45,53,82,1)" #tief dunkel blau #2d3552 - Border
+  color-blue-bright-1: "rgba(169,186,202,1)" #hell blau #a9baca
+  color-blue-bright-2: "rgba(169,186,202,0.15)" #hell blau #a9baca mit 15%
+
+  # Text Variable
+  text-color: "var(--color-white)"
+  primary-text-color: "var(--color-white)"
+  text-primary-color: "var(--color-white)"
+  secondary-text-color: "var(--color-grey)"
+  text-medium-light-color: "var(--color-grey-dark-1)"
+  text-medium-color: "var(--color-grey-dark-2)"
+  disabled-text-color: "var(--color-grey-dark-3)"
+  primary-color: "var(--accent-color)"
+
+  # Font-Size Variable
+  font-size-title: "20px"
+  font-size-subtitle: "18px"
+
+  # Main Colors
+  app-header-background-color: "var(--color-blue-deepdark-2-transp)"
+  accent-color: "var(--color-blue-1)"
+  accent-medium-color: "var(--accent-color)"
+
+  # Background
+  background-color: "var(--color-blue-deepdark-1)"
+  background-color-2: "var(--color-blue-deepdark-2)"
+  primary-background-color: "var(--color-blue-deepdark-1)"
+  secondary-background-color: "transparent"
+  markdown-code-background-color: "var(--background-color)"
+  st-mode-active-background: "var(--accent-color)"
+
+  # Card
+  card-background-color: "var(--ha-card-background)"
+  ha-card-background: "var(--color-blue-deepdark-2)"
+  ha-card-box-shadow: "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)"
+  ha-card-border-radius: "0.25rem"
+  border-color: "rgba(45,53,82,0)"
+
+  # Icons
+  paper-item-icon-color: "var(--color-white-dark)"
+  paper-item-icon-active-color: "var(--accent-color)"
+
+  # Sidebar
+  sidebar-background-color: "var(--color-blue-deepdark-2)"
+  sidebar-icon-color: "var(--color-blue-bright-1)"
+  sidebar-selected-icon-color: "var(--accent-color)"
+  sidebar-selected-text-color: "var(--color-white)"
+  #sidebar-selected-background-color: "var(--color-blue-deepdark-3)" # Dont work ToDo
+  paper-listbox-background-color: "var(--sidebar-background-color)"
+  divider-color: "var(--color-blue-deepdark-4)"
+  light-primary-color: "var(--ha-card-background)"
+
+  # Sliders
+  paper-slider-knob-color: "var(--accent-color)"
+  paper-slider-pin-color: "var(--background-color-2)"
+  paper-slider-active-color: "var(--accent-color)"
+  paper-slider-container-color: "var(--background-color-2)"
+
+  # Toggle:
+  paper-toggle-button-checked-bar-color: "var(--accent-color)"
+  mdc-theme-primary: "var(--accent-color)"
+
+  # Switch
+  switch-unchecked-color: "var(--color-grey-dark-2)"
+  switch-checked-button-color: "var(--color-white-dark)" #Switch Button checked
+  switch-unchecked-button-color: "var(--color-white-dark)" #Switch Button unchecked
+  switch-checked-track-color: "var(--accent-color)" #Switch Background
+  switch-unchecked-track-color: "var(--color-grey-dark-3)"
+
+
+  # Radio Button
+  paper-radio-button-checked-color: "var(--accent-color)"
+
+  # Popups
+  dialog-backdrop-filter: "blur(5px) brightness(95%)"
+  mdc-dialog-scrim-color: "rgba(0,0,0,0.50)" # BG Overlay
+  mdc-theme-surface: "rgba(0,0,0,0.50)"
+  more-info-header-background: "var(--secondary-background-color)"
+  paper-dialog-background-color: "var(--background-color)"
+
+  # Tables
+  table-row-background-color: "var(--background-color)"
+  table-row-alternative-background-color: "var(--ha-card-background)"
+
+  # Badges
+  label-badge-background-color: "var(--background-color)"
+  label-badge-text-color: "var(--text-primary-color)"
+  label-badge-red: "var(--color-red-1)"
+  label-badge-blue: "var(--color-blue-1)"
+  label-badge-green: "var(--color-green-bright-1)"
+  label-badge-ocher: "var(--color-ocher-1)"
+
+  paper-input-container-focus-color: "var(--accent-color)"
+
+  # Custom Header
+  ch-background: "var(--background-color)"
+  ch-active-tab-color: "var(--accent-color)"
+  ch-notification-dot-color: "var(--accent-color)"
+  ch-all-tabs-color: "var(--sidebar-icon-color)"
+  ch-tab-indicator-color: "var(--accent-color)"
+
+  # Mini Mediaplayer
+  mini-media-player-base-color: "var(--color-white)"
+  mini-media-player-accent-color: "var(--accent-color)"
+
+  # HACS
+  hacs-badge-color: "var(--accent-color)"
+  hacs-status-installed: "var(--text-color)"
+  hacs-status-pending-restart: "var(--text-dark-color)"
+  hacs-status-pending-update: "var(--accent-color)"
+
+  # Card-Mod
+  card-mod-theme: "ING Dark"
+
+  card-mod-more-info-yaml: |
+    $: |
+      .mdc-dialog {
+        background: none !important;
+      }
+      .mdc-dialog__scrim {
+        background-color: rgba(0,0,0,0.50);
+      }
+      .mdc-dialog .mdc-dialog__scrim {
+        background-color: var(--mdc-dialog-scrim-color) !important;
+      }
+      .mdc-dialog .mdc-dialog__container .mdc-dialog__surface {
+        background: none !important;
+        background-color: transparent;
+        box-shadow: none !important;
+      }
+      .mdc-dialog .mdc-dialog__container .mdc-dialog__surface .mdc-dialog__content {
+        background-color: var(--mdc-dialog-scrim-color);
+      }
+      :host {
+        background: none !important;
+      }
+    ha-header-bar$: |
+      .mdc-top-app-bar {
+        background: none !important;
+      }
+    mwc-tab-bar$: |
+      .mdc-tab-bar {
+        background-color: var(--mdc-dialog-scrim-color);
+      }
+    .: |
+      .heading {
+        border-bottom: none !important;
+      }
+>>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586

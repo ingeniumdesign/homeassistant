@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - platform: time_date
   display_options:
     - "time"
@@ -160,3 +161,179 @@
       friendly_name: Octavia last connected
       value_template: "{{ as_timestamp(states('sensor.octavia_last_connected')) | timestamp_custom('%a, %d.%m. - %H:%M') }}"
 
+=======
+- platform: time_date
+  display_options:
+    - "time"
+    - "date"
+    - "date_time"
+    - "date_time_utc"
+    - "date_time_iso"
+    - "time_date"
+    - "time_utc"
+    - "beat"
+
+## Intel NUC ########################################################################
+# check the Lan with: ha network info
+- platform: systemmonitor
+  resources:
+    - type: last_boot
+    - type: disk_free
+    - type: disk_use
+    - type: disk_use_percent
+      arg: /
+    - type: disk_use_percent
+      arg: /home
+    - type: memory_free
+    - type: memory_use
+    - type: memory_use_percent
+    #- type: process
+    - type: processor_use
+    - type: processor_temperature
+    - type: network_in
+      arg: eno1
+    - type: network_out
+      arg: eno1
+    #- type: throughput_network_in
+    #- type: throughput_network_out
+    #- type: packets_in
+    #- type: packets_out
+
+# https://home-assistant.io/components/sensor.cpuspeed/
+- platform: cpuspeed
+
+# CPU Temperature on Thermal Zone 2
+- platform: command_line
+  name: CPU Temp
+  command: "cat /sys/class/thermal/thermal_zone2/temp"
+  unit_of_measurement: "°C"
+  #scan_interval: 240
+  value_template: "{{ value | multiply(0.001) | round(1) }}"
+
+# HDD sda Temperature @ToDo: dont work?
+# install via terminal first: apt install hddtemp
+#- platform: command_line
+#  name: HDD Temp
+#  command: "hddtemp -n /dev/sda"
+#  unit_of_measurement: "°C"
+
+# only for Raspberry Pi3
+#- platform: command_line
+#  name: GPU Temp
+#  command: "/opt/vc/bin/vcgencmd measure_temp"
+#  unit_of_measurement: "°C"
+#  value_template: '{{ value | regex_findall_index("=([0-9]*\.[0-9]*)", 0) }}'
+
+# only for Raspberry Pi3
+#- platform: command_line
+#  name: CPU Clock
+#  command: "/opt/vc/bin/vcgencmd measure_clock arm"
+#  unit_of_measurement: "MHz"
+#  value_template: '{{ value | regex_findall_index("=([0-9]*)", 0) | multiply(0.000001) | round(0) }}'
+
+# Database mariaDB
+- platform: sql
+  db_url: !secret db_url
+  queries:
+    - name: DB size
+      query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1048576, 2) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
+      column: "value"
+      unit_of_measurement: MB
+
+## Version Check ###############################################################
+
+- platform: version
+  name: version_current
+
+- platform: version
+  name: version_latest
+  source: hassio
+
+- platform: template
+  sensors:
+    version_check:
+      value_template: "{{ states('sensor.version_latest') == states('sensor.version_current') }}"
+      friendly_name: "HA UpToDate geprüft"
+
+## Stats Home ##################################################################
+# HASS.io UpTime https://www.home-assistant.io/integrations/uptime/
+- platform: uptime
+  name: Hass.io Uptime
+  #unit_of_measurement: minutes
+
+- platform: template
+  sensors:
+    hass_io_uptime_pretty:
+      friendly_name: Hass.io Uptime
+      value_template: >
+        {%- set up_time = as_timestamp(now())-as_timestamp(states('sensor.hass_io_uptime')) %}
+
+        {% if states('sensor.hass_io_uptime') == '0.0' %} 
+          Soeben neu gestartet...
+        {% else %}
+        {%- macro phrase(name, divisor, mod=None) %}
+          {%- set value = ((up_time // divisor) % (mod if mod else divisor)) | int %}
+          {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
+        {%- endmacro %}
+
+        {%- set values = [
+          phrase('W.', 60*60*24*7),
+          phrase('T.', 60*60*24, 7),
+          phrase('Std.', 60*60, 24),
+          phrase('Min.', 60),
+          phrase('Sek.', 1, 60)
+        ] | select('!=','') | list %}
+
+        {{ values[:-1] | join(', ') ~ ' ' ~ values[-1] if values | length > 1 else values | first }}
+        {% endif %}
+
+    net_uptime_pretty:
+      friendly_name: Verbunden
+      value_template: >
+        {% if states('sensor.net_uptime') == '0.0' %}
+          Soeben neu gestartet...
+        {% else %}
+        {% macro phrase(value, name) %}
+          {%- set value = value | int %}
+          {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
+        {%- endmacro %}
+
+        {% set weeks = (states('sensor.net_uptime') | int / 7) | int %}
+        {% set days = (states('sensor.net_uptime') | int) - (weeks * 7) %}
+        {% set hours = (states('sensor.net_uptime') | float - states('sensor.net_uptime') | int) * 24 %}
+        {% set minutes = (hours - hours | int) * 60 %}
+
+        {{ [ phrase(weeks, 'W.'), phrase(days, 'T.'), phrase(hours, 'Std.'), phrase(minutes, 'Min.') ] | select('!=','') | list | join(', ') }}
+        {% endif %}
+
+    nuc_uptime:
+      friendly_name: NUC Uptime
+      entity_id: sensor.time
+      value_template: >
+        {%- set up_time = as_timestamp(now())-as_timestamp(states('sensor.last_boot')) %}
+
+        {% if states('sensor.last_boot') == '0.0' %}
+          Soeben neu gestartet...
+        {% else %}
+        {%- macro phrase(name, divisor, mod=None) %}
+          {%- set value = ((up_time // divisor) % (mod if mod else divisor)) | int %}
+          {{- '{} {}{}'.format(value, name, end) if value | int > 0 else '' }}
+        {%- endmacro %}
+
+        {%- set values = [
+          phrase('W.', 60*60*24*7),
+          phrase('T.', 60*60*24, 7),
+          phrase('Std.', 60*60, 24),
+          phrase('Min.', 60),
+          phrase('Sek.', 1, 60)
+        ] | select('!=','') | list %}
+
+        {{ values[:-1] | join(', ') ~ ' ' ~ values[-1] if values | length > 1 else values | first }}
+        {% endif %}
+
+    # SKODA TIME
+    octavia_last_connected_pretty:
+      friendly_name: Octavia last connected
+      value_template: "{{ as_timestamp(states('sensor.octavia_last_connected')) | timestamp_custom('%a, %d.%m. - %H:%M') }}"
+
+>>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
