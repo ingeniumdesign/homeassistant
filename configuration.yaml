@@ -17,11 +17,8 @@ homeassistant:
   auth_providers:
     - type: homeassistant
   customize: !include_dir_merge_named customizations
-
   # Load packages
   packages: !include_dir_named packages
-
-#local_ip:
 
 ## MultiSensoring #######################################################################
 # DONT use this, we use OpenZWave (beta) !
@@ -147,10 +144,6 @@ media_player:
     #mac: !secret media_player_denon_x4200w_mac_address
     name: Denon-AVR-X4200W
 
-#samsungtv:
-#  - host: 192.168.178.27
-#    name: Samsung TV Q9075
-
 ## UTILITY METER ########################################################################
 utility_meter:
   net_received_monthly:
@@ -159,23 +152,6 @@ utility_meter:
   net_sent_monthly:
     source: sensor.net_sent
     cycle: monthly
-
-## WAKEonLAN #############################################################################
-#wake_on_lan:
-
-## UPNP FRITZBOX ########################################################################
-##upnp:
-##  local_ip: 192.168.178.1
-
-## SPEEDTEST ############################################################################
-##speedtestdotnet:
-##  server_id: 10010
-##  scan_interval:
-##    minutes: 480
-##  monitored_conditions:
-##    - ping
-##    - download
-##    - upload
 
 ## SKODA CONNECT ########################################################################
 # https://github.com/lendy007/homeassistant-skodaconnect
@@ -197,6 +173,13 @@ tankerkoenig:
   longitude: !secret homeassistant_longitude
   radius: 5
   scan_interval: "0:15:01"
+
+## VACUUM ROBOROCK S6 ###################################################################
+# https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor
+##vacuum:
+##  - platform: xiaomi_miio
+##    host: 192.168.178.46
+##    token: !secret vacuum_roborock_s6_token
 
 #########################################################################################
 
