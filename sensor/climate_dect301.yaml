@@ -16,10 +16,19 @@
       value_template: "{{state_attr('climate.schlafzimmer_dect301_1', 'temperature') }}"
       friendly_name: "Temperatur"
       unit_of_measurement: '°C'
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
     schlafzimmer_dect301_1_current_temperature:
       value_template: "{{state_attr('climate.schlafzimmer_dect301_1', 'current_temperature') }}"
       friendly_name: "Temperatur"
       unit_of_measurement: '°C'
+<<<<<<< HEAD
+=======
+>>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
+=======
+>>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
     schlafzimmer_dect301_1_battery_level:
       value_template: "{{state_attr('climate.schlafzimmer_dect301_1', 'battery_level') }}"
       friendly_name: "Batterie"

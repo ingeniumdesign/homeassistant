@@ -159,4 +159,3 @@
     octavia_last_connected_pretty:
       friendly_name: Octavia last connected
       value_template: "{{ as_timestamp(states('sensor.octavia_last_connected')) | timestamp_custom('%a, %d.%m. - %H:%M') }}"
-
