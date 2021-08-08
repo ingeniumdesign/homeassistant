@@ -922,9 +922,24 @@ cards:
         card:
           type: vertical-stack
           cards:
-            ##- !include
-            ##  - ../includes/titles.yaml
-            ##  - title: HACS / Home Assistant Community Store
+            - type: markdown
+              style: |
+                ha-card {
+                  font-size: var(--font-size-title);
+                  font-family: var(--font-title);
+                  line-height: 30px;
+                  background: none;
+                  margin-top: 0.4em;
+                  margin-left: 8px;
+                  margin-bottom: 0em;
+                  box-shadow: none;
+                  background: none;
+                }
+                ha-markdown {
+                  padding: 0px 0px 0px 8px !important;
+                  border-left: 3px solid var(--accent-color);
+                }
+              content: HACS / Home Assistant Community Store
 
             - type: entities
               entities:
@@ -936,9 +951,24 @@ cards:
                 }
 
       # SERVICE OPTION
-      ##- !include
-      ##  - ../includes/titles.yaml
-      ##  - title: SERVICE - Home Assistant
+      - type: markdown
+        style: |
+          ha-card {
+            font-size: var(--font-size-title);
+            font-family: var(--font-title);
+            line-height: 30px;
+            background: none;
+            margin-top: 0.4em;
+            margin-left: 8px;
+            margin-bottom: 0em;
+            box-shadow: none;
+            background: none;
+          }
+          ha-markdown {
+            padding: 0px 0px 0px 8px !important;
+            border-left: 3px solid var(--accent-color);
+          }
+        content: SERVICE - Home Assistant
 
       - type: horizontal-stack
         cards:
@@ -996,9 +1026,24 @@ cards:
                 - color: var(--color-error)
 
       # INFOS Intel NUC
-      ##- !include
-      ##  - ../includes/titles.yaml
-      ##  - title: Intel NUC i5
+      - type: markdown
+        style: |
+          ha-card {
+            font-size: var(--font-size-title);
+            font-family: var(--font-title);
+            line-height: 30px;
+            background: none;
+            margin-top: 0.4em;
+            margin-left: 8px;
+            margin-bottom: 0em;
+            box-shadow: none;
+            background: none;
+          }
+          ha-markdown {
+            padding: 0px 0px 0px 8px !important;
+            border-left: 3px solid var(--accent-color);
+          }
+        content: Intel NUC i5
 
       - type: custom:stack-in-card
         cards:
@@ -1129,68 +1174,176 @@ cards:
               - sensor.hass_io_uptime_pretty
 
       # INFOS Synology DSM DS713+
-      ##- !include
-      ##  - ../includes/titles.yaml
-      ##  - title: Synology DSM DS713+
+      - type: markdown
+        style: |
+          ha-card {
+            font-size: var(--font-size-title);
+            font-family: var(--font-title);
+            line-height: 30px;
+            background: none;
+            margin-top: 0.4em;
+            margin-left: 8px;
+            margin-bottom: 0em;
+            box-shadow: none;
+            background: none;
+          }
+          ha-markdown {
+            padding: 0px 0px 0px 8px !important;
+            border-left: 3px solid var(--accent-color);
+          }
+        content: Synology DSM DS713+
 
-      # ABFRAGE - Synology
-      - type: conditional
-        conditions:
-          - entity: device_tracker.ing_nas
-            state: "home"
-        card:
-          type: custom:stack-in-card
-          cards:
-            - type: horizontal-stack
-              cards:
-##                - !include
-##                  - ../includes/graphs_embeded.yaml
-##                  - entity: sensor.ing_nas_cpu_load_total
-##                    name: CPU
-##                    hours_to_show: 12
-##                    points_per_hour: 4
-##                    line_color: var(--color-red-1)
-##                - !include
-##                  - ../includes/graphs_embeded.yaml
-##                  - entity: sensor.ing_nas_memory_usage_real
-##                    name: Memory
-##                    hours_to_show: 12
-##                    points_per_hour: 4
-##                    line_color: var(--color-ocher-1)
-##                - !include
-##                  - ../includes/graphs_embeded.yaml
-##                  - entity: sensor.ing_nas_temperature
-##                    name: Temperatur
-##                    hours_to_show: 12
-##                    points_per_hour: 4
-##                    line_color: var(--color-green-bright-1)
-            - type: custom:auto-entities
-              style: !include ../includes/style_entities_embeded.yaml
-              show_empty: false
-              card:
-                type: entities
-              filter:
-                exclude:
-                  - state: unavailable
-                include:
-                  - entity_id: sensor.ing_nas_volume_1_used_space
-                  - entity_id: sensor.ing_nas_laufwerk_1_temperature
-                  - entity_id: sensor.ing_nas_laufwerk_2_temperature
-                  - entity_id: sensor.ing_nas_network_up
-                  - entity_id: sensor.ing_nas_network_down
+##       ABFRAGE - Synology
+##      - type: conditional
+##        conditions:
+##          - entity: device_tracker.ing_nas
+##            state: "home"
+      - card:
+        type: custom:stack-in-card
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.ing_nas_cpu_utilization_total
+                name: CPU
+                align_state: center
+                align_icon: right
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-red-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
 
-      # ABFRAGE - Synology
-      - type: conditional
-        conditions:
-          - entity: device_tracker.ing_nas
-            state_not: "home"
-        card:
-          type: markdown
-          content: |
-            ### Synology nicht erreichbar
-            Die NAS Synology DSM DS713+ ist zur Zeit nicht erreichbar oder ausgeschaltet.
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.ing_nas_memory_usage_real
+                name: Speicher RAM
+                align_state: center
+                align_icon: right
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-ocher-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
 
-            **INFO:** täglich um 2:00 Uhr schaltet sich die NAS automatisch aus.
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.ing_nas_temperature
+                name: Temperatur
+                align_state: center
+                align_icon: right
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-green-bright-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
+
+          - type: custom:auto-entities
+            style: !include ../includes/style_entities_embeded.yaml
+            show_empty: false
+            card:
+              type: entities
+            filter:
+              exclude:
+                - state: unavailable
+              include:
+                - entity_id: sensor.ing_nas_volume_1_used_space
+                - entity_id: sensor.ing_nas_laufwerk_1_temperature
+                - entity_id: sensor.ing_nas_laufwerk_2_temperature
+                - entity_id: sensor.ing_nas_network_up
+                - entity_id: sensor.ing_nas_network_down
+
+##      # ABFRAGE - Synology
+##      - type: conditional
+##        conditions:
+##          - entity: device_tracker.ing_nas
+##            state_not: "home"
+##        card:
+##          type: markdown
+##          content: |
+##            ### Synology nicht erreichbar
+##            Die NAS Synology DSM DS713+ ist zur Zeit nicht erreichbar oder ausgeschaltet.
+##
+##            **INFO:** täglich um 2:00 Uhr schaltet sich die NAS automatisch aus.
 
       # Homematic IP Overview
       - type: custom:stack-in-card
@@ -1220,9 +1373,24 @@ cards:
   - type: vertical-stack
     style: !include ../includes/style.yaml
     cards:
-      ##- !include
-      ##  - ../includes/titles.yaml
-      ##  - title: DOCKER STATUS
+      - type: markdown
+        style: |
+          ha-card {
+            font-size: var(--font-size-title);
+            font-family: var(--font-title);
+            line-height: 30px;
+            background: none;
+            margin-top: 0.4em;
+            margin-left: 8px;
+            margin-bottom: 0em;
+            box-shadow: none;
+            background: none;
+          }
+          ha-markdown {
+            padding: 0px 0px 0px 8px !important;
+            border-left: 3px solid var(--accent-color);
+          }
+        content: DOCKER STATUS
 
       - type: custom:stack-in-card
         cards:
@@ -1264,20 +1432,80 @@ cards:
                   icon: true
                   name: true
                   labels: false
-##              - !include
-##                - ../includes/graphs_embeded.yaml
-##                - entity: sensor.docker_1cpu
-##                  name: CPU
-##                  hours_to_show: 12
-##                  points_per_hour: 4
-##                  line_color: var(--color-green-bright-1)
-##              - !include
-##                - ../includes/graphs_embeded.yaml
-##                - entity: sensor.docker_memory_percent
-##                  name: Memory
-##                  hours_to_show: 12
-##                  points_per_hour: 4
-##                  line_color: var(--color-ocher-1)
+
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.docker_1cpu
+                name: CPU
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-green-bright-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
+
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.docker_memory_percent
+                name: Speicher RAM
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-ocher-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
 
           - type: entities
             style: !include ../includes/style_entities_embeded.yaml
@@ -1290,9 +1518,25 @@ cards:
               - sensor.docker_images
               - sensor.docker_version
 
-      ##- !include
-      ##  - ../includes/titles.yaml
-      ##  - title: NETZMONITOR
+      # NETZWERK INFOS
+      - type: markdown
+        style: |
+          ha-card {
+            font-size: var(--font-size-title);
+            font-family: var(--font-title);
+            line-height: 30px;
+            background: none;
+            margin-top: 0.4em;
+            margin-left: 8px;
+            margin-bottom: 0em;
+            box-shadow: none;
+            background: none;
+          }
+          ha-markdown {
+            padding: 0px 0px 0px 8px !important;
+            border-left: 3px solid var(--accent-color);
+          }
+        content: NETZMONITOR
 
       - type: custom:stack-in-card
         cards:
@@ -1427,7 +1671,7 @@ cards:
               - sensor.net_received_monthly
               - sensor.net_sent_monthly
               - sensor.net_uptime_pretty
-              - binary_sensor.remote_ui
+              - sensor.ingeniumdesign_connection_uptime
 
       - type: custom:stack-in-card
         cards:
@@ -1505,7 +1749,7 @@ cards:
                 - climate.buro_dect301_1
                 - climate.schlafzimmer_dect301_1
                 - synology_dsm.reboot
-                - vacuum.xiaomi_vacuum_cleaner
+                - vacuum.wall_e
                 - automation.eaw_abholtermine_abfall
                 - notify.ha_message
                 - notify.ha_message_group

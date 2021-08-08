@@ -22,10 +22,14 @@ homeassistant:
   packages: !include_dir_named packages
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #local_ip:
 =======
 local_ip:
 >>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
+=======
+#local_ip:
+>>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
 
 ## MultiSensoring #######################################################################
 # DONT use this, we use OpenZWave (beta) !
@@ -165,6 +169,7 @@ utility_meter:
     cycle: monthly
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 ## SYNOLOGY DS713 #######################################################################
 ## Data Input via HA Backend
@@ -175,10 +180,13 @@ utility_meter:
     #name: SYNOLOGY DSM DS713+
 
 >>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
+=======
+>>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
 ## WAKEonLAN #############################################################################
 #wake_on_lan:
 
 ## UPNP FRITZBOX ########################################################################
+<<<<<<< HEAD
 <<<<<<< HEAD
 ##upnp:
 ##  local_ip: 192.168.178.1
@@ -234,6 +242,20 @@ speedtestdotnet:
     - download
     - upload
 >>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
+=======
+##upnp:
+##  local_ip: 192.168.178.1
+
+## SPEEDTEST ############################################################################
+##speedtestdotnet:
+##  server_id: 10010
+##  scan_interval:
+##    minutes: 480
+##  monitored_conditions:
+##    - ping
+##    - download
+##    - upload
+>>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
 
 ## SKODA CONNECT ########################################################################
 # https://github.com/lendy007/homeassistant-skodaconnect
@@ -261,10 +283,14 @@ tankerkoenig:
 ## LOVELACE UI ##########################################################################
 # OLD ?
 <<<<<<< HEAD
+<<<<<<< HEAD
 lovelace_gen:
 =======
 #lovelace_gen:
 >>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
+=======
+lovelace_gen:
+>>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
 
 lovelace:
   mode: yaml
