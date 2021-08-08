@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # purge_interval: 2
 # purge_keep_days: 14
 db_url: !secret db_url
@@ -89,3 +90,98 @@ exclude:
     - sensor.nuc_uptime
     - sensor.last_boot
     - sensor.sun_state
+=======
+# purge_interval: 2
+# purge_keep_days: 14
+db_url: !secret db_url
+
+include:
+  domains:
+    - sensor
+    - switch
+    - media_player
+    - light
+    - binary_sensor
+    - cover
+  entities:
+    - person.sebastian_schmal
+    - person.julia_schmal
+    - device_tracker.handy_sebastian
+    - device_tracker.iphone_vr_smart
+    - device_tracker.iphone_vr_smart_2
+    - device_tracker.octavia
+    - sensor.sebastian_status
+    - sensor.julia_status
+    - switch.summer
+    - binary_sensor.motion_sensor_mainhallway
+    - binary_sensor.motion_sensor_stairwell1
+    - binary_sensor.motion_sensor_stairwell2
+    - binary_sensor.motion_sensor_stairwell3
+    - binary_sensor.motion_sensor_kitchen
+    - binary_sensor.motion_sensor_restroom
+    - binary_sensor.remote_ui
+    - input_boolean.notify_dooropen
+    - input_boolean.motion_sensor_mainhallway_toggle
+    - input_boolean.motion_sensor_stairwell1_toggle
+    - input_boolean.motion_sensor_stairwell2_toggle
+    - input_boolean.motion_sensor_stairwell3_toggle
+    - input_boolean.motion_sensor_kitchen_toggle
+    - input_boolean.motion_sensor_restroom_toggle
+    - sensor.fritz_netmonitor
+    - sensor.mainhallway_zw100_multisensor_1_air_temperature
+    - sensor.mainhallway_zw100_multisensor_1_humidity
+    - binary_sensor.mainhallway_zw100_multisensor_1_home_security_tampering_cover_removed
+    - binary_sensor.mainhallway_zw100_multisensor_1_home_security_motion_detected
+    - sensor.mainhallway_zw100_multisensor_1_illuminance
+    - binary_sensor.mainhallway_zw100_multisensor_1_sensor
+    - sensor.mainhallway_zw100_multisensor_1_ultraviolet
+    - sensor.mainhallway_zw100_multisensor_1_battery_level
+    - switch.buro_dect200_1
+    - sensor.buro_dect200_1_total_consumption
+    - sensor.buro_dect200_1_current_power_w
+    - sensor.buro_dect200_1_voltage
+    - sensor.buro_dect200_1_current_a
+    - climate.buro_dect301_1
+    - climate.schlafzimmer_dect301_1
+    - sensor.handy_sebastian_akkufullstand
+    - sensor.net_upload_cur
+    - sensor.net_download_cur_filtered
+    - vacuum.xiaomi_vacuum_cleaner
+    - sensor.solar_elevation
+    - sensor.dwd_weather_humidity
+    - sensor.dwd_weather_temperature
+    - sensor.opensky
+    - sensor.docker_cpu
+    - sensor.docker_1cpu
+    - sensor.docker_memory_percent
+    - sensor.docker_memory
+    - sensor.docker_containers_total
+    - sensor.docker_containers_running
+    - sensor.docker_containers_paused
+    - sensor.docker_containers_stopped
+    - sensor.docker_images
+    - sensor.docker_version
+    - switch.mainhallway_led_shelly_1l_84cca8ad7232
+    - binary_sensor.office_window_xiaomi_1_openclose
+    - sensor.gasstation_ed_diesel
+    - sensor.gasstation_shellblackdecker_diesel
+    - sensor.gasstation_shellwiesbadener_diesel
+    - sensor.gasstation_total_diesel
+    - input_select.sensor_frontdoortest
+
+exclude:
+  entity_globs:
+    #- sensor.handy_sebastian_*
+  entities:
+    - sensor.time
+    - sensor.time_date
+    - sensor.time_utc
+    - sensor.date
+    - sensor.date_time
+    - sensor.date_time_iso
+    - sensor.date_time_utc
+    - sensor.hass_io_uptime
+    - sensor.nuc_uptime
+    - sensor.last_boot
+    - sensor.sun_state
+>>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
