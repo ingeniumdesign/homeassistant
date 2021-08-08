@@ -1,10 +1,10 @@
 # Example https://github.com/frenck/home-assistant-config/tree/master/config/themes
 
+# Theme
 ING Dark:
   # Fonts
-  font-family-raleway: "Raleway,sans-serif"
-  font-family-oswald: "Oswald,sans-serif"
-  font-family-quicksand: "Quicksand,sans-serif"
+  font-family-raleway: "Raleway, sans-serif"
+  font-family-comfortaa: "Comfortaa, sans-serif"
 
   primary-font-family: "var(--font-family-raleway)"
   paper-font-common-base_-_font-family: "var(--primary-font-family)"
@@ -16,23 +16,31 @@ ING Dark:
   paper-font-title_-_font-family: "var(--primary-font-family)"
   ha-card-header-font-family: "var(--primary-font-family)"
 
-  font-title: "var(--font-family-quicksand)"
+  # Font Variable
+  font-title: "var(--font-family-comfortaa)"
 
-  # Color
-  color-white: "rgba(255, 255, 255, 1)" #ffffff
-  color-white-dark: "rgba(234, 240, 249, 1)" #eaf0f9
+  # Color Variable
+  color-white: "rgba(255,255,255,1)" #ffffff
+  color-white-dark: "rgba(234,240,249,1)" #eaf0f9
+  color-grey: "rgba(192,192,192,1)" #C0C0C0
+  color-grey-dark-1: "rgba(169,169,169,1)" #A9A9A9
+  color-grey-dark-2: "rgba(128,128,128,1)" #808080
+  color-grey-dark-3: "rgba(105,105,105,1)" #696969
   color-red-1: "rgba(247,53,67,1)" #rot
   color-red-bright-1: "rgba(255,102,102,0.6)" #hell rot
-  color-red-error-1: rgba(255,153,0,1.0)" #default HA red rgb(219, 68, 55) --error-color
+  color-red-error-1: "rgba(255,153,0,1.0)" #default HA red rgb(219, 68, 55) --error-color
   color-error: "var(--error-color)" #default HA red rgb(219, 68, 55)
   color-lilac-bright-1: "rgba(31,142,250,0.9)" #hell flieder
   color-ocher-1: "rgba(222,176,107,1)" #ocker
+  color-ocher-2: "rgba(222,176,107,0.7)" #ocker
   color-green-bright-1: "rgba(0,202,139,1)" #hell grün
   color-purple-1: "rgba(139,64,156,1)" #lila
+  color-purple-bright-1: "rgba(118,128,255,1)" #7680ff
   color-orange-1: "rgba(255,153,0,1)" #orange
-  color-blue-1: "rgba(118,128,255,1)" #7680ff
+  color-blue-1: "rgba(6,169,244,1)" #06a9f4
   color-blue-deepdark-1: "rgba(21,30,45,1)" #tief dunkel blau #151e2d
   color-blue-deepdark-2: "rgba(30,42,64,1)" #tief dunkel blau #1e2a40
+  color-blue-deepdark-2-transp: "rgba(30,42,64,0.7)" #tief dunkel blau #1e2a40
   color-blue-deepdark-3: "rgba(38,51,76,1)" #tief dunkel blau #26334c
   color-blue-deepdark-4: "rgba(45,53,82,1)" #tief dunkel blau #2d3552 - Border
   color-blue-bright-1: "rgba(169,186,202,1)" #hell blau #a9baca
@@ -42,14 +50,18 @@ ING Dark:
   text-color: "var(--color-white)"
   primary-text-color: "var(--color-white)"
   text-primary-color: "var(--color-white)"
-  secondary-text-color: "#BAC0C6"
-  text-medium-light-color: "#A0A2A8"
-  text-medium-color: "#80828A"
-  disabled-text-color: "#626569"
+  secondary-text-color: "var(--color-grey)"
+  text-medium-light-color: "var(--color-grey-dark-1)"
+  text-medium-color: "var(--color-grey-dark-2)"
+  disabled-text-color: "var(--color-grey-dark-3)"
   primary-color: "var(--accent-color)"
 
+  # Font-Size Variable
+  font-size-title: "20px"
+  font-size-subtitle: "18px"
+
   # Main Colors
-  app-header-background-color: "var(--color-blue-deepdark-2)"
+  app-header-background-color: "var(--color-blue-deepdark-2-transp)"
   accent-color: "var(--color-blue-1)"
   accent-medium-color: "var(--accent-color)"
 
@@ -66,7 +78,7 @@ ING Dark:
   ha-card-background: "var(--color-blue-deepdark-2)"
   ha-card-box-shadow: "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)"
   ha-card-border-radius: "0.25rem"
-  border-color: "rgba(45, 53, 82, 0)"
+  border-color: "rgba(45,53,82,0)"
 
   # Icons
   paper-item-icon-color: "var(--color-white-dark)"
@@ -93,18 +105,22 @@ ING Dark:
   mdc-theme-primary: "var(--accent-color)"
 
   # Switch
-  switch-unchecked-color: "#70889e"
-  switch-checked-button-color: "var(--accent-color)"
-  switch-unchecked-track-color: "var(--background-color-2)"
-  switch-checked-track-color: "var(--background-color-2)"
+  switch-unchecked-color: "var(--color-grey-dark-2)"
+  switch-checked-button-color: "var(--color-white-dark)" #Switch Button checked
+  switch-unchecked-button-color: "var(--color-white-dark)" #Switch Button unchecked
+  switch-checked-track-color: "var(--accent-color)" #Switch Background
+  switch-unchecked-track-color: "var(--color-grey-dark-3)"
+
 
   # Radio Button
   paper-radio-button-checked-color: "var(--accent-color)"
 
   # Popups
+  dialog-backdrop-filter: "blur(5px) brightness(95%)"
   mdc-dialog-scrim-color: "rgba(0,0,0,0.50)" # BG Overlay
+  mdc-theme-surface: "rgba(0,0,0,0.50)"
   more-info-header-background: "var(--secondary-background-color)"
-  paper-dialog-background-color: "var(--background-color)" #'rgba(47,59,82,0.4)'
+  paper-dialog-background-color: "var(--background-color)"
 
   # Tables
   table-row-background-color: "var(--background-color)"
@@ -113,10 +129,10 @@ ING Dark:
   # Badges
   label-badge-background-color: "var(--background-color)"
   label-badge-text-color: "var(--text-primary-color)"
-  label-badge-red: "rgba(73,85,108,1)"
-  label-badge-blue: "rgba(26,137,245,1)"
-  label-badge-green: "rgba(0,202,139,1)"
-  label-badge-yellow: "rgba(222,176,107,1)"
+  label-badge-red: "var(--color-red-1)"
+  label-badge-blue: "var(--color-blue-1)"
+  label-badge-green: "var(--color-green-bright-1)"
+  label-badge-ocher: "var(--color-ocher-1)"
 
   paper-input-container-focus-color: "var(--accent-color)"
 
@@ -137,38 +153,19 @@ ING Dark:
   hacs-status-pending-restart: "var(--text-dark-color)"
   hacs-status-pending-update: "var(--accent-color)"
 
-  # Custom
-  custom_heading: "#ffffff"
-  custom_icon_light: "#ffffff"
-  custom_icon_dark: "#ffffff"
-  custom_card_background: "var(--ha-card-background)"
-  # hell rot
-  custom_motion_off: "rgba(255,102,102,0.6)"
-  # hell lila
-  custom_motion_detected: "rgba(31,142,250,0.9)"
-  # rot
-  custom_graph_color_1: "rgba(247,53,67,1)"
-  #oka
-  custom_graph_color_2: "rgba(222,176,107,1)"
-  #hell grün
-  custom_graph_color_3: "rgba(0,202,139,1)"
-  #lila
-  custom_graph_color_4: "rgba(139,64,156,1)"
-  #orange
-  custom_graph_color_5: "rgba(255,153,0,1)"
-
   # Card-Mod
   card-mod-theme: "ING Dark"
 
   card-mod-more-info-yaml: |
     $: |
+      .mdc-dialog {
+        background: none !important;
+      }
       .mdc-dialog__scrim {
-        backdrop-filter: blur(5px) brightness(95%);
-        -webkit-backdrop-filter: blur(5px) brightness(95%);
         background-color: rgba(0,0,0,0.50);
       }
       .mdc-dialog .mdc-dialog__scrim {
-        background-color: rgba(0,0,0,0.50) !important;
+        background-color: var(--mdc-dialog-scrim-color) !important;
       }
       .mdc-dialog .mdc-dialog__container .mdc-dialog__surface {
         background: none !important;
@@ -176,9 +173,7 @@ ING Dark:
         box-shadow: none !important;
       }
       .mdc-dialog .mdc-dialog__container .mdc-dialog__surface .mdc-dialog__content {
-        backdrop-filter: blur(5px) brightness(95%);
-        -webkit-backdrop-filter: blur(5px) brightness(95%);
-        background-color: rgba(0,0,0,0.50);
+        background-color: var(--mdc-dialog-scrim-color);
       }
       :host {
         background: none !important;
@@ -189,8 +184,9 @@ ING Dark:
       }
     mwc-tab-bar$: |
       .mdc-tab-bar {
-        backdrop-filter: blur(5px) brightness(95%);
-        -webkit-backdrop-filter: blur(5px) brightness(95%);
-        background-color: rgba(0,0,0,0.50);
+        background-color: var(--mdc-dialog-scrim-color);
       }
     .: |
+      .heading {
+        border-bottom: none !important;
+      }

@@ -21,6 +21,8 @@ homeassistant:
   # Load packages
   packages: !include_dir_named packages
 
+#local_ip:
+
 ## MultiSensoring #######################################################################
 # DONT use this, we use OpenZWave (beta) !
 # Dont run zwave with OpenZWave (beta) together!!
@@ -31,14 +33,16 @@ homeassistant:
 
 #Zigbee Home Automation
 zha:
+  # Data Input via Plugin Config
   #usb_path: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00
-  #usb_path:
   database_path: /config/zigbee.db
 
 ## Themes UI ############################################################################
 ## ui-lovelace.yaml inline Styles
 frontend:
   themes: !include_dir_merge_named themes
+  extra_module_url:
+    - /local/custom-ui/custom-ui.js
 
 config:
 
@@ -92,7 +96,7 @@ logbook:
       - sensor.date_time
       - sensor.date_time_iso
       - sensor.date_time_utc
-      - sensor.hass_io_uptime
+      - sensor.uptime
       - sensor.hass_io_uptime_pretty
       - sensor.nuc_uptime
       - sensor.last_boot
@@ -147,14 +151,6 @@ media_player:
 #  - host: 192.168.178.27
 #    name: Samsung TV Q9075
 
-## DEVICE TRACKERS ######################################################################
-device_tracker:
-  - platform: fritz
-    host: 192.168.178.1
-    password: !secret device_tracker_fritzbox_password
-    track_new_devices: true
-    consider_home: 90
-
 ## UTILITY METER ########################################################################
 utility_meter:
   net_received_monthly:
@@ -164,40 +160,48 @@ utility_meter:
     source: sensor.net_sent
     cycle: monthly
 
-## SYNOLOGY DS713 #######################################################################
-synology_dsm:
-  - host: 192.168.178.43
-    username: !secret synology_dsm_ds713_username
-    password: !secret synology_dsm_ds713_password
-    #name: SYNOLOGY DSM DS713+
-
 ## WAKEonLAN #############################################################################
-wake_on_lan:
+#wake_on_lan:
 
 ## UPNP FRITZBOX ########################################################################
-upnp:
-  local_ip: 192.168.178.1
+##upnp:
+##  local_ip: 192.168.178.1
 
-## VACUUM ROBOROCK S6 ###################################################################
-# https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor
-vacuum:
-  - platform: xiaomi_miio
-    host: 192.168.178.46
-    token: !secret vacuum_roborock_s6_token
+## SPEEDTEST ############################################################################
+##speedtestdotnet:
+##  server_id: 10010
+##  scan_interval:
+##    minutes: 480
+##  monitored_conditions:
+##    - ping
+##    - download
+##    - upload
 
-## SPEEDTEST ###########################################################################
-speedtestdotnet:
-  server_id: 10010
-  scan_interval:
-    minutes: 480
-  monitored_conditions:
-    - ping
-    - download
-    - upload
+## SKODA CONNECT ########################################################################
+# https://github.com/lendy007/homeassistant-skodaconnect
+skodaconnect: !include skodaconnect.yaml
+
+## DOCKER ###############################################################################
+# https://github.com/ualex73/monitor_docker
+monitor_docker:
+
+## SHELLY ###############################################################################
+shelly: !include shelly.yaml
+
+## TANKERKÖNIG ###############################################################################
+tankerkoenig:
+  api_key: !secret tankerkoenig_api_key
+  fuel_types:
+    - "diesel"
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  radius: 5
+  scan_interval: "0:15:01"
 
 #########################################################################################
 
 ## LOVELACE UI ##########################################################################
+# OLD ?
 lovelace_gen:
 
 lovelace:
@@ -251,15 +255,10 @@ lovelace:
       type: module
     - url: /hacsfiles/vacuum-card/vacuum-card.js
       type: module
-      # https://github.com/Villhellm/custom-sidebar
-      #- url: /hacsfiles/custom-sidebar/custom-sidebar.js
-      #  type: module
     # Styles
-    - url: "https://fonts.googleapis.com/css?family=Raleway"
+    - url: "https://fonts.googleapis.com/css2?family=Raleway&display=swap"
       type: css
-    - url: "https://fonts.googleapis.com/css?family=Oswald"
-      type: css
-    - url: "https://fonts.googleapis.com/css?family=Quicksand"
+    - url: "https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
       type: css
   dashboards:
     lovelace-generated:
@@ -270,6 +269,7 @@ lovelace:
       show_in_sidebar: true
       require_admin: true
 
+# https://github.com/thomasloven/hass-browser_mod
 browser_mod:
   disable:
     - all
@@ -278,10 +278,12 @@ input_boolean: !include_dir_merge_named input_boolean
 input_select: !include_dir_merge_named input_select
 input_number: !include_dir_merge_named input_number
 
-#group: !include groups.yaml
-automation: !include automations.yaml
+group: !include groups.yaml
+#automation: !include automations.yaml
+automation: !include_dir_merge_list automations
 
 scene: !include scenes.yaml
 script: !include_dir_merge_named scripts
 switch: !include_dir_merge_list switch
 sensor: !include_dir_merge_list sensor
+light: !include lights.yaml

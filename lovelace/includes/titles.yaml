@@ -2,7 +2,7 @@
 type: markdown
 style: |
   ha-card {
-    font-size: 20px;
+    font-size: var(--font-size-title);
     font-family: var(--font-title);
     line-height: 30px;
     background: none;
@@ -16,4 +16,4 @@ style: |
     padding: 0px 0px 0px 8px !important;
     border-left: 3px solid var(--accent-color);
   }
-content: {{title}}
+content: {{ title }}

@@ -15,6 +15,22 @@ input_number.kwh_cost:
   friendly_name: Kosten für eine kWh
   icon: mdi:currency-eur
   unit_of_measurement: €
+sensor.mainhallway_zw100_multisensor_1_air_temperature:
+  friendly_name: Flur Temperatur
+sensor.mainhallway_zw100_multisensor_1_humidity:
+  friendly_name: Flur Luftfeuchtigkeit
+binary_sensor.mainhallway_zw100_multisensor_1_home_security_tampering_cover_removed:
+  friendly_name: Flur Sicherheit
+binary_sensor.mainhallway_zw100_multisensor_1_home_security_motion_detected:
+  friendly_name: Flur Sensor Bewegung
+sensor.mainhallway_zw100_multisensor_1_illuminance:
+  friendly_name: Flur Helligkeit
+binary_sensor.mainhallway_zw100_multisensor_1_sensor:
+  friendly_name: Flur Bewegungsmelder
+sensor.mainhallway_zw100_multisensor_1_ultraviolet:
+  friendly_name: Flur UV-Strahlung
+sensor.mainhallway_zw100_multisensor_1_battery_level:
+  friendly_name: Flur Multisensor Batterie
 switch.buro_dect200_1:
   friendly_name: Büro Steckdose 1
   icon: mdi:power-plug
@@ -25,6 +41,15 @@ sensor.buro_dect200_1_today_energy_kwh:
 climate.buro_dect301_1:
   friendly_name: Büro Heizung 1
   icon: mdi:radiator
+climate.schlafzimmer_dect301_1:
+  friendly_name: Schlafzimmer Heizung 1
+  icon: mdi:radiator
+climate.livingroom_hmipbwth_thermostat:
+  friendly_name: Fußbodenheizung
+  icon: mdi:radiator
+climate.mainhallway_hmipbwth_thermostat:
+  friendly_name: Fußbodenheizung
+  icon: mdi:radiator
 sensor.db_size:
   friendly_name: DB-Größe
   icon: mdi:database
@@ -32,6 +57,10 @@ sensor.version_current:
   friendly_name: Aktuell
 sensor.version_latest:
   friendly_name: Neueste
+input_boolean.notifications:
+  friendly_name: Benachrichtungen
+input_boolean.notify_dooropen:
+  friendly_name: Haustür Warnung
 input_boolean.motion_sensor_mainhallway_toggle:
   friendly_name: Flur
 input_boolean.motion_sensor_stairwell1_toggle:
@@ -46,8 +75,6 @@ input_boolean.motion_sensor_restroom_toggle:
   friendly_name: Gäste-WC
 sensor.hacs:
   friendly_name: Plugins / Components
-binary_sensor.remote_ui:
-  icon: mdi:cloud
 sensor.net_received_monthly:
   friendly_name: Download
   icon: mdi:inbox-arrow-down
@@ -84,6 +111,8 @@ device_tracker.iphone_vr_smart:
   friendly_name: Julia Handy
 device_tracker.iphone_vr_smart_2:
   friendly_name: Julia Handy App
+device_tracker.octavia:
+  friendly_name: ŠKODA Octavia RS Kombi
 group.motion_sensors:
   friendly_name: Bewegungsmelder
   icon: mdi:leak
@@ -93,26 +122,86 @@ sensor.cpu_temp:
 sensor.cpu_speed:
   friendly_name: CPU Speed
   icon: mdi:pulse
+sensor.disk_use_percent_home:
+  friendly_name: Speicher verwendet /home
+sensor.disk_use_percent:
+  friendly_name: Speicher verwendet
+sensor.disk_use:
+  friendly_name: Speicher verwendet
 switch.basti_nuc:
   friendly_name: Computer NUC
   icon: mdi:desktop-tower
-sensor.basti_nas_cpu_load_total:
+#device_tracker.ing_nas:
+#  friendly_name: ING NAS
+sensor.ing_nas_cpu_load_total:
   friendly_name: CPU Load
   icon: mdi:cpu-64-bit
-sensor.basti_nas_volume_1_used_space:
+sensor.ing_nas_volume_1_used_space:
   friendly_name: Speicher verwendet
   icon: mdi:harddisk
-sensor.basti_nas_laufwerk_1_temperature:
+sensor.ing_nas_laufwerk_1_temperature:
   friendly_name: Temperatur LW 1
   icon: mdi:thermometer
-sensor.basti_nas_laufwerk_2_temperature:
+sensor.ing_nas_laufwerk_2_temperature:
   friendly_name: Temperatur LW 2
   icon: mdi:thermometer
-sensor.basti_nas_network_up:
+sensor.ing_nas_network_up:
   friendly_name: Netzwerk Upload
   icon: mdi:inbox-arrow-up
-sensor.basti_nas_network_down:
+sensor.ing_nas_network_down:
   friendly_name: Netzwerk Download
   icon: mdi:inbox-arrow-down
-vacuum.xiaomi_vacuum_cleaner:
-  friendly_name: Wallie
+vacuum.wall_e:
+  friendly_name: WALL-E
+sensor.opensky:
+  friendly_name: openSky
+  unit_of_measurement: Flugzeuge
+  attribution: "Wieviele Flugzeuge sind über unserem Haus?"
+sensor.docker_cpu:
+  friendly_name: CPU
+  icon: mdi:cpu-64-bit
+sensor.docker_1cpu:
+  friendly_name: CPU
+  icon: mdi:cpu-64-bit
+sensor.docker_memory_percent:
+  friendly_name: Speicher verwendet
+sensor.docker_memory:
+  friendly_name: Speicher verwendet
+sensor.docker_containers_total:
+  friendly_name: Container
+sensor.docker_containers_running:
+  friendly_name: Container aktiv
+sensor.docker_containers_paused:
+  friendly_name: Container pause
+sensor.docker_containers_stopped:
+  friendly_name: Container gestoppt
+sensor.docker_images:
+  friendly_name: Speicherversionen
+  icon: mdi:cloud-braces
+sensor.docker_version:
+  friendly_name: Version
+  icon: mdi:toolbox
+switch.mainhallway_led_shelly_1l_84cca8ad7232:
+  friendly_name: Flur Shelly 1L
+  icon: mdi:credit-card-wireless
+binary_sensor.office_window_xiaomi_1_openclose:
+  friendly_name: Büro Fenster
+  device_class: window
+  templates:
+    icon_color: >
+      if (state == 'on') return 'var(--color-red-1)';
+      return 'var(--paper-item-icon-color)';
+sensor.tankerkoenig_dirk_schirmacher_diesel:
+  friendly_name: ED Tankstelle
+  value_template: >
+    {% if states("sensor.tankerkoenig_dirk_schirmacher_diesel") == unknown %}
+      geschlossen
+    {% else %}
+      {{ states('sensor.tankerkoenig_dirk_schirmacher_diesel') }}
+    {% endif %}
+input_select.sensor_frontdoortest:
+  friendly_name: Haustür TEST
+  device_class: door
+light.light1test:
+  friendly_name: Licht TEST
+  device_class: light

@@ -34,35 +34,6 @@ button_card_templates:
     styles:
       card:
         - font-size: 14px
-    state:
-      - value: "Abwesend"
-        styles:
-          icon:
-            - filter: grayscale(80%) #blur(5px)
-      - value: "Lange Abwesend"
-        styles:
-          icon:
-            - filter: grayscale(100%)
-      - value: "Arbeit"
-        styles:
-          icon:
-            - filter: grayscale(100%)
-      - value: "Sebastian Arbeit"
-        styles:
-          icon:
-            - filter: grayscale(100%)
-      - value: "Julia Arbeit"
-        styles:
-          icon:
-            - filter: grayscale(100%)
-      - value: "Angekommen"
-        styles:
-          icon:
-            - filter: grayscale(30%)
-      - value: "Verlassen"
-        styles:
-          icon:
-            - filter: grayscale(100%)
     style: |
       img {
         width: 100% !important;
@@ -98,6 +69,7 @@ button_card_templates:
       card:
         - height: 70px
         - font-size: 11px
+        - margin: 0px
         - background: >
             [[[
             if (entity.state == "on") return "var(--accent-color)";
@@ -121,7 +93,7 @@ button_card_templates:
     style: !include lovelace/includes/style.yaml
   timer:
     color_type: card
-    color: "var(--custom_motion_off)"
+    color: "var(--color-red-bright-1)"
     size: 25px
     show_icon: false
     show_name: false

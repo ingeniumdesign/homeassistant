@@ -1,6 +1,8 @@
 kwh_cost:
-    name: Arbeitspreis
-    min: 0
-    max: 2
-    unit_of_measurement: Cent
-    mode: box
+  name: kwhcost
+  initial: 0.28
+  min: 0
+  max: 4
+  unit_of_measurement: Cent
+  step: 0.01
+  mode: box

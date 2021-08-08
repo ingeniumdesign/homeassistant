@@ -1,6 +1,6 @@
 # Log Severities: notset, debug, info, warn, warning, error, fatal, critical
-#default: debug
-default: warning
+default: debug
+#default: warning
 logs:
   aiohttp.access: critical
   aiohttp.server: critical
@@ -20,6 +20,7 @@ logs:
   homeassistant.components.sensor.rest: info
   homeassistant.components.tplink.switch: error
   homeassistant.components.zwave: warn
+  homeassistant.components.deconz: debug
   homeassistant.exceptions: info
   homeassistant.helpers.script: info
   homeassistant.helpers.entity: critical

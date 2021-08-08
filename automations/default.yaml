@@ -7,8 +7,9 @@
 #      # Event is either enter or leave
 #      event: enter # or "leave"
 
-- id: "Hass Startup Notification"
-  alias: 'Hass Startup Notification'
+- id: notify_hass_startup
+  alias: "Notify HASS Startup"
+  description: "Send notification HASS Startup"
   trigger:
     - platform: homeassistant
       event: start
@@ -18,8 +19,9 @@
       title: "*Info / Warning*"
       message: "Home Assistant ist gestartet"
 
-- id: "Hass Shutdown Notification"
-  alias: 'Hass Shutdown Notification'
+- id: notify_hass_shutdown
+  alias: "Notify HASS Shutdown"
+  description: "Send notification HASS Shutdown"
   trigger:
     - platform: homeassistant
       event: shutdown
@@ -29,7 +31,23 @@
       title: "*Info / Warning*"
       message: "Home Assistant ist herunter gefahren"
 
-- alias: 'Send notification when sun rises'
+- id: notify_home_assistant_update
+  alias: 'Notify Home Assistant Update'
+  description: "Send notification Home Assistant Update"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.updater
+      from: 'off'
+      to: 'on'
+  action:
+    - service: notify.ha_message_group
+      data:
+        title: "*Home Assistant Update*"
+        message: "Es gibt eine neue Home Assistant Version!"
+
+- id: notify_sun_rises
+  alias: "Notify Sun rises"
+  description: "Send notification when sun rises"
   trigger:
     platform: sun
     event: sunrise
@@ -40,7 +58,9 @@
       title: '*Home Assistant Info*'
       message: 'Die Sonne ist aufgegangen.'
 
-- alias: 'Send notification when sun sets'
+- id: notify_sun_sets
+  alias: "Notify Sun sets"
+  description: "Send notification when sun sets"
   trigger:
     platform: sun
     event: sunset
@@ -51,7 +71,9 @@
       title: '*Home Assistant Info*'
       message: 'Die Sonne ist untergegangen.'
 
-- alias: "EAW Abholtermine - Abfall"
+- id: eaw_ics_trash
+  alias: "EAW ICS Trash"
+  description: "Send notification EAW Timing for Trash"
   trigger:
     - platform: time
       at: "17:00:00"

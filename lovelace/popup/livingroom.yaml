@@ -21,27 +21,14 @@ service_data:
             - entity: media_player.vu_uno4k_se
               tap_action:
                 action: none
-      style: |
-        $: |
-          .mdc-dialog .mdc-dialog__scrim {
-            backgrund: green !important;
-            --ha-card-background: var(--color-orange-1) !important;
-          }
-        .: |
-          ha-card {
-            backgrund: black !important;
-            color: white;
-            --ha-card-background: var(--color-orange-1) !important;
-          }
-          :host {
-            backgrund: red !important;
-            --ha-card-background: var(--color-orange-1) !important;
-          }
+    style:
+      .: |
         ha-card {
-          backgrund: black !important;
-          color: white;
-          --ha-card-background: var(--color-orange-1) !important;
+          background: none !important;
+          --ha-card-background: none;
+          --card-background-color: transparent;
         }
         :host {
-          backgrund: blue !important;
+          --ha-card-background: none;
+          --card-background-color: transparent;
         }
