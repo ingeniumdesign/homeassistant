@@ -334,10 +334,11 @@ _More Screenshot down below._
 - Synology [DS713+](https://www.synology.com/de-de/support/download/DS713+#system) - [Amazon *](https://amzn.to/3hHu8xz) // Buy the new [DS720+](https://www.synology.com/de-de/products/DS720+) [Amazon *](https://amzn.to/3rWErT1)
 - ZyXEL [GS1900-24E](https://www.zyxel.com/de/de/products_services/8-10-16-24-48-port-GbE-Smart-Managed-Switch-GS1900-Series/) - [Amazon *](https://amzn.to/391vcbR)
 - ZyXEL [GS1900-8](https://www.zyxel.com/de/de/products_services/8-10-16-24-48-port-GbE-Smart-Managed-Switch-GS1900-Series/) - [Amazon *](https://amzn.to/357BQMo)
+- ZyXEL [GS108B-V3](https://www.zyxel.com/de/de/products_services/8-Port-Desktop-Gigabit-Ethernet-Switch-GS-108B-v3/) - [Amazon *](https://amzn.to/3irRh9k)
 - Homematic IP 1x [Access Point](https://www.homematic-ip.com/produkte/detail/home-control-access-point.html) - [Amazon *](https://amzn.to/2MhohDn)
 - Homematic IP 1x [Fußbodenheizungsaktor – 12-fach, motorisch](https://www.homematic-ip.com/produkte/detail/homematic-ip-fussbodenheizungsaktor-12-fach-motorisch.html) - [Amazon *](https://amzn.to/3paOJNB)
-- Homematic IP 6x [Stellantrieb – motorisch](https://www.homematic-ip.com/produkte/detail/homematic-ip-stellantrieb-motorisch.html) - [Amazon *](https://amzn.to/3p4AVEq)
-- Homematic IP 1x [Wandthermostat 240V - 150628A0](https://www.homematic-ip.com/produkte/detail/wandthermostat-mit-schaltausgang-fuer-markenschalter.html) - [Amazon *](https://amzn.to/39lquqC)
+- Homematic IP 7x [Stellantrieb – motorisch](https://www.homematic-ip.com/produkte/detail/homematic-ip-stellantrieb-motorisch.html) - [Amazon *](https://amzn.to/3p4AVEq)
+- Homematic IP 2x [Wandthermostat 240V - 150628A0](https://www.homematic-ip.com/produkte/detail/wandthermostat-mit-schaltausgang-fuer-markenschalter.html) - [Amazon *](https://amzn.to/39lquqC)
 
 ## Hass.io Addons
 
@@ -427,7 +428,7 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
   - Lights still on?
   - Stove or oven still on?
   - Heating-System´s turn down.
-- [x] Frontdoor is longer open XX Minutes, Alexa Info
+- [ ] Frontdoor is longer open XX Minutes, Alexa Info
 - [x] Trash Calendar with notification
 - [x] Zones for different people
 - [ ] presence detection with different states like zone
@@ -448,7 +449,8 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 - [x] Device, Sensor... Battery Infos and Stats.
 - [x] Network Infos from Fritzbox
 - [x] SpeedTest.net Infos for the Network
-- [ ] Settings for the different sensors, Lights, Motion detector...
+- [ ] Settings for the different sensors, Lights, Motion detector...-
+- [x] Car Infos
 - [ ] Info for Car is open? Next Car Check?
 - [ ] and many more...
 
@@ -547,7 +549,7 @@ You find the System Configuration in this File: <br />
 - [ ] **ERROR** kiosk-mode dont work from LoveLace UI
 - [ ] **ISSUE** Backup to a second HDD [Community Forum](https://community.home-assistant.io/t/snapshot-other-hdd/268439)
 - [ ] **WARNING** Updating opensky sensor took longer than the scheduled update interval [GitHub #45453](https://github.com/home-assistant/core/issues/45453)
-- [ ] **ISSUE** Can not connect to Docker API [Community Forum](https://community.home-assistant.io/t/exposing-docker-sock-for-monitor-docker/265565)
+- [ ] **ISSUE** Can not connect to Docker API [Community Forum](https://community.home-assistant.io/t/exposing-docker-sock-for-monitor-docker/265565) - All the time, after HA Update!
 
 ### Say Thank You
 

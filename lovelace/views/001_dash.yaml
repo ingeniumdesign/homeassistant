@@ -1312,7 +1312,7 @@ cards:
         content: SAUGER ROBOROCK S6
 
       - type: "custom:vacuum-card"
-        entity: vacuum.xiaomi_vacuum_cleaner
+        entity: vacuum.wall_e
         show_name: false
         compact_view: false
         style: |

@@ -119,7 +119,6 @@ include:
     - binary_sensor.motion_sensor_stairwell3
     - binary_sensor.motion_sensor_kitchen
     - binary_sensor.motion_sensor_restroom
-    - binary_sensor.remote_ui
     - input_boolean.notify_dooropen
     - input_boolean.motion_sensor_mainhallway_toggle
     - input_boolean.motion_sensor_stairwell1_toggle
@@ -127,7 +126,6 @@ include:
     - input_boolean.motion_sensor_stairwell3_toggle
     - input_boolean.motion_sensor_kitchen_toggle
     - input_boolean.motion_sensor_restroom_toggle
-    - sensor.fritz_netmonitor
     - sensor.mainhallway_zw100_multisensor_1_air_temperature
     - sensor.mainhallway_zw100_multisensor_1_humidity
     - binary_sensor.mainhallway_zw100_multisensor_1_home_security_tampering_cover_removed
@@ -146,7 +144,7 @@ include:
     - sensor.handy_sebastian_akkufullstand
     - sensor.net_upload_cur
     - sensor.net_download_cur_filtered
-    - vacuum.xiaomi_vacuum_cleaner
+    - vacuum.wall_e
     - sensor.solar_elevation
     - sensor.dwd_weather_humidity
     - sensor.dwd_weather_temperature
