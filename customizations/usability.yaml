@@ -128,8 +128,11 @@ sensor.disk_use_percent:
   friendly_name: Speicher verwendet
 sensor.disk_use:
   friendly_name: Speicher verwendet
-switch.basti_nuc:
+switch.computer_nuc:
   friendly_name: Computer NUC
+  icon: mdi:desktop-tower
+switch.basti_pc:
+  friendly_name: Basti PC
   icon: mdi:desktop-tower
 #device_tracker.ing_nas:
 #  friendly_name: ING NAS

@@ -294,164 +294,164 @@ cards:
               - sensor.db_size
               - sensor.hass_io_uptime_pretty
 
-      # INFOS Synology DSM DS713+
-      - type: markdown
-        style: |
-          ha-card {
-            font-size: var(--font-size-title);
-            font-family: var(--font-title);
-            line-height: 30px;
-            background: none;
-            margin-top: 0.4em;
-            margin-left: 8px;
-            margin-bottom: 0em;
-            box-shadow: none;
-            background: none;
-          }
-          ha-markdown {
-            padding: 0px 0px 0px 8px !important;
-            border-left: 3px solid var(--accent-color);
-          }
-        content: Synology DSM DS713+
-
-##       ABFRAGE - Synology
-##      - type: conditional
-##        conditions:
-##          - entity: device_tracker.ing_nas
-##            state: "home"
-      - card:
-        type: custom:stack-in-card
-        cards:
-          - type: horizontal-stack
-            cards:
-              - type: 'custom:mini-graph-card'
-                style: |
-                  ha-card {
-                    font-family: var(--primary-font-family);
-                    border-bottom: 2px solid var(--background-color);
-                  }
-                  .graph {
-                    padding-top: 15px;
-                    padding-bottom: 0px;
-                  }
-                  .info {
-                    padding-bottom: 0px;
-                  }
-                  .flex {
-                    padding-bottom: 10px;
-                  }
-                entities:
-                  - sensor.ing_nas_cpu_utilization_total
-                name: CPU
-                align_state: center
-                align_icon: right
-                font_size: 60
-                font_size_header: 11
-                hours_to_show: 12
-                line_color: var(--color-red-1)
-                line_width: 4
-                animate: true
-                points_per_hour: 4
-                lower_bound: 0
-                lower_bound_secondary: 0
-                show:
-                  fill: fade
-                  graph: line
-                  extrema: false
-                  icon: true
-                  name: true
-                  labels: false
-
-              - type: 'custom:mini-graph-card'
-                style: |
-                  ha-card {
-                    font-family: var(--primary-font-family);
-                    border-bottom: 2px solid var(--background-color);
-                  }
-                  .graph {
-                    padding-top: 15px;
-                    padding-bottom: 0px;
-                  }
-                  .info {
-                    padding-bottom: 0px;
-                  }
-                  .flex {
-                    padding-bottom: 10px;
-                  }
-                entities:
-                  - sensor.ing_nas_memory_usage_real
-                name: Speicher RAM
-                align_state: center
-                align_icon: right
-                font_size: 60
-                font_size_header: 11
-                hours_to_show: 12
-                line_color: var(--color-ocher-1)
-                line_width: 4
-                animate: true
-                points_per_hour: 4
-                lower_bound: 0
-                lower_bound_secondary: 0
-                show:
-                  fill: fade
-                  graph: line
-                  extrema: false
-                  icon: true
-                  name: true
-                  labels: false
-
-              - type: 'custom:mini-graph-card'
-                style: |
-                  ha-card {
-                    font-family: var(--primary-font-family);
-                    border-bottom: 2px solid var(--background-color);
-                  }
-                  .graph {
-                    padding-top: 15px;
-                    padding-bottom: 0px;
-                  }
-                  .info {
-                    padding-bottom: 0px;
-                  }
-                  .flex {
-                    padding-bottom: 10px;
-                  }
-                entities:
-                  - sensor.ing_nas_temperature
-                name: Temperatur
-                align_state: center
-                align_icon: right
-                font_size: 60
-                font_size_header: 11
-                hours_to_show: 12
-                line_color: var(--color-green-bright-1)
-                line_width: 4
-                animate: true
-                points_per_hour: 4
-                lower_bound: 0
-                lower_bound_secondary: 0
-                show:
-                  fill: fade
-                  graph: line
-                  extrema: false
-                  icon: true
-                  name: true
-                  labels: false
-
-          - type: custom:auto-entities
-            style: !include ../includes/style_entities_embeded.yaml
-            show_empty: false
-            card:
-              type: entities
-            filter:
-              exclude:
-                - state: unavailable
-              include:
-                - entity_id: sensor.ing_nas_volume_1_used_space
-                - entity_id: sensor.ing_nas_laufwerk_1_temperature
-                - entity_id: sensor.ing_nas_laufwerk_2_temperature
-                - entity_id: sensor.ing_nas_network_up
-                - entity_id: sensor.ing_nas_network_down
+##      # INFOS Synology DSM DS713+
+##      - type: markdown
+##        style: |
+##          ha-card {
+##            font-size: var(--font-size-title);
+##            font-family: var(--font-title);
+##            line-height: 30px;
+##            background: none;
+##            margin-top: 0.4em;
+##            margin-left: 8px;
+##            margin-bottom: 0em;
+##            box-shadow: none;
+##            background: none;
+##          }
+##          ha-markdown {
+##            padding: 0px 0px 0px 8px !important;
+##            border-left: 3px solid var(--accent-color);
+##          }
+##        content: Synology DSM DS713+
+##
+####       ABFRAGE - Synology
+####      - type: conditional
+####        conditions:
+####          - entity: device_tracker.ing_nas
+####            state: "home"
+##      - card:
+##        type: custom:stack-in-card
+##        cards:
+##          - type: horizontal-stack
+##            cards:
+##              - type: 'custom:mini-graph-card'
+##                style: |
+##                  ha-card {
+##                    font-family: var(--primary-font-family);
+##                    border-bottom: 2px solid var(--background-color);
+##                  }
+##                  .graph {
+##                    padding-top: 15px;
+##                    padding-bottom: 0px;
+##                  }
+##                  .info {
+##                    padding-bottom: 0px;
+##                  }
+##                  .flex {
+##                    padding-bottom: 10px;
+##                  }
+##                entities:
+##                  - sensor.ing_nas_cpu_utilization_total
+##                name: CPU
+##                align_state: center
+##                align_icon: right
+##                font_size: 60
+##                font_size_header: 11
+##                hours_to_show: 12
+##                line_color: var(--color-red-1)
+##                line_width: 4
+##                animate: true
+##                points_per_hour: 4
+##                lower_bound: 0
+##                lower_bound_secondary: 0
+##                show:
+##                  fill: fade
+##                  graph: line
+##                  extrema: false
+##                  icon: true
+##                  name: true
+##                  labels: false
+##
+##              - type: 'custom:mini-graph-card'
+##                style: |
+##                  ha-card {
+##                    font-family: var(--primary-font-family);
+##                    border-bottom: 2px solid var(--background-color);
+##                  }
+##                  .graph {
+##                    padding-top: 15px;
+##                    padding-bottom: 0px;
+##                  }
+##                  .info {
+##                    padding-bottom: 0px;
+##                  }
+##                  .flex {
+##                    padding-bottom: 10px;
+##                  }
+##                entities:
+##                  - sensor.ing_nas_memory_usage_real
+##                name: Speicher RAM
+##                align_state: center
+##                align_icon: right
+##                font_size: 60
+##                font_size_header: 11
+##                hours_to_show: 12
+##                line_color: var(--color-ocher-1)
+##                line_width: 4
+##                animate: true
+##                points_per_hour: 4
+##                lower_bound: 0
+##                lower_bound_secondary: 0
+##                show:
+##                  fill: fade
+##                  graph: line
+##                  extrema: false
+##                  icon: true
+##                  name: true
+##                  labels: false
+##
+##              - type: 'custom:mini-graph-card'
+##                style: |
+##                  ha-card {
+##                    font-family: var(--primary-font-family);
+##                    border-bottom: 2px solid var(--background-color);
+##                  }
+##                  .graph {
+##                    padding-top: 15px;
+##                    padding-bottom: 0px;
+##                  }
+##                  .info {
+##                    padding-bottom: 0px;
+##                  }
+##                  .flex {
+##                    padding-bottom: 10px;
+##                  }
+##                entities:
+##                  - sensor.ing_nas_temperature
+##                name: Temperatur
+##                align_state: center
+##                align_icon: right
+##                font_size: 60
+##                font_size_header: 11
+##                hours_to_show: 12
+##                line_color: var(--color-green-bright-1)
+##                line_width: 4
+##                animate: true
+##                points_per_hour: 4
+##                lower_bound: 0
+##                lower_bound_secondary: 0
+##                show:
+##                  fill: fade
+##                  graph: line
+##                  extrema: false
+##                  icon: true
+##                  name: true
+##                  labels: false
+##
+##          - type: custom:auto-entities
+##            style: !include ../includes/style_entities_embeded.yaml
+##            show_empty: false
+##            card:
+##              type: entities
+##            filter:
+##              exclude:
+##                - state: unavailable
+##              include:
+##                - entity_id: sensor.ing_nas_volume_1_used_space
+##                - entity_id: sensor.ing_nas_laufwerk_1_temperature
+##                - entity_id: sensor.ing_nas_laufwerk_2_temperature
+##                - entity_id: sensor.ing_nas_network_up
+##                - entity_id: sensor.ing_nas_network_down
 
 ##      # ABFRAGE - Synology
 ##      - type: conditional
@@ -792,7 +792,6 @@ cards:
               - sensor.net_received_monthly
               - sensor.net_sent_monthly
               - sensor.net_uptime_pretty
-              - sensor.ingeniumdesign_connection_uptime
 
       - type: custom:stack-in-card
         cards:
@@ -869,7 +868,7 @@ cards:
               entities:
                 - climate.buro_dect301_1
                 - climate.schlafzimmer_dect301_1
-                - synology_dsm.reboot
+                #- synology_dsm.reboot
                 - vacuum.wall_e
                 - automation.eaw_abholtermine_abfall
                 - notify.ha_message

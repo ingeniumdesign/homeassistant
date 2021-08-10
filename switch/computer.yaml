@@ -1,10 +1,20 @@
 # Computer Basti NUC @TODO Icon ändern und PC herunterfahren Funktion
 - platform: wake_on_lan
-  name: "Basti NUC"
-  mac: "94:C6:91:10:5C:45"
-  host: 192.168.178.93
+  name: "Computer-NUC"
+  mac: !secret computer_computer_nuc_mac
+  host: !secret computer_computer_nuc_ip
   turn_off:
     service: script.pc_off
+
+- platform: wake_on_lan
+  name: "Basti-PC"
+  mac: !secret computer_basti_pc_mac
+  host: !secret computer_basti_pc_ip
+  turn_off:
+    service: hassio.addon_stdin
+    data:
+      addon: core_rpc_shutdown
+      input: basti-pc
 
 #- platform: template
 #  switches:
@@ -21,8 +31,8 @@
 #        data:
 #          entity_id: switch.turn_off
 #          data:
-#            mac: '94:C6:91:10:5C:45'
-#            host: 192.168.178.93
+#            mac:
+#            host:
 #            broadcast_address: 255.255.255.255
 #      icon_template: >-
 #        {% if is_state('device_tracker.basti_nuc', 'home') %}

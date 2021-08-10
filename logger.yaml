@@ -14,13 +14,22 @@ logs:
   homeassistant.components.feedreader: error
   homeassistant.components.http: warn
   homeassistant.components.ipp: critical
-  homeassistant.components.media_player: info
+  homeassistant.components.media_player: warn
   homeassistant.components.rest.sensor: critical
   homeassistant.components.recorder: error
-  homeassistant.components.sensor.rest: info
+  homeassistant.components.sensor.rest: warn
   homeassistant.components.tplink.switch: error
   homeassistant.components.zwave: warn
   homeassistant.components.deconz: debug
+  #homeassistant.components.synology_dsm: debug
+  custom_components.gardena_smart_system: warn
+  custom_components.gardena_smart_system.mower: warn
+  custom_components.gardena_smart_system.sensor: warn
+  custom_components.gardena_smart_system.switch: warn
+  custom_components.gardena_smart_system.config_flow: warn
+  gardena: debug
+  gardena.smart_system: debug
+  websocket: debug
   homeassistant.exceptions: info
   homeassistant.helpers.script: info
   homeassistant.helpers.entity: critical

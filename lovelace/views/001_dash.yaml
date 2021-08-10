@@ -608,7 +608,7 @@ cards:
 
       - type: "custom:vacuum-card"
         entity: vacuum.wall_e
-        show_name: false
+        show_name: true
         compact_view: false
         style: |
           ha-card {
@@ -664,6 +664,77 @@ cards:
             - attribute: cleaning_time
               unit: Min.
               subtitle: Zeit
+
+      ## Gardena Mähroboter smart SILENO city
+      - type: markdown
+        style: |
+          ha-card {
+            font-size: var(--font-size-title);
+            font-family: var(--font-title);
+            line-height: 30px;
+            background: none;
+            margin-top: 0.4em;
+            margin-left: 8px;
+            margin-bottom: 0em;
+            box-shadow: none;
+            background: none;
+          }
+          ha-markdown {
+            padding: 0px 0px 0px 8px !important;
+            border-left: 3px solid var(--accent-color);
+          }
+        content: MÄHROBOTER SMART SILENO CITY
+
+      - type: "custom:vacuum-card"
+        entity: vacuum.wall_e_sileno
+        show_name: true
+        compact_view: false
+        image: /local/images/Smart-SILENO-city-01.png
+        style: |
+          ha-card {
+            margin-top: 5px;
+            margin-bottom: 5px;
+          }
+          .preview {
+            background: var(--ha-card-background) !important;
+          }
+          .stats {
+            border-top: 3px solid var(--background-color) !important;
+          }
+          .stats-block {
+            margin: 5px 0px;
+            border-right: 0px !important;
+          }
+          .toolbar {
+            background: (var(--ha-card-background), var(--primary-background-color)) !important;
+            border-top: 3px solid var(--background-color) !important;
+            min-height: 30px;
+          }
+          .toolbar ha-icon-button {
+            color: var(--text-color) !important;
+          }
+          .vacuum {
+            max-height: 150px !important;
+            margin: 10px auto 10px auto !important;
+          }
+          .battery {
+            font-weight: normal !important;
+          }
+          .stats-hours {
+            font-size: 16px !important;
+          }
+        stats:
+          default:
+            - attribute: rf_link_level
+              unit: '%'
+              subtitle: Signal
+            - attribute: rf_link_state
+              unit:
+              subtitle: Status
+            - attribute: operating_hours
+              unit: Std.
+              subtitle: Laufzeit
+
 
   ## ROW 3 ###################################################################################################################
   #- type: vertical-stack
