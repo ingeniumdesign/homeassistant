@@ -96,6 +96,7 @@ _More Screenshot down below._
   - ICS
   - Shelly (_Next testing with [ShellyForHass](https://github.com/StyraHem/ShellyForHASS)_)
   - [Skoda Connect](https://github.com/lendy007/homeassistant-skodaconnect) - ŠKODA OCTAVIA RS COMBI
+  - [Gardena Smart System](https://github.com/py-smart-gardena/hass-gardena-smart-system)
 - [Lovelace Gen](https://github.com/thomasloven/hass-lovelace_gen)
 
 ## Lovelace Plugins
