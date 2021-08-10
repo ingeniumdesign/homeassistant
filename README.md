@@ -56,6 +56,7 @@ _More Screenshot down below._
 - Homematic IP 1x [Fußbodenheizungsaktor – 12-fach, motorisch](https://www.homematic-ip.com/produkte/detail/homematic-ip-fussbodenheizungsaktor-12-fach-motorisch.html) - [Amazon *](https://amzn.to/3paOJNB)
 - Homematic IP 7x [Stellantrieb – motorisch](https://www.homematic-ip.com/produkte/detail/homematic-ip-stellantrieb-motorisch.html) - [Amazon *](https://amzn.to/3p4AVEq)
 - Homematic IP 2x [Wandthermostat 240V - 150628A0](https://www.homematic-ip.com/produkte/detail/wandthermostat-mit-schaltausgang-fuer-markenschalter.html) - [Amazon *](https://amzn.to/39lquqC)
+- Gardena [Mähroboter smart SILENO city, 250](https://www.gardena.com/de/produkte/rasenpflege/mahroboter/mahroboter-smart-sileno-city-250-m2-set/970450703/) - [Amazon *](https://amzn.to/3fNnVAq)
 
 ## Hass.io Addons
 
@@ -166,7 +167,9 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 - [x] Device, Sensor... Battery Infos and Stats.
 - [x] Network Infos from Fritzbox
 - [x] SpeedTest.net Infos for the Network
-- [ ] Settings for the different sensors, Lights, Motion detector...-
+- [ ] Settings for the different sensors, Lights, Motion detector...
+- [ ] More Gardena Mower Infos
+- [ ] More Gardena Infos
 - [x] Car Infos
 - [ ] Info for Car is open? Next Car Check?
 - [ ] and many more...
@@ -267,6 +270,7 @@ You find the System Configuration in this File: <br />
 - [ ] **ISSUE** Backup to a second HDD [Community Forum](https://community.home-assistant.io/t/snapshot-other-hdd/268439)
 - [ ] **WARNING** Updating opensky sensor took longer than the scheduled update interval [GitHub #45453](https://github.com/home-assistant/core/issues/45453)
 - [ ] **ISSUE** Can not connect to Docker API [Community Forum](https://community.home-assistant.io/t/exposing-docker-sock-for-monitor-docker/265565) - All the time, after HA Update!
+- [ ] **ERROR** synology_dsm dont work. Go in long loading point.
 
 ### Say Thank You
 
