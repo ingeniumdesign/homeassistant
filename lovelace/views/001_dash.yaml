@@ -1,4 +1,3 @@
-<<<<<<< HEAD:lovelace/views/001_dash.yaml
 icon: mdi:home-assistant
 title: Dashboard
 path: dashboard
@@ -609,7 +608,7 @@ cards:
 
       - type: "custom:vacuum-card"
         entity: vacuum.wall_e
-        show_name: false
+        show_name: true
         compact_view: false
         style: |
           ha-card {
@@ -666,107 +665,7 @@ cards:
               unit: Min.
               subtitle: Zeit
 
-  ## ROW 3 ###################################################################################################################
-  #- type: vertical-stack
-  #  cards:
-  ## KARTE
-  #    - type: markdown
-#        style: |
-#          ha-card {
-#            font-size: var(--font-size-title);
-#            font-family: var(--font-title);
-#            line-height: 30px;
-#            background: none;
-#            margin-top: 0.4em;
-#            margin-left: 8px;
-#            margin-bottom: 0em;
-#            box-shadow: none;
-#            background: none;
-#          }
-#          ha-markdown {
-#            padding: 0px 0px 0px 8px !important;
-#            border-left: 3px solid var(--accent-color);
-#          }
-#        content: KARTE
-
-  #    - type: map
-  #      style: !include ../includes/style.yaml
-  #      aspect_ratio: 16x9
-  #      default_zoom: 14
-  #      dark_mode: false
-  #      entities:
-  #        - device_tracker.handy_sebastian
-  #        - device_tracker.iphone_vr_smart
-  #        - device_tracker.iphone_vr_smart_2
-  #        - zone.home
-  #        - zone.sebastianarbeit
-  #        - zone.juliaarbeit
-  #        - zone.golfpark
-=======
-icon: mdi:home-assistant
-title: Dashboard
-path: dashboard
-id: dash
-
-popup_cards:
-  sensor.sebastian_status:
-    title: Sebastian
-    card:
-      type: custom:stack-in-card
-      style: !include ../includes/style_entities_popup.yaml
-      cards:
-        - type: history-graph
-          style: !include ../includes/style_entities_popup.yaml
-          entities:
-            - sensor.sebastian_status
-        - type: entities
-          style: !include ../includes/style_entities_popup.yaml
-          entities:
-            - device_tracker.handy_sebastian
-  sensor.julia_status:
-    title: Julia
-    card:
-      type: custom:stack-in-card
-      style: !include ../includes/style_entities_popup.yaml
-      cards:
-        - type: history-graph
-          style: !include ../includes/style_entities_popup.yaml
-          entities:
-            - sensor.julia_status
-        - type: entities
-          style: !include ../includes/style_entities_popup.yaml
-          entities:
-            - device_tracker.iphone_vr_smart
-  device_tracker.handy_sebastian:
-    title: Karte
-    card:
-      type: map
-      aspect_ratio: 16:9
-      default_zoom: 12
-      hours_to_show: 24
-      entities:
-        - device_tracker.handy_sebastian
-  device_tracker.iphone_vr_smart:
-    title: Karte
-    card:
-      type: map
-      aspect_ratio: 16:9
-      default_zoom: 12
-      hours_to_show: 24
-      entities:
-        - device_tracker.iphone_vr_smart
-  weather.dwd_weather_idstein:
-    title: Weather
-    large: true
-    card:
-      type: iframe
-      style: !include ../includes/style_entities_popup.yaml
-      url: https://embed.windy.com/embed2.html?lat=50.220&lon=8.270&zoom=11&level=surface&overlay=rain&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=50.220&detailLon=8.270&metricWind=default&metricTemp=default&radarRange=-1
-
-cards:
-  ## ROW 1 ###################################################################################################################
-  - type: vertical-stack
-    cards:
+      ## Gardena Mähroboter smart SILENO city
       - type: markdown
         style: |
           ha-card {
@@ -784,591 +683,58 @@ cards:
             padding: 0px 0px 0px 8px !important;
             border-left: 3px solid var(--accent-color);
           }
-        content: QUICK LINKS
+        content: MÄHROBOTER SMART SILENO CITY
 
-      ## SHORTCUTS ##
-      - type: horizontal-stack
-        cards:
-          - type: "custom:button-card"
-            template: popup_button
-            entity: input_boolean.shortcut_mainhallway
-            tap_action: !include ../popup/mainhallway.yaml
-          - type: "custom:button-card"
-            template: popup_button
-            entity: input_boolean.shortcut_livingroom
-            tap_action: !include ../popup/livingroom.yaml
-          - type: "custom:button-card"
-            template: popup_button
-            entity: input_boolean.shortcut_kitchen_diningroom
-            tap_action: !include ../popup/livingroom.yaml
-          - type: "custom:button-card"
-            template: popup_button
-            entity: input_boolean.shortcut_office
-            tap_action: !include ../popup/livingroom.yaml
+##      - type: "custom:vacuum-card"
+##        entity: vacuum.wall_e_sileno
+##        show_name: true
+##        compact_view: false
+##        image: /local/images/Smart-SILENO-city-01.png
+##        style: |
+##          ha-card {
+##            margin-top: 5px;
+##            margin-bottom: 5px;
+##          }
+##          .preview {
+##            background: var(--ha-card-background) !important;
+##          }
+##          .stats {
+##            border-top: 3px solid var(--background-color) !important;
+##          }
+##          .stats-block {
+##            margin: 5px 0px;
+##            border-right: 0px !important;
+##          }
+##          .toolbar {
+##            background: (var(--ha-card-background), var(--primary-background-color)) !important;
+##            border-top: 3px solid var(--background-color) !important;
+##            min-height: 30px;
+##          }
+##          .toolbar ha-icon-button {
+##            color: var(--text-color) !important;
+##          }
+##          .vacuum {
+##            max-height: 150px !important;
+##            margin: 10px auto 10px auto !important;
+##          }
+##          .battery {
+##            font-weight: normal !important;
+##          }
+##          .stats-hours {
+##            font-size: 16px !important;
+##          }
+##        stats:
+##          default:
+##            - attribute: rf_link_level
+##              unit: '%'
+##              subtitle: Signal
+##            - attribute: rf_link_state
+##              unit:
+##              subtitle: Status
+##            - attribute: operating_hours
+##              unit: Std.
+##              subtitle: Laufzeit
 
-      ## PEOPLE STATUS ##
-      - type: horizontal-stack
-        style: !include ../includes/style.yaml
-        cards:
-          ## SEBASTIAN ##
-          - type: custom:stack-in-card
-            cards:
-              ## CHARGING ##
-              - type: custom:bar-card
-                style: |
-                  .card-content {
-                    padding: 0px;
-                  }
-                  #states > * {
-                    margin-top: 0;
-                  }
-                entity: sensor.handy_sebastian_akkufullstand
-                positions:
-                  icon: "off"
-                  indicator: "off"
-                  name: "off"
-                  value: "off"
-                color: "var(--accent-color)"
-                height: 3px
-                animation:
-                  state: "on"
-              - type: horizontal-stack
-                cards:
-                  ## PERSON STATUS ##
-                  - type: custom:button-card
-                    template: people_state
-                    entity: person.sebastian_schmal
-                    entity_picture: /api/image/serve/ea23f5c0d3ea6bfa3a5ef5f5c736d6fe/512x512
-                  - type: vertical-stack
-                    cards:
-                      ## BATTERY ##
-                      - type: custom:button-card
-                        template: people_button
-                        tap_action:
-                          action: none
-                        entity: sensor.handy_sebastian_akkufullstand
-                        show_state: true
-                      ## MAP ICON ##
-                      - type: custom:button-card
-                        template: people_button
-                        entity: device_tracker.handy_sebastian
-                        name: Map
-                        show_name: false
-                        icon: mdi:map
-                        icon_name: Map
-                        show_icon: true
-                        show_state: false
-                        size: 25px
-                        hold_action:
-                          action: navigate
-                          navigation_path: /lovelace/map/
-                        style: |
-                          #img-cell {
-                            height: 25px !important;
-                          }
-                      ## LAST CHANGED ##
-                      - type: custom:button-card
-                        template: people_button
-                        tap_action:
-                          action: none
-                        entity: device_tracker.handy_sebastian
-                        show_last_changed: true
-          ## JULIA ##
-          - type: custom:stack-in-card
-            cards:
-              ## CHARGING ##
-              - type: custom:bar-card
-                style: |
-                  .card-content {
-                    padding: 0px;
-                  }
-                  #states > * {
-                    margin-top: 0;
-                  }
-                entity: sensor.iphone_vr_smart_battery_level
-                positions:
-                  icon: "off"
-                  indicator: "off"
-                  name: "off"
-                  value: "off"
-                color: "var(--accent-color)"
-                height: 3px
-                animation:
-                  state: "on"
-              - type: horizontal-stack
-                cards:
-                  ## PERSON STATUS ##
-                  - type: custom:button-card
-                    template: people_state
-                    entity: person.julia_schmal
-                    entity_picture: /api/image/serve/09d27438a01ffee34ff7ef5a70514588/512x512
-                  - type: vertical-stack
-                    cards:
-                      ## BATTERY ##
-                      - type: custom:button-card
-                        template: people_button
-                        tap_action:
-                          action: none
-                        entity: sensor.iphone_vr_smart_battery_level
-                        show_state: true
-                      ## MAP ICON ##
-                      - type: custom:button-card
-                        template: people_button
-                        entity: device_tracker.iphone_vr_smart
-                        name: Map
-                        show_name: false
-                        icon: mdi:map
-                        icon_name: Map
-                        show_icon: true
-                        show_state: false
-                        size: 25px
-                        hold_action:
-                          action: navigate
-                          navigation_path: /lovelace/map/
-                        style: |
-                          #img-cell {
-                            height: 25px !important;
-                          }
-                      ## LAST CHANGED ##
-                      - type: custom:button-card
-                        template: people_button
-                        tap_action:
-                          action: none
-                        entity: device_tracker.iphone_vr_smart
-                        show_last_changed: true
-
-      ## WEATHER
-      - type: markdown
-        style: |
-          ha-card {
-            font-size: var(--font-size-title);
-            font-family: var(--font-title);
-            line-height: 30px;
-            background: none;
-            margin-top: 0.4em;
-            margin-left: 8px;
-            margin-bottom: 0em;
-            box-shadow: none;
-            background: none;
-          }
-          ha-markdown {
-            padding: 0px 0px 0px 8px !important;
-            border-left: 3px solid var(--accent-color);
-          }
-        content: WETTER
-
-      - type: custom:weather-card
-        entity: weather.dwd_weather_idstein
-        current: true
-        details: false
-        forecast: true
-        style: |
-          ha-card {
-            border: solid 1px var(--border-color);
-            font-family: var(--primary-font-family);
-            margin-top: 5px !important;
-            margin-bottom: 5px !important;
-          }
-          .spacer {
-            padding-top: 0em !important;
-          }
-          .current {
-            padding-top: 0em !important;
-            padding-left: 1em !important;
-            margin-top: 0.5em !important;
-            margin-bottom: 0em !important;
-          }
-          .temp {
-            font-size: 3.2em !important;
-            position: sticky !important;
-          }
-          .tempc {
-            font-size: 1.5em !important;
-            position: sticky !important;
-          }
-          .forecast {
-            margin-top: -4.5em !important;
-            margin-bottom: -0.7em !important;
-          }
-          .forecast .day:first-child {
-            margin-left: 7.5em !important;
-          }
-          .day {
-            border-right: none !important;
-            line-height: 2 !important;
-          }
-          .precipitation {
-            display: none !important;
-          }
-          .icon {
-            width: 40px !important;
-            height: 40px !important;
-          }
-          .icon.bigger {
-            width: 4.5em !important;
-            height: 4.5em !important;
-            left: 2.5em !important;
-            top: 8em !important;
-          }
-
-      # Abfallkalender
-      - type: markdown
-        style: |
-          ha-card {
-            font-size: var(--font-size-title);
-            font-family: var(--font-title);
-            line-height: 30px;
-            background: none;
-            margin-top: 0.4em;
-            margin-left: 8px;
-            margin-bottom: 0em;
-            box-shadow: none;
-            background: none;
-          }
-          ha-markdown {
-            padding: 0px 0px 0px 8px !important;
-            border-left: 3px solid var(--accent-color);
-          }
-        content: ABFALLKALENDER
-
-      - type: horizontal-stack
-        cards:
-          - type: entities
-            entities:
-              - entity: sensor.ics_1
-                style: |
-                  :host {
-                    --paper-item-icon-color: #191919
-                  }
-              - entity: sensor.ics_3
-                style: |
-                  :host {
-                    --paper-item-icon-color: var(--accent-color)
-                  }
-              - entity: sensor.ics_4
-                style: |
-                  :host {
-                    --paper-item-icon-color: #f5ff00
-                  }
-              - entity: sensor.ics_2
-                style: |
-                  :host {
-                    --paper-item-icon-color: #b47d49
-                  }
-
-  ## ROW 2 ###################################################################################################################
-  - type: vertical-stack
-    cards:
-      ## TEMPERATUR / LUFTFEUCHTIGKEIT ##
-      - type: markdown
-        style: |
-          ha-card {
-            font-size: var(--font-size-title);
-            font-family: var(--font-title);
-            line-height: 30px;
-            background: none;
-            margin-top: 0.4em;
-            margin-left: 8px;
-            margin-bottom: 0em;
-            box-shadow: none;
-            background: none;
-          }
-          ha-markdown {
-            padding: 0px 0px 0px 8px !important;
-            border-left: 3px solid var(--accent-color);
-          }
-        content: SENSOREN
-
-      - type: horizontal-stack
-        cards:
-          - type: "custom:mini-graph-card"
-            style: |
-              ha-card {
-                border: solid 1px var(--border-color);
-                font-family: var(--primary-font-family);
-                margin-top: 5px;
-                margin-bottom: 5px;
-              }
-              .graph {
-                padding-top: 15px;
-                padding-bottom: 0px;
-              }
-              .info {
-                padding-bottom: 0px;
-              }
-              .flex {
-                padding-bottom: 10px;
-              }
-            entities:
-              - entity: sensor.livingroom_hmipbwth_thermostat_temperature
-                name: Innen
-                color: var(--color-ocher-1)
-              - entity: sensor.dwd_weather_temperature
-                name: Außen
-                color: var(--accent-color)
-            name: Temperatur
-            align_state: center
-            align_icon: left
-            font_size: 60
-            font_size_header: 11
-            hours_to_show: 48
-            line_color: var(--color-red-1)
-            line_width: 4
-            animate: true
-            points_per_hour: 0.5
-            lower_bound_secondary: 0
-            show:
-              fill: fade
-              graph: line
-              extrema: false
-            #tap_action:
-            #action: none
-          - type: "custom:mini-graph-card"
-            style: |
-              ha-card {
-                border: solid 1px var(--border-color);
-                font-family: var(--primary-font-family);
-                margin-top: 5px;
-                margin-bottom: 5px;
-              }
-              .graph {
-                padding-top: 15px;
-                padding-bottom: 0px;
-              }
-              .info {
-                padding-bottom: 0px;
-              }
-              .flex {
-                padding-bottom: 10px;
-              }
-            entities:
-              - entity: sensor.mainhallway_zw100_multisensor_1_humidity
-                name: Innen
-                color: var(--color-ocher-1)
-              - entity: sensor.dwd_weather_humidity
-                name: Außen
-                color: var(--accent-color)
-            name: Luftfeuchtigkeit
-            align_state: center
-            align_icon: right
-            font_size: 60
-            font_size_header: 11
-            hours_to_show: 48
-            line_color: var(--color-green-bright-1)
-            line_width: 4
-            animate: true
-            points_per_hour: 0.5
-            lower_bound_secondary: 0
-            show:
-              fill: fade
-              graph: line
-              extrema: false
-            tap_action:
-              action: none
-
-      ## DOWNLOAD / UPLOAD ##
-      - type: horizontal-stack
-        cards:
-          - type: custom:mini-graph-card
-            style: |
-              ha-card {
-                border: solid 1px var(--border-color);
-                font-family: var(--primary-font-family);
-                margin-top: 5px;
-                margin-bottom: 5px;
-              }
-              .graph {
-                padding-top: 15px;
-                padding-bottom: 0px;
-              }
-              .info {
-                padding-bottom: 0px;
-              }
-              .flex {
-                padding-bottom: 10px;
-              }
-            entities:
-              - sensor.net_download_cur_filtered
-            name: Download
-            align_state: center
-            align_icon: left
-            font_size: 60
-            font_size_header: 11
-            hours_to_show: 24
-            line_color: var(--accent-color)
-            line_width: 4
-            animate: true
-            points_per_hour: 1.0
-            lower_bound_secondary: 0
-            show:
-              fill: fade
-              graph: line
-              extrema: false
-            # @ToDo link disable
-            #tap_action:
-            #  action: none
-            #hold_action:
-            #  action: none
-          - type: custom:mini-graph-card
-            style: |
-              ha-card {
-                border: solid 1px var(--border-color);
-                font-family: var(--primary-font-family);
-                margin-top: 5px;
-                margin-bottom: 5px;
-              }
-              .graph {
-                padding-top: 15px;
-                padding-bottom: 0px;
-              }
-              .info {
-                padding-bottom: 0px;
-              }
-              .flex {
-                padding-bottom: 10px;
-              }
-            entities:
-              - sensor.net_upload_cur
-            name: Upload
-            align_state: center
-            align_icon: left
-            font_size: 60
-            font_size_header: 11
-            hours_to_show: 24
-            line_color: var(--accent-color)
-            line_width: 4
-            animate: true
-            points_per_hour: 1.0
-            lower_bound_secondary: 0
-            show:
-              fill: fade
-              graph: line
-              extrema: false
-            # @ToDo link disable
-            #tap_action:
-            #  action: none
-            #hold_action:
-            #  action: none
-
-      ## Other Sensor ##
-      - type: horizontal-stack
-        cards:
-          - type: custom:mini-graph-card
-            entities:
-              - entity: sensor.opensky
-            name: Flugzeuge ü. Haus + 20km
-            align_icon: left
-            align_state: center
-            hours_to_show: 24
-            points_per_hour: 1
-            font_size: 60
-            font_size_header: 11
-            line_color: var(--accent-color)
-            line_width: 4
-            animate: true
-            bar_spacing: 2
-            show:
-              graph: bar
-              labels: true
-              labels_secondary: true
-            tap_action:
-              action: none
-            style: |
-              ha-card {
-                border: solid 1px var(--border-color);
-                font-family: var(--primary-font-family);
-                margin-top: 5px;
-                margin-bottom: 5px;
-              }
-              .graph {
-                padding-top: 15px;
-                padding-bottom: 0px;
-              }
-              .info {
-                padding-bottom: 0px;
-              }
-              .flex {
-                padding-bottom: 10px;
-              }
-
-      ## VACUUM ROBOROCK S6 - XIAOMI
-      - type: markdown
-        style: |
-          ha-card {
-            font-size: var(--font-size-title);
-            font-family: var(--font-title);
-            line-height: 30px;
-            background: none;
-            margin-top: 0.4em;
-            margin-left: 8px;
-            margin-bottom: 0em;
-            box-shadow: none;
-            background: none;
-          }
-          ha-markdown {
-            padding: 0px 0px 0px 8px !important;
-            border-left: 3px solid var(--accent-color);
-          }
-        content: SAUGER ROBOROCK S6
-
-      - type: "custom:vacuum-card"
-        entity: vacuum.wall_e
-        show_name: false
-        compact_view: false
-        style: |
-          ha-card {
-            margin-top: 5px;
-            margin-bottom: 5px;
-          }
-          .preview {
-            background: var(--ha-card-background) !important;
-          }
-          .stats {
-            border-top: 3px solid var(--background-color) !important;
-          }
-          .stats-block {
-            margin: 5px 0px;
-            border-right: 0px !important;
-          }
-          .toolbar {
-            background: (var(--ha-card-background), var(--primary-background-color)) !important;
-            border-top: 3px solid var(--background-color) !important;
-            min-height: 30px;
-          }
-          .toolbar ha-icon-button {
-            color: var(--text-color) !important;
-          }
-          .vacuum {
-            max-height: 150px !important;
-            margin: 10px auto 10px auto !important;
-          }
-          .battery {
-            font-weight: normal !important;
-          }
-          .stats-hours {
-            font-size: 16px !important;
-          }
-        stats:
-          default:
-            - attribute: filter_left
-              unit: Std.
-              subtitle: Filter
-            - attribute: side_brush_left
-              unit: Std.
-              subtitle: Seitenbürste
-            - attribute: main_brush_left
-              unit: Std.
-              subtitle: Hauptbürste
-            - attribute: sensor_dirty_left
-              unit: Std.
-              subtitle: Sensoren
-          cleaning:
-            - attribute: cleaned_area
-              unit: m2
-              subtitle: Bereich
-            - attribute: cleaning_time
-              unit: Min.
-              subtitle: Zeit
 
   ## ROW 3 ###################################################################################################################
   #- type: vertical-stack
@@ -1406,4 +772,3 @@ cards:
   #        - zone.sebastianarbeit
   #        - zone.juliaarbeit
   #        - zone.golfpark
->>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586:lovelace/views/01_dash.yaml

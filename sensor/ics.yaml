@@ -3,7 +3,7 @@
 
 - platform: ics
   name: Restmülltonne
-  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
+  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1087
   #startswith: Restmülltonne
   contains: "Restmülltonne"
   id: 1
@@ -15,7 +15,7 @@
 
 - platform: ics
   name: Biotonne
-  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
+  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1087
   #startswith: Biotonne
   contains: "Biotonne"
   id: 2
@@ -27,7 +27,7 @@
 
 - platform: ics
   name: Altpapiertonne
-  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
+  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1087
   #startswith: Altpapiertonne
   contains: "Altpapiertonne"
   id: 3
@@ -39,7 +39,7 @@
 
 - platform: ics
   name: Gelbetonne
-  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1136
+  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1087
   #startswith: Gelber
   contains: "Gelber Sack"
   id: 4

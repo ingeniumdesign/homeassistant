@@ -17,27 +17,8 @@ homeassistant:
   auth_providers:
     - type: homeassistant
   customize: !include_dir_merge_named customizations
-
   # Load packages
   packages: !include_dir_named packages
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-#local_ip:
-=======
-local_ip:
->>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
-=======
-#local_ip:
->>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
-
-## MultiSensoring #######################################################################
-# DONT use this, we use OpenZWave (beta) !
-# Dont run zwave with OpenZWave (beta) together!!
-#zwave:
-#  usb_path: /dev/ttyAMA0
-#  network_key: !secret network_key
-#  debug: true
 
 #Zigbee Home Automation
 zha:
@@ -92,7 +73,7 @@ notify:
 system_health:
 
 system_log:
-  max_entries: 30
+  max_entries: 60
 
 logbook:
   exclude:
@@ -145,19 +126,15 @@ media_player:
     username: !secret media_player_enigma2_vu_username
     password: !secret media_player_enigma2_vu_password
   # Samsung TV Q9075
-  - platform: samsungtv_tizen
-    host: 192.168.178.27
-    mac: !secret media_player_samsungtv_tizen_q9075_mac_address
-    name: Samsung TV Q9075
+  ##- platform: samsungtv_tizen
+  ##  host: 192.168.178.27
+  ##  mac: !secret media_player_samsungtv_tizen_q9075_mac_address
+  ##  name: Samsung TV Q9075
   # Denon-AVR-X4200W
   - platform: denon
     host: 192.168.178.26
     #mac: !secret media_player_denon_x4200w_mac_address
     name: Denon-AVR-X4200W
-
-#samsungtv:
-#  - host: 192.168.178.27
-#    name: Samsung TV Q9075
 
 ## UTILITY METER ########################################################################
 utility_meter:
@@ -168,39 +145,6 @@ utility_meter:
     source: sensor.net_sent
     cycle: monthly
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-## SYNOLOGY DS713 #######################################################################
-## Data Input via HA Backend
-#synology_dsm:
-  #- host: !secret synology_dsm_ds713_host
-  #  username: !secret synology_dsm_ds713_username
-  #  password: !secret synology_dsm_ds713_password
-    #name: SYNOLOGY DSM DS713+
-
->>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
-=======
->>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
-## WAKEonLAN #############################################################################
-#wake_on_lan:
-
-## UPNP FRITZBOX ########################################################################
-<<<<<<< HEAD
-<<<<<<< HEAD
-##upnp:
-##  local_ip: 192.168.178.1
-
-## SPEEDTEST ############################################################################
-##speedtestdotnet:
-##  server_id: 10010
-##  scan_interval:
-##    minutes: 480
-##  monitored_conditions:
-##    - ping
-##    - download
-##    - upload
-
 ## SKODA CONNECT ########################################################################
 # https://github.com/lendy007/homeassistant-skodaconnect
 skodaconnect: !include skodaconnect.yaml
@@ -221,30 +165,13 @@ tankerkoenig:
   longitude: !secret homeassistant_longitude
   radius: 5
   scan_interval: "0:15:01"
-=======
-upnp:
-  local_ip: 192.168.178.1
 
 ## VACUUM ROBOROCK S6 ###################################################################
 # https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor
-vacuum:
-  - platform: xiaomi_miio
-    host: 192.168.178.46
-    token: !secret vacuum_roborock_s6_token
-
-## SPEEDTEST ############################################################################
-speedtestdotnet:
-  server_id: 10010
-  scan_interval:
-    minutes: 480
-  monitored_conditions:
-    - ping
-    - download
-    - upload
->>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
-=======
-##upnp:
-##  local_ip: 192.168.178.1
+##vacuum:
+##  - platform: xiaomi_miio
+##    host: 192.168.178.46
+##    token: !secret vacuum_roborock_s6_token
 
 ## SPEEDTEST ############################################################################
 ##speedtestdotnet:
@@ -255,42 +182,10 @@ speedtestdotnet:
 ##    - ping
 ##    - download
 ##    - upload
->>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
-
-## SKODA CONNECT ########################################################################
-# https://github.com/lendy007/homeassistant-skodaconnect
-skodaconnect: !include skodaconnect.yaml
-
-## DOCKER ###############################################################################
-# https://github.com/ualex73/monitor_docker
-monitor_docker:
-
-## SHELLY ###############################################################################
-shelly: !include shelly.yaml
-
-## TANKERKÖNIG ###############################################################################
-tankerkoenig:
-  api_key: !secret tankerkoenig_api_key
-  fuel_types:
-    - "diesel"
-  latitude: !secret homeassistant_latitude
-  longitude: !secret homeassistant_longitude
-  radius: 5
-  scan_interval: "0:15:01"
-
-#########################################################################################
 
 ## LOVELACE UI ##########################################################################
 # OLD ?
-<<<<<<< HEAD
-<<<<<<< HEAD
 lovelace_gen:
-=======
-#lovelace_gen:
->>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
-=======
-lovelace_gen:
->>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
 
 lovelace:
   mode: yaml

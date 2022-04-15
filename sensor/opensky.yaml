@@ -3,12 +3,5 @@
   name: opensky
   latitude: !secret homeassistant_latitude
   longitude: !secret homeassistant_longitude
-<<<<<<< HEAD
-<<<<<<< HEAD
   altitude: 0
-=======
->>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
-=======
-  altitude: 0
->>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
   radius: 20
