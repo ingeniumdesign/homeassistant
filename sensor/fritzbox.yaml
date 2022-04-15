@@ -1,37 +1,16 @@
 - platform: template
   sensors:
     net_download_max:
-<<<<<<< HEAD
-<<<<<<< HEAD
       value_template: "{{ states('sensor.ingeniumdesign_max_kbit_s_received') | float / 1000 | round(1) }}"
-=======
-      value_template: "{{ (state_attr('sensor.ingeniumdesign_max_kbit_s_received', 'max_byte_rate_down')|float / 125000)|round(1) }}"
->>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
-=======
-      value_template: "{{ states('sensor.ingeniumdesign_max_kbit_s_received') | float / 1000 | round(1) }}"
->>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
       unit_of_measurement: "Mbit/s"
       friendly_name: "Down"
       icon_template: mdi:download
   
     net_upload_max:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
       value_template: "{{ states('sensor.ingeniumdesign_max_kbit_s_sent') | float / 1000 | round(1) }}"
       unit_of_measurement: "Mbit/s"
       friendly_name: "Up"
       icon_template: mdi:upload
-<<<<<<< HEAD
-=======
-        value_template: "{{ (state_attr('sensor.ingeniumdesign_max_kbit_s_sent', 'max_byte_rate_up')|float / 125000)|round(1) }}"
-        unit_of_measurement: "Mbit/s"
-        friendly_name: "Up"
-        icon_template: mdi:upload
->>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
-=======
->>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
 
     net_download_cur:
       value_template: "{{ states('sensor.ingeniumdesign_kb_s_received') | float / 1000 | round(1) }}"
@@ -46,15 +25,10 @@
       icon_template: mdi:upload
     
     net_received:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
       value_template: "{{ states('sensor.ingeniumdesign_gb_received') | float | round(0) }}"
       unit_of_measurement: "GB"
       friendly_name: "Empfangen"
       icon_template: mdi:file
-<<<<<<< HEAD
     
     net_sent:
       value_template: "{{ states('sensor.ingeniumdesign_gb_sent') | float | round(0) }}"
@@ -68,34 +42,6 @@
       unit_of_measurement: "Tage"
       friendly_name: "Verbunden"
       icon_template: mdi:calendar
-=======
-        value_template: "{{ (state_attr('sensor.ingeniumdesign_max_kbit_s_received', 'bytes_received')|float / 1000000)|round(0) }}"
-        unit_of_measurement: "MB"
-        friendly_name: "Empfangen"
-        icon_template: mdi:file
-=======
->>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
-    
-    net_sent:
-      value_template: "{{ states('sensor.ingeniumdesign_gb_sent') | float | round(0) }}"
-      unit_of_measurement: "GB"
-      friendly_name: "Gesendet"
-      icon_template: mdi:file
-
-    net_uptime:
-<<<<<<< HEAD
-        value_template: "{{ (state_attr('sensor.ingeniumdesign_connection_uptime', 'uptime')|float / 86400)|round(1) }}"
-        unit_of_measurement: "Tage"
-        friendly_name: "Verbunden"
-        icon_template: mdi:calendar
->>>>>>> 579106b177a350199a98d2a7dfd757c615d2e586
-=======
-      value_template: "{{states('sensor.ingeniumdesign_connection_uptime').split('T')[1].split('+')[0]}}"
-      #value_template: "{{ as_timestamp(strptime( states('sensor.ingeniumdesign_connection_uptime'), '%Y-%m-%d %H:%M:%S')) | timestamp_custom('%Y-%m-%d %H:%M:%S') }}"
-      unit_of_measurement: "Tage"
-      friendly_name: "Verbunden"
-      icon_template: mdi:calendar
->>>>>>> e44eb0b4dc4a5ca007ac8446cc817f8787405910
 
 - platform: filter
   name: "net_download_cur_filtered"
