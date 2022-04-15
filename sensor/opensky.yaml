@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # OpenSky https://www.home-assistant.io/integrations/opensky/
 - platform: opensky
   name: opensky
@@ -5,3 +6,12 @@
   longitude: !secret homeassistant_longitude
   altitude: 0
   radius: 20
+=======
+# OpenSky https://www.home-assistant.io/integrations/opensky/
+- platform: opensky
+  name: opensky
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  altitude: 0
+  radius: 20
+>>>>>>> 1addeea5818d2e7a84237a3c57bae50696881053

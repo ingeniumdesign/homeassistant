@@ -20,15 +20,24 @@ logs:
   homeassistant.components.sensor.rest: warn
   homeassistant.components.tplink.switch: error
   homeassistant.components.zwave: warn
+<<<<<<< HEAD
   homeassistant.components.deconz: warn
+=======
+  homeassistant.components.deconz: debug
+>>>>>>> 1addeea5818d2e7a84237a3c57bae50696881053
   #homeassistant.components.synology_dsm: debug
   custom_components.gardena_smart_system: warn
   custom_components.gardena_smart_system.mower: warn
   custom_components.gardena_smart_system.sensor: warn
   custom_components.gardena_smart_system.switch: warn
   custom_components.gardena_smart_system.config_flow: warn
+<<<<<<< HEAD
   gardena: warn
   gardena.smart_system: warn
+=======
+  gardena: debug
+  gardena.smart_system: debug
+>>>>>>> 1addeea5818d2e7a84237a3c57bae50696881053
   websocket: debug
   homeassistant.exceptions: info
   homeassistant.helpers.script: info
