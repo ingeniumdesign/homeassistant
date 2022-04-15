@@ -684,8 +684,6 @@ cards:
             border-left: 3px solid var(--accent-color);
           }
         content: MÄHROBOTER SMART SILENO CITY
-
-<<<<<<< HEAD
 ##      - type: "custom:vacuum-card"
 ##        entity: vacuum.wall_e_sileno
 ##        show_name: true
@@ -735,57 +733,6 @@ cards:
 ##            - attribute: operating_hours
 ##              unit: Std.
 ##              subtitle: Laufzeit
-=======
-      - type: "custom:vacuum-card"
-        entity: vacuum.wall_e_sileno
-        show_name: true
-        compact_view: false
-        image: /local/images/Smart-SILENO-city-01.png
-        style: |
-          ha-card {
-            margin-top: 5px;
-            margin-bottom: 5px;
-          }
-          .preview {
-            background: var(--ha-card-background) !important;
-          }
-          .stats {
-            border-top: 3px solid var(--background-color) !important;
-          }
-          .stats-block {
-            margin: 5px 0px;
-            border-right: 0px !important;
-          }
-          .toolbar {
-            background: (var(--ha-card-background), var(--primary-background-color)) !important;
-            border-top: 3px solid var(--background-color) !important;
-            min-height: 30px;
-          }
-          .toolbar ha-icon-button {
-            color: var(--text-color) !important;
-          }
-          .vacuum {
-            max-height: 150px !important;
-            margin: 10px auto 10px auto !important;
-          }
-          .battery {
-            font-weight: normal !important;
-          }
-          .stats-hours {
-            font-size: 16px !important;
-          }
-        stats:
-          default:
-            - attribute: rf_link_level
-              unit: '%'
-              subtitle: Signal
-            - attribute: rf_link_state
-              unit:
-              subtitle: Status
-            - attribute: operating_hours
-              unit: Std.
-              subtitle: Laufzeit
->>>>>>> 1addeea5818d2e7a84237a3c57bae50696881053
 
 
   ## ROW 3 ###################################################################################################################
