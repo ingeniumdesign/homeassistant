@@ -192,7 +192,7 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 ##### Juan Mtech Install Guide
 
 Check this Install Guide frist! <br />
-[How to set up Hassio in Docker and in an Ubuntu server](https://www.juanmtech.com/set-up-hassio-in-docker-and-in-an-ubuntu-server/)
+[How to set up Hassio in Docker and in an Ubuntu server](https://www.juanmtech.com/how-to-set-up-hassio-in-docker-and-in-an-ubuntu-server/)
 
 ##### Absolute Beginners guide to installing HA on Intel NUC using Docker.
 
