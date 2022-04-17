@@ -147,7 +147,7 @@ utility_meter:
 
 ## SKODA CONNECT ########################################################################
 # https://github.com/lendy007/homeassistant-skodaconnect
-skodaconnect: !include skodaconnect.yaml
+#skodaconnect: !include skodaconnect.yaml
 
 ## DOCKER ###############################################################################
 # https://github.com/ualex73/monitor_docker
