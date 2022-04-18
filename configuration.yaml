@@ -126,10 +126,10 @@ media_player:
     username: !secret media_player_enigma2_vu_username
     password: !secret media_player_enigma2_vu_password
   # Samsung TV Q9075
-  - platform: samsungtv_tizen
-    host: 192.168.178.27
-    mac: !secret media_player_samsungtv_tizen_q9075_mac_address
-    name: Samsung TV Q9075
+  ##- platform: samsungtv_tizen
+  ##  host: 192.168.178.27
+  ##  mac: !secret media_player_samsungtv_tizen_q9075_mac_address
+  ##  name: Samsung TV Q9075
   # Denon-AVR-X4200W
   - platform: denon
     host: 192.168.178.26
@@ -147,7 +147,7 @@ utility_meter:
 
 ## SKODA CONNECT ########################################################################
 # https://github.com/lendy007/homeassistant-skodaconnect
-skodaconnect: !include skodaconnect.yaml
+#skodaconnect: !include skodaconnect.yaml
 
 ## DOCKER ###############################################################################
 # https://github.com/ualex73/monitor_docker
@@ -174,14 +174,14 @@ tankerkoenig:
 ##    token: !secret vacuum_roborock_s6_token
 
 ## SPEEDTEST ############################################################################
-speedtestdotnet:
-  server_id: 10010
-  scan_interval:
-    minutes: 480
-  monitored_conditions:
-    - ping
-    - download
-    - upload
+##speedtestdotnet:
+##  server_id: 10010
+##  scan_interval:
+##    minutes: 480
+##  monitored_conditions:
+##    - ping
+##    - download
+##    - upload
 
 ## LOVELACE UI ##########################################################################
 # OLD ?

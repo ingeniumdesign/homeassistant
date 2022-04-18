@@ -18,6 +18,8 @@ www/community
 # Ignore files
 .HA_VERSION
 home-assistant.log
+home-assistant.log.1
+home-assistant.log.fault
 home-assistant_v2.db
 known_devices.yaml
 options.xml
