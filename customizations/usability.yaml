@@ -197,7 +197,7 @@ binary_sensor.office_window_xiaomi_1_openclose:
 sensor.tankerkoenig_dirk_schirmacher_diesel:
   friendly_name: ED Tankstelle
   value_template: >
-    {% if states("sensor.tankerkoenig_dirk_schirmacher_diesel") == unknown %}
+    {% if is_state("sensor.tankerkoenig_dirk_schirmacher_diesel") == unknown %}
       geschlossen
     {% else %}
       {{ states('sensor.tankerkoenig_dirk_schirmacher_diesel') }}

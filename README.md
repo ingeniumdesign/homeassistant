@@ -29,7 +29,7 @@ _More Screenshot down below._
 - Intel NUC i5 [NUC7i5BNB](https://ark.intel.com/content/www/de/de/ark/products/95064/intel-nuc-board-nuc7i5bnb.html) with 16GB RAM and 250GB NVMe SSD [Amazon i5-10 *](https://amzn.to/35e8tYI)
 - Raspberry [Pi3 B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) - [Amazon *](https://amzn.to/3hJPFWC) with 1GB RAM and [16GB *](https://amzn.to/2KRBXVH) microSDHC - DEV Server
 - AVM [FRITZ!Box 6590 Cable](https://avm.de/produkte/fritzbox/fritzbox-6590-cable/) - [Amazon *](https://amzn.to/359i6YE) // Take the new [6591 Cable](https://avm.de/produkte/fritzbox/fritzbox-6591-cable/)! - [Amazon *](https://amzn.to/3pNbdUU)
-- AVM 3x [FRITZ!DECT 301](https://avm.de/produkte/fritzdect/fritzdect-301/) - [Amazon *](https://amzn.to/3pSRUd4)
+- AVM 8x [FRITZ!DECT 301](https://avm.de/produkte/fritzdect/fritzdect-301/) - [Amazon *](https://amzn.to/3pSRUd4)
 - AVM 1x [FRITZ!DECT 200](https://avm.de/produkte/fritzdect/fritzdect-200/) - [Amazon *](https://amzn.to/2LnpAQK)
 - AVM 1x [FRITZ!Powerline 1260E Set](https://avm.de/produkte/fritzpowerline/fritzpowerline-1260e-wlan-set/) - [Amazon *](https://amzn.to/35a7gSv)
 - Phoscon [Conbee II USB](https://phoscon.de/de/conbee2) - [Amazon *](https://amzn.to/3n7jgu0) - for Zigbee using ZHA integration <br />
@@ -40,7 +40,7 @@ _More Screenshot down below._
   _For the Intel NUC i5 Upgrade_
 - Xiaomi [Roborock S6](https://de.roborock.com/pages/roborock-s6) - [Xiaomi Cloud Tokens Extractor](https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor) - [Amazon *](https://amzn.to/38eLmPX)
 - Xiaomi 4x [Door & Window Sensor](https://xiaomi-mi.com/sockets-and-sensors/xiaomi-mi-door-window-sensors/) MCCGQ01LM - [Amazon *](https://amzn.to/2NR1pM0)
-- AEOTEC 1x [Plus Multisensor 6 EU 868.4MHz](https://aeotec.com/z-wave-sensor/) ZW100-C - [Amazon *](https://amzn.to/38YJoCm)
+- AEOTEC 4x [Plus Multisensor 6 EU 868.4MHz](https://aeotec.com/z-wave-sensor/) ZW100-C - [Amazon *](https://amzn.to/38YJoCm)
 - Amazon [FireHD 10 Tablet *](https://amzn.to/3oicZNp) - [Fire Toolbox V11.0](https://forum.xda-developers.com/t/windows-tool-fire-toolbox-v11-0.3889604/)
 - Amazon [FireHD 10 Plus Tablet *](https://amzn.to/3iqhlli) - [Fire Toolbox V11.0](https://forum.xda-developers.com/t/windows-tool-fire-toolbox-v11-0.3889604/)
 - Amazon 1x [Echo Dot (4. Gen.) *](https://amzn.to/3ncrktE)
@@ -48,6 +48,7 @@ _More Screenshot down below._
 - Shelly 2x [2.5](https://shelly.cloud/products/shelly-25-smart-home-automation-relay/) - [Amazon *](https://amzn.to/38W9vuG)
 - Shelly 2x [1](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/) - [Amazon *](https://amzn.to/397NDNm)
 - Shelly 2x [1L](https://shelly.cloud/products/shelly-1l-single-wire-smart-home-automation-relay/) - [Amazon *](https://amzn.to/3paPwhT)
+- USB Power Socket 4x for the ceiling / AEOTEC Plus Multisensor - [Amazon *](https://amzn.to/3KNcbeQ)
 - Synology [DS713+](https://www.synology.com/de-de/support/download/DS713+#system) - [Amazon *](https://amzn.to/3hHu8xz) // Buy the new [DS720+](https://www.synology.com/de-de/products/DS720+) [Amazon *](https://amzn.to/3rWErT1)
 - ZyXEL [GS1900-24E](https://www.zyxel.com/de/de/products_services/8-10-16-24-48-port-GbE-Smart-Managed-Switch-GS1900-Series/) - [Amazon *](https://amzn.to/391vcbR)
 - ZyXEL [GS1900-8](https://www.zyxel.com/de/de/products_services/8-10-16-24-48-port-GbE-Smart-Managed-Switch-GS1900-Series/) - [Amazon *](https://amzn.to/357BQMo)
@@ -191,7 +192,7 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 ##### Juan Mtech Install Guide
 
 Check this Install Guide frist! <br />
-[How to set up Hassio in Docker and in an Ubuntu server](https://www.juanmtech.com/set-up-hassio-in-docker-and-in-an-ubuntu-server/)
+[How to set up Hassio in Docker and in an Ubuntu server](https://www.juanmtech.com/how-to-set-up-hassio-in-docker-and-in-an-ubuntu-server/)
 
 ##### Absolute Beginners guide to installing HA on Intel NUC using Docker.
 
@@ -205,7 +206,7 @@ Use this Guide to Check the migration from Pi to NUC. Dont use the Install part.
 
 ### Portainer CE - Docker Overview
 
-![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/portainer.JPG) Container list
+![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/portainer.JPG) Container list - [Docker Portainer CE](https://www.portainer.io/)
 
 
 ### HA on Raspbarry Pi 3B+
