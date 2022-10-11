@@ -16,21 +16,35 @@ input_number.kwh_cost:
   icon: mdi:currency-eur
   unit_of_measurement: €
 sensor.mainhallway_zw100_multisensor_1_air_temperature:
-  friendly_name: Flur Temperatur
+  friendly_name: Eingang Temperatur
 sensor.mainhallway_zw100_multisensor_1_humidity:
-  friendly_name: Flur Luftfeuchtigkeit
-binary_sensor.mainhallway_zw100_multisensor_1_home_security_tampering_cover_removed:
-  friendly_name: Flur Sicherheit
-binary_sensor.mainhallway_zw100_multisensor_1_home_security_motion_detected:
-  friendly_name: Flur Sensor Bewegung
+  friendly_name: Eingang Luftfeuchtigkeit
+binary_sensor.mainhallway_zw100_multisensor_1_home_security_tampering_product_cover_removed:
+  friendly_name: Eingang Sicherheit
+binary_sensor.mainhallway_zw100_multisensor_1_home_security_motion_detection:
+  friendly_name: Eingang Sensor Bewegung
 sensor.mainhallway_zw100_multisensor_1_illuminance:
-  friendly_name: Flur Helligkeit
-binary_sensor.mainhallway_zw100_multisensor_1_sensor:
-  friendly_name: Flur Bewegungsmelder
+  friendly_name: Eingang Helligkeit
 sensor.mainhallway_zw100_multisensor_1_ultraviolet:
-  friendly_name: Flur UV-Strahlung
+  friendly_name: Eingang UV-Strahlung
 sensor.mainhallway_zw100_multisensor_1_battery_level:
+  friendly_name: Eingang Multisensor Batterie
+sensor.mainhallway_zw100_multisensor_2_air_temperature:
+  friendly_name: Flur Temperatur
+sensor.mainhallway_zw100_multisensor_2_humidity:
+  friendly_name: Flur Luftfeuchtigkeit
+binary_sensor.mainhallway_zw100_multisensor_2_home_security_tampering_product_cover_removed:
+  friendly_name: Flur Sicherheit
+binary_sensor.mainhallway_zw100_multisensor_2_home_security_motion_detection:
+  friendly_name: Flur Sensor Bewegung
+sensor.mainhallway_zw100_multisensor_2_illuminance:
+  friendly_name: Flur Helligkeit
+sensor.mainhallway_zw100_multisensor_2_ultraviolet:
+  friendly_name: Flur UV-Strahlung
+sensor.mainhallway_zw100_multisensor_2_battery_level:
   friendly_name: Flur Multisensor Batterie
+sensor.node_4_node_status:
+  friendly_name: Node Status
 switch.buro_dect200_1:
   friendly_name: Büro Steckdose 1
   icon: mdi:power-plug

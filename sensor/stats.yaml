@@ -36,7 +36,7 @@
     #- type: packets_out
 
 # https://home-assistant.io/components/sensor.cpuspeed/
-- platform: cpuspeed
+#- platform: cpuspeed
 
 # CPU Temperature on Thermal Zone 2
 - platform: command_line
