@@ -35,12 +35,18 @@ include:
     - input_boolean.motion_sensor_restroom_toggle
     - sensor.mainhallway_zw100_multisensor_1_air_temperature
     - sensor.mainhallway_zw100_multisensor_1_humidity
-    - binary_sensor.mainhallway_zw100_multisensor_1_home_security_tampering_cover_removed
-    - binary_sensor.mainhallway_zw100_multisensor_1_home_security_motion_detected
+    - binary_sensor.mainhallway_zw100_multisensor_1_home_security_tampering_product_cover_removed
+    - binary_sensor.mainhallway_zw100_multisensor_1_home_security_motion_detection
     - sensor.mainhallway_zw100_multisensor_1_illuminance
-    - binary_sensor.mainhallway_zw100_multisensor_1_sensor
     - sensor.mainhallway_zw100_multisensor_1_ultraviolet
     - sensor.mainhallway_zw100_multisensor_1_battery_level
+    - sensor.mainhallway_zw100_multisensor_2_air_temperature
+    - sensor.mainhallway_zw100_multisensor_2_humidity
+    - binary_sensor.mainhallway_zw100_multisensor_2_home_security_tampering_product_cover_removed
+    - binary_sensor.mainhallway_zw100_multisensor_2_home_security_motion_detection
+    - sensor.mainhallway_zw100_multisensor_2_illuminance
+    - sensor.mainhallway_zw100_multisensor_2_ultraviolet
+    - sensor.mainhallway_zw100_multisensor_2_battery_level
     - switch.buro_dect200_1
     - sensor.buro_dect200_1_total_consumption
     - sensor.buro_dect200_1_current_power_w

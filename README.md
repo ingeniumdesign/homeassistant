@@ -78,7 +78,7 @@ _More Screenshot down below._
   - node-red-contrib-alexa-remote2
 - [ESPHome](https://esphome.io/)
 - [MariaDB](https://home-assistant.io/addons/mariadb/)
-- [OpenZWave (beta)](https://www.home-assistant.io/integrations/ozw) - Z-Stick Gen5+ or RaZberry 2
+- [Z-Wave JS](https://www.home-assistant.io/integrations/zwave_js/) - Z-Stick Gen5+ or RaZberry 2
 - [deCONZ](https://www.home-assistant.io/integrations/deconz/) - Conbee II
 - [OpenSky Network](https://opensky-network.org/)
 - [Speedtest.net](https://www.speedtest.net/)
@@ -141,6 +141,7 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 
 #### Automation / Features:
 
+- [ ] Dashboard Cards Widgets with HACS [room-card](https://github.com/marcokreeft87/room-card)
 - [ ] Quick-Infos when leaving the house
   - All windows closed?
   - Living-Room devices still on?
@@ -236,7 +237,7 @@ device: >-
 
 #### Z-Wave RaZberry 2 Modul for the RPi 3B+:
 
-https://www.home-assistant.io/integrations/ozw <br />
+https://www.home-assistant.io/integrations/zwave_js/ <br />
 https://www.home-assistant.io/docs/z-wave/device-specific/#razberry-board
 
 1. Plugged it into the very first pins (#1-#10).
