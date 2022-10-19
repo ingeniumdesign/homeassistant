@@ -142,6 +142,7 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 #### Automation / Features:
 
 - [ ] Dashboard Cards Widgets with HACS [room-card](https://github.com/marcokreeft87/room-card)
+- [ ] Solar Power Cards Widgets with HACS [power-card](https://github.com/reptilex/tesla-style-solar-power-card)
 - [ ] Quick-Infos when leaving the house
   - All windows closed?
   - Living-Room devices still on?
