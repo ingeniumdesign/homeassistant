@@ -43,6 +43,14 @@ popup_cards:
 cards:
   - type: vertical-stack
     cards:
+      - type: entities
+        show_header_toggle: false
+        style: !include ../includes/style_entities.yaml
+        entities:
+          - input_boolean.party_mode_toggle
+
+  - type: vertical-stack
+    cards:
       ##- !include
       ##  - ../includes/titles.yaml
       ##  - title: TEST SENSOREN & SCHALTER

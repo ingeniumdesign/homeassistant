@@ -14,6 +14,7 @@ ssh
 tts
 www/sound
 www/community
+zigbee2mqtt
 
 # Ignore files
 .HA_VERSION

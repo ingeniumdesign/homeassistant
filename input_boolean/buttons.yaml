@@ -3,3 +3,5 @@ button_logbook:
 
 button_battery:
   name: Batterien
+
+party_mode_toggle:

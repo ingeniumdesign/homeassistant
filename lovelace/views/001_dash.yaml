@@ -68,18 +68,18 @@ cards:
             font-size: var(--font-size-title);
             font-family: var(--font-title);
             line-height: 30px;
-            background: none;
             margin-top: 0.4em;
             margin-left: 8px;
             margin-bottom: 0em;
             box-shadow: none;
             background: none;
+            border: none;
           }
           ha-markdown {
             padding: 0px 0px 0px 8px !important;
             border-left: 3px solid var(--accent-color);
           }
-        content: QUICK LINKS
+        content: INFORMATIONEN
 
       ## SHORTCUTS ##
       - type: horizontal-stack
@@ -239,12 +239,12 @@ cards:
             font-size: var(--font-size-title);
             font-family: var(--font-title);
             line-height: 30px;
-            background: none;
             margin-top: 0.4em;
             margin-left: 8px;
             margin-bottom: 0em;
             box-shadow: none;
             background: none;
+            border: none;
           }
           ha-markdown {
             padding: 0px 0px 0px 8px !important;
@@ -313,12 +313,12 @@ cards:
             font-size: var(--font-size-title);
             font-family: var(--font-title);
             line-height: 30px;
-            background: none;
             margin-top: 0.4em;
             margin-left: 8px;
             margin-bottom: 0em;
             box-shadow: none;
             background: none;
+            border: none;
           }
           ha-markdown {
             padding: 0px 0px 0px 8px !important;
@@ -361,12 +361,12 @@ cards:
             font-size: var(--font-size-title);
             font-family: var(--font-title);
             line-height: 30px;
-            background: none;
             margin-top: 0.4em;
             margin-left: 8px;
             margin-bottom: 0em;
             box-shadow: none;
             background: none;
+            border: none;
           }
           ha-markdown {
             padding: 0px 0px 0px 8px !important;
@@ -545,12 +545,13 @@ cards:
             #hold_action:
             #  action: none
 
-      ## Other Sensor ##
+      ## OpenSky Network ##
       - type: horizontal-stack
         cards:
           - type: custom:mini-graph-card
             entities:
               - entity: sensor.opensky
+              #- sensor.opensky
             name: Flugzeuge ü. Haus + 20km
             align_icon: left
             align_state: center
@@ -593,12 +594,12 @@ cards:
             font-size: var(--font-size-title);
             font-family: var(--font-title);
             line-height: 30px;
-            background: none;
             margin-top: 0.4em;
             margin-left: 8px;
             margin-bottom: 0em;
             box-shadow: none;
             background: none;
+            border: none;
           }
           ha-markdown {
             padding: 0px 0px 0px 8px !important;
@@ -672,12 +673,12 @@ cards:
             font-size: var(--font-size-title);
             font-family: var(--font-title);
             line-height: 30px;
-            background: none;
             margin-top: 0.4em;
             margin-left: 8px;
             margin-bottom: 0em;
             box-shadow: none;
             background: none;
+            border: none;
           }
           ha-markdown {
             padding: 0px 0px 0px 8px !important;
@@ -745,12 +746,12 @@ cards:
 #            font-size: var(--font-size-title);
 #            font-family: var(--font-title);
 #            line-height: 30px;
-#            background: none;
 #            margin-top: 0.4em;
 #            margin-left: 8px;
 #            margin-bottom: 0em;
 #            box-shadow: none;
 #            background: none;
+#            border: none;
 #          }
 #          ha-markdown {
 #            padding: 0px 0px 0px 8px !important;

@@ -10,10 +10,13 @@ homeassistant:
   elevation: 298
   # 'metric' for Metric, 'imperial' for Imperial
   unit_system: metric
+  currency: EUR
+  country: DE
+  language: de
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Berlin
   external_url: !secret homeassistant_external_url
-  internal_url: !secret homeassistant_internal_url
+  internal_url: !secret homeassistant_external_url
   auth_providers:
     - type: homeassistant
   customize: !include_dir_merge_named customizations
@@ -43,8 +46,11 @@ api:
 http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
-
-updater:
+  cors_allowed_origins:
+    - https://google.com
+    - https://www.home-assistant.io
+  ip_ban_enabled: true
+  login_attempts_threshold: 5
 
 conversation:
 
@@ -226,6 +232,8 @@ lovelace:
     #  type: module
     - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
       type: module
+    - url: /hacsfiles/my-cards/my-cards.js
+      type: module
     - url: /hacsfiles/swipe-card/swipe-card.js
       type: module
     - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
@@ -253,9 +261,9 @@ lovelace:
       require_admin: true
 
 # https://github.com/thomasloven/hass-browser_mod
-browser_mod:
-  disable:
-    - all
+#browser_mod:
+#  disable:
+#    - all
 
 input_boolean: !include_dir_merge_named input_boolean
 input_select: !include_dir_merge_named input_select

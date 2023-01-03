@@ -55,6 +55,7 @@ ING Dark:
   text-medium-color: "var(--color-grey-dark-2)"
   disabled-text-color: "var(--color-grey-dark-3)"
   primary-color: "var(--accent-color)"
+  secondary-color: "var(--accent-color)"
 
   # Font-Size Variable
   font-size-title: "20px"
@@ -65,6 +66,22 @@ ING Dark:
   accent-color: "var(--color-blue-1)"
   accent-medium-color: "var(--accent-color)"
 
+  # Input
+  #input-fill-color: "var(--color-blue-deepdark-1)"
+  input-fill-color: "transparent"
+  input-disabled-fill-color: "transparent"
+  input-label-ink-color: "var(--color-white)"
+  input-ink-color: "var(--color-white)"
+  input-dropdown-icon-color: "var(--color-white)"
+  input-outlined-idle-border-color: "var(--color-blue-deepdark-4)"
+  input-outlined-hover-border-color: "var(--color-blue-deepdark-4)"
+  mdc-ripple-activated-opacity: "1.0" #Select Overlay Opacity
+  #mdc-dialog-content-ink-color: "var(--color-white)"
+  #mdc-text-field-fill-color: "var(--input-fill-color)"
+  #mdc-text-field-label-ink-color: "var(--input-label-ink-color)"
+  #mdc-select-ink-color: "var(--input-ink-color)"
+
+
   # Background
   background-color: "var(--color-blue-deepdark-1)"
   background-color-2: "var(--color-blue-deepdark-2)"
@@ -73,11 +90,17 @@ ING Dark:
   markdown-code-background-color: "var(--background-color)"
   st-mode-active-background: "var(--accent-color)"
 
+  # fix dropdown background
+  material-background-color: 'var(--light-primary-color)'
+
   # Card
   card-background-color: "var(--ha-card-background)"
   ha-card-background: "var(--color-blue-deepdark-2)"
   ha-card-box-shadow: "0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)"
   ha-card-border-radius: "0.25rem"
+  ha-card-border-width: "0rem"
+  ha-card-border-color: "rgba(0, 0, 0, 0)"
+  ha-card-border-style: "none"
   border-color: "rgba(45,53,82,0)"
 
   # Icons
@@ -102,7 +125,9 @@ ING Dark:
 
   # Toggle:
   paper-toggle-button-checked-bar-color: "var(--accent-color)"
-  mdc-theme-primary: "var(--accent-color)"
+  # mwc - for some reason it's buttons
+  mdc-theme-primary: "var(--primary-color)"
+  mdc-theme-secondary: "var(--secondary-color)"
 
   # Switch
   switch-unchecked-color: "var(--color-grey-dark-2)"
@@ -111,7 +136,6 @@ ING Dark:
   switch-checked-track-color: "var(--accent-color)" #Switch Background
   switch-unchecked-track-color: "var(--color-grey-dark-3)"
 
-
   # Radio Button
   paper-radio-button-checked-color: "var(--accent-color)"
 
@@ -119,6 +143,8 @@ ING Dark:
   dialog-backdrop-filter: "blur(5px) brightness(95%)"
   mdc-dialog-scrim-color: "rgba(0,0,0,0.50)" # BG Overlay
   mdc-theme-surface: "rgba(0,0,0,0.50)"
+  popup-background-color: "rgba(0,0,0,0.50)" # BG Overlay
+  popup-header-background-color: "transparent"
   more-info-header-background: "var(--secondary-background-color)"
   paper-dialog-background-color: "var(--background-color)"
 
@@ -175,8 +201,21 @@ ING Dark:
       .mdc-dialog .mdc-dialog__container .mdc-dialog__surface .mdc-dialog__content {
         background-color: var(--mdc-dialog-scrim-color);
       }
+    browser-mod-popup$: |
       :host {
         background: none !important;
+      }
+    ha-dialog$: |
+      .mdc-dialog .mdc-dialog__scrim {
+        background-color: var(--mdc-dialog-scrim-color) !important;
+      }
+      .mdc-dialog .mdc-dialog__container .mdc-dialog__surface {
+        background: none !important;
+        background-color: transparent;
+        box-shadow: none !important;
+      }
+      .mdc-dialog .mdc-dialog__container .mdc-dialog__surface .mdc-dialog__content {
+        background-color: var(--mdc-dialog-scrim-color);
       }
     ha-header-bar$: |
       .mdc-top-app-bar {

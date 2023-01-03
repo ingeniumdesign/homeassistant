@@ -71,6 +71,9 @@ sensor.version_current:
   friendly_name: Aktuell
 sensor.version_latest:
   friendly_name: Neueste
+input_boolean.party_mode_toggle:
+  friendly_name: Party-Modus
+  icon: mdi:party-popper
 input_boolean.notifications:
   friendly_name: Benachrichtungen
 input_boolean.notify_dooropen:

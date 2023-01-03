@@ -74,8 +74,7 @@ _More Screenshot down below._
   <br />Backup to a second HDD: `ln -s /home/backup-ha/ /usr/share/hassio/backup`
 - [Mosquitto broker](https://home-assistant.io/addons/mosquitto/)
 - [Node-RED](https://github.com/hassio-addons/addon-node-red)
-  - node-red-contrib-mytimeout
-  - node-red-contrib-alexa-remote2
+  - a Pluginlist is above
 - [ESPHome](https://esphome.io/)
 - [MariaDB](https://home-assistant.io/addons/mariadb/)
 - [Z-Wave JS](https://www.home-assistant.io/integrations/zwave_js/) - Z-Stick Gen5+ or RaZberry 2
@@ -84,6 +83,7 @@ _More Screenshot down below._
 - [Speedtest.net](https://www.speedtest.net/)
 - [Samsung Smart TV](https://www.home-assistant.io/integrations/samsungtv/)
 - [MQTT](https://www.home-assistant.io/integrations/mqtt/)
+- [uptimerobot](https://uptimerobot.com/)
 
 ## Custom Components
 
@@ -99,6 +99,7 @@ _More Screenshot down below._
   - [Skoda Connect](https://github.com/lendy007/homeassistant-skodaconnect) - ŠKODA OCTAVIA RS COMBI
   - [Gardena Smart System](https://github.com/py-smart-gardena/hass-gardena-smart-system)
 - [Lovelace Gen](https://github.com/thomasloven/hass-lovelace_gen)
+- HA Add-ons by alexbelgium [GitHub](https://github.com/alexbelgium/hassio-addons) - Manage add-on repositories
 
 ## Lovelace Plugins
 
@@ -138,6 +139,9 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 #### NODE-RED Plugins:
 - [node-red-contrib-alexa-remote2](https://flows.nodered.org/node/node-red-contrib-alexa-remote2)
 - [node-red-contrib-amazon-echo](https://flows.nodered.org/node/node-red-contrib-amazon-echo)
+- [node-red-contrib-shelly](https://flows.nodered.org/node/node-red-contrib-shelly)
+- node-red-contrib-stoptimer
+- node-red-contrib-sun-position
 
 #### Automation / Features:
 
@@ -155,6 +159,8 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
 - [x] Zones for different people
 - [ ] presence detection with different states like zone
 - [x] Motion Sensor, Edit Time, Lights Control
+- [ ] "Party" Light Modus with On/Off Control.
+  - LED Strips Light Effect
 - [ ] Weather-Infos for one Week
 - [x] Show Planes over the house
 - [x] Turning the AEOTEC Plus Multisensor 6 - motion sensors off on demand.
@@ -162,6 +168,7 @@ All of my automations are in Home Assistant - automations.yaml and with NODE-RED
   - Telegram Bot for the "Family Group" - _**Info:** Invite the "GetIDs Bot" in Group for Bot-ID -100XXXXX_
   - HA Info stop or restart
   - Monitor Sensor Crash with Notify
+- [ ] notification via whatsapp - https://www.callmebot.com/
 - [x] Vacuum Infos and Start/Stop Functions
 - [x] HA and Plugin Update Infos.
 - [x] Lovelace Restart, Frontend/Theme Reload, Restart HA and Server Restart.
@@ -208,7 +215,11 @@ Use this Guide to Check the migration from Pi to NUC. Dont use the Install part.
 
 ### Portainer CE - Docker Overview
 
-![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/portainer.JPG) Container list - [Docker Portainer CE](https://www.portainer.io/)
+![](https://raw.githubusercontent.com/ingeniumdesign/homeassistant/master/docs/portainer.JPG)  
+Container CE: [Docker Portainer CE](https://www.portainer.io/)  
+Local URL: [192.168.178.xx:9443](https://192.168.178.xx:9443/)  
+Update & Backup: [Portainer Backup](https://docs.portainer.io/admin/settings#backup-portainer) / Update: [Portainer CE](https://docs.portainer.io/start/upgrade/docker)  
+After Update - Reconnect Docker API: [Exposing docker.sock for monitor_docker](https://community.home-assistant.io/t/exposing-docker-sock-for-monitor-docker/265565/9)
 
 
 ### HA on Raspbarry Pi 3B+
