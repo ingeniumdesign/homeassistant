@@ -3,8 +3,8 @@
 
 - platform: ics
   name: Restmülltonne
-  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1087
-  #startswith: Restmülltonne
+  #url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1087
+  url: https://www.eaw-rheingau-taunus.de/abfallsammlung/abfuhrtermine/feed.ics?tx_vierwdeaw_garbagecalendarics%5Baction%5D=ics&tx_vierwdeaw_garbagecalendarics%5Bcontroller%5D=GarbageCalendar&tx_vierwdeaw_garbagecalendarics%5Bstreet%5D=1087
   contains: "Restmülltonne"
   id: 1
   timeformat: "%A, %d.%m."
@@ -15,8 +15,8 @@
 
 - platform: ics
   name: Biotonne
-  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1087
-  #startswith: Biotonne
+  #url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1087
+  url: https://www.eaw-rheingau-taunus.de/abfallsammlung/abfuhrtermine/feed.ics?tx_vierwdeaw_garbagecalendarics%5Baction%5D=ics&tx_vierwdeaw_garbagecalendarics%5Bcontroller%5D=GarbageCalendar&tx_vierwdeaw_garbagecalendarics%5Bstreet%5D=1087
   contains: "Biotonne"
   id: 2
   timeformat: "%A, %d.%m."
@@ -27,27 +27,28 @@
 
 - platform: ics
   name: Altpapiertonne
-  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1087
-  #startswith: Altpapiertonne
+  #url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1087
+  url: https://www.eaw-rheingau-taunus.de/abfallsammlung/abfuhrtermine/feed.ics?tx_vierwdeaw_garbagecalendarics%5Baction%5D=ics&tx_vierwdeaw_garbagecalendarics%5Bcontroller%5D=GarbageCalendar&tx_vierwdeaw_garbagecalendarics%5Bstreet%5D=1087
   contains: "Altpapiertonne"
   id: 3
   timeformat: "%A, %d.%m."
+  show_blank: "-"
   show_remaining: true
   show_ongoing: true
   description_in_state: false
-  icon: "mdi:newspaper-variant-multiple-outline"
+  icon: "mdi:trash-can-outline"
 
 - platform: ics
   name: Gelbetonne
-  url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1087
-  #startswith: Gelber
-  contains: "Gelber Sack"
+  #url: https://www.eaw-rheingau-taunus.de/abfallkalender/calendar.ics?streetid=1087
+  url: https://www.eaw-rheingau-taunus.de/abfallsammlung/abfuhrtermine/feed.ics?tx_vierwdeaw_garbagecalendarics%5Baction%5D=ics&tx_vierwdeaw_garbagecalendarics%5Bcontroller%5D=GarbageCalendar&tx_vierwdeaw_garbagecalendarics%5Bstreet%5D=1087
+  contains: "Gelbe Tonne"
   id: 4
   timeformat: "%A, %d.%m."
   show_remaining: true
   show_ongoing: true
   description_in_state: false
-  icon: "mdi:recycle"
+  icon: "mdi:trash-can-outline"
 
 # Wochentage ICS
 #- platform: template

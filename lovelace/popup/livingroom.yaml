@@ -1,34 +1,38 @@
-action: call-service
-service: browser_mod.popup
-service_data:
-  deviceID: this
-  title: Wohnzimmer Status
-  card:
-    type: custom:mod-card
-    card:
-      type: horizontal-stack
-      cards:
-        - type: entities
-          state_color: true
-          show_header_toggle: false
-          entities:
-            ##- entity: media_player.samsung_tv_q9075
-            ##  tap_action:
-            ##    action: none
-            - entity: media_player.denon_avr_x4200w
-              tap_action:
-                action: none
-            - entity: media_player.vu_uno4k_se
-              tap_action:
-                action: none
-    style:
-      .: |
-        ha-card {
-          background: none !important;
-          --ha-card-background: none;
-          --card-background-color: transparent;
-        }
-        :host {
-          --ha-card-background: none;
-          --card-background-color: transparent;
-        }
+#action: call-service
+#service: browser_mod.popup
+#service_data:
+action: fire-dom-event
+browser_mod:
+  service: browser_mod.popup
+  data:
+    deviceID: this
+    title: Wohnzimmer Status
+    content:
+      type: custom:mod-card
+      card:
+        type: horizontal-stack
+        cards:
+          - type: entities
+            state_color: true
+            show_header_toggle: false
+            entities:
+              ##- entity: media_player.samsung_tv_q9075
+              ##  tap_action:
+              ##    action: none
+              - entity: media_player.denon_avr_x4200w
+                tap_action:
+                  action: none
+              - entity: media_player.vu_uno4k_se
+                tap_action:
+                  action: none
+      style:
+        .: |
+          ha-card {
+            background: none !important;
+            --ha-card-background: none;
+            --card-background-color: transparent;
+          }
+          :host {
+            --ha-card-background: none;
+            --card-background-color: transparent;
+          }

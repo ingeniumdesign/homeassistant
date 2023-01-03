@@ -1,5 +1,5 @@
 input_boolean:
-  # SHORTCUTS
+  # SHORTCUTS Dashboard
   shortcut_mainhallway:
     name: Flur
     icon: mdi:view-carousel-outline

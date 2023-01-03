@@ -72,8 +72,8 @@
 
 ## Stats Home ##################################################################
 # HASS.io UpTime https://www.home-assistant.io/integrations/uptime/
-- platform: uptime
-  name: Hass.io Uptime
+#- platform: uptime
+#  name: Hass.io Uptime
 
 - platform: template
   sensors:

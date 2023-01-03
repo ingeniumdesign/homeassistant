@@ -49,12 +49,12 @@ cards:
                   font-size: var(--font-size-title);
                   font-family: var(--font-title);
                   line-height: 30px;
-                  background: none;
                   margin-top: 0.4em;
                   margin-left: 8px;
                   margin-bottom: 0em;
                   box-shadow: none;
                   background: none;
+                  border: none;
                 }
                 ha-markdown {
                   padding: 0px 0px 0px 8px !important;
@@ -78,12 +78,12 @@ cards:
             font-size: var(--font-size-title);
             font-family: var(--font-title);
             line-height: 30px;
-            background: none;
             margin-top: 0.4em;
             margin-left: 8px;
             margin-bottom: 0em;
             box-shadow: none;
             background: none;
+            border: none;
           }
           ha-markdown {
             padding: 0px 0px 0px 8px !important;
@@ -100,7 +100,7 @@ cards:
             name: Lovelace Restart
             tap_action:
               action: call-service
-              service: browser_mod.lovelace_reload
+              service: lovelace.reload_resources
             hold_action:
               action: none
             styles:
@@ -153,12 +153,12 @@ cards:
             font-size: var(--font-size-title);
             font-family: var(--font-title);
             line-height: 30px;
-            background: none;
             margin-top: 0.4em;
             margin-left: 8px;
             margin-bottom: 0em;
             box-shadow: none;
             background: none;
+            border: none;
           }
           ha-markdown {
             padding: 0px 0px 0px 8px !important;
@@ -301,12 +301,12 @@ cards:
 ##            font-size: var(--font-size-title);
 ##            font-family: var(--font-title);
 ##            line-height: 30px;
-##            background: none;
 ##            margin-top: 0.4em;
 ##            margin-left: 8px;
 ##            margin-bottom: 0em;
 ##            box-shadow: none;
 ##            background: none;
+##            border: none;
 ##          }
 ##          ha-markdown {
 ##            padding: 0px 0px 0px 8px !important;
@@ -500,12 +500,12 @@ cards:
             font-size: var(--font-size-title);
             font-family: var(--font-title);
             line-height: 30px;
-            background: none;
             margin-top: 0.4em;
             margin-left: 8px;
             margin-bottom: 0em;
             box-shadow: none;
             background: none;
+            border: none;
           }
           ha-markdown {
             padding: 0px 0px 0px 8px !important;
@@ -646,12 +646,12 @@ cards:
             font-size: var(--font-size-title);
             font-family: var(--font-title);
             line-height: 30px;
-            background: none;
             margin-top: 0.4em;
             margin-left: 8px;
             margin-bottom: 0em;
             box-shadow: none;
             background: none;
+            border: none;
           }
           ha-markdown {
             padding: 0px 0px 0px 8px !important;
