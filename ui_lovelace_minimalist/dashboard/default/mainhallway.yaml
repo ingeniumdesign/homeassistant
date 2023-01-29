@@ -1,0 +1,98 @@
+title: "Flur"
+path: "mainhallway"
+icon: "mdi:view-carousel-outline"
+id: "mainhallway"
+theme: "minimalist-desktop"
+cards:
+  - type: "custom:button-card"
+    template: chip_back
+    variables:
+      ulm_chip_back_path: dashboard
+
+  - type: "custom:button-card"
+    template: card_title
+    name: "Flur"
+
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:button-card'
+        template: card_graph
+        entity: sensor.mainhallway_hmipbwth_thermostat_temperature
+        variables:
+          ulm_card_graph_name: "Temperature Flur"
+          ulm_card_graph_color: "var(--google-blue)"
+          ulm_card_graph_entity: sensor.mainhallway_hmipbwth_thermostat_temperature
+          #ulm_card_graph_color2: "var(--google-blue)"
+          #ulm_card_graph_entity2: sensor.dwd_weather_temperature
+          ulm_card_graph_type: fill
+          ulm_card_graph_hours: 48
+          ulm_card_graph_points: 0.5
+          ulm_card_graph_group_by: interval
+      - type: 'custom:button-card'
+        template: card_graph
+        entity: sensor.mainhallway_hmipbwth_thermostat_humidity
+        variables:
+          ulm_card_graph_name: "Luftfeuchtigkeit Flur"
+          ulm_card_graph_color: "var(--google-green)"
+          ulm_card_graph_entity: sensor.mainhallway_hmipbwth_thermostat_humidity
+          ulm_card_graph_type: fill
+          ulm_card_graph_hours: 48
+          ulm_card_graph_points: 0.5
+          ulm_card_graph_group_by: interval
+  ##- type: horizontal-stack
+  ##  cards:
+  ##    - type: "custom:button-card"
+  ##      entity: lock.door_lock
+  ##      template: "custom_card_eraycetinay_lock"
+  ##      name: "Haustür"
+  ##      variables:
+  ##        ulm_custom_card_eraycetinay_lock_tap_control: true
+  ##        ulm_custom_card_eraycetinay_lock_battery_level: sensor.handy_sebastian_akkufullstand
+  ##        ulm_custom_card_eraycetinay_lock_door_open: binary_sensor.frontdoortest
+  ##      triggers_update:
+  ##        - "sensor.handy_sebastian_akkufullstand"
+  ##        - "input_select.sensor_frontdoortest"
+
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        template: card_thermostat
+        entity: climate.mainhallway_hmipbwth_thermostat
+        variables:
+          ulm_card_thermostat_enable_horizontal: false
+          ulm_card_thermostat_enable_collapse: true
+          ulm_card_thermostat_enable_controls: true
+          ulm_card_thermostat_enable_hvac_modes: false
+          ulm_card_thermostat_enable_popup: false
+          ulm_card_thermostat_enable_background_color: false
+          ulm_card_thermostat_enable_display_temperature: true
+          ulm_card_thermostat_preset_mode: true
+
+  - type: horizontal-stack
+    cards:
+      - type: "custom:simple-thermostat"
+        entity: climate.mainhallway_hmipbwth_thermostat
+        header:
+          name: Fußbodenheizung
+          icon: mdi:radiator
+        decimal: 0
+        step_size: 1.0
+        step_layout: column
+        label:
+          temperature: Innen
+        sensors:
+          - entity: sensor.mainhallway_hmipbwth_thermostat_humidity
+            name: Luftfeuchtigkeit
+          - entity: sensor.dwd_weather_temperature
+            name: Außen
+        style: |
+          ha-card {
+            box-shadow: none;
+            border-radius: var(--border-radius);
+          }
+          ha-card .header__title {
+            font-size: var(--font-size-subtitle);
+          }
+          ha-card .mode-item {
+            background: var(--color-blue-bright-2)
+          }

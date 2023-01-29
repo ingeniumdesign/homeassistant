@@ -1,0 +1,6 @@
+group:
+
+  # All Climate Entities
+  all_climate_entities:
+    name: All Climate Entities
+    entities:

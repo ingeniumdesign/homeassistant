@@ -1,0 +1,14 @@
+group:
+
+  # All Window Entities
+  all_window_entities:
+    name: All Window Entities
+    entities:
+      - binary_sensor.bathroom_bedroom_window_aqara_1_0x00158d00075d7545_contact
+      - binary_sensor.office_window_xiaomi_1_0x00158d00062f93ee_contact
+
+  # All Door Entities
+  all_door_entities:
+    name: All Door Entities
+    entities:
+

@@ -7,6 +7,7 @@
 #      # Event is either enter or leave
 #      event: enter # or "leave"
 
+
 - id: notify_hass_startup
   alias: "Notify HASS Startup"
   description: "Send notification HASS Startup"
@@ -16,7 +17,7 @@
   action:
     service: notify.ha_message_group
     data:
-      title: "*Info / Warning*"
+      title: "*Info*"
       message: "Home Assistant ist gestartet"
 
 - id: notify_hass_shutdown
@@ -28,7 +29,7 @@
   action:
     service: notify.ha_message_group
     data:
-      title: "*Info / Warning*"
+      title: "*Warning*"
       message: "Home Assistant ist herunter gefahren"
 
 - id: notify_home_assistant_update
@@ -36,14 +37,28 @@
   description: "Send notification Home Assistant Update"
   trigger:
     - platform: state
-      entity_id: binary_sensor.updater
-      from: 'off'
-      to: 'on'
+      entity_id: sensor.version_check
+      from: 'False'
+      to: 'True'
   action:
     - service: notify.ha_message_group
       data:
         title: "*Home Assistant Update*"
         message: "Es gibt eine neue Home Assistant Version!"
+
+- id: notify_hacs_update
+  alias: 'Notify HACS Update'
+  description: "Send notification HACS Update"
+  trigger:
+    - platform: state
+      entity_id: sensor.hacs
+      from: '0'
+      to: '1'
+  action:
+    - service: notify.ha_message_group
+      data:
+        title: "*HACS Update*"
+        message: "Es gibt ein neues HACS Update!"
 
 - id: notify_sun_rises
   alias: "Notify Sun rises"

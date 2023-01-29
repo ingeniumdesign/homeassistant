@@ -1,0 +1,54 @@
+---
+chip_group_state:
+  template: "chips"
+  triggers_update: "all"
+  label: |
+    [[[
+      var icon = "❔";
+      if (variables.ulm_chip_group_state_icon) {
+        icon = variables.ulm_chip_group_state_icon;
+      }
+      var on_label = "";
+      if (variables.ulm_chip_group_state_on_label) {
+        on_label = variables.ulm_chip_group_state_on_label;
+      }
+      var on_label_single = "";
+      if (variables.ulm_chip_group_state_on_label_single) {
+        on_label_single = variables.ulm_chip_group_state_on_label_single;
+      }
+      else {
+        on_label_single = on_label
+      }
+      var off_label = "";
+      if (variables.ulm_chip_group_state_off_label) {
+        off_label = variables.ulm_chip_group_state_off_label;
+      }
+      else {
+        off_label_single = off_label
+      }
+      var group_entity = ""
+      if (variables.ulm_chip_group_state_entity) {
+        group_entity = states[variables.ulm_chip_group_state_entity];
+      }
+      var on_count = 0
+      for (var entity of group_entity.attributes.entity_id) {
+        if (states[entity].state == 'on') {
+          on_count++;
+        }
+      }
+      var state = "";
+      if (group_entity.state) {
+        if (group_entity.state == 'off') {
+          state = off_label;      
+        }
+        else if (group_entity.state == 'on') {
+          if (on_count == 1) {
+            state = on_count + " " + on_label_single;
+          }
+          else {
+            state = on_count + " " + on_label;
+          }
+        }
+      }
+      return icon + " " + state;
+    ]]]

@@ -18,8 +18,7 @@ include:
     - person.julia_schmal
     - device_tracker.handy_sebastian
     - device_tracker.iphone_vr_smart
-    - device_tracker.iphone_vr_smart_2
-    - device_tracker.octavia
+    - device_tracker.skoda_octavia_combi_rs_tmbjk8nx5py042131_position
     - sensor.sebastian_status
     - sensor.julia_status
     - switch.summer
@@ -55,7 +54,7 @@ include:
     - sensor.buro_dect200_1_current_power_w
     - sensor.buro_dect200_1_voltage
     - sensor.buro_dect200_1_current_a
-    - climate.buro_dect301_1
+    - climate.office_1_dect301_1
     - climate.schlafzimmer_dect301_1
     - sensor.handy_sebastian_akkufullstand
     - sensor.net_upload_cur
@@ -75,13 +74,12 @@ include:
     - sensor.docker_containers_stopped
     - sensor.docker_images
     - sensor.docker_version
-    - switch.mainhallway_led_shelly_1l_84cca8ad7232
     - binary_sensor.office_window_xiaomi_1_openclose
     - sensor.gasstation_ed_diesel
     - sensor.gasstation_shellblackdecker_diesel
     - sensor.gasstation_shellwiesbadener_diesel
     - sensor.gasstation_total_diesel
-    - input_select.sensor_frontdoortest
+    - switch.boilerroom_plug_shelly_plugs_80646f83ebcf
 
 exclude:
   entity_globs:

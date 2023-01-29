@@ -1,0 +1,33 @@
+sensor:
+
+  - platform: template
+    sensors:
+
+      # Number of Climate On
+      number_of_climate_on:
+        friendly_name: "Number of Climate On"
+        icon_template: mdi:radiator
+        value_template: >-
+          {% set count = namespace(value=0) %}
+          {% for entity_id in state_attr('group.all_climate_entities','entity_id') %}
+            {% if (states(entity_id) == 'on') %}
+              {% set count.value = count.value + 1 %}
+            {% endif %}
+          {% endfor %}
+          {{ count.value }}
+
+  # Lowest Temperature Home
+  #- platform: min_max
+  #  unique_id : lowest_temperature_home
+  #  name: Lowest Temperature Home
+  #  type: min
+  #  entity_ids:
+  #- sensor.work_room_temperature_sensor_temperature
+
+  # Highest Temperature Home
+  #- platform: min_max
+  #  unique_id : highest_temperature_home
+  #  name: Highest Temperature Home
+  #  type: max
+  #  entity_ids:
+  #- sensor.work_room_temperature_sensor_temperature

@@ -1,0 +1,24 @@
+ing_fritzbox_sent_day:
+  name: ING-Fritzbox Upload day
+  min: 0
+  max: 5000
+ing_fritzbox_sent_month:
+  name: ING-Fritzbox Upload month
+  min: 0
+  max: 500000
+ing_fritzbox_sent_year:
+  name: ING-Fritzbox Upload year
+  min: 0
+  max: 5000000
+ing_fritzbox_received_day:
+  name: ING-Fritzbox Download day
+  min: 0
+  max: 5000
+ing_fritzbox_received_month:
+  name: ING-Fritzbox Download month
+  min: 0
+  max: 500000
+ing_fritzbox_received_year:
+  name: ING-Fritzbox Download year
+  min: 0
+  max: 5000000

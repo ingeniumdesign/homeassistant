@@ -1,0 +1,10 @@
+---
+button_card_templates: !include_dir_merge_named "../../custom_components/ui_lovelace_minimalist/__ui_minimalist__/ulm_templates/"
+
+title: "Dashboard Default"
+theme: "minimalist-desktop"
+background: "var(--background-image)"
+views:
+  - !include "default/dashboard.yaml"
+  - !include "default/mainhallway.yaml"
+  - !include "default/livingroom.yaml"

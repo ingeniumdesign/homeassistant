@@ -23,17 +23,20 @@
     - type: memory_free
     - type: memory_use
     - type: memory_use_percent
-    #- type: process
     - type: processor_use
     - type: processor_temperature
     - type: network_in
       arg: eno1
     - type: network_out
       arg: eno1
-    #- type: throughput_network_in
-    #- type: throughput_network_out
-    #- type: packets_in
-    #- type: packets_out
+    - type: throughput_network_in
+      arg: eno1
+    - type: throughput_network_out
+      arg: eno1
+    - type: packets_in
+      arg: eno1
+    - type: packets_out
+      arg: eno1
 
 # https://home-assistant.io/components/sensor.cpuspeed/
 #- platform: cpuspeed
@@ -103,11 +106,11 @@
         {{ values[:-1] | join(', ') ~ ' ' ~ values[-1] if values | length > 1 else values | first }}
         {% endif %}
 
-    #sensor.ingeniumdesign_connection_uptime
+    #sensor.ing_fritzbox_connection_uptime
     net_uptime_pretty:
       friendly_name: Verbunden
       value_template: >
-        {%- set up_time = as_timestamp(now())-as_timestamp(states('sensor.ingeniumdesign_connection_uptime')) %}
+        {%- set up_time = as_timestamp(now())-as_timestamp(states('sensor.ing_fritzbox_connection_uptime')) %}
 
         {% if states('sensor.last_boot') == '0.0' %}
           Soeben neu gestartet...
@@ -127,6 +130,30 @@
         ] | select('!=','') | list %}
 
         {{ values[:-1] | join(', ') ~ ' ' ~ values[-1] if values | length > 1 else values | first }}
+        {% endif %}
+
+    #sensor.ing_fritzbox_connection_uptime
+    net_uptime_pretty_short:
+      friendly_name: Verbunden
+      value_template: >
+        {%- set up_time = as_timestamp(now())-as_timestamp(states('sensor.ing_fritzbox_connection_uptime')) %}
+
+        {% if states('sensor.last_boot') == '0.0' %}
+          Soeben neu gestartet...
+        {% else %}
+
+        {%- macro phrase(name, divisor, mod=None) %}
+          {%- set value = ((up_time // divisor) % (mod if mod else divisor)) | int %}
+          {{- '{} {}'.format(value, name) if value | int > 0 else '' }}
+        {%- endmacro %}
+
+        {%- set values = [
+          phrase('W.', 60*60*24*7),
+          phrase('T.', 60*60*24, 7),
+          phrase('Std.', 60*60, 24)
+        ] | select('!=','') | list %}
+
+        {{ values[:-1] | join(' ') ~ ' ' ~ values[-1] if values | length > 1 else values | first }}
         {% endif %}
 
     nuc_uptime:
@@ -156,6 +183,6 @@
         {% endif %}
 
     # SKODA TIME
-    octavia_last_connected_pretty:
+    skoda_octavia_combi_rs_tmbjk8nx5py042131_last_connected_pretty:
       friendly_name: Octavia last connected
-      value_template: "{{ as_timestamp(states('sensor.octavia_last_connected')) | timestamp_custom('%a, %d.%m. - %H:%M') }}"
+      value_template: "{{ as_timestamp(states('sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_last_connected')) | timestamp_custom('%a, %d.%m. - %H:%M') }}"

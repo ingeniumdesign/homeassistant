@@ -1,0 +1,82 @@
+sensor:
+
+  - platform: template
+    sensors:
+
+      # Number of Devices On
+      number_of_devices_on:
+        friendly_name: "Number of Devices On"
+        icon_template: mdi:power-plug
+        value_template: >-
+          {% set count = namespace(value=0) %}
+          {% for entity_id in state_attr('group.all_device_on_entities','entity_id') %}
+            {% if (states(entity_id) == 'on') %}
+              {% set count.value = count.value + 1 %}
+            {% endif %}
+          {% endfor %}
+          {{ count.value }}
+
+      # Number of Batteries Low
+      number_of_batteries_low:
+        friendly_name: "Number of Batteries Low"
+        icon_template: mdi:battery
+        value_template: >-
+            {% set count = namespace(value=0) %}
+            {% for entity_id in states.group.all_batteries_sensor_entities.attributes.entity_id %}
+              {% if ( states(entity_id) | int(0) ) < 10 %}
+                {% set count.value = count.value + 1 %}
+              {% endif %}
+            {% endfor %}
+            {{ count.value }}
+
+      # Number of Inks Low
+      number_of_inks_low:
+        friendly_name: "Number of Inks Low"
+        icon_template: mdi:format-color-fill
+        value_template: >-
+            {% set count = namespace(value=0) %}
+            {% for entity_id in states.group.all_ink_sensor_entities.attributes.entity_id %}
+              {% if ( states(entity_id) | int(0) ) < 10 %}
+                {% set count.value = count.value + 1 %}
+              {% endif %}
+            {% endfor %}
+            {{ count.value }}
+
+      # Number of Computers On
+      number_of_computers_on:
+        friendly_name: "Number of Computers On"
+        icon_template: mdi:desktop-classic
+        value_template: >-
+          {% set count = namespace(value=0) %}
+          {% for entity_id in state_attr('group.all_computer_on_entities','entity_id') %}
+            {% if (states(entity_id) == 'on') %}
+              {% set count.value = count.value + 1 %}
+            {% endif %}
+          {% endfor %}
+          {{ count.value }}
+
+      # Number of Device in Wlan
+      number_of_device_wlan:
+        friendly_name: "Number of Device in Wlan"
+        icon_template: mdi:desktop-classic
+        value_template: >-
+          {% set count = namespace(value=0) %}
+          {% for entity_id in state_attr('group.all_device_wlan_entities','entity_id') %}
+            {% if (states(entity_id) == 'on') %}
+              {% set count.value = count.value + 1 %}
+            {% endif %}
+          {% endfor %}
+          {{ count.value }}
+
+      # Number of Notifications On
+      number_of_notifications_on:
+        friendly_name: "Number of Notifications On"
+        icon_template: mdi:bell
+        value_template: >-
+          {% set count = namespace(value=0) %}
+          {% for entity_id in state_attr('group.all_notification_entities','entity_id') %}
+            {% if ( states(entity_id) != 'off' and states(entity_id) != '0' ) %}
+              {% set count.value = count.value + 1 %}
+            {% endif %}
+          {% endfor %}
+          {{ count.value }}

@@ -1,12 +1,11 @@
-# Configure a default setup of Home Assistant (frontend, api, etc)
-default_config:
-
 homeassistant:
   # Name of the location where Home Assistant is running
   name: Familie Schmal
   # Location required to calculate the time the sun rises and sets
   latitude: !secret homeassistant_latitude
   longitude: !secret homeassistant_longitude
+
+  # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 298
   # 'metric' for Metric, 'imperial' for Imperial
   unit_system: metric
@@ -15,42 +14,45 @@ homeassistant:
   language: de
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Berlin
+
   external_url: !secret homeassistant_external_url
-  internal_url: !secret homeassistant_external_url
+  internal_url: !secret homeassistant_internal_url
+
   auth_providers:
     - type: homeassistant
-  customize: !include_dir_merge_named customizations
+
+  # Customization file
+  customize: !include_dir_merge_named customize
   # Load packages
   packages: !include_dir_named packages
-
-#Zigbee Home Automation
-zha:
-  # Data Input via Plugin Config
-  #usb_path: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00
-  database_path: /config/zigbee.db
-
-## Themes UI ############################################################################
-## ui-lovelace.yaml inline Styles
-frontend:
-  themes: !include_dir_merge_named themes
-  extra_module_url:
-    - /local/custom-ui/custom-ui.js
-
-config:
-
-hassio:
-
-api:
 
 # HTTP / HTTPS Config
 http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
-  cors_allowed_origins:
-    - https://google.com
-    - https://www.home-assistant.io
-  ip_ban_enabled: true
-  login_attempts_threshold: 5
+  #cors_allowed_origins:
+  #  - https://google.com
+  #  - https://www.home-assistant.io
+  #ip_ban_enabled: true
+  #login_attempts_threshold: 5
+
+# Themes UI
+# ui-lovelace.yaml inline Styles
+frontend:
+  themes:
+    !include_dir_merge_named themes
+  extra_module_url:
+    - /hacsfiles/lovelace-card-mod/card-mod.js
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Enables configuration UI
+config:
+
+hassio:
+
+api:
 
 conversation:
 
@@ -105,44 +107,66 @@ ssdp:
 
 zeroconf:
 
-person:
+person: !include_dir_merge_named person
 
 mobile_app:
 
-## HOME ASSISTANT CLOUD #################################################################
+# HOME ASSISTANT CLOUD - aktiv
 cloud:
 
-## TTS ##################################################################################
+# TTS
 tts:
   - platform: google_translate
     language: "de"
 
-## PLUGINS ##############################################################################
-#########################################################################################
+wake_on_lan:
 
-## MEDIA PLAYER #########################################################################
+camera:
+
+alexa:
+  smart_home:
+
+## PLUGINS ##############################################################################
+
+#Zigbee Home Automation
+##zha:
+# Data Input via Plugin Config
+#usb_path: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2408889-if00
+##database_path: /config/zigbee.db
+
+# Spotcast
+spotcast:
+  sp_dc: !secret sp_dc
+  sp_key: !secret sp_key
+
+# MEDIA PLAYER
+# https://www.home-assistant.io/integrations/media_source/
 media_source:
 
 media_player:
-  # VU UNO4k SE
-  - platform: enigma2
-    host: 192.168.178.32
-    mac_address: !secret media_player_enigma2_vu_mac_address
-    name: VU UNO4k SE
-    username: !secret media_player_enigma2_vu_username
-    password: !secret media_player_enigma2_vu_password
-  # Samsung TV Q9075
-  ##- platform: samsungtv_tizen
-  ##  host: 192.168.178.27
-  ##  mac: !secret media_player_samsungtv_tizen_q9075_mac_address
-  ##  name: Samsung TV Q9075
   # Denon-AVR-X4200W
   - platform: denon
     host: 192.168.178.26
     #mac: !secret media_player_denon_x4200w_mac_address
     name: Denon-AVR-X4200W
 
-## UTILITY METER ########################################################################
+enigma:
+  devices:
+    # @ToDo ggf. lag am TV ?
+    # VU UNO4k SE - Wohnzimmer
+    - host: !secret media_player_enigma2_vu_ip_address
+      port: 80
+      name: Vu+ Uno4K SE
+      username: !secret media_player_enigma2_vu_username
+      password: !secret media_player_enigma2_vu_password
+    # AX HD60 - Büro
+    - host: !secret media_player_enigma2_axhd60_office_ip_address
+      port: 80
+      name: AX HD60 - Office
+      username: !secret media_player_enigma2_axhd60_office_username
+      password: !secret media_player_enigma2_axhd60_office_password
+
+# UTILITY METER
 utility_meter:
   net_received_monthly:
     source: sensor.net_received
@@ -151,18 +175,18 @@ utility_meter:
     source: sensor.net_sent
     cycle: monthly
 
-## SKODA CONNECT ########################################################################
+# SKODA CONNECT
 # https://github.com/lendy007/homeassistant-skodaconnect
 #skodaconnect: !include skodaconnect.yaml
 
-## DOCKER ###############################################################################
+# DOCKER
 # https://github.com/ualex73/monitor_docker
 monitor_docker:
 
-## SHELLY ###############################################################################
+# SHELLY
 shelly: !include shelly.yaml
 
-## TANKERKÖNIG ###############################################################################
+# TANKERKÖNIG
 tankerkoenig:
   api_key: !secret tankerkoenig_api_key
   fuel_types:
@@ -172,14 +196,14 @@ tankerkoenig:
   radius: 5
   scan_interval: "0:15:01"
 
-## VACUUM ROBOROCK S6 ###################################################################
+# VACUUM ROBOROCK S6
 # https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor
 ##vacuum:
 ##  - platform: xiaomi_miio
 ##    host: 192.168.178.46
 ##    token: !secret vacuum_roborock_s6_token
 
-## SPEEDTEST ############################################################################
+# SPEEDTEST
 ##speedtestdotnet:
 ##  server_id: 10010
 ##  scan_interval:
@@ -190,14 +214,38 @@ tankerkoenig:
 ##    - upload
 
 ## LOVELACE UI ##########################################################################
-# OLD ?
-lovelace_gen:
-
 lovelace:
+  #mode: storage
   mode: yaml
+
+  # Add yaml dashboards
+  dashboards:
+    lovelace-minimalist:
+      mode: yaml
+      title: Dashboard
+      # icon: mdi:view-dashboard
+      show_in_sidebar: true
+      # require_admin: true
+      filename: ui_lovelace_minimalist/dashboard/ui-lovelace.yaml
+    lovelace-minimalist-mobile:
+      mode: yaml
+      title: Dashboard Mobile
+      # icon: mdi:view-dashboard
+      show_in_sidebar: true
+      # require_admin: true
+      filename: ui_lovelace_minimalist/dashboard/ui-lovelace-mobile.yaml
+
   # Include external resources only add when mode is yaml
+  #resources: !include /config/resources.yaml
   resources:
+    # JS
+    # https://github.com/elax46/custom-brand-icons
+    - url: /local/community/custom-brand-icons/custom-brand-icons.js
+      type: js
+    - url: /local/javascript/custom_card_ing_header.js
+      type: js
     # Plugins
+    # HACS Frontend repo "lovelace-layout-card" is already installed, Remove it or disable include custom cards
     - url: /hacsfiles/lovelace-layout-card/layout-card.js
       type: module
     - url: /hacsfiles/lovelace-hui-element/hui-element.js
@@ -212,7 +260,7 @@ lovelace:
       type: module
     - url: /hacsfiles/lovelace-card-tools/card-tools.js
       type: module
-    - url: /hacsfiles/lovelace-card-mod/card-mod.js?v1
+    - url: /hacsfiles/lovelace-card-mod/card-mod.js
       type: module
     - url: /hacsfiles/bar-card/bar-card.js
       type: module
@@ -232,6 +280,7 @@ lovelace:
     #  type: module
     - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
       type: module
+    # HACS Frontend repo "my-cards" is already installed, Remove it or disable include custom cards
     - url: /hacsfiles/my-cards/my-cards.js
       type: module
     - url: /hacsfiles/swipe-card/swipe-card.js
@@ -240,30 +289,28 @@ lovelace:
       type: module
     - url: /hacsfiles/simple-thermostat/simple-thermostat.js
       type: module
+    # HACS Frontend repo "simple-weather-card" is already installed, Remove it or disable include custom cards
+    - url: /hacsfiles/simple-weather-card/simple-weather-card-bundle.js
+      type: module
     - url: /hacsfiles/weather-card/weather-card.js
       type: module
+    # HACS Frontend repo "weather-radar-card" is already installed, Remove it or disable include custom cards
+    - url: /hacsfiles/weather-radar-card/weather-radar-card.js
+      type: module
+    # HACS Frontend repo "lovelace-state-switch" is already installed, Remove it or disable include custom cards
     - url: /hacsfiles/lovelace-state-switch/state-switch.js
       type: module
     - url: /hacsfiles/vacuum-card/vacuum-card.js
       type: module
+    - url: /hacsfiles/spotify-card/spotify-card.js
+      type: module
     # Styles
-    - url: "https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+    - url: "https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,300,300italic,400italic,500,500italic,700,700italic"
       type: css
-    - url: "https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
-      type: css
-  dashboards:
-    lovelace-generated:
-      mode: yaml
-      filename: notexist.yaml
-      title: Generated
-      icon: mdi:rotate-right
-      show_in_sidebar: true
-      require_admin: true
-
-# https://github.com/thomasloven/hass-browser_mod
-#browser_mod:
-#  disable:
-#    - all
+    #- url: "https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+    #  type: css
+    #- url: "https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+    #  type: css
 
 input_boolean: !include_dir_merge_named input_boolean
 input_select: !include_dir_merge_named input_select
@@ -278,3 +325,5 @@ script: !include_dir_merge_named scripts
 switch: !include_dir_merge_list switch
 sensor: !include_dir_merge_list sensor
 light: !include lights.yaml
+lock: !include_dir_merge_list lock
+binary_sensor: !include_dir_merge_list binary_sensor

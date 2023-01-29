@@ -1,0 +1,16 @@
+group:
+
+  # All Media-Player Entities
+  all_media_player_entities:
+    name: All Media-Player Entities
+    entities:
+      - media_player.denon_avr_x4200w
+      - media_player.vu_uno4k_se
+      - media_player.ax_hd60_office
+      - media_player.samsung_au8079_55_tv
+      - media_player.echo_show_15_mainhallway
+      - media_player.echo_dot_kitchen
+      - media_player.echo_dot_bathroom_1
+      - media_player.echo_dot_bedroom
+      - media_player.echo_dot_childrenroom_1
+      - media_player.kindle_fire_hd_10_plus_ing

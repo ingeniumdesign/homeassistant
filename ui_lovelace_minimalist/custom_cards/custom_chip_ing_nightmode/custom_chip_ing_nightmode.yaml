@@ -1,0 +1,24 @@
+# DONT WORK - input_boolean.nightmode
+---
+chip_ing_nightmode:
+  template: chips
+  label: |
+    [[[
+      var icon = '';
+      if (states['input_boolean.nightmode'].state == 'on') {
+        var icon = '🌞';
+      } else if(states['input_boolean.nightmode'].state == 'off') {
+        var icon = '⚫';
+      }
+      return icon;
+    ]]]
+
+
+##- type: horizontal-stack
+##  cards:
+##    - type: custom:button-card
+##      template: edge
+##    - type: custom:button-card
+##      template: chip_ing_nightmode
+##    - type: custom:button-card
+##      template: edge

@@ -1,0 +1,193 @@
+---
+card_ing_internet:
+  show_name: false
+  show_label: false
+  show_icon: false
+  variables:
+    color: blue
+    router_name: router_name
+    router_model: router_model
+  styles:
+    grid:
+      - grid-template-areas: '"item1" "item2" "item3"'
+      - grid-template-columns: 1fr
+      - grid-template-rows: min-content min-content
+      - row-gap: 12px
+    card:
+      - border-radius: var(--border-radius)
+      - box-shadow: var(--box-shadow)
+      - padding: 12px
+  custom_fields:
+    item1:
+      card:
+        type: custom:button-card
+        show_last_changed: false
+        show_label: true
+        show_name: true
+        show_icon: true
+        name: '[[[ return variables.router_name ]]]'
+        label: '[[[ return variables.router_model ]]]'
+        icon: mdi:wifi
+        styles:
+          icon:
+            - color: '[[[ return `rgba(var(--color-${variables.color}), 1)`; ]]]'
+            - width: 32px
+          label:
+            - justify-self: center
+            - align-self: start
+            - font-weight: bolder
+            - font-size: 12px
+            - filter: opacity(40%)
+          name:
+            - margin-top: 10px
+            - justify-self: center
+            - font-weight: bold
+            - font-size: 14px
+          img_cell:
+            - background-color: '[[[ return `rgba(var(--color-${variables.color}), 0.2)`; ]]]'
+            - border-radius: 50%
+            - place-self: center
+            - width: 62px
+            - height: 62px
+          grid:
+            - grid-template-areas: '"i" "n" "l"'
+          card:
+            - box-shadow: none
+        size: 20px
+    item2:
+      card:
+        type: custom:button-card
+        color: var(--google-grey)
+        show_icon: false
+        show_label: false
+        show_name: true
+        styles:
+          name:
+            - align-self: start
+            - justify-self: center
+            - font-weight: bold
+            - font-size: 14px
+          grid:
+            - grid-template-areas: '"n n" "item1 item2"'
+            - grid-template-columns: auto
+            - grid-template-rows: min-content min-content min-content
+          card:
+            - box-shadow: none
+            - border-radius: 20px
+            - border: 2px solid var(--google-grey)
+            - height: 90px
+        name: Monthly Network Traffic
+        custom_fields:
+          item1:
+            card:
+              type: custom:button-card
+              template: custom_card_generic_no_icon_bg
+              entity: '[[[ return variables.incoming_traffic_entity; ]]]'
+              name: Incoming
+              icon: mdi:arrow-down
+          item2:
+            card:
+              type: custom:button-card
+              template: custom_card_generic_no_icon_bg
+              entity: '[[[ return variables.outgoing_traffic_entity; ]]]'
+              name: Outgoing
+              icon: mdi:arrow-up
+    item3:
+      card:
+        type: custom:button-card
+        template: list_2_items
+        custom_fields:
+          item1:
+            card:
+              type: custom:button-card
+              template: custom_card_big_number
+              entity: '[[[ return variables.download_speed_entity; ]]]'
+          item2:
+            card:
+              type: custom:button-card
+              template: custom_card_big_number
+              entity: '[[[ return variables.upload_speed_entity; ]]]'
+
+custom_card_big_number:
+  color: var(--google-blue)
+  show_label: true
+  show_icon: false
+  label: |
+    [[[ 
+      var unit = entity.attributes.unit_of_measurement != null ? ' ' + entity.attributes.unit_of_measurement : ''
+      return entity.state + unit;
+    ]]]
+  styles:
+    icon:
+      - width: 30px
+      - height: 30px
+    label:
+      - align-self: center
+      - justify-self: center
+      - font-weight: bold
+      - font-size: 23px
+    name:
+      - align-self: center
+      - justify-self: center
+      - font-weight: bold
+      - font-size: 12px
+      - filter: opacity(40%)
+    grid:
+      - grid-template-areas: '"l" "n"'
+      - grid-template-columns: auto
+      - grid-template-rows: min-content
+    card:
+      - box-shadow: none
+      - padding-top: 15px
+      - padding-botton: 10px
+      - background-color: rgba(var(--color-theme),0.05)
+      - border-radius: 14px
+      - place-self: center
+      - height: 80px
+
+custom_card_generic_no_icon_bg:
+  show_icon: true
+  show_name: true
+  show_label: true
+  template:
+    - ulm_language_variables
+  label: |
+    [[[
+      var unit = entity.attributes.unit_of_measurement != null ? " " + entity.attributes.unit_of_measurement : ""
+      if (entity.state == "on") {
+        return variables.ulm_on;
+      } else if (entity.state == "off") {
+        return variables.ulm_off;
+      } else if (entity.state == "unavailable") {
+        return variables.ulm_unavailable;
+      } else if (entity.state == "idle") {
+        return variables.ulm_idle;
+      } else if (entity.state == "open") {
+        return variables.ulm_open;
+      } else if (entity.state == "closed") {
+        return variables.ulm_closed;
+      } else {
+        return entity.state + unit;
+      }
+    ]]]
+  styles:
+    icon:
+      - color: rgba(var(--color-theme),0.9)
+      - width: 30px
+    label:
+      - font-weight: bold
+      - justify-self: start
+      - font-size: 14px
+      - filter: opacity(100%)
+    name:
+      - font-weight: bold
+      - justify-self: start
+      - font-size: 12px
+      - filter: opacity(40%)
+    grid:
+      - grid-template-areas: '"i l" "i n"'
+      - grid-template-columns: auto
+      - grid-template-rows: auto
+    card:
+      - box-shadow: none
+      - margin-bottom: 10px

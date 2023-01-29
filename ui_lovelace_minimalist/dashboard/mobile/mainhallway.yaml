@@ -1,0 +1,149 @@
+title: "Flur"
+path: "mainhallway"
+icon: "mdi:view-carousel-outline"
+id: "mainhallway"
+theme: "minimalist-mobile-tapbar"
+cards:
+  #- type: custom:layout-card
+  #  layout_type: grid
+  #  layout:
+  #    grid-template-columns: 1fr 1fr 1fr
+  #    grid-template-rows: auto
+  #    max_cols: 3
+  #  #layout:
+  #  #  grid-template-columns: 1fr 1fr 1fr
+  #  #  margin: 0 -4px 0 -4px
+  #  #  padding: 0
+  #  #  card_margin: 0
+  #  cards:
+  #    - type: "custom:button-card"
+  #      template: chip_back
+  #      variables:
+  #        ulm_chip_back_path: dashboard
+  #      #styles:
+  #      #  card:
+  #      #    - align-self: "end"
+  #    - type: "custom:button-card"
+  #      template: card_title
+  #      name: "Flur"
+  #      styles:
+  #        card:
+  #          #- width: "auto"
+  #          - margin-left: 0px
+  #          - margin-top: 0
+  #    # Weather Chip
+  #    - type: "custom:button-card"
+  #      template: chip_temperature
+  #      variables:
+  #        ulm_chip_temperature_inside: sensor.mainhallway_hmipbwth_thermostat_temperature
+  #        ulm_chip_temperature_outside: sensor.dwd_weather_temperature
+  #        ulm_chip_temperature_weather: sensor.dwd_weather_temperature
+  #      #styles:
+  #      #  card:
+  #      #    - align-self: "end"
+
+  - type: "custom:button-card"
+    template: "card_ing_header"
+    variables:
+      header_title: "Flur"
+      header_navigate_path: "dashboard"
+      header_back_button: true
+      header_weather: true
+      header_weather_entity_id: sensor.mainhallway_hmipbwth_thermostat_temperature
+
+
+  - type: vertical-stack
+    cards:
+
+      - type: horizontal-stack
+        cards:
+          - type: 'custom:button-card'
+            template: card_graph
+            entity: sensor.mainhallway_hmipbwth_thermostat_temperature
+            variables:
+              ulm_card_graph_name: "Temperature"
+              ulm_card_graph_color: "var(--google-blue)"
+              ulm_card_graph_entity: sensor.mainhallway_hmipbwth_thermostat_temperature
+              #ulm_card_graph_color2: "var(--google-blue)"
+              #ulm_card_graph_entity2: sensor.dwd_weather_temperature
+              ulm_card_graph_type: fill
+              ulm_card_graph_hours: 48
+              ulm_card_graph_points: 0.5
+              ulm_card_graph_group_by: interval
+          - type: 'custom:button-card'
+            template: card_graph
+            entity: sensor.mainhallway_hmipbwth_thermostat_humidity
+            variables:
+              ulm_card_graph_name: "Luftfeuchtigkeit"
+              ulm_card_graph_color: "var(--google-green)"
+              ulm_card_graph_entity: sensor.mainhallway_hmipbwth_thermostat_humidity
+              ulm_card_graph_type: fill
+              ulm_card_graph_hours: 48
+              ulm_card_graph_points: 0.5
+              ulm_card_graph_group_by: interval
+      ##- type: horizontal-stack
+      ##  cards:
+      ##    - type: "custom:button-card"
+      ##      entity: lock.door_lock
+      ##      template: "custom_card_eraycetinay_lock"
+      ##      name: "Haustür"
+      ##      variables:
+      ##        ulm_custom_card_eraycetinay_lock_tap_control: true
+      ##        ulm_custom_card_eraycetinay_lock_battery_level: sensor.handy_sebastian_akkufullstand
+      ##        ulm_custom_card_eraycetinay_lock_door_open: binary_sensor.frontdoortest
+      ##      triggers_update:
+      ##        - "sensor.handy_sebastian_akkufullstand"
+      ##        - "input_select.sensor_frontdoortest"
+
+      - type: "custom:button-card"
+        template: card_title
+        name: "Geräte"
+        label: '[[[ return states["sensor.number_of_devices_on"].state + " eingeschaltet" ]]]'
+        styles:
+          card:
+            - margin-left: 10px
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_thermostat
+            entity: climate.mainhallway_hmipbwth_thermostat
+            variables:
+              ulm_card_thermostat_enable_horizontal: false
+              ulm_card_thermostat_enable_collapse: true
+              ulm_card_thermostat_enable_controls: true
+              ulm_card_thermostat_enable_hvac_modes: false
+              ulm_card_thermostat_enable_popup: false
+              ulm_card_thermostat_enable_background_color: false
+              ulm_card_thermostat_enable_display_temperature: true
+              ulm_card_thermostat_preset_mode: true
+
+      # Separator card
+      - type: vertical-stack
+        cards:
+          - type: "custom:button-card"
+            template: "card_ing_separator"
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_light
+            entity: light.mainhallway_led_shelly_rgbw2_00bc99
+            variables:
+              ulm_card_light_enable_slider: true
+              ulm_card_light_enable_color: false
+              ulm_card_light_force_background_color: false
+              ulm_card_light_enable_popup: true
+              ulm_card_light_enable_popup_tap: true
+
+          - type: "custom:button-card"
+            template: card_light
+            entity: light.guest_restroom_led_shelly_rgbw2_00c178
+            variables:
+              ulm_card_light_enable_slider: true
+              ulm_card_light_enable_color: false
+              ulm_card_light_force_background_color: false
+              ulm_card_light_enable_horizontal: false
+              ulm_card_light_enable_popup: true
+              ulm_card_light_enable_popup_tap: true
+

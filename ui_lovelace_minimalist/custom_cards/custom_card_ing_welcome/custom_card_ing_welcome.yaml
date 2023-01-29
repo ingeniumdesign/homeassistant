@@ -1,0 +1,315 @@
+---
+card_ing_welcome:
+  variables:
+    ulm_weather: "[[[ return variables.ulm_weather]]]"
+    ulm_language: "[[[ return hass['language']; ]]]"
+    entity_1:
+      entity_id: ""
+      color: >
+        [[[
+          var colors = ['yellow', 'blue', 'red', 'purple','green', 'pink', 'grey'];
+          var color = colors[Math.floor(Math.random() * colors.length)];
+          return color;
+        ]]]
+    entity_2:
+      entity_id: ""
+      color: >
+        [[[
+          var colors = ['yellow', 'blue', 'red', 'purple','green', 'pink'];
+          var color = colors[Math.floor(Math.random() * colors.length)];
+          return color;
+        ]]]
+    entity_3:
+      entity_id: ""
+      color: >
+        [[[
+          var colors = ['yellow', 'blue', 'red', 'purple','green', 'pink'];
+          var color = colors[Math.floor(Math.random() * colors.length)];
+          return color;
+        ]]]
+    entity_4:
+      entity_id: ""
+      color: >
+        [[[
+          var colors = ['yellow', 'blue', 'red', 'purple','green', 'pink'];
+          var color = colors[Math.floor(Math.random() * colors.length)];
+          return color;
+        ]]]
+    entity_5:
+      entity_id: ""
+      color: >
+        [[[
+          var colors = ['yellow', 'blue', 'red', 'purple','green', 'pink'];
+          var color = colors[Math.floor(Math.random() * colors.length)];
+          return color;
+        ]]]
+    entity_6:
+      entity_id: ""
+      color: >
+        [[[
+          var colors = ['yellow', 'blue', 'red', 'purple','green', 'pink'];
+          var color = colors[Math.floor(Math.random() * colors.length)];
+          return color;
+        ]]]
+    entity_7:
+      entity_id: ""
+      color: >
+        [[[
+          var colors = ['yellow', 'blue', 'red', 'purple','green', 'pink'];
+          var color = colors[Math.floor(Math.random() * colors.length)];
+          return color;
+        ]]]
+  template:
+    - "ulm_language_variables"
+    - "ulm_translation_engine"
+  show_icon: false
+  show_name: false
+  show_label: true
+  styles:
+    grid:
+      - grid-template-areas: >
+          [[[
+            if(variables.ulm_card_ing_welcome_collapse && states[variables.ulm_card_ing_welcome_collapse].state == 'on'){
+              return "\'item1\' \'item2\' ";
+            } else {
+              return "\'item1\' \'item2\' \'item3\'";
+            }
+          ]]]
+      - grid-template-columns: "1fr"
+      - grid-template-rows: "min-content min-content"
+      - row-gap: "0px"
+    card:
+      - border-radius: "var(--border-radius)"
+      - box-shadow: "var(--box-shadow)"
+      - padding: "10px"
+    custom_fields:
+      item3:
+        - display: >
+            [[[
+              if(variables.ulm_card_ing_welcome_collapse && states[variables.ulm_card_ing_welcome_collapse].state == 'on'){
+                return "none";
+              } else {
+                return "block";
+              }
+            ]]]
+  custom_fields:
+    item1:
+      card:
+        type: "custom:button-card"
+        # Template bottom
+        template: "card_topbar_ing_welcome"
+        variables:
+          ulm_card_ing_welcome_collapse: "[[[ return variables.ulm_card_ing_welcome_collapse ]]]"
+          ulm_weather: "[[[ return variables.ulm_weather]]]"
+          ulm_language: "[[[ return variables.ulm_language ]]]"
+        styles:
+          card:
+            - border-radius: "none"
+            - box-shadow: "none"
+            - padding: "4px"
+    item2:
+      card:
+        type: "custom:button-card"
+        show_icon: false
+        show_label: false
+        show_name: true
+        show_entity_picture: false
+        tap_action:
+          action: none
+        name: |
+          [[[
+            var today = new Date();
+            var time = today.getHours()
+            let welcome = '';
+            if (time >= '18'){
+              welcome = variables.ulm_evening;
+            } else if (time >= '12'){
+              welcome = variables.ulm_afternoon;
+            } else if (time >= '5'){
+              welcome = variables.ulm_morning;
+            } else {
+              welcome = variables.ulm_hello;
+            }
+          
+            let username = '';
+            if (hass.user.name == 'Sebastian Schmal'){      
+              username = 'Sebastian';
+            } else if (hass.user.name == 'Sebastian Schmal Admin'){
+              username = 'Sebastian Admin';
+            } else if (hass.user.name == 'Julia Schmal'){
+              username = 'Julia';
+            } else {
+              username = '';
+            }
+          
+            return welcome + ', ' + username + '!';
+          ]]]
+        styles:
+          name:
+            - align-self: "start"
+            - justify-self: "start"
+            - font-weight: "bold"
+            - font-size: "24px"
+            - margin-left: "4px"
+          grid:
+            - grid-template-areas: "'i n' 'i l'"
+            - grid-template-columns: "min-content auto"
+            - grid-template-rows: "min-content min-content"
+            - text-align: "start"
+          card:
+            - box-shadow: "none"
+            - padding-bottom: "8px"
+    item3:
+      card:
+        type: "custom:button-card"
+        # Template here: https://ui-lovelace-minimalist.github.io/UI/usage/cards/card_scenes/
+        # custom_components/ui_lovelace_minimalist/__ui_minimalist__/ulm_templates/card_templates/cards/card_scenes_welcome.yaml
+        template: card_scenes_welcome
+        # Overright template: card_scenes_pill_welcome
+        custom_fields:
+          item1:
+            card:
+              custom_fields:
+                item2:
+                  card:
+                    styles:
+                      name:
+                        - font-weight: "500"
+                        - font-size: "12px"
+          item2:
+            card:
+              custom_fields:
+                item2:
+                  card:
+                    styles:
+                      name:
+                        - font-weight: "500"
+                        - font-size: "12px"
+          item3:
+            card:
+              custom_fields:
+                item2:
+                  card:
+                    styles:
+                      name:
+                        - font-weight: "500"
+                        - font-size: "12px"
+          item4:
+            card:
+              custom_fields:
+                item2:
+                  card:
+                    styles:
+                      name:
+                        - font-weight: "500"
+                        - font-size: "12px"
+          item5:
+            card:
+              custom_fields:
+                item2:
+                  card:
+                    styles:
+                      name:
+                        - font-weight: "500"
+                        - font-size: "12px"
+        styles:
+          name:
+            - font-size: "12px"
+          card:
+            - border-radius: "none"
+            - box-shadow: "none"
+            - padding: "4px"
+        variables:
+          entity_1: "[[[ return variables.entity_1]]]"
+          entity_2: "[[[ return variables.entity_2]]]"
+          entity_3: "[[[ return variables.entity_3]]]"
+          entity_4: "[[[ return variables.entity_4]]]"
+          entity_5: "[[[ return variables.entity_5]]]"
+          entity_6: "[[[ return variables.entity_6]]]"
+          entity_7: "[[[ return variables.entity_7]]]"
+
+# template - card_topbar_ing_welcome
+card_topbar_ing_welcome:
+  show_icon: false
+  show_name: false
+  show_label: false
+  styles:
+    grid:
+      - grid-template-areas: "item1 item2 item3"
+      - justify-content: "space-between"
+      - display: "flex"
+    card:
+      - border-radius: "none"
+      - box-shadow: "none"
+      - padding: "12px"
+      - background: "none"
+  custom_fields:
+    item1:
+      card:
+        type: "custom:button-card"
+        template: "chips"
+        entity: "[[[ return variables.ulm_card_ing_welcome_collapse ]]]"
+        icon: "mdi:chevron-down"
+        show_icon: true
+        styles:
+          grid:
+            - grid-template-areas: "'i'"
+          card:
+            - box-shadow: >
+                [[[
+                  if (hass.themes.darkMode){
+                    return "0px 2px 4px 0px rgba(0,0,0,0.80)";
+                  } else {
+                    return "var(--box-shadow)";
+                  }
+                ]]]
+        state:
+          - value: "on"
+            icon: "mdi:chevron-up"
+            styles:
+              icon:
+                - color: "rgb(var(--color-theme))"
+        tap_action:
+          action: "call-service"
+          service: "input_boolean.toggle"
+          service_data:
+            entity_id: "[[[ return variables.ulm_card_ing_welcome_collapse ]]]"
+    item2:
+      card:
+        type: "custom:button-card"
+        template: "chip_ing_weather_date_temp"
+        entity: "[[[ return variables.ulm_weather]]]"
+        variables:
+          ulm_weather: "[[[ return variables.ulm_weather ]]]"
+          ulm_language: "[[[ return variables.ulm_language ]]]"
+        styles:
+          card:
+            - width: "100px"
+            - box-shadow: >
+                [[[
+                  if (hass.themes.darkMode){
+                    return "0px 2px 4px 0px rgba(0,0,0,0.80)";
+                  } else {
+                    return "var(--box-shadow)";
+                  }
+                ]]]
+    item3:
+      card:
+        type: "custom:button-card"
+        tap_action:
+          action: "navigate"
+          navigation_path: "/profile"
+        template: "chip_mdi_icon_only"
+        variables:
+          ulm_chip_mdi_icon_only_icon: "mdi:cog"
+        styles:
+          card:
+            - align-self: "end"
+            - box-shadow: >
+                [[[
+                  if (hass.themes.darkMode){
+                    return "0px 2px 4px 0px rgba(0,0,0,0.80)";
+                  } else {
+                    return "var(--box-shadow)";
+                  }
+                ]]]

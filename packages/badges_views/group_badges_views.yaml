@@ -1,0 +1,108 @@
+group:
+
+  # All Device 'on' Entities
+  all_device_on_entities:
+    name: All Device ON Entities
+    entities:
+      - media_player.samsung_q90_series_75
+      - media_player.samsung_au8079_55_tv
+      - media_player.denon_avr_x4200w
+      - light.guest_restroom_led_shelly_rgbw2_00c178
+      - switch.garden_back_ldv_wifi_plug_out_1
+      - switch.computer_nuc
+      - switch.computer_sebastian_pc
+      - switch.computer_dkd_laptop
+
+
+############################################################################
+#                                                                          #
+#   All Tablets Is Charging Entities                                       #
+#                                                                          #
+############################################################################
+
+  # all_tablets_is_charging_entities:
+  #   name: All Tablets Is Charging Entities
+  #   entities:
+  #     - binary_sensor.ronen_tab_is_charging
+  #     - binary_sensor.kfir_tab_is_charging
+  #     - binary_sensor.ipadminidima_is_charging
+
+
+############################################################################
+#                                                                          #
+#   All Tablets Batteries                                                  #
+#                                                                          #
+############################################################################
+
+  # all_tablets_battery_entities:
+  #   name: All Tablets Battery Entities
+  #   entities:
+  #     - sensor.ronen_tab_battery_level
+  #     - sensor.kfir_tab_battery_level
+  #     - sensor.ipadminidima_battery_level
+
+
+############################################################################
+#                                                                          #
+#   All Batteries Sensor Entities                                          #
+#                                                                          #
+############################################################################
+
+  all_batteries_sensor_entities:
+    name: All Batteries Sensor Entities
+    entities:
+      #- sensor.xiaomi_work_room_temp_battery
+      #- sensor.xiaomi_living_room_motion_battery
+      #- sensor.xiaomi_kitchen_motion_battery
+      #- sensor.xiaomi_button_bedside_dima_battery
+      #- sensor.xiaomi_button_bedside_galit_battery
+      #- sensor.xiaomi_button_makeup_battery
+      #- sensor.xiaomi_button_kitchen_strip_right_battery
+      #- sensor.xiaomi_button_kitchen_strip_left_battery
+
+
+
+############################################################################
+#                                                                          #
+#   All Ink Sensor Entities                                                #
+#                                                                          #
+############################################################################
+
+  all_ink_sensor_entities:
+    name: All Ink Sensor Entities
+    entities:
+      #- sensor.mfc_j650dw_black_ink_remaining
+      #- sensor.mfc_j650dw_cyan_ink_remaining
+      #- sensor.mfc_j650dw_magenta_ink_remaining
+      #- sensor.mfc_j650dw_yellow_ink_remaining
+
+
+  # All Computers 'on' Entities
+  all_computer_on_entities:
+    name: All Computers ON Entities
+    entities:
+      - switch.computer_nuc
+      - switch.computer_sebastian_pc
+      - switch.computer_dkd_laptop
+
+  # All Device in Wlan Entities
+  all_device_wlan_entities:
+    name: All Device in Wlan Entities
+    #filter:
+    #  include:
+    #    - entity_id: "switch.*_internet_access"
+
+############################################################################
+#                                                                          #
+#   All Notification Entities                                              #
+#                                                                          #
+############################################################################
+
+  all_notification_entities:
+    name: All Notification Versions
+    entities:
+      #- binary_sensor.ha_update_available
+      #- sensor.number_of_tasmota_versions_old
+      #- sensor.hacs
+      #- binary_sensor.zeg_update_available
+      #- binary_sensor.blaze_update_available

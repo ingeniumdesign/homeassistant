@@ -16,7 +16,7 @@ browser_mod:
             state_color: true
             show_header_toggle: false
             entities:
-              ##- entity: media_player.samsung_tv_q9075
+              ##- entity: media_player.samsung_q90_series_75
               ##  tap_action:
               ##    action: none
               - entity: media_player.denon_avr_x4200w

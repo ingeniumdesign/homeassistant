@@ -1,0 +1,81 @@
+- id: ing_fritzbox_rollover
+  alias: ING-Fritzbox Rollover
+  description: ''
+  trigger:
+    - entity_id: sensor.ing_fritzbox_sent_gb_day
+      platform: state
+  condition:
+    - condition: template
+      value_template: '{{ not is_state("input_number.ing_fritzbox_sent_day", 0) }}'
+    - condition: template
+      value_template: '{{ (trigger.from_state.state | float) < (trigger.to_state.state | float) }}'
+  action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.ing_fritzbox_sent_day
+        value: '{{ states("input_number.ing_fritzbox_sent_day") | int + 1}}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.ing_fritzbox_sent_month
+        value: '{{ states("input_number.ing_fritzbox_sent_month") | int + 1 }}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.ing_fritzbox_sent_year
+        value: '{{ states("input_number.ing_fritzbox_sent_year") | int + 1 }}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.ing_fritzbox_received_day
+        value: '{{ states("input_number.ing_fritzbox_received_day") | int + 1}}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.ing_fritzbox_received_month
+        value: '{{ states("input_number.ing_fritzbox_received_month") | int + 1 }}'
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.ing_fritzbox_received_year
+        value: '{{ states("input_number.ing_fritzbox_received_year") | int + 1 }}'
+
+
+# Clear ING Fritzbox Data
+- id: ing_fritzbox_daily_gb_clear
+  alias: ING-Fritzbox Daily GB Clear
+  description: ''
+  trigger:
+    - at: 00:00:00
+      platform: time
+  condition: []
+  action:
+    - entity_id: input_number.ing_fritzbox_sent_day
+      service: input_number.set_value
+    - entity_id: input_number.ing_fritzbox_received_day
+      service: input_number.set_value
+
+- id: ing_fritzbox_monthly_gb_clear
+  alias: ING-Fritzbox Monthly GB Clear
+  description: ''
+  trigger:
+    - at: 00:00:00
+      platform: time
+  condition:
+    - condition: template
+      value_template: '{{ now().day == 1 }}'
+  action:
+    - entity_id: input_number.ing_fritzbox_sent_month
+      service: input_number.set_value
+    - entity_id: input_number.ing_fritzbox_received_month
+      service: input_number.set_value
+
+- id: ing_fritzbox_yearly_gb_clear
+  alias: ING-Fritzbox Yearly GB Reset
+  description: ''
+  trigger:
+    - at: 00:00:00
+      platform: time
+  condition:
+    - condition: template
+      value_template: '{{ (utcnow().month == 1) + (utcnow().day == 1) == 2 }}'
+  action:
+    - entity_id: input_number.ing_fritzbox_sent_year
+      service: input_number.set_value
+    - entity_id: input_number.ing_fritzbox_received_year
+      service: input_number.set_value

@@ -14,7 +14,7 @@ cards:
         show_name: true
         style: !include ../includes/style_entities.yaml
         entities:
-          - entity: light.light1test
+          - entity: light_bulb_example_01_0xb4e3f9fffe524699
             name: Licht
           - sensor.buro_dect301_1_current_temperature
           - entity: binary_sensor.office_window_xiaomi_1_openclose
@@ -69,7 +69,7 @@ cards:
   - type: vertical-stack
     cards:
       - type: light
-        entity: light.light1test
+        entity: light_bulb_example_01_0xb4e3f9fffe524699
         name: Licht
 
       ##- !include

@@ -1,0 +1,92 @@
+title: "Ungebraucht"
+path: "unused"
+icon: "mdi:folder-star-multiple"
+id: "unused"
+theme: "minimalist-mobile-tapbar"
+cards:
+
+  - type: "custom:button-card"
+    template: "card_ing_header"
+    variables:
+      header_title: "Ungebraucht"
+      header_navigate_path: "dashboard"
+      header_back_button: true
+      header_weather: true
+      header_weather_entity_id:
+
+
+  - type: vertical-stack
+    cards:
+
+      - type: custom:auto-entities
+        show_empty: false
+        filter:
+          template: "{{ state_attr('sensor.unavailable_entities','entity_id') }}"
+        sort:
+          method: state
+        card:
+          type: entities
+          title: "Unavailable Entities"
+          show_header_toggle: false
+
+      - type: "custom:spotify-card"
+        #always_play_random_song: true
+        hide_currently_playing: true
+        hide_playback_controls: true
+        hide_top_header: true
+        hide_warning: true
+        hide_chromecast_devices: true
+        display_style: Grid
+        grid_covers_per_row: 5
+
+        account: default
+        #height: <optional pixels height for the playlist element. If content is larger scrolling will be enabled>
+        limit: 5
+        #device: <optional name of a device to pre-select>
+        #playlist_type: <optional featured|discover-weekly> Change type of playlists shown. Default are your normal playlists.
+        always_play_random_song: false
+        #country_code: <optional country code to show featured playlist relevent to a particular country. https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 >
+        #hide_warning: <optional true> Hide warnings if they are displayed.
+        name: Test
+        #display_style: <optional Grid> Change default display style.
+        #grid_covers_per_row: <optional number> Number of covers per row (default 3) in Grid-view.
+        # media_player.spotify_basti4k
+        spotify_entity: media_player.spotify_basti4k
+        #default_device: <optional> Name of your spotify connect or chromecast device, e.g. "Kitchen"
+        #filter_devices: <optional Array> Hides devices which matches any array entry. The entries have to be regular expressions and are matched against the full device-name. The following are examples
+        #  - .*room <hides all devices ending with room>
+        #  - bath.*,kids.* <hides all devices which start with bath or kids>
+        #known_connect_devices: <optional> List of known Spotify Connect devices, see [Known Spotify Connect devices](Known-Spotify-Connect-devices) section
+        #  - id: The Spotify Connect device id
+        #  name: The name of the device
+        #  entity_id: <optional> The Home Assistant media player entity id of this device (e.g. from Sonos integration)
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_media_player
+            entity: media_player.spotify_basti4k
+            variables:
+              ulm_card_media_player_name: Spotify
+
+
+      - type: horizontal-stack
+        cards:
+
+          - type: "custom:button-card"
+            template: card_generic
+            entity: switch.pi_hole
+
+          - type: "custom:button-card"
+            template: card_generic
+            entity: sensor.pi_hole_domains_blocked
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_generic
+            entity: device_tracker.pc_192_168_178_67
+
+          - type: "custom:button-card"
+            template: card_generic
+            entity: switch.pc_192_168_178_67_internet_access

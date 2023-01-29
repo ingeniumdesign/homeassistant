@@ -1,0 +1,809 @@
+title: "Dashboard"
+path: "dashboard"
+icon: "mdi:home-assistant"
+id: "dashboard"
+theme: "minimalist-mobile-tapbar"
+#type: "custom:grid-layout"
+#layout_type: "grid"
+cards:
+
+  # Welcome card
+  - type: "custom:button-card"
+    template: "card_ing_welcome"
+    triggers_update: "input_boolean.welcome_toggle"
+    variables:
+      ulm_card_ing_welcome_collapse: "input_boolean.welcome_toggle"
+      ulm_weather: "weather.dwd_weather_idstein"
+      ulm_language: "de"
+      entity_1:
+        entity_id: "input_boolean.party_mode_toggle"
+        icon: "mdi:party-popper"
+        name: "Party"
+        color: "grey"
+      entity_2:
+        entity_id: "binary_sensor.cam_frontdoor_motion"
+        icon: "mdi:cctv"
+        name: "Tür"
+        color: "grey"
+        #variables:
+        #  ulm_card_ing_popup_camera_name: Tür Kamera
+        #  ulm_card_ing_popup_camera: camera.cam_frontdoor
+      entity_3:
+        entity_id: "input_boolean.party_mode_toggle"
+        icon: "mdi:shield"
+        name: Secure
+        color: "green"
+      entity_4:
+        entity_id: "input_boolean.party_mode_toggle"
+        icon: "mdi:nas"
+        name: Lab
+        color: "purple"
+      entity_5:
+        entity_id: "input_boolean.party_mode_toggle"
+        icon: "mdi:party-popper"
+        name: "Party Mode"
+        color: "red"
+
+        type: 'custom:button-card'
+        template: card_vertical_button
+        entity: input_boolean.party_mode_toggle
+        show_last_changed: false
+        variables:
+          ulm_card_vertical_button_state: "on"
+          #ulm_card_vertical_button_color: blue
+    styles:
+      card:
+        - padding: 10px 9px 0 9px
+        - border-top-left-radius: 0px
+        - border-top-right-radius: 0px
+        - overflow: hidden;
+        - left: -2px;
+    card_mod:
+      class: button-card-welcome
+      style: |
+        :host {
+          width: 101%;
+          max-width: none;
+          padding: 0 0 3px 0 !important;
+          margin: -4px 0 12px 0 !important;
+          overflow: hidden;
+          left: -3px;
+        }
+        ha-card {
+          padding-top: 10px;
+        }
+
+  - type: vertical-stack
+    cards:
+
+      # Chip cards with Slider
+      #- type: horizontal-stack
+      - type: custom:swipe-card
+        start_card: 1
+        parameters:
+          effect: slide
+          slidesPerView: 1
+          autoHeight: true
+          spaceBetween: 6
+          freeMode: true
+          loop: false
+        cards:
+          # Weather Chip
+          - type: "custom:button-card"
+            template: "chip_temperature"
+            variables:
+              ulm_chip_temperature_inside: sensor.livingroom_hmipbwth_thermostat_temperature
+              ulm_chip_temperature_outside: sensor.dwd_weather_temperature
+              ulm_chip_temperature_weather: sensor.dwd_weather_temperature
+            triggers_update: all
+            # Bugs: https://github.com/bramkragten/swipe-card/issues/51
+            card_mod:
+              style: |
+                ha-card {
+                  margin-bottom:2px;
+                }
+
+          # Presense Chip
+          - type: "custom:button-card"
+            template:
+              - "chip_icon_label_state"
+              #- "chip_navigate_only"
+              - "chip_blue"
+            icon: "mdi:home"
+            variables:
+              ulm_chip_icon_state_entity: sensor.number_of_persons_home
+              #ulm_chip_navigate_path: /lovelace/minimalist_presense
+            triggers_update: all
+            # Bugs: https://github.com/bramkragten/swipe-card/issues/51
+            card_mod:
+              style: |
+                ha-card {
+                  margin-bottom:2px;
+                }
+
+          # Lights Chip
+          - type: "custom:button-card"
+            template:
+              - "chip_icon_label_state"
+              - "chip_navigate_only"
+              - "chip_yellow"
+            icon: "mdi:lightbulb-on"
+            variables:
+              ulm_chip_icon_state_entity: sensor.number_of_lights_on
+              ulm_chip_navigate_path: light_overview
+            triggers_update: all
+
+          # Window / Door Chip
+          - type: "custom:button-card"
+            template:
+              - "chip_icon_label_state"
+              #- "chip_navigate_only"
+              - "chip_blue"
+            icon: "mdi:door-open"
+            variables:
+              ulm_chip_icon_state_entity: sensor.number_of_windows_open
+            triggers_update: all
+
+          # Computer Chip
+          - type: "custom:button-card"
+            template:
+              - "chip_icon_label_state"
+              #- "chip_navigate_only"
+              - "chip_blue"
+            icon: "mdi:desktop-classic"
+            variables:
+              ulm_chip_icon_state_entity: sensor.number_of_computers_on
+            triggers_update: all
+
+          # Device Chip
+          - type: "custom:button-card"
+            template:
+              - "chip_icon_label_state"
+              #- "chip_navigate_only"
+              - "chip_green"
+            icon: "mdi:devices"
+            variables:
+              ulm_chip_icon_state_entity: sensor.number_of_devices_on
+            triggers_update: all
+
+          # Media Chip
+          - type: "custom:button-card"
+            template:
+              - "chip_icon_label_state"
+              #- "chip_navigate_only"
+              - "chip_green"
+            icon: "mdi:cast-audio"
+            variables:
+              ulm_chip_icon_state_entity: sensor.number_of_media_player_on
+            triggers_update: all
+
+          # Motion Chip
+          - type: "custom:button-card"
+            template:
+              - "chip_icon_label_state"
+              #- "chip_navigate_only"
+              - "chip_blue"
+            icon: "mdi:motion-sensor"
+            variables:
+              ulm_chip_icon_state_entity: sensor.number_of_motion_on
+            triggers_update: all
+
+      # User cards
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_person
+            entity: person.sebastian_schmal
+            triggers_update: all
+            variables:
+              ulm_card_person_entity: person.sebastian_schmal
+              ulm_card_person_use_entity_picture: true
+              ulm_card_person_icon: mdi:face-man
+              ulm_card_person_battery: sensor.handy_sebastian_akkufullstand
+              #ulm_card_person_eta: sensor.waze_travel_time_person
+              #ulm_address: sensor.s10_mike_gegeocodeerde_locatie
+
+          - type: "custom:button-card"
+            template: card_person
+            entity: person.julia_schmal
+            triggers_update: all
+            variables:
+              ulm_card_person_entity: person.julia_schmal
+              ulm_card_person_use_entity_picture: true
+              ulm_card_person_icon: mdi:face-woman
+              ulm_card_person_battery: sensor.iphone_vr_smart_battery_level
+              #ulm_card_person_eta: sensor.waze_travel_time_person
+              #ulm_address: sensor.s10_mike_gegeocodeerde_locatie
+
+      # Button cards
+      - type: horizontal-stack
+        cards:
+          - type: 'custom:button-card'
+            template:
+              - card_vertical_button
+              - card_ing_popup_camera
+            entity: binary_sensor.cam_frontdoor_motion
+            icon: mdi:cctv
+            variables:
+              ulm_card_ing_popup_camera_name: Tür Kamera
+              ulm_card_ing_popup_camera: camera.cam_frontdoor
+            triggers_update: all
+            name: |-
+              [[[
+                if (entity.state === "on") {
+                  return "Bewegungen";
+                } else if (entity.state === "off") {
+                  return "Tür Kamera";
+                } else if (entity.state === "unavailable") {
+                  return "Tür Kamera";
+                } else {
+                  return entity.state;
+                }
+              ]]]
+
+          - type: 'custom:button-card'
+            template: card_vertical_button
+            entity: input_boolean.party_mode_toggle
+            name: "Party Mode"
+            icon: mdi:party-popper
+            show_last_changed: false
+            variables:
+              ulm_card_vertical_button_state: "on"
+              #ulm_card_vertical_button_color: blue
+
+          - type: 'custom:button-card'
+            template: card_vertical_button
+            entity: input_boolean.notify_dooropen
+            name: "Test"
+            icon: mdi:television-classic
+            show_last_changed: false
+            variables:
+              ulm_card_vertical_button_state: "on"
+              ulm_card_vertical_button_color: green
+
+          - type: 'custom:button-card'
+            template: card_vertical_button
+            entity: input_boolean.notify_dooropen
+            name: "Test"
+            icon: mdi:television-classic
+            show_last_changed: false
+            variables:
+              ulm_card_vertical_button_state: "on"
+              ulm_card_vertical_button_color: green
+
+      # Separator card
+      - type: vertical-stack
+        cards:
+          - type: "custom:button-card"
+            template: "card_ing_separator"
+
+      # Weather card
+      - type: horizontal-stack
+        cards:
+          - type: custom:weather-card
+            entity: weather.dwd_weather_idstein
+            current: true
+            details: false
+            forecast: true
+            style: |
+              ha-card {
+                box-shadow: var(--box-shadow);
+                border-radius: var(--border-radius);
+                padding: 1em;
+              }
+              .spacer {
+                padding-top: 0em !important;
+              }
+              .current {
+                padding-top: 0em !important;
+                padding-left: 1em !important;
+                margin-top: 0.5em !important;
+                margin-bottom: 0em !important;
+              }
+              .temp {
+                font-size: 3.2em !important;
+                position: sticky !important;
+              }
+              .tempc {
+                font-size: 1.5em !important;
+                position: sticky !important;
+              }
+              .forecast {
+                margin-top: -4.5em !important;
+                margin-bottom: -0.7em !important;
+              }
+              .forecast .day:first-child {
+                margin-left: 7.5em !important;
+              }
+              .day {
+                border-right: none !important;
+                line-height: 2 !important;
+              }
+              .precipitation {
+                display: none !important;
+              }
+              .icon {
+                width: 40px !important;
+                height: 40px !important;
+              }
+              .icon.bigger {
+                width: 4.5em !important;
+                height: 4.5em !important;
+                left: 2.5em !important;
+                top: 8em !important;
+              }
+
+      - type: "custom:button-card"
+        template: card_title
+        name: "Räume"
+        #label: '[[[ return "Davon sind " + states["sensor.number_of_devices_on"].state + " Geräte an." ]]]'
+        label: '[[[ return states["sensor.number_of_devices_on"].state + " Geräte an" ]]]'
+        styles:
+          card:
+            - margin-left: 10px
+
+      # Room cards - 2 Col
+      - type: horizontal-stack
+        cards:
+          # Livingroom
+          - type: "custom:button-card"
+            template:
+              - card_room
+              - grey_no_state
+              - grey_on
+              - grey_off
+            name: Wohnzimmer
+            label: >
+              [[[
+                return states['sensor.livingroom_hmipbwth_thermostat_temperature'].state + "°C • " + states['sensor.livingroom_hmipbwth_thermostat_humidity'].state + " %"
+              ]]]
+            entity: light_bulb_example_01_0xb4e3f9fffe524699
+            icon: phu:rooms-living
+            size: "50%"
+            tap_action:
+              action: navigate
+              navigation_path: "livingroom"
+            variables:
+              entity_1:
+                entity_id: climate.mainhallway_hmipbwth_thermostat
+                templates:
+                  - grey_no_state
+                  - grey_on
+                  - grey_off
+                tap_action:
+                  action: more-info
+              entity_2:
+                entity_id: cover.child_1_shutter_shelly_25_40f52000f9c9
+                templates:
+                  - grey_no_state
+                  - grey_on
+                  - grey_off
+                tap_action:
+                  action: more-info
+              entity_3:
+                entity_id: light.mainhallway_led_shelly_rgbw2_00bc99
+                templates:
+                  - grey_no_state
+                  - grey_on
+                  - grey_off
+                tap_action:
+                  action: more-info
+              entity_4:
+                entity_id: light.mainhallway_led_shelly_rgbw2_00bc99
+                templates:
+                  - grey_no_state
+                  - grey_on
+                  - grey_off
+                tap_action:
+                  action: more-info
+
+          # Kitchen
+          - type: "custom:button-card"
+            template:
+              - card_room
+              - grey_no_state
+              - grey_on
+              - grey_off
+            name: Küche
+            label: >
+              [[[
+                return states['sensor.livingroom_hmipbwth_thermostat_temperature'].state + "°C • " + states['sensor.livingroom_hmipbwth_thermostat_humidity'].state + " %"
+              ]]]
+            entity: light.mainhallway_led_shelly_rgbw2_00bc99
+            triggers_update: light.mainhallway_led_shelly_rgbw2_00bc99
+            icon: mdi:fridge
+            size: "50%"
+            tap_action:
+              action: navigate
+              navigation_path: "mainhallway"
+            variables:
+              ulm_custom_card_ing_room_light_entity: light.mainhallway_led_shelly_rgbw2_00bc99
+              ulm_card_thermostat_enable_popup: true
+              ulm_card_dynamic_color: true
+              entity_1:
+                entity_id: cover.child_1_shutter_shelly_25_40f52000f9c9
+                templates:
+                  - grey_no_state
+                  - grey_on
+                  - grey_off
+                tap_action:
+                  action: more-info
+              entity_2:
+                entity_id: media_player.echo_dot_kitchen
+                templates:
+                  - grey_no_state
+                  - grey_on
+                  - grey_off
+                tap_action:
+                  action: more-info
+
+      # Room cards - 3 Col
+      - type: horizontal-stack
+        cards:
+          # Main Bedroom
+          - type: "custom:button-card"
+            template:
+              - card_room
+              - grey_no_state
+              - grey_on
+              - grey_off
+            name: Schlafz.
+            label: >
+              [[[
+                return states['sensor.livingroom_hmipbwth_thermostat_temperature'].state + "°C • " + states['sensor.livingroom_hmipbwth_thermostat_humidity'].state + " %"
+              ]]]
+            entity: light_bulb_example_01_0xb4e3f9fffe524699
+            icon: phu:rooms-bedroom
+            styles:
+              name:
+                - margin-left: "7px"
+              label:
+                - margin-left: "7px"
+                #- font-weight: "normal"
+                - font-size: "12px"
+              img_cell:
+                - width: "60%"
+                - height: "60%"
+                - margin-top: "30%"
+                - margin-left: "-30%"
+            tap_action:
+              action: navigate
+              navigation_path: "livingroom"
+            variables:
+              entity_1:
+                entity_id: climate.mainhallway_hmipbwth_thermostat
+                templates:
+                  - grey_no_state
+                  - grey_on
+                  - grey_off
+                tap_action:
+                  action: more-info
+              entity_2:
+                entity_id: cover.child_1_shutter_shelly_25_40f52000f9c9
+                templates:
+                  - grey_no_state
+                  - grey_on
+                  - grey_off
+                tap_action:
+                  action: more-info
+              entity_3:
+                entity_id: media_player.echo_dot_bedroom
+                templates:
+                  - grey_no_state
+                  - grey_on
+                  - grey_off
+                tap_action:
+                  action: more-info
+
+          # Mainhallway
+          - type: "custom:button-card"
+            template:
+              - card_room
+              - grey_no_state
+              - grey_on
+              - grey_off
+            name: Flur
+            label: >
+              [[[
+                return states['sensor.mainhallway_hmipbwth_thermostat_temperature'].state + "°C • " + states['sensor.mainhallway_hmipbwth_thermostat_humidity'].state + " %"
+              ]]]
+            entity: light.mainhallway_led_shelly_rgbw2_00bc99
+            triggers_update: all
+            icon: mdi:view-carousel-outline
+            styles:
+              name:
+                - margin-left: "7px"
+              label:
+                - margin-left: "7px"
+                - font-size: "12px"
+              img_cell:
+                - width: "60%"
+                - height: "60%"
+                - margin-top: "30%"
+                - margin-left: "-30%"
+            tap_action:
+              action: navigate
+              navigation_path: "mainhallway"
+            variables:
+              entity_1:
+                entity_id: light.mainhallway_led_shelly_rgbw2_00bc99
+                templates:
+                  - grey_no_state
+                  - grey_on
+                  - grey_off
+                tap_action:
+                  action: more-info
+              entity_2:
+                entity_id: climate.mainhallway_hmipbwth_thermostat
+                templates:
+                  - grey_no_state
+                  - grey_on
+                  - grey_off
+                tap_action:
+                  action: more-info
+
+          # Büro
+          - type: 'custom:button-card'
+            template:
+              - card_room
+              - grey_no_state
+              - grey_on
+              - grey_off
+            name: Büro
+            entity: climate.office_1_dect301_1
+            triggers_update: climate.office_1_dect301_1
+            icon: mdi:desktop-tower-monitor
+            styles:
+              name:
+                - margin-left: "7px"
+              label:
+                - margin-left: "7px"
+                #- font-weight: "normal"
+                - font-size: "12px"
+              img_cell:
+                - width: "60%"
+                - height: "60%"
+                - margin-top: "30%"
+                - margin-left: "-30%"
+            tap_action:
+              action: navigate
+              navigation_path: "office-1"
+            variables:
+              label_use_temperature: true
+              label_use_brightness: false
+              ulm_custom_popup:
+                template: "popup_thermostat_temperature"
+                entity: climate.office_1_dect301_1
+                popup_variables:
+                  ulm_card_thermostat_enable_popup: true
+              entity_1:
+                entity_id: media_player.echo_dot_bathroom_1
+                templates:
+                  - grey_no_state
+                  - grey_on
+                  - grey_off
+                tap_action:
+                  action: more-info
+
+
+      # - type: horizontal-stack
+     #   cards:
+     #     - type: 'custom:button-card'
+     #       template:
+     #         - ulm_translation_engine
+     #         - card_room
+     #         - grey_no_state
+     #         - grey_on
+     #         - grey_off
+     #       name: Schlafzimmer
+     #       label: >
+     #         [[[
+     #           return "🌡️ " + states['sensor.schlafzimmer_dect301_1_current_temperature'].state + " °C" + "  💧 " + states['sensor.livingroom_hmipbwth_thermostat_humidity'].state + " %"
+     #         ]]]
+     #       entity: climate.schlafzimmer_dect301_1
+     #       icon: mdi:bed-king
+     #       hold_action:
+     #         action: none
+     #         #navigation_path: '/ui-lovelace-minimalist/bathroom'
+     #       tap_action:
+     #         action: "fire-dom-event"
+     #         browser_mod:
+     #           service: "browser_mod.popup"
+     #           data:
+     #             large: true
+     #             hide_header: true
+     #             content:
+     #               type: "custom:button-card"
+     #               template: "popup_thermostat_temperature"
+     #               entity: "[[[ return entity.entity_id ]]]"
+     #               #entities:
+     #               #  - "climate.schlafzimmer_dect301_1"
+     #               #  - "[[[ return entity.entity_id ]]]"
+     #               variables:
+     #                 ulm_custom_popup:
+     #                   template: "popup_thermostat_temperature"
+     #                   entity: climate.schlafzimmer_dect301_1
+     #             style: |
+     #               --popup-background-color: var(--primary-background-color);
+     #               --popup-border-radius: 20px;
+     #               --popup-padding-x: 24px;
+     #               --popup-padding-y: 20px;
+     #               --popup-min-width: 1000px;
+     #             card_mod:
+     #               style:
+     #                 ha-dialog$: |
+     #                   @media (max-width: 800px){
+     #                     div.mdc-dialog__container {
+     #                       --mdc-dialog-min-width: 100vw;
+     #                       --mdc-dialog-max-width: 100vw;
+     #                       --mdc-dialog-min-height: 100%;
+     #                       --ha-dialog-border-radius: 0px;
+     #                     }
+     #                   }
+     #       variables:
+     #         label_use_temperature: true
+     #         label_use_brightness: false
+     #         #ulm_card_thermostat_enable_popup: true
+     #         #ulm_card_thermostat_preset_mode: true
+     #         #ulm_custom_popup:
+     #         #  template: "popup_thermostat_temperature"
+     #         #  entity: climate.schlafzimmer_dect301_1
+     #         entity_1:
+     #           entity_id: climate.schlafzimmer_dect301_1
+     #           templates:
+     #             #- card_thermostat
+     #             - yellow_on
+     #           tap_action:
+     #             action: none
+
+
+      - type: "custom:button-card"
+        template: card_title
+        name: "Netzwerk"
+        #label: '[[[ return "Davon sind " + states["sensor.number_of_devices_on"].state + " Geräte an." ]]]'
+        label: '[[[ return states["sensor.number_of_devices_on"].state + " Geräte an" ]]]'
+        styles:
+          card:
+            - margin-left: 10px
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_graph
+            entity: sensor.net_download_cur_filtered
+            triggers_update: all
+            variables:
+              ulm_card_graph_color: "var(--google-blue)"
+              ulm_card_graph_name: Download
+              ulm_card_graph_entity: sensor.net_download_cur_filtered
+              ulm_card_graph_type: fill
+              ulm_card_graph_hours: 24
+              ulm_card_graph_group_by: interval
+
+          - type: "custom:button-card"
+            template: card_graph
+            entity: sensor.net_upload_cur_filtered
+            triggers_update: all
+            variables:
+              ulm_card_graph_color: "var(--google-blue)"
+              ulm_card_graph_name: Upload
+              ulm_card_graph_entity: sensor.net_upload_cur_filtered
+              ulm_card_graph_type: fill
+              ulm_card_graph_hours: 24
+              ulm_card_graph_group_by: interval
+
+      - type: "custom:button-card"
+        template: card_title
+        name: "Geräte"
+        styles:
+          card:
+            - margin-left: 10px
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_light
+            entity: light.mainhallway_led_shelly_rgbw2_00bc99
+            variables:
+              #ulm_card_light_enable_slider: true
+              ulm_card_light_enable_color: true
+              #ulm_card_light_force_background_color: true
+              ulm_card_light_enable_popup: true
+              ulm_card_light_enable_popup_tap: true
+
+          - type: "custom:button-card"
+            template: "custom_card_ing_lock"
+            entity: binary_sensor.bathroom_bedroom_window_aqara_1_0x00158d00075d7545_contact
+            #name: "Door Lock"
+            variables:
+              ulm_custom_card_eraycetinay_lock_tap_control: true
+              ulm_custom_card_eraycetinay_lock_battery_level: sensor.bathroom_bedroom_window_aqara_1_0x00158d00075d7545_battery
+              ulm_custom_card_eraycetinay_lock_door_open: binary_sensor.bathroom_bedroom_window_aqara_1_0x00158d00075d7545_contact
+            triggers_update:
+              - "sensor.bathroom_bedroom_window_aqara_1_0x00158d00075d7545_battery"
+              - "binary_sensor.bathroom_bedroom_window_aqara_1_0x00158d00075d7545_contact"
+
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: "card_vacuum"
+            entity: "vacuum.wall_e"
+            variables:
+              ulm_card_vacuum_enable_popup: true
+              uml_card_vacuum_camera: camera.vacuum
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: custom_card_generic_dual_entity
+            variables:
+              ulm_custom_card_generic_dual_entity_1: sensor.bathroom_bedroom_window_aqara_1_0x00158d00075d7545_battery
+              ulm_custom_card_generic_dual_entity_2: sensor.bathroom_bedroom_window_aqara_1_0x00158d00075d7545_device_temperature
+
+      - type: "custom:button-card"
+        template: card_title
+        name: "Abfallkalender"
+        styles:
+          card:
+            - margin-left: 10px
+
+      - type: horizontal-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.ics_1
+                style: |
+                  :host {
+                    --paper-item-icon-color: var(--google-gray);
+                    --ha-card-background: rgba(var(--color-theme), 0.05);
+                    --card-background-color: rgba(var(--color-theme), 0.05);
+                    background-color: rgba(var(--color-theme),0.05);
+                  }
+              - entity: sensor.ics_3
+                style:
+                  hui-sensor-entity-row$: |
+                    state-badge {
+                      background-color: rgba(var(--color-theme),0.05);
+                      border-radius: 50%;
+                      place-self: center;
+                      width: 42px;
+                      height: 42px; 
+                    }
+                    .pointer {
+                      background-color: rgba(var(--color-theme),0.05);
+                      border-radius: 50%;
+                      place-self: center;
+                      width: 42px;
+                      height: 42px;
+                    }
+                #style: |
+                #  :host {
+                #    --paper-item-icon-color: var(--google-blue)
+                #  }
+              - entity: sensor.ics_4
+                style: |
+                  :host {
+                    --paper-item-icon-color: var(--google-yellow)
+                  }
+              - entity: sensor.ics_2
+                style: |
+                  :host {
+                    --paper-item-icon-color: var(--google-green)
+                  }
+                  state-badge {
+                    background-color: rgba(var(--color-theme),0.05);
+                    border-radius: 50%;
+                    place-self: center;
+                    width: 42px;
+                    height: 42px;
+                  }
+                  .pointer {
+                    background-color: rgba(var(--color-theme),0.05);
+                    border-radius: 50%;
+                    place-self: center;
+                    width: 42px;
+                    height: 42px;
+                  }
+
+      

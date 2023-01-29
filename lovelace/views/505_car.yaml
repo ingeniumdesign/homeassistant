@@ -157,7 +157,7 @@ cards:
                   - entity: sensor.octavia_service_inspection_days
                     name: Inspektion
                 #entities:
-                #  - entity: device_tracker.octavia
+                #  - entity: device_tracker.skoda_octavia_combi_rs_tmbjk8nx5py042131_position
                 #    name: Location
 
               - entity: sensor.octavia_request_results

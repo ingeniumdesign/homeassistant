@@ -1,0 +1,28 @@
+sensor:
+
+  - platform: template
+    sensors:
+
+      # Number of Shutter Open
+      number_of_shutter_open:
+        friendly_name: "Number of shutter open"
+        icon_template: mdi:window-shutter
+        value_template: >-
+          {% set count = namespace(value=0) %}
+          {% for entity_id in state_attr('group.all_shutter_entities','entity_id') %}
+            {% if (states(entity_id) == 'open') %}
+              {% set count.value = count.value + 1 %}
+            {% endif %}
+          {% endfor %}
+          {{ count.value }}
+
+      # Only Shutter Open
+      only_shutter_open:
+        friendly_name: "Only shutter open"
+        icon_template: mdi:window-shutter
+        value_template: >-
+          {% for entity_id in state_attr('group.all_shutter_entities','entity_id') %}
+            {% if (states(entity_id) == 'open') %}
+              {{ states[entity_id].attributes.friendly_name }}
+            {% endif %}
+          {% endfor %}

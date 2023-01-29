@@ -1,0 +1,11 @@
+title: "Wohnzimmer"
+path: "livingroom"
+icon: "mdi:sofa"
+id: "livingroom"
+theme: "minimalist-desktop"
+cards:
+  - type: "custom:button-card"
+    template: chip_back
+    variables:
+      ulm_chip_back_path: dashboard
+

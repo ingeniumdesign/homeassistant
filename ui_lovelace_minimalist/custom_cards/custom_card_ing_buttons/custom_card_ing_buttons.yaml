@@ -1,0 +1,47 @@
+---
+card_ing_buttons:
+  show_icon: true
+  show_label: true
+  show_name: true
+  hold_action:
+    action: none
+  state:
+    - value: "on"
+      styles:
+        img_cell:
+          - background-color: rgba(var(--color-yellow),0.2)
+        icon:
+          - color: rgba(var(--color-yellow),1)
+        card:
+          - background-color: "transparent"
+    - value: "off"
+      styles:
+        img_cell:
+          - background-color: "var(--card-background-color)"
+        icon:
+          - color: rgba(var(--color-theme),.5)
+        card:
+          - background-color: "transparent"
+  styles:
+    name:
+      - font-weight: "bold"
+      - font-size: "14px"
+      - margin-top: "10px"
+    label:
+      - font-weight: "bold"
+      - font-size: "12px"
+      - opacity: "0.4"
+      - margin-bottom: "5px"
+    img_cell:
+      - background-color: "var(--card-background-color)"
+      - border-radius: "50%"
+      - place-self: "center"
+      - width: "60px"
+      - height: "60px"
+      - box-shadow: 'var(--ha-card-box-shadow)'
+    icon:
+      - color: rgba(var(--color-theme),.5)
+    card:
+      - padding: "5px"
+      - box-shadow: "none"
+      - background-color: "transparent"

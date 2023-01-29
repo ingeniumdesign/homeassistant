@@ -1,0 +1,114 @@
+title: "Light Overview"
+path: "light_overview"
+id: "light_overview"
+theme: "minimalist-mobile-tapbar"
+visible: false
+subview: false
+cards:
+  - type: custom:layout-card
+    layout_type: grid
+    layout:
+      grid-template-columns: 1fr 1fr
+      grid-template-rows: auto
+      max_cols: 2
+    cards:
+      - type: "custom:button-card"
+        template: chip_back
+        variables:
+          ulm_chip_back_path: dashboard
+      # Lights Chip
+      - type: 'custom:button-card'
+        template:
+          - "chip_icon_label_state"
+          - "chip_yellow"
+        icon: "mdi:lightbulb"
+        variables:
+          ulm_chip_icon_state_entity: sensor.number_of_lights_on
+
+  - type: "custom:button-card"
+    template: card_title
+    name: "Lampen & LED"
+    label: '[[[ return states["sensor.number_of_devices_on"].state + " Geräte an" ]]]'
+    styles:
+      card:
+        - margin-left: 10px
+
+  - type: horizontal-stack
+    cards:
+      # Mainhallway LED
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.mainhallway_led_shelly_rgbw2_00bc99
+        name: Flur LED
+        variables:
+          ulm_card_light_enable_slider: true
+          ulm_card_light_enable_color: true
+
+      # Mainhallway LED
+      - type: "custom:button-card"
+        template: card_light
+        entity: light.mainhallway_led_shelly_rgbw2_00bc99
+        name: Flur LED 2
+        variables:
+          ulm_card_light_enable_slider: true
+          ulm_card_light_enable_color: true
+
+  # On
+  - type: vertical-stack
+    view_layout:
+      grid-area: ein
+    cards:
+      - type: 'custom:button-card'
+        template: card_title
+        name: "Lampen & LED an"
+        styles:
+          card:
+            - margin-left: 10px
+      - type: custom:auto-entities
+        card:
+          type: grid
+          square: false
+          columns: 2
+        card_param: cards
+        filter:
+          include:
+            - domain: light
+              state: "on"
+              options:
+                type: 'custom:button-card'
+                template: card_light
+                variables:
+                  ulm_card_light_enable_slider: true
+                  ulm_card_light_enable_color: true
+          exclude:
+            - entity_id: "*dashboard*"
+  # Off
+  - type: vertical-stack
+    view_layout:
+      grid-area: aus
+    cards:
+      - type: 'custom:button-card'
+        template: card_title
+        name: "Alle Lampen & LED"
+        label: '[[[ return states["sensor.number_of_devices_on"].state + " Geräte an" ]]]'
+        styles:
+          card:
+            - margin-left: 10px
+      - type: custom:auto-entities
+        card:
+          type: grid
+          square: false
+          columns: 2
+        card_param: cards
+        filter:
+          include:
+            - domain: light
+              state: "off"
+              options:
+                type: 'custom:button-card'
+                template: card_light
+                variables:
+                  ulm_card_light_enable_slider: true
+                  ulm_card_light_enable_color: true
+          exclude:
+            - entity_id: "*dashboard*"
