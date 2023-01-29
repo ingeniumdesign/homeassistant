@@ -1,0 +1,82 @@
+title: "Einstellungen"
+path: "settings"
+icon: "mdi:cog"
+id: "settings"
+theme: "minimalist-mobile-tapbar"
+cards:
+
+  - type: "custom:button-card"
+    template: "card_ing_header"
+    variables:
+      header_title: "Einstellungen"
+      header_navigate_path: "dashboard"
+      header_back_button: true
+      header_weather: true
+      header_weather_entity_id:
+
+  - type: vertical-stack
+    cards:
+
+      - type: "custom:button-card"
+        template: card_input_boolean
+        entity: input_boolean.party_mode_toggle
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_input_boolean
+            entity: input_boolean.notifications
+
+          - type: "custom:button-card"
+            template: card_input_boolean
+            entity: input_boolean.notify_dooropen
+
+      - type: "custom:button-card"
+        template: card_title
+        name: "Bewegungsmelder"
+        label: '[[[ return "Für " + states["sensor.number_of_motion"].state + " Geräte" ]]]'
+        styles:
+          card:
+            - margin-left: 10px
+
+      - type: horizontal-stack
+        cards:
+
+          - type: "custom:button-card"
+            template: card_input_boolean
+            entity: input_boolean.motion_sensor_mainhallway_toggle
+          - type: "custom:button-card"
+            template: card_input_boolean
+            entity: input_boolean.motion_sensor_stairwell1_toggle
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_input_boolean
+            entity: input_boolean.motion_sensor_stairwell2_toggle
+          - type: "custom:button-card"
+            template: card_input_boolean
+            entity: input_boolean.motion_sensor_stairwell3_toggle
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_input_boolean
+            entity: input_boolean.motion_sensor_kitchen_toggle
+          - type: "custom:button-card"
+            template: card_input_boolean
+            entity: input_boolean.motion_sensor_restroom_toggle
+
+      - type: "custom:button-card"
+        template: card_title
+        name: "Stromkosten"
+        label: '[[[ return states["sensor.number_of_motion"].state + " Geräte" ]]]'
+        styles:
+          card:
+            - margin-left: 10px
+
+      - type: vertical-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_ing_input_number
+            entity: input_number.kwh_cost

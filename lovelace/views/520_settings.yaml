@@ -61,7 +61,7 @@ cards:
         entities:
           - input_select.sensor_frontdoortest
           - type: custom:slider-entity-row
-            entity: light.light1test
+            entity: light_bulb_example_01_0xb4e3f9fffe524699
             toggle: true
 
   - type: vertical-stack

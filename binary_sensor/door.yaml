@@ -1,0 +1,14 @@
+- platform: template
+  sensors:
+    frontdoortest:
+      friendly_name: "Haustür TEST"
+      device_class: presence
+      value_template: "{{ is_state('input_boolean.frontdoortest', 'on') }}"
+
+#- platform: template
+#  sensors:
+#    frontdoortest: # Rename this to choice your binary_sensor name
+#      friendly_name: "Haustür TEST" #edit this
+#      value_template: "{{ states('input_boolean.frontdoortest') }}" #edit sensor.your_door_sensor with your sensor door
+#      attribute_templates:
+#        door_state: "{{ state_attr('input_boolean.frontdoortest', 'door_state') }}" #edit sensor.your_door_sensor with your sensor door

@@ -1,0 +1,19 @@
+title: "Map Overview"
+path: "map_overview"
+id: "map_overview"
+theme: "minimalist-mobile-tapbar"
+visible: false
+subview: false
+cards:
+  - type: map
+    #aspect_ratio: 16x9
+    default_zoom: 12
+    #hours_to_show: 48
+    dark_mode: true
+    entities:
+      - device_tracker.handy_sebastian
+      - device_tracker.iphone_vr_smart
+      - device_tracker.skoda_octavia_combi_rs_tmbjk8nx5py042131_position
+      - zone.home
+      - zone.juliaarbeit
+      - zone.golfpark

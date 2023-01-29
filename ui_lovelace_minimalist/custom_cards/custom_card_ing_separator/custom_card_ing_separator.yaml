@@ -1,0 +1,42 @@
+---
+### Card Separator ###
+card_ing_separator:
+  name: "[[[ return variables.name ]]]"
+  tap_action:
+    action: "none"
+  show_icon: false
+  show_label: false
+  show_name: true
+  variables:
+    height: "2px"
+    width: "100vw"
+    bgColor: "rgba(var(--color-theme), 0.1)"
+    padding: "8px"
+    name: " "
+  styles:
+    card:
+      - box-shadow: "none"
+      - border: "none"
+      - border-radius: "0"
+      - width: "[[[ return variables.width ]]]"
+      - max-width: "100%"
+      - margin: "0"
+      - padding-top: "[[[ return variables.padding ]]]"
+      - padding-bottom: "[[[ return variables.padding ]]]"
+      - position: "relative"
+      - background: "none"
+      - display: "block"
+    name:
+      - width: "100%"
+      - height: "[[[ return variables.height ]]]"
+      - background-color: "[[[ return variables.bgColor ]]]"
+      - text-overflow: "unset"
+      - grid-area: "unset"
+    grid:
+      - grid-template-areas: "'n'"
+      - grid-template-columns: "1fr"
+      - grid-template-rows: "1fr"
+  extra_styles: |
+    #aspect-ratio {
+      display: block !important;
+    }

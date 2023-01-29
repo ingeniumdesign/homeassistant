@@ -1,0 +1,102 @@
+---
+card_ing_header:
+  show_icon: false
+  show_label: false
+  show_name: false
+  triggers_update: "all"
+  variables:
+    header_title: ""
+    header_navigate_path: ""
+    header_back_button: true
+    header_weather: true
+    header_weather_entity_id: ""
+  card_mod:
+    class: button-card-header
+    style: |
+      :host {
+        width: 100%;
+        max-width: none;
+        background: none;
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0 !important;
+        margin: 0 0 12px 0 !important;
+        z-index: 999;
+      
+        -webkit-box-shadow: 0px 3px 8px -3px rgba(0,0,0,0.08); 
+        box-shadow: 0px 3px 8px -3px rgba(0,0,0,0.08);
+      }
+      ha-card {
+        -webkit-backdrop-filter: blur(6px) !important;
+        backdrop-filter: blur(6px) !important;
+        background: var( --lovelace-background, var(--primary-background-color-rgba) ) !important;
+      }
+  styles:
+    card:
+      - padding: 0 9px 0 9px
+      - font-size: 1.5rem
+      - background: none
+      - box-shadow: none
+      - border-radius: 0px
+      - font-weight: bold
+      - color: var(--primary-text-color)
+      - height: 56px
+      - margin: 0 0 12px 0;
+      - border: 0
+    grid:
+      - grid-template-areas: "'back title weather'"
+      - grid-template-columns: "140px auto 140px"
+      - grid-template-rows: 1fr
+    custom_fields:
+      weather:
+        - justify-self: end
+  custom_fields:
+    back:
+      card:
+        type: custom:button-card
+        template: chip_back
+        variables:
+          ulm_chip_back_path: "[[[ return variables.header_navigate_path; ]]]"
+          card_header_back_button: "[[[ return variables.header_back_button; ]]]"
+
+    title:
+      card:
+        type: custom:button-card
+        template: card_title
+        #variables:
+        name: "[[[ return variables.header_title; ]]]"
+        card_mod:
+          style: |
+            :host {
+              max-width: none !important;
+            }
+        styles:
+          card:
+            - margin-left: "0px"
+          name:
+            - justify-self: "stretch"
+
+    weather:
+      card:
+        type: custom:button-card
+        template: chip_temperature
+        variables:
+          ulm_chip_temperature_inside: "[[[ return variables.header_weather_entity_id; ]]]"
+          ulm_chip_temperature_outside: sensor.dwd_weather_temperature
+          ulm_chip_temperature_weather: sensor.dwd_weather_temperature
+          ulm_card_weather_enable_popup: true
+          card_header_weather: "[[[ return variables.header_weather; ]]]"
+
+        card_mod:
+          style: |
+            :host {
+              max-width: max-content !important;
+              justify-self: end;
+              text-align: right;
+            }
+        styles:
+          card:
+            - justify-self: "end"

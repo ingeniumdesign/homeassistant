@@ -3,6 +3,7 @@ kwh_cost:
   initial: 0.28
   min: 0
   max: 4
-  unit_of_measurement: Cent
+  #unit_of_measurement: Cent
+  unit_of_measurement: EUR/kWh
   step: 0.01
   mode: box

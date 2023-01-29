@@ -1,0 +1,773 @@
+title: "System"
+path: "system"
+icon: "mdi:server-network"
+id: "system"
+theme: "minimalist-mobile-tapbar"
+cards:
+
+  - type: "custom:button-card"
+    template: "card_ing_header"
+    variables:
+      header_title: "Technik"
+      header_navigate_path: "dashboard"
+      header_back_button: true
+      header_weather: true
+      header_weather_entity_id:
+
+  - type: vertical-stack
+    cards:
+
+      # ABFRAGE - HASSIO
+      - type: conditional
+        conditions:
+          - entity: sensor.version_check
+            state: "False"
+        card:
+          type: vertical-stack
+          cards:
+            - type: entities
+              entities:
+                - sensor.version_current
+                - sensor.version_latest
+              style: |
+                ha-card {
+                  
+                }
+
+      # ABFRAGE - HACS
+      - type: conditional
+        conditions:
+          - entity: sensor.hacs
+            state_not: "0"
+        card:
+          type: vertical-stack
+          cards:
+            - type: markdown
+              style: |
+                ha-card {
+
+                }
+                ha-markdown {
+
+                }
+              content: HACS / Home Assistant Community Store
+
+            - type: entities
+              entities:
+                - sensor.hacs
+              style: |
+                ha-card {
+                  
+                }
+
+
+      - type: vertical-stack
+        cards:
+          # Network Speed Internet
+          - type: "custom:button-card"
+            template:
+              - card_ing_internet
+              - ulm_language_variables
+            triggers_update: all
+            variables:
+              download_speed_entity: sensor.net_download_cur_filtered
+              upload_speed_entity: sensor.net_upload_cur_filtered
+              incoming_traffic_entity: sensor.net_received_monthly
+              outgoing_traffic_entity: sensor.net_sent_monthly
+              router_name: FRITZ!Box 6590 Cable
+              #router_model: 6590 Cable
+              #router_model: '[[[ if (states["binary_sensor.ing_fritzbox_connection" ].state == "on") return "Verbunden"; else return "Getrennt"; ]]]'
+              router_model: '[[[ if (states["binary_sensor.ing_fritzbox_connection" ].state == "on") return "Verbunden seit: " + states["sensor.net_uptime_pretty_short"].state; else return "Getrennt"; ]]]'
+
+          - type: 'custom:button-card'
+            template: card_graph
+            entity: sensor.ing_fritzbox_received_gb_day
+            variables:
+              ulm_card_graph_color: "var(--google-blue)"
+              ulm_card_graph_name: Tagestransfer
+              ulm_card_graph_entity: sensor.ing_fritzbox_received_gb_day
+              ulm_card_graph_color2: "var(--google-green)"
+              ulm_card_graph_entity2: sensor.ing_fritzbox_sent_gb_day
+              ulm_card_graph_type: fill
+              ulm_card_graph_hours: 24
+              ulm_card_graph_group_by: interval
+
+      - type: "custom:button-card"
+        template: card_title
+        name: ""
+        label: "Powerline"
+        styles:
+          card:
+            - margin-left: 10px
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_ing_buttons
+            icon: mdi:reload-alert
+            name: FRITZ!Powerline 1260E
+            label: Reboot
+            entity: button.fritz_powerline_1260e_reboot
+
+          - type: "custom:button-card"
+            template: card_ing_buttons
+            icon: mdi:reload-alert
+            name: FRITZ!Powerline 1260E
+            label: Reconnect
+            entity: button.fritz_powerline_1260e_reconnect
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_ing_buttons
+            icon: mdi:reload-alert
+            name: FRITZ!Powerline 546E
+            label: Reboot
+            entity: button.fritz_powerline_546e_reboot
+
+          - type: "custom:button-card"
+            template: card_ing_buttons
+            icon: mdi:reload-alert
+            name: FRITZ!Powerline 546E
+            label: Reconnect
+            entity: button.fritz_powerline_546e_reconnect
+
+      # Separator card
+      - type: vertical-stack
+        cards:
+          - type: "custom:button-card"
+            template: "card_ing_separator"
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_generic
+            entity: sensor.number_of_devices_on
+            name: Geräte
+            label: '[[[ return states["sensor.number_of_devices_on"].state + " Aktive" ]]]'
+            icon: mdi:desktop-tower
+            variables:
+              ulm_card_generic_icon: mdi:desktop-tower
+              ulm_card_generic_name: '[[[ return states["sensor.number_of_devices_on"].state + " Aktive" ]]]'
+              ulm_outlet_power_enable_popup: false
+
+          - type: 'custom:button-card'
+            template: card_generic
+            entity: sensor.number_of_devices_on
+            name: '[[[ return states["sensor.number_of_devices_on"].state + " Aktive" ]]]'
+            icon: mdi:television-classic
+            variables:
+              ulm_card_vertical_button_state: Away
+              ulm_card_vertical_button_color: green
+
+
+      - type: "custom:button-card"
+        template: card_title
+        name: "Service"
+        label: "In Verwendung als Admin"
+        styles:
+          card:
+            - margin-left: 10px
+
+      # Service Button
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_ing_buttons
+            icon: mdi:reload
+            name: Template
+            label: Reload
+            tap_action:
+              action: call-service
+              service: template.reload
+
+          - type: "custom:button-card"
+            template: card_ing_buttons
+            icon: mdi:reload
+            name: Theme UI
+            label: Reload
+            tap_action:
+              action: call-service
+              service: ui_lovelace_minimalist.reload
+
+          - type: "custom:button-card"
+            template: card_ing_buttons
+            icon: mdi:reload
+            name: Theme
+            label: Reload
+            tap_action:
+              action: call-service
+              service: frontend.reload_themes
+
+          - type: "custom:button-card"
+            template: card_ing_buttons
+            icon: mdi:reload
+            name: Lovelace
+            label: Restart
+            tap_action:
+              action: call-service
+              service: lovelace.reload_resources
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_ing_buttons
+            icon: mdi:reload
+            name: Addon
+            label: Restart
+            tap_action:
+              action: call-service
+              service: hassio.addon_restart
+
+          - type: "custom:button-card"
+            template: card_ing_buttons
+            icon: mdi:reload
+            name: Config
+            label: Reload
+            tap_action:
+              action: call-service
+              service: homeassistant.reload_core_config
+
+          - type: "custom:button-card"
+            template: card_ing_buttons
+            icon: mdi:reload-alert
+            name: Home-Assistant
+            label: Restart
+            tap_action:
+              action: none
+            hold_action:
+              action: call-service
+              service: homeassistant.restart
+            styles:
+              icon:
+                - color: rgba(var(--color-red),.8)
+
+          - type: "custom:button-card"
+            template: card_ing_buttons
+            icon: mdi:reload-alert
+            name: Server
+            label: Restart
+            tap_action:
+              action: none
+            hold_action:
+              action: call-service
+              service: hassio.host_reboot
+            styles:
+              icon:
+                - color: rgba(var(--color-red),.8)
+
+
+      # INFOS Intel NUC
+
+      - type: custom:stack-in-card
+        cards:
+          - type: vertical-stack
+            cards:
+
+              - type: "custom:button-card"
+                template: "custom_card_ing_hardware"
+                entity: switch.computer_nuc
+                variables:
+                  graph_span: "1d"
+                  chart_type: "radialBar"
+                  entity_1:
+                    entity_id: "sensor.cpu_temp"
+                    icon: ''
+                    name: "Temp"
+                    color: "yellow"
+                    max_value: 100
+                  entity_2:
+                    entity_id: "sensor.memory_use"
+                    icon: ''
+                    name: "Memory"
+                    color: "blue"
+                    max_value: 100
+                  entity_3:
+                    entity_id: "sensor.processor_use"
+                    icon: ''
+                    name: "CPU"
+                    color: "green"
+                    max_value: 100
+                  entity_4:
+                    entity_id: "sensor.disk_use_percent"
+                    icon: "mdi:harddisk"
+                    name: "Disk"
+                    color: "red"
+
+          - type: horizontal-stack
+            #title: Intel NUC i5
+            cards:
+
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.processor_use_percent
+                name: CPU
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-red-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
+
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.memory_use_percent
+                name: Speicher RAM
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-ocher-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
+
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.cpu_temp
+                name: Temperatur
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-green-bright-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
+
+          - type: entities
+            entities:
+              - sensor.cpu_speed
+              - sensor.disk_use_percent
+              - sensor.disk_use
+              - sensor.network_in_eno1
+              - sensor.network_out_eno1
+              - sensor.nuc_uptime
+              - sensor.db_size
+              - sensor.hass_io_uptime_pretty
+
+      - type: custom:stack-in-card
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.docker_cpu
+                name: CPU
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-red-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
+
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.docker_1cpu
+                name: CPU
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-green-bright-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
+
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.docker_memory_percent
+                name: Speicher RAM
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-ocher-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: false
+                  icon: true
+                  name: true
+                  labels: false
+
+          - type: entities
+            entities:
+              - sensor.docker_memory
+              - sensor.docker_containers_total
+              - sensor.docker_containers_running
+              - sensor.docker_containers_paused
+              - sensor.docker_containers_stopped
+              - sensor.docker_images
+              - sensor.docker_version
+
+      # NETZWERK INFOS
+
+
+      - type: custom:stack-in-card
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:bar-card
+                style: |
+                  .card-content {
+                    padding: 3px;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                  }
+                  #states.card-content {
+                    padding-left:0;
+                  }
+                entity: sensor.net_download_max
+                color: "var(--accent-color)"
+                height: 30px
+                positions:
+                  icon: inside
+                  indicator: "off"
+                  title: inside
+                  value: inside
+                target: 500
+                max: 550
+              - type: custom:bar-card
+                style: |
+                  .card-content {
+                    padding: 3px;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                  }
+                  #states.card-content {
+                    padding-right:0;
+                  }
+                  #states > * {
+                    margin-top: 1px;
+                  }
+                entity: sensor.net_upload_max
+                color: "var(--accent-color)"
+                height: 30px
+                positions:
+                  icon: inside
+                  indicator: "off"
+                  title: inside
+                  value: inside
+                target: 50
+                max: 52
+          - type: horizontal-stack
+            cards:
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .graph .graph__container {
+                    padding-right:3px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.net_download_cur_filtered
+                name: Download
+                align_icon: left
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--color-red-1)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: true
+                  icon: true
+                  name: true
+                  labels: false
+              - type: 'custom:mini-graph-card'
+                style: |
+                  ha-card {
+                    font-family: var(--primary-font-family);
+                    border-bottom: 2px solid var(--background-color);
+                  }
+                  .graph {
+                    padding-top: 15px;
+                    padding-bottom: 0px;
+                  }
+                  .info {
+                    padding-bottom: 0px;
+                  }
+                  .flex {
+                    padding-bottom: 10px;
+                  }
+                entities:
+                  - sensor.net_upload_cur
+                name: Upload
+                align_icon: left
+                align_state: center
+                font_size: 60
+                font_size_header: 11
+                hours_to_show: 12
+                line_color: var(--accent-color)
+                line_width: 4
+                animate: true
+                points_per_hour: 4
+                lower_bound: 0
+                lower_bound_secondary: 0
+                show:
+                  fill: fade
+                  graph: line
+                  extrema: true
+                  icon: true
+                  name: true
+                  labels: false
+
+          - type: entities
+            entities:
+              - sensor.net_received_monthly
+              - sensor.net_sent_monthly
+              - sensor.net_uptime_pretty
+
+      - type: custom:stack-in-card
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.speedtest_ping
+                icon: mdi:speedometer-slow
+              - entity: sensor.speedtest_download
+              - entity: sensor.speedtest_upload
+              - entity: sensor.speedtest_server_name
+                name: Serverort
+                icon: mdi:office-building-marker
+                tap_action:
+                  action: none
+              - entity: sensor.speedtest_last_updated
+                name: Letztes Update
+                icon: mdi:clock-fast
+                tap_action:
+                  action: none
+
+      - type: custom:stack-in-card
+        cards:
+          - type: "custom:button-card"
+            #template: header_clickable
+            entity: input_boolean.button_battery
+            name: Batterien
+          - type: conditional
+            conditions:
+              - entity: input_boolean.button_battery
+                state: "on"
+            card:
+              type: custom:auto-entities
+              card:
+                type: custom:bar-card
+                sort_by_level: asc
+                title_position: inside
+                tap_action:
+                  action: none
+                severity:
+                  - color: var(--color-red-1)
+                    from: 0
+                    to: 20
+                  - color: var(--color-orange-1)
+                    from: 21
+                    to: 50
+                  - color: var(--color-ocher-1)
+                    from: 51
+                    to: 70
+              show_empty: true
+              filter:
+                include:
+                  - entity_id: sensor.*.battery_level*
+                    state: <=20
+                  - entity_id: sensor.*.akkufullstand*
+                    state: <=30
+                  - entity_id: sensor.*.battery_state*
+                    state: <=30
+                #exclude:
+                #  - entity_id: sensor.*.battery_level*
+
+      - type: custom:stack-in-card
+        cards:
+          - type: "custom:button-card"
+            #template: header_clickable
+            entity: input_boolean.button_logbook
+            name: Logbuch
+          - type: conditional
+            conditions:
+              - entity: input_boolean.button_logbook
+                state: "on"
+            card:
+              type: logbook
+              entities:
+                - climate.buro_dect301_1
+                - climate.schlafzimmer_dect301_1
+                #- synology_dsm.reboot
+                - vacuum.wall_e
+                - automation.eaw_abholtermine_abfall
+                - notify.ha_message
+                - notify.ha_message_group
+              hours_to_show: 24
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_input_boolean
+            entity: switch.boilerroom_plug_shelly_plugs_80646f83ebcf
+            variables:
+              ulm_card_input_boolean_name: Warmwasser Pumpe
+              ulm_translation_state: "[[[if (entity.state =='on'){ return 'An · ' + states['sensor.boilerroom_plug_shelly_plugs_80646f83ebcf_power'].state + 'W'} else { return 'Aus'; }]]]"
+              ulm_outlet_power_enable_popup: true

@@ -1,0 +1,8 @@
+group:
+
+  # All Light Entities
+  all_light_entities:
+    name: All Light Entities
+    entities:
+      - light.guest_restroom_led_shelly_rgbw2_00c178
+      - light.mainhallway_led_shelly_rgbw2_00bc99

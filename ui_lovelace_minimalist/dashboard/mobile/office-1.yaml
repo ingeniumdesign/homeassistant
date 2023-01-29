@@ -1,0 +1,209 @@
+title: "Büro"
+path: "office-1"
+icon: "mdi:desktop-tower-monitor"
+id: "office-1"
+theme: "minimalist-mobile-tapbar"
+cards:
+  #- type: custom:layout-card
+  #  layout_type: grid
+  #  layout:
+  #    grid-template-columns: 1fr 1fr 1fr
+  #    grid-template-rows: auto
+  #    max_cols: 3
+  #  cards:
+  #    - type: "custom:button-card"
+  #      template: chip_back
+  #      variables:
+  #        ulm_chip_back_path: dashboard
+  #    - type: "custom:button-card"
+  #      template: card_title
+  #      name: "Büro"
+  #      styles:
+  #        card:
+  #          - margin-left: 0px
+  #          - margin-top: 0
+  #    # Weather Chip
+  #    - type: "custom:button-card"
+  #      template: chip_temperature
+  #      variables:
+  #        ulm_chip_temperature_inside: sensor.office_1_dect301_1_current_temperature
+  #        ulm_chip_temperature_outside: sensor.dwd_weather_temperature
+  #        ulm_chip_temperature_weather: sensor.dwd_weather_temperature
+
+
+  - type: "custom:button-card"
+    template: "card_ing_header"
+    variables:
+      header_title: "Büro"
+      header_navigate_path: "dashboard"
+      header_back_button: true
+      header_weather: true
+      header_weather_entity_id: sensor.office_1_dect301_1_current_temperature
+
+
+  - type: vertical-stack
+    cards:
+
+      - type: horizontal-stack
+        cards:
+          - type: 'custom:button-card'
+            template: card_graph
+            entity: sensor.office_1_dect301_1_current_temperature
+            variables:
+              ulm_card_graph_name: "Temperature"
+              ulm_card_graph_color: "var(--google-blue)"
+              ulm_card_graph_entity: sensor.office_1_dect301_1_current_temperature
+              #ulm_card_graph_color2: "var(--google-blue)"
+              #ulm_card_graph_entity2: sensor.dwd_weather_temperature
+              ulm_card_graph_type: fill
+              ulm_card_graph_hours: 48
+              ulm_card_graph_points: 0.5
+              ulm_card_graph_group_by: interval
+          # @Todo gibt es nicht
+          - type: 'custom:button-card'
+            template: card_graph
+            entity: sensor.livingroom_hmipbwth_thermostat_humidity
+            variables:
+              ulm_card_graph_name: "Luftfeuchtigkeit"
+              ulm_card_graph_color: "var(--google-green)"
+              ulm_card_graph_entity: sensor.mainhallway_hmipbwth_thermostat_humidity
+              ulm_card_graph_type: fill
+              ulm_card_graph_hours: 48
+              ulm_card_graph_points: 0.5
+              ulm_card_graph_group_by: interval
+
+      - type: "custom:button-card"
+        template: card_title
+        name: "Geräte"
+        label: '[[[ return states["sensor.number_of_devices_on"].state + " eingeschaltet" ]]]'
+        styles:
+          card:
+            - margin-left: 10px
+
+      - type: "custom:button-card"
+        template: card_thermostat
+        entity: climate.office_1_dect301_1
+        variables:
+          ulm_card_thermostat_enable_collapse: false
+          ulm_card_thermostat_enable_controls: true
+          ulm_card_thermostat_enable_hvac_modes: false
+          ulm_card_thermostat_enable_background_color: false
+          ulm_card_thermostat_enable_display_temperature: true
+          ulm_card_thermostat_enable_horizontal: false
+          ulm_card_thermostat_enable_popup: true
+
+      # Separator card
+      - type: vertical-stack
+        cards:
+          - type: "custom:button-card"
+            template: "card_ing_separator"
+
+      - type: vertical-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_cover
+            entity: cover.child_1_shutter_shelly_25_40f52000f9c9
+            variables:
+              ulm_card_cover_enable_controls: true
+              ulm_card_cover_enable_slider: false
+              ulm_card_curtain_display_collapse_expand: false
+              ulm_card_cover_enable_popup: true
+
+
+      # Separator card
+      - type: vertical-stack
+        cards:
+          - type: "custom:button-card"
+            template: "card_ing_separator"
+
+      - type: horizontal-stack
+        cards:
+          - type: 'custom:button-card'
+            template: card_input_boolean
+            entity: media_player.ax_hd60_office
+            variables:
+              #ulm_card_input_boolean_name: Guest Mode
+              ulm_card_media_player_enable_art: false
+              ulm_card_media_player_enable_popup: true
+
+          - type: "custom:button-card"
+            template: card_media_player
+            entity: media_player.samsung_au8079_55_tv
+            variables:
+              #ulm_card_media_player_name: Livingroom Nvidia Shield
+              ulm_card_media_player_enable_art: false
+              ulm_card_media_player_enable_popup: true
+
+      - type: horizontal-stack
+        cards:
+          - type: 'custom:button-card'
+            template: card_input_boolean
+            entity: switch.computer_sebastian_pc
+            variables:
+              ulm_card_input_boolean_name: Computer
+
+          - type: 'custom:button-card'
+            template: card_input_boolean
+            entity: switch.computer_dkd_laptop
+            variables:
+              ulm_card_input_boolean_name: dkd Laptop
+
+          - type: 'custom:button-card'
+            template: card_input_boolean
+            entity: switch.computer_sebastian_pc
+            variables:
+              ulm_card_input_boolean_name: Computer Arbeit
+
+      - type: horizontal-stack
+        cards:
+          - type: 'custom:button-card'
+            template: card_input_boolean
+            entity: sensor.website_ingeniumdesign
+            variables:
+              ulm_card_input_boolean_name: "Webseite: INGENIUMDESIGN"
+
+      - type: "custom:button-card"
+        template: card_title
+        name: "Drucker"
+        styles:
+          card:
+            - margin-left: 10px
+
+      - type: vertical-stack
+        cards:
+          - type: entities
+            show_header_toggle: true
+            title: Drucker MFC490CW
+            icon: mdi:printer-wireless
+            entities:
+              - sensor.mfc_490cw_status
+              - sensor.mfc_490cw_page_counter
+              - sensor.mfc_490cw_black_ink_remaining
+              - sensor.mfc_490cw_cyan_ink_remaining
+              - sensor.mfc_490cw_magenta_ink_remaining
+              - sensor.mfc_490cw_yellow_ink_remaining
+
+          # @ToDo Counter Paper fehlt noch - sensor.mfc_490cw_page_counter
+          - type: "custom:button-card"
+            template: "card_ing_printer"
+            entity: sensor.mfc_490cw_status
+            variables:
+              printer_name: Brother MFC 490 CW
+              printer_counter:
+                entity_id: sensor.mfc_490cw_page_counter
+                #name: Test
+              cartridges:
+                - label: "B"
+                  entity_id: sensor.mfc_490cw_black_ink_remaining
+                  color: "black"
+                - label: "Y"
+                  entity_id: sensor.mfc_490cw_yellow_ink_remaining
+                  color: "rgba(var(--color-yellow), 1)"
+                - label: "M"
+                  entity_id: sensor.mfc_490cw_magenta_ink_remaining
+                  color: "#F84B7A"
+                - label: "C"
+                  entity_id: sensor.mfc_490cw_cyan_ink_remaining
+                  color: "#427EDE"
+
+

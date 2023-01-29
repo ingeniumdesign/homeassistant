@@ -1,0 +1,6 @@
+group:
+
+  # All Shutter Entities
+  all_shutter_entities:
+    name: All Shutter Entities
+    entities:

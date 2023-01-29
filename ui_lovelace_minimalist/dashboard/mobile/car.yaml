@@ -1,0 +1,295 @@
+title: "Auto"
+path: "car"
+icon: "mdi:car-connected"
+id: "car"
+theme: "minimalist-mobile-tapbar"
+cards:
+  - type: "custom:button-card"
+    template: "card_ing_header"
+    variables:
+      header_title: "Garage"
+      header_navigate_path: "dashboard"
+      header_back_button: true
+      header_weather: true
+      header_weather_entity_id: sensor.office_1_dect301_1_current_temperature
+
+  - type: vertical-stack
+    cards:
+
+      - type: 'custom:stack-in-card'
+        mode: vertical
+        cards:
+          - entity: sensor.tankerkoenig_dirk_schirmacher_diesel
+            type: 'custom:multiple-entity-row'
+            name: Diesel
+            show_state: false
+            show_last_changed: true
+            style:
+              multiple-entity-row:
+                $: |
+                  .info {
+                    flex: 1 0 20%;
+                  }
+            entities:
+              # @ToDo: Wenn geschlossen / unknown Text ändern.
+              - entity: sensor.tankerkoenig_dirk_schirmacher_diesel
+                name: ED Tankstelle
+                value_template: >
+                  {% if states('sensor.tankerkoenig_dirk_schirmacher_diesel') == 'unknown' %}
+                    geschlossen
+                  {% else %}
+                    {{states('sensor.tankerkoenig_dirk_schirmacher_diesel')}}
+                  {% endif %}
+              - entity: sensor.tankerkoenig_total_idstein_diesel
+                name: Total Tankstelle
+                state: >
+                  {% if states('sensor.tankerkoenig_total_idstein_diesel') == 'Unknown' %}
+                    geschlossen
+                  {% else %}
+                    {{states('sensor.tankerkoenig_total_idstein_diesel')}}
+                  {% endif %}
+              - entity: sensor.tankerkoenig_shell_idstein_black_u_decker_str_9_diesel
+                name: Shell Black&Decker
+              - entity: sensor.tankerkoenig_shell_idstein_wiesbadener_str_56_diesel
+                name: Shell Wiesbadener
+                state: >
+                  {% if states('sensor.tankerkoenig_shell_idstein_wiesbadener_str_56_diesel') == 'unknown' %}
+                    geschlossen
+                  {% else %}
+                    {{states('sensor.tankerkoenig_shell_idstein_wiesbadener_str_56_diesel')}}
+                  {% endif %}
+                  
+
+      - type: horizontal-stack
+        cards:
+          - type: 'custom:button-card'
+            template: card_graph
+            entity: sensor.tankerkoenig_dirk_schirmacher_diesel
+            variables:
+              ulm_card_graph_color: "var(--google-blue)"
+              ulm_card_graph_name: ED Tankstelle
+              ulm_card_graph_entity: sensor.tankerkoenig_dirk_schirmacher_diesel
+              ulm_card_graph_type: fill
+              ulm_card_graph_hours: 48
+              ulm_card_graph_group_by: interval
+
+          - type: 'custom:button-card'
+            template: card_graph
+            entity: sensor.tankerkoenig_total_idstein_diesel
+            variables:
+              ulm_card_graph_color: "var(--google-blue)"
+              ulm_card_graph_name: Total Tankstelle
+              ulm_card_graph_entity: sensor.tankerkoenig_total_idstein_diesel
+              ulm_card_graph_type: fill
+              ulm_card_graph_hours: 48
+              ulm_card_graph_group_by: interval
+
+      - type: horizontal-stack
+        cards:
+
+          - type: 'custom:button-card'
+            template: card_graph
+            entity: sensor.tankerkoenig_shell_idstein_black_u_decker_str_9_diesel
+            variables:
+              ulm_card_graph_color: "var(--google-blue)"
+              ulm_card_graph_name: Shell Black&Decker
+              ulm_card_graph_entity: sensor.tankerkoenig_shell_idstein_black_u_decker_str_9_diesel
+              ulm_card_graph_type: fill
+              ulm_card_graph_hours: 48
+              ulm_card_graph_group_by: interval
+
+          - type: 'custom:button-card'
+            template: card_graph
+            entity: sensor.tankerkoenig_shell_idstein_wiesbadener_str_56_diesel
+            variables:
+              ulm_card_graph_color: "var(--google-blue)"
+              ulm_card_graph_name: Shell Wiesbadener
+              ulm_card_graph_entity: sensor.tankerkoenig_shell_idstein_wiesbadener_str_56_diesel
+              ulm_card_graph_type: fill
+              ulm_card_graph_hours: 48
+              ulm_card_graph_group_by: interval
+
+      - type: vertical-stack
+        cards:
+
+          - type: 'custom:stack-in-card'
+            mode: vertical
+            keep:
+              box_shadow: false
+              background: false
+            cards:
+              - type: entities
+                entities:
+                  - type: 'custom:multiple-entity-row'
+                    entities:
+                      - entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_fuel_level
+                        name: Tank
+                      - entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_combustion_range
+                        name: Reichweite
+                    entity: binary_sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_doors_locked
+                    name: "ŠKODA OCTAVIA KOMBI RS"
+                    secondary_info:
+                      entity: binary_sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_doors_locked
+                      name: ' '
+                    show_state: false
+                    state_color: true
+                    state_header: true
+                  - type: divider
+
+              - type: picture
+                image: /local/images/Car-Octavia-RS-02.png
+                entity: lock.skoda_octavia_combi_rs_tmbjk8nx5py042131_door_locked
+
+              - type: 'custom:stack-in-card'
+                mode: horizontal
+                style: |
+                  ha-card {
+                    box-shadow: none;
+                    border: 0;
+                  }
+                cards:
+                  - type: button
+                    entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_adblue_level
+                    show_name: true
+                    name: AD Blue
+                    icon: 'mdi:water-check'
+                    icon_height: 25px
+                    tap_action:
+                      action: none
+                    hold_action:
+                      action: none
+
+                  - type: button
+                    entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_service_inspection_days
+                    show_name: true
+                    name: Inspektion
+                    icon: "mdi:tools"
+                    icon_height: 25px
+                    tap_action:
+                      action: none
+                    hold_action:
+                      action: none
+
+                  - type: button
+                    entity: binary_sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_parking_light
+                    show_name: true
+                    name: Licht
+                    icon: 'mdi:car-parking-lights'
+                    icon_height: 25px
+                    tap_action:
+                      action: none
+                    hold_action:
+                      action: none
+
+                  - type: button
+                    entity: binary_sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_windows_closed
+                    show_name: true
+                    name: Fenster
+                    icon_height: 25px
+                    tap_action:
+                      action: none
+                    hold_action:
+                      action: none
+
+                  - type: button
+                    entity: binary_sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_doors_locked
+                    show_name: true
+                    name: Türen
+                    icon: 'mdi:car-door-lock'
+                    icon_height: 25px
+                    tap_action:
+                      action: none
+                    hold_action:
+                      action: none
+
+              - type: entities
+                show_header_toggle: false
+                state_color: true
+                entities:
+                  - type: divider
+
+                  - entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_adblue_level
+                    type: 'custom:multiple-entity-row'
+                    name: Motor
+                    state_header: Ad Blue
+                    icon: 'mdi:engine'
+                    secondary_info:
+                      entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_odometer
+                      name: 'KM-Stand:'
+                    entities:
+                      - entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_service_inspection_distance
+                        name: Inspektion
+                      - entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_service_inspection_days
+                        name: Tage
+                    #entities:
+                    #  - entity: device_tracker.skoda_octavia_combi_rs_tmbjk8nx5py042131_position
+                    #    name: Location
+
+                  - entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_request_results
+                    type: 'custom:multiple-entity-row'
+                    name: Datenabgleich
+                    state_header: Anfragen
+                    icon: 'mdi:car-connected'
+                    secondary_info:
+                      entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_last_connected_pretty
+                      name: ' '
+                    style:
+                      ha-entity-toggle$: |
+                        ha-switch {
+                          padding: 3px 5px !important;
+                        }
+                    entities:
+                      - entity: switch.skoda_octavia_combi_rs_tmbjk8nx5py042131_force_data_refresh
+                        name: Erzwingen
+                        toggle: true
+
+                  - entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_last_trip_average_fuel_consumption
+                    type: "custom:multiple-entity-row"
+                    name: "Letzter Trip"
+                    unit: l
+                    icon: "mdi:map-marker-distance"
+                    state_header: "Verbrauch"
+                    style: "--ha-state-icon-color: blue; --ha-state-icon-size: 24px;"
+                    #style: |
+                    #  ha-card {
+                    #    box-shadow: none;
+                    #    border: 0;
+                    #  }
+                    entities:
+                      - entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_last_trip_average_speed
+                        name: "% Speed"
+                      - entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_last_trip_duration
+                        name: "Fahrzeit"
+                      - entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_last_trip_length
+                        name: "Strecke"
+                  - type: divider
+
+              #- type: entities
+              #  show_header_toggle: false
+              #  state_color: true
+              #  entities:
+              #    - type: divider
+
+              - type: 'custom:button-card'
+                template: card_graph
+                styles:
+                  card:
+                    - box-shadow: none
+                    - border: 0
+                entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_combustion_range
+                variables:
+                  ulm_card_graph_color: "var(--google-blue)"
+                  ulm_card_graph_name: Reichweite
+                  ulm_card_graph_entity: sensor.skoda_octavia_combi_rs_tmbjk8nx5py042131_combustion_range
+                  ulm_card_graph_type: fill
+                  ulm_card_graph_hours: 60
+                  ulm_card_graph_group_by: interval
+                  ulm_card_tap_action: "none"
+                  ulm_card_hold_action: "none"
+                  ulm_card_double_tap_action: "none"
+                  ulm_icon_tap_action: "none"
+                  ulm_icon_hold_action: "none"
+                  ulm_icon_double_tap_action: "none"
+                  ulm_name_tap_action: "none"
+                  ulm_name_hold_action: "none"
+                  ulm_name_double_tap_action: "none"

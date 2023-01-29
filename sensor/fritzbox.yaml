@@ -1,44 +1,44 @@
 - platform: template
   sensors:
     net_download_max:
-      value_template: "{{ states('sensor.ingeniumdesign_max_kbit_s_received') | float / 1000 | round(1) }}"
+      value_template: "{{ states('sensor.ing_fritzbox_max_kbit_s_received') | float / 1000 | round(1) }}"
       unit_of_measurement: "Mbit/s"
       friendly_name: "Down"
       icon_template: mdi:download
   
     net_upload_max:
-      value_template: "{{ states('sensor.ingeniumdesign_max_kbit_s_sent') | float / 1000 | round(1) }}"
+      value_template: "{{ states('sensor.ing_fritzbox_max_kbit_s_sent') | float / 1000 | round(1) }}"
       unit_of_measurement: "Mbit/s"
       friendly_name: "Up"
       icon_template: mdi:upload
 
     net_download_cur:
-      value_template: "{{ states('sensor.ingeniumdesign_kb_s_received') | float / 1000 | round(1) }}"
+      value_template: "{{ states('sensor.ing_fritzbox_kb_s_received') | float / 1000 | round(1) }}"
       unit_of_measurement: "Mbit/s"
       friendly_name: "Download"
       icon_template: mdi:download
     
     net_upload_cur:
-      value_template: "{{ states('sensor.ingeniumdesign_kb_s_sent') | float / 1000 | round(1) }}"
+      value_template: "{{ states('sensor.ing_fritzbox_kb_s_sent') | float / 1000 | round(1) }}"
       unit_of_measurement: "Mbit/s"
       friendly_name: "Upload"
       icon_template: mdi:upload
     
     net_received:
-      value_template: "{{ states('sensor.ingeniumdesign_gb_received') | float | round(0) }}"
+      value_template: "{{ states('sensor.ing_fritzbox_gb_received') | float | round(0) }}"
       unit_of_measurement: "GB"
       friendly_name: "Empfangen"
       icon_template: mdi:file
     
     net_sent:
-      value_template: "{{ states('sensor.ingeniumdesign_gb_sent') | float | round(0) }}"
+      value_template: "{{ states('sensor.ing_fritzbox_gb_sent') | float | round(0) }}"
       unit_of_measurement: "GB"
       friendly_name: "Gesendet"
       icon_template: mdi:file
 
     net_uptime:
-      value_template: "{{states('sensor.ingeniumdesign_connection_uptime').split('T')[1].split('+')[0]}}"
-      #value_template: "{{ as_timestamp(strptime( states('sensor.ingeniumdesign_connection_uptime'), '%Y-%m-%d %H:%M:%S')) | timestamp_custom('%Y-%m-%d %H:%M:%S') }}"
+      value_template: "{{states('sensor.ing_fritzbox_connection_uptime').split('T')[1].split('+')[0]}}"
+      #value_template: "{{ as_timestamp(strptime( states('sensor.ing_fritzbox_connection_uptime'), '%Y-%m-%d %H:%M:%S')) | timestamp_custom('%Y-%m-%d %H:%M:%S') }}"
       unit_of_measurement: "Tage"
       friendly_name: "Verbunden"
       icon_template: mdi:calendar
@@ -50,3 +50,57 @@
     - filter: range
       lower_bound: 0
       upper_bound: 100
+
+- platform: filter
+  name: "net_upload_cur_filtered"
+  entity_id: sensor.net_upload_cur
+  filters:
+    - filter: range
+      lower_bound: 0
+      upper_bound: 100
+
+- platform: template
+  sensors:
+    ing_fritzbox_sent_gb_day:
+      friendly_name: "ING-Fritzbox Upload GB Per Day"
+      # Add current usage to rollover value. Add uint32 max / 1000000 to the value.
+      value_template: "{{ (states('sensor.ing_fritzbox_kb_s_sent') | float / 1000000 + (states('input_number.ing_fritzbox_sent_day') | float) * 4.295 ) | round(2) | default('unknown')}}"
+      #value_template: "{{ (state_attr('sensor.ing_fritzbox_kb_s_sent') | float / 1000000 + (states('input_number.ing_fritzbox_sent_day') | float) * 4.295 ) | round(2) | default('unknown')}}"
+      # The 'entity_id' option near /config/sensor/fritzbox.yaml is deprecated, please remove it from your configuration
+      #entity_id: sensor.ing_fritzbox_kb_s_sent
+      unit_of_measurement: 'GB'
+    ing_fritzbox_sent_gb_month:
+      friendly_name: "ING-Fritzbox Upload GB Per Month"
+      # Add current usage to rollover value
+      value_template: "{{ (states('sensor.ing_fritzbox_kb_s_sent') | float / 1000000 + (states('input_number.ing_fritzbox_sent_month') | float) * 4.295 ) | round(2) | default('unknown')}}"
+      #value_template: "{{ (state_attr('sensor.ing_fritzbox_kb_s_sent') | float / 1000000 + (states('input_number.ing_fritzbox_sent_month') | float) * 4.295 ) | round(2) | default('unknown')}}"
+      #entity_id: sensor.ing_fritzbox_kb_s_sent
+      unit_of_measurement: 'GB'
+    ing_fritzbox_sent_gb_year:
+      friendly_name: "ING-Fritzbox Upload GB Per Year"
+      # Add current usage to rollover value
+      value_template: "{{ (states('sensor.ing_fritzbox_kb_s_sent') | float / 1000000 + (states('input_number.ing_fritzbox_sent_year') | float) * 4.295 ) | round(2) | default('unknown')}}"
+      #value_template: "{{ (state_attr('sensor.ing_fritzbox_kb_s_sent') | float / 1000000 + (states('input_number.ing_fritzbox_sent_year') | float) * 4.295 ) | round(2) | default('unknown')}}"
+      #entity_id: sensor.ing_fritzbox_kb_s_sent
+      unit_of_measurement: 'GB'
+    ing_fritzbox_received_gb_day:
+      friendly_name: "ING-Fritzbox Download GB Per Day"
+      # Add current usage to rollover value. Add uint32 max / 1000000 to the value.
+      value_template: "{{ (states('sensor.ing_fritzbox_kb_s_received') | float / 1000000 + (states('input_number.ing_fritzbox_received_day') | float) * 4.295 ) | round(2) | default('unknown')}}"
+      #value_template: "{{ (state_attr('sensor.ing_fritzbox_kb_s_received') | float / 1000000 + (states('input_number.ing_fritzbox_received_day') | float) * 4.295 ) | round(2) | default('unknown')}}"
+      #entity_id: sensor.ing_fritzbox_kb_s_received
+      unit_of_measurement: 'GB'
+    ing_fritzbox_received_gb_month:
+      friendly_name: "ING-Fritzbox Download GB Per Month"
+      # Add current usage to rollover value
+      value_template: "{{ (states('sensor.ing_fritzbox_kb_s_received') | float / 1000000 + (states('input_number.ing_fritzbox_received_month') | float) * 4.295 ) | round(2) | default('unknown')}}"
+      #value_template: "{{ (state_attr('sensor.ing_fritzbox_kb_s_received') | float / 1000000 + (states('input_number.ing_fritzbox_received_month') | float) * 4.295 ) | round(2) | default('unknown')}}"
+      #entity_id: sensor.ing_fritzbox_kb_s_received
+      unit_of_measurement: 'GB'
+    ing_fritzbox_received_gb_year:
+      friendly_name: "ING-Fritzbox Download GB Per Year"
+      # Add current usage to rollover value
+      value_template: "{{ (states('sensor.ing_fritzbox_kb_s_received') | float / 1000000 + (states('input_number.ing_fritzbox_received_year') | float) * 4.295 ) | round(2) | default('unknown')}}"
+      #value_template: "{{ (state_attr('sensor.ing_fritzbox_kb_s_received') | float / 1000000 + (states('input_number.ing_fritzbox_received_year') | float) * 4.295 ) | round(2) | default('unknown')}}"
+      #entity_id: sensor.ing_fritzbox_kb_s_received
+      unit_of_measurement: 'GB'

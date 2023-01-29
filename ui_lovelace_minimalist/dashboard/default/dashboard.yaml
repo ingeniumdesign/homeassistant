@@ -1,0 +1,258 @@
+title: "Dashboard"
+path: "dashboard"
+icon: "mdi:home-assistant"
+id: "dashboard"
+theme: "minimalist-desktop"
+cards:
+  - type: vertical-stack
+    cards:
+      - type: "custom:button-card"
+        template: "card_esh_welcome"
+        triggers_update: "input_boolean.welcome_toggle"
+        variables:
+          ulm_card_esh_welcome_collapse: input_boolean.welcome_toggle
+          ulm_weather: "weather.dwd_weather_idstein"
+          entity_1:
+            nav: "house"
+            icon: "mdi:home"
+            name: "House"
+            color: "blue"
+          entity_2:
+            nav: "lights"
+            icon: "mdi:lightbulb"
+            name: "Lights"
+            color: "yellow"
+          entity_3:
+            nav: "security"
+            icon: "mdi:shield"
+            name: Secure
+            color: "green"
+          entity_4:
+            nav: "network"
+            icon: "mdi:nas"
+            name: Lab
+            color: "purple"
+          entity_5:
+            nav: "network"
+            icon: "mdi:flask"
+            name: "Party Mode"
+            color: "red"
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: chip_icon_state
+            variables:
+              ulm_chip_icon_state_icon: "💻"
+              ulm_chip_icon_state_entity: group.all_persons
+          - type: "custom:button-card"
+            template: chip_mdi_icon_only
+            variables:
+              ulm_chip_mdi_icon_only_entity: group.all_persons
+              ulm_chip_mdi_icon_only_icon: mdi:door
+          - type: "custom:button-card"
+            entity: group.all_persons
+            template: chips
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_person
+            entity: person.sebastian_schmal
+            variables:
+              ulm_card_person_entity: person.sebastian_schmal
+              ulm_card_person_use_entity_picture: true
+              ulm_card_person_icon: mdi:face-man
+              ulm_card_person_battery: sensor.handy_sebastian_akkufullstand
+              #ulm_card_person_eta: sensor.waze_travel_time_person
+              #ulm_address: sensor.s10_mike_gegeocodeerde_locatie
+
+          - type: "custom:button-card"
+            template: card_person
+            entity: person.julia_schmal
+            variables:
+              ulm_card_person_entity: person.julia_schmal
+              ulm_card_person_use_entity_picture: true
+              ulm_card_person_icon: mdi:face-woman
+              ulm_card_person_battery: sensor.iphone_vr_smart_battery_level
+              #ulm_card_person_eta: sensor.waze_travel_time_person
+              #ulm_address: sensor.s10_mike_gegeocodeerde_locatie
+
+      - type: horizontal-stack
+        cards:
+          - type: 'custom:button-card'
+            template: card_vertical_button
+            entity: input_boolean.party_mode_toggle
+            name: "Party Mode"
+            icon: mdi:party-popper
+            show_last_changed: false
+            variables:
+              ulm_card_vertical_button_state: "on"
+              #ulm_card_vertical_button_color: blue
+
+          - type: 'custom:button-card'
+            template: card_vertical_button
+            entity: input_boolean.notify_dooropen
+            name: "Test"
+            icon: mdi:television-classic
+            show_last_changed: true
+            variables:
+              ulm_card_vertical_button_state: "on"
+              ulm_card_vertical_button_color: green
+
+          - type: 'custom:button-card'
+            template: card_vertical_button
+            entity: input_boolean.notify_dooropen
+            name: "Test"
+            icon: mdi:television-classic
+            show_last_changed: true
+            variables:
+              ulm_card_vertical_button_state: "on"
+              ulm_card_vertical_button_color: green
+
+          - type: 'custom:button-card'
+            template: card_vertical_button
+            entity: input_boolean.notify_dooropen
+            name: "Test"
+            icon: mdi:television-classic
+            show_last_changed: true
+            variables:
+              ulm_card_vertical_button_state: "on"
+              ulm_card_vertical_button_color: green
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:weather-card
+            entity: weather.dwd_weather_idstein
+            current: true
+            details: false
+            forecast: true
+            style: |
+              ha-card {
+                box-shadow: var(--box-shadow);
+                border-radius: var(--border-radius);
+                padding: 1em;
+              }
+              .spacer {
+                padding-top: 0em !important;
+              }
+              .current {
+                padding-top: 0em !important;
+                padding-left: 1em !important;
+                margin-top: 0.5em !important;
+                margin-bottom: 0em !important;
+              }
+              .temp {
+                font-size: 3.2em !important;
+                position: sticky !important;
+              }
+              .tempc {
+                font-size: 1.5em !important;
+                position: sticky !important;
+              }
+              .forecast {
+                margin-top: -4.5em !important;
+                margin-bottom: -0.7em !important;
+              }
+              .forecast .day:first-child {
+                margin-left: 7.5em !important;
+              }
+              .day {
+                border-right: none !important;
+                line-height: 2 !important;
+              }
+              .precipitation {
+                display: none !important;
+              }
+              .icon {
+                width: 40px !important;
+                height: 40px !important;
+              }
+              .icon.bigger {
+                width: 4.5em !important;
+                height: 4.5em !important;
+                left: 2.5em !important;
+                top: 8em !important;
+              }
+
+      - type: "custom:button-card"
+        template: card_title
+        name: "Räume"
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template:
+              - card_esh_room
+              - yellow_on
+            name: Flur
+            entity: light.mainhallway_led_shelly_rgbw2_00bc99
+            triggers_update: light.mainhallway_led_shelly_rgbw2_00bc99
+            icon: mdi:view-carousel-outline
+            tap_action:
+              action: navigate
+              navigation_path: "mainhallway"
+            variables:
+              ulm_custom_card_esh_room_light_entity: light.mainhallway_led_shelly_rgbw2_00bc99
+              #ulm_custom_card_esh_room_climate_entity: climate.mainhallway_hmipbwth_thermostat
+              ulm_card_thermostat_enable_popup: true
+              ulm_card_dynamic_color: true
+            label: >
+              [[[
+                return "🌡️ " + states['sensor.mainhallway_hmipbwth_thermostat_temperature'].state + " °C" + "  💧 " + states['sensor.mainhallway_hmipbwth_thermostat_humidity'].state + " %"
+              ]]]
+
+          - type: "custom:button-card"
+            template:
+              - card_esh_room
+              - blue_on
+            name: Wohnzimmer
+            entity: light_bulb_example_01_0xb4e3f9fffe524699
+            triggers_update: light_bulb_example_01_0xb4e3f9fffe524699
+            icon: mdi:sofa
+            tap_action:
+              action: navigate
+              navigation_path: "livingroom"
+            variables:
+              ulm_custom_card_esh_room_light_entity: light.guest_restroom_led_shelly_rgbw2_00c178
+              #ulm_custom_card_esh_room_climate_entity: climate.livingroom_hmipbwth_thermostat
+              #ulm_card_thermostat_enable_popup: true
+            label: >
+              [[[
+                return "🌡️ " + states['sensor.livingroom_hmipbwth_thermostat_temperature'].state + " °C" + "  💧 " + states['sensor.livingroom_hmipbwth_thermostat_humidity'].state + " %"
+              ]]]
+
+          - type: "custom:button-card"
+            template:
+              - card_esh_room
+              - yellow_on
+            name: Küche
+            entity: light.mainhallway_led_shelly_rgbw2_00bc99
+            triggers_update: light.mainhallway_led_shelly_rgbw2_00bc99
+            icon: mdi:view-carousel-outline
+            tap_action:
+              action: navigate
+              navigation_path: "mainhallway"
+            variables:
+              ulm_custom_card_esh_room_light_entity: light.mainhallway_led_shelly_rgbw2_00bc99
+              #ulm_custom_card_esh_room_climate_entity: climate.mainhallway_hmipbwth_thermostat
+              ulm_card_thermostat_enable_popup: true
+              ulm_card_dynamic_color: true
+            label: >
+              [[[
+                return "🌡️ " + states['sensor.livingroom_hmipbwth_thermostat_temperature'].state + " °C" + "  💧 " + states['sensor.livingroom_hmipbwth_thermostat_humidity'].state + " %"
+              ]]]
+
+      - type: "custom:button-card"
+        template: card_title
+        name: "Geräte"
+
+      - type: horizontal-stack
+        cards:
+          - type: "custom:button-card"
+            template: card_light
+            entity: light.mainhallway_led_shelly_rgbw2_00bc99
+            variables:
+              ulm_card_light_enable_slider: true
+              ulm_card_light_enable_color: true
+              ulm_card_light_force_background_color: true

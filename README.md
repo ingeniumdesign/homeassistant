@@ -58,6 +58,12 @@ _More Screenshot down below._
 - Homematic IP 7x [Stellantrieb – motorisch](https://www.homematic-ip.com/produkte/detail/homematic-ip-stellantrieb-motorisch.html) - [Amazon *](https://amzn.to/3p4AVEq)
 - Homematic IP 2x [Wandthermostat 240V - 150628A0](https://www.homematic-ip.com/produkte/detail/wandthermostat-mit-schaltausgang-fuer-markenschalter.html) - [Amazon *](https://amzn.to/39lquqC)
 - Gardena [Mähroboter smart SILENO city, 250](https://www.gardena.com/de/produkte/rasenpflege/mahroboter/mahroboter-smart-sileno-city-250-m2-set/970450703/) - [Amazon *](https://amzn.to/3fNnVAq)
+- BT Dongle - Install: `sudo apt install bluez` and `sudo apt install bluetooth libbluetooth-dev`
+
+## HA House Planning
+
+[HA - Miro Board - House Planning](https://miro.com/app/board/uXjVPz5VLXQ=/?share_link_id=220432519680)
+
 
 ## Hass.io Addons
 
@@ -84,6 +90,7 @@ _More Screenshot down below._
 - [Samsung Smart TV](https://www.home-assistant.io/integrations/samsungtv/)
 - [MQTT](https://www.home-assistant.io/integrations/mqtt/)
 - [uptimerobot](https://uptimerobot.com/)
+- Ledvance over [SmartThings](https://www.home-assistant.io/integrations/smartthings/)
 
 ## Custom Components
 
@@ -93,7 +100,6 @@ _More Screenshot down below._
   - SamsungTV Tizen
   - Monitor Docker
   - browser_mod
-  - [Custom UI](https://github.com/Mariusthvdb/custom-ui)
   - ICS
   - Shelly (_Next testing with [ShellyForHass](https://github.com/StyraHem/ShellyForHASS)_)
   - [Skoda Connect](https://github.com/lendy007/homeassistant-skodaconnect) - ŠKODA OCTAVIA RS COMBI
@@ -129,8 +135,8 @@ _More Screenshot down below._
 - [custom-sidebar](https://github.com/DBuit/sidebar-card) - deactivated
 
 ### Google Fonts
-- **Headlines:** Comfortaa [Google Fonts](https://fonts.google.com/specimen/Comfortaa)
-- **Content:** Raleway [Google Fonts](https://fonts.google.com/specimen/Raleway)
+- **Headlines:** ~~Comfortaa [Google Fonts](https://fonts.google.com/specimen/Comfortaa)~~
+- **Content:** ~~Raleway [Google Fonts](https://fonts.google.com/specimen/Raleway)~~
 
 ## Automations :green_heart:
 
@@ -212,6 +218,19 @@ Check this install Guide after the "main Install". Dont use the Install part. <b
 
 Use this Guide to Check the migration from Pi to NUC. Dont use the Install part. <br />
 [community.home-assistant.io](https://community.home-assistant.io/t/a-successful-migration-from-pi-3-to-intel-nuc/189992)
+
+### Wording Overview
+
+**RAUM_GERÄTBEZEICHNUNG_NUMMER_VALUE**
+
+office_dect301_1_current_power  
+office_dect301_2_status
+
+**Shelly Example:**
+
+RAUM_FUNKTION_GERÄTBEZEICHNUNG_NUMMER_VALUE
+
+mainhallway_led_shelly1l_84CCA8AD7232
 
 ### Portainer CE - Docker Overview
 

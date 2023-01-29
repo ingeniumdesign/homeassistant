@@ -1,3 +1,0 @@
-# {{ states.group.all_persons.state }}
-# group.all_persons = not_home
-

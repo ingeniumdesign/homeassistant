@@ -1,0 +1,9 @@
+group:
+
+  # All Motion Entities
+  all_motion_entities:
+    name: All Motion Entities
+    entities:
+      - binary_sensor.guest_restroom_zw100_multisensor_home_security_motion_detection
+      - binary_sensor.mainhallway_zw100_multisensor_1_home_security_motion_detection
+      - binary_sensor.mainhallway_zw100_multisensor_2_home_security_motion_detection

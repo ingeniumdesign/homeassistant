@@ -1,20 +1,22 @@
-# Computer Basti NUC @TODO Icon ändern und PC herunterfahren Funktion
+# Computer Sebastian NUC @TODO Icon ändern und PC herunterfahren Funktion
 - platform: wake_on_lan
-  name: "Computer-NUC"
+  name: Computer - NUC
   mac: !secret computer_computer_nuc_mac
   host: !secret computer_computer_nuc_ip
   turn_off:
     service: script.pc_off
 
+# Main Computer Sebastian
 - platform: wake_on_lan
-  name: "Basti-PC"
-  mac: !secret computer_basti_pc_mac
-  host: !secret computer_basti_pc_ip
+  name: Computer - Sebastian PC
+  mac: !secret computer_sebastian_pc_mac
+  host: !secret computer_sebastian_pc_ip
   turn_off:
     service: hassio.addon_stdin
     data:
       addon: core_rpc_shutdown
-      input: basti-pc
+      # @Todo für was steht das input?
+      input: computer_sebastian_pc
 
 #- platform: template
 #  switches:
@@ -40,3 +42,10 @@
 #        {% else %}
 #          mdi:apple
 #        {% endif %}
+
+# DKD Laptop Sebastian
+- platform: wake_on_lan
+  name: Computer - dkd Laptop
+  mac: !secret computer_dkd_laptop_mac
+  host: !secret computer_dkd_laptop_ip
+

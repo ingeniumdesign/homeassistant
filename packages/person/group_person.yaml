@@ -1,0 +1,8 @@
+group:
+
+  # All Persons Entities
+  all_person_entities:
+    name: All Persons Entities
+    entities:
+      - person.sebastian_schmal
+      - person.julia_schmal

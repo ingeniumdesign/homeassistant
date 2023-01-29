@@ -1,0 +1,18 @@
+---
+button_card_templates: !include_dir_merge_named "../../custom_components/ui_lovelace_minimalist/__ui_minimalist__/ulm_templates/"
+
+title: "Dashboard Mobile"
+theme: "minimalist-mobile-tapbar"
+background: "var(--background-image)"
+views:
+  - !include "mobile/dashboard.yaml"
+  - !include "mobile/mainhallway.yaml"
+  - !include "mobile/livingroom.yaml"
+  - !include "mobile/office-1.yaml"
+  - !include "mobile/car.yaml"
+  - !include "mobile/system.yaml"
+  - !include "mobile/settings.yaml"
+  - !include "mobile/unused.yaml"
+  # Hidden Sites
+  - !include "mobile/hidden/light_overview.yaml"
+  - !include "mobile/hidden/map_overview.yaml"
